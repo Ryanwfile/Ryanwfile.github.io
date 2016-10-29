@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">    
+  <link rel="stylesheet" href ="bookbs.css">
+  <link rel="stylesheet" href ="bootstrap.css">
+  
+  <title>Battleship</title>
+</head>
+<body>
+<div class = "container" id = "wrap">
+  <a class = "navbar-brand" href="CR2.html">Ryan's Homepage</a>
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>                        
+  </button>
+  
+  <form id="bombBox">
+    <input type="text" id="guessInput" placeholder="A0">
+    <input type="button" id="fireButton" value="Fire!">
+  </form>
+  <div id = "description">
+    <h2>BattleShip</h2>
+  </div>
+  <ul class="pills-stacked" id="myNavBar">
+  	<li><a href="#">Home</a></li>
+  	<li><a href="#">Services</a></li>
+  	<li id ="accordion">	
+    	<a href="#collapseone" data-toggle="collapse" data-parent="accordion">Portfolio Pages<span class="caret"></span></a>
+    	<div id="collapseone" class="panel-collapse collapse in">
+    		<ul class="pills-stacked">         
+          <li><a href="valid.php">Simon Game</a></li>
+          <li><a href="proto\alpha3.html">Tic Tac Toe</a></li>
+          <li><a href="carousel1.html">George Carlin Tribute</a></li>
+          <li><a href="valid.php">Random Quote Generator</a></li>
+          <li><a href="http://ryanrw81.wix.com/joes-fruit" target= "blank">Wix Site</a></li>
+          <li><a href="valid.php">Local Weather</a></li>
+          <li><a href="valid.php">Twitch Streamer Status</a></li>
+          <li><a href="valid.php">Wiki Search</a></li>
+          <li><a href="valid.php">Pomodoro Clock</a></li>
+          <li><a href="valid.php">Calculator</a></li> 
+          <li><a href="clock.html">Digital Clock(Jquery)</a></li>                    			
+    		</ul>
+      </div>
+  	</li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div id="board">
+    <div id="messageArea"></div>
+    <table class="clearfix">
+    <tr>
+    <td id="00"></td> <td id="01"></td> <td id="02"></td> <td id="03"></td>
+    <td id="04"></td> <td id="05"></td> <td id="06"></td>
+    </tr>
+    <tr>
+    <td id="10"></td> <td id="11"></td> <td id="12"></td> <td id="13"></td>
+    <td id="14"></td> <td id="15"></td> <td id="16"></td>
+    </tr>
+    <tr>
+    <td id="20"></td> <td id="21"></td> <td id="22"></td> <td id="23"></td>
+    <td id="24"></td> <td id="25"></td> <td id="26"></td>
+    </tr>
+    <tr>
+    <td id="30"></td> <td id="31"></td> <td id="32"></td> <td id="33"></td>
+    <td id="34"></td> <td id="35"></td> <td id="36"></td>
+    </tr>
+    <tr>
+    <td id="40"></td> <td id="41"></td> <td id="42"></td> <td id="43"></td>
+    <td id="44"></td> <td id="45"></td> <td id="46"></td>
+    </tr>
+    <tr>
+    <td id="50"></td> <td id="51"></td> <td id="52"></td> <td id="53"></td>
+    <td id="54"></td> <td id="55"></td> <td id="56"></td>
+    </tr>
+    <tr>
+    <td id="60"></td> <td id="61"></td> <td id="62"></td> <td id="63"></td>
+    <td id="64"></td> <td id="65"></td> <td id="66"></td>
+    </tr>
+    </table>
+  </div>
+  <h5 id = "top">This game was created with the help of the tutorial from the book <u>Head First Javascript Programming</u><br>
+  It is not responsive and doesn't function on smaller screens
+  </h5>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+<script src="bookcode.js"></script> 
+</html>

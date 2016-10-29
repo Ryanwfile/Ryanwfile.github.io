@@ -1,0 +1,109 @@
+#myNavBar
+{
+	float:left;
+}
+
+#wrap
+{
+	width:100%;
+}
+
+#top
+{
+	text-align: center;
+	margin:auto;
+}
+
+body 
+{
+	background-color: #3399ff !important;
+}
+
+h2
+{
+	font-family: "Times New Roman", Times, serif !important;
+}
+
+li
+{
+	list-style: none;
+	color:black;
+}
+
+div#board 
+{
+	position: relative;
+	width: 55vw;
+	height: 45vw;
+	margin: auto;
+	background: url("http://codifyacademy.com/project_battleship_demo/css/../img/board.jpg") no-repeat;
+}
+
+div#messageArea 
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	color: rgb(83, 175, 19);
+}
+
+ a
+{
+	color:black !important;
+}
+
+.hit 
+{
+	background: url("http://codifyacademy.com/project_battleship_demo/css/../img/ship.png") no-repeat center center;
+}
+
+.miss 
+{
+	background: url("http://codifyacademy.com/project_battleship_demo/css/../img/miss.png") no-repeat center center;
+}
+
+table 
+{
+	border-spacing: 0px; 
+	/*could also use border collapse here instead */
+	position: absolute;
+	left: 173px;
+	top: 98px;
+	
+}
+
+td 
+{
+	width: 94px;
+	height: 94px;
+}
+
+form 
+{
+	position: relative;
+	bottom: 0px;
+	right: 0px;
+	padding: 15px;
+	background-color: rgb(83, 175, 19);
+	width:15%;
+	margin:auto;
+	//float:right;
+}
+
+form input 
+{
+	background-color: rgb(152, 207, 113);
+	border-color: rgb(83, 175, 19);
+	font-size: 1em;
+}
+
+#description h2
+{
+	float:right;
+	margin-right: 30px;
+	font-size: 6em;
+}
+
+
+
+
