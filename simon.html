@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+<style>
+.circle
+{ 
+  border-radius:50%;
+  width:500px;
+  height:500px;
+  background:#000000;
+  margin:5px auto;
+  overflow:hidden;
+  border:15px solid #000; 
+}
+
+.center
+{
+  border-radius:50%;
+  width:250px;
+  height:250px;
+  background:white;
+  position:relative;  
+  border:25px solid black;
+  clear:both;
+  top:-130px;
+  left:115px;
+  z-index:2;
+} 
+
+.score
+{
+  border-radius:50%;  
+  position:relative;
+} 
+
+.sector
+{
+  width: 50%;
+  float: left;
+  height: 250px;
+  border:25px;
+  box-shadow: 0px 5px 0px #00823F;
+  }
+
+#red
+{
+  background-color: #aa0000;
+  border-right: 4px solid #000;
+  border-bottom: 4px solid #000;
+}
+#red:hover
+{
+  background-color:grey;
+}
+
+#green
+{
+  background-color: #00aa00;
+  border-left: 4px solid #000;
+  border-bottom: 4px solid #000;
+}
+#green:hover
+{
+  background-color:grey;
+}
+#blue
+{
+  background-color:#0000aa;
+  border-right:4px solid #000;
+  border-top:4px solid #000;
+  position:relative;
+  top:-250px;
+  z-index:1;
+}
+#blue:hover
+{
+  background-color:grey;
+}
+#yellow
+{
+  background-color:#CCCC00;
+  border-left:4px solid #000;
+  border-top:4px solid #000;
+  position:relative;
+  top:-250px;
+  z-index:1;
+}
+#yellow:hover
+{
+  background-color:grey;
+}
+
+#title
+{
+  text-align:center;
+  position:relative;  
+  font-family:courier;
+  font-weight:bold;
+  font-size:40px;
+  color:blue;
+}
+.button
+{
+  width:50px;
+  height:50px;
+  background:orange;
+  position:relative;  
+}
+
+.ui
+{
+  border-radius:50%;
+}
+#start
+{
+  background:green;
+  border:1px solid black;
+}
+#reset
+{
+  background:blue;
+  border:1px solid black;
+}
+#strict 
+{
+  background:red;
+  border:1px solid black;
+  font-family: OpenSans;  
+  background-color: #00FF7C;
+  border: 1px solid #00FF7C;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0px #00823F;
+  position: relative;
+  top:-14px;
+  transition: all ease 0.3s;
+  color:black;
+}
+#count
+{
+  position:relative;
+  width:50px;
+  height:50px;
+  margin:auto;
+  border-radius:0;
+  background:black;
+  border-radius:5%;
+  //top:25px;
+  text-align:center;
+  color:white;
+}
+#count_display{
+  position:relative;  
+  background:black;   
+  color:red;
+  font-size:18px;   
+}
+
+#strict:active
+{
+  box-shadow:0px 3px 0px grey;
+  transform:translateY(2px);
+}
+
+#stOff{
+  display:none;
+}
+#stOn{
+  display:none;
+}
+
+#win
+{
+  text-align:center;
+  font-family:Georgia;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+
+.navbar-default/*governs the background and border*/
+{
+  background:none;
+  border:none;
+}
+
+.navbar .navbar-nav 
+{
+  display: inline-block;
+  float: none;
+  vertical-align: top;  
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+  background-color:transparent;
+}
+
+.wrap
+{
+  text-align:center;
+}
+
+</style>
+</head>
+<body>
+<div class = "container-fluid wrap">
+<div class = "navbar navbar-default">
+      <ul class = 'nav navbar-nav'>
+        <li><a href = "#">Home</a></li>
+        <li><a href = "#">Contact</a></li>
+        <li><a href = "#">About</a></li>
+              <li class="dropdown">
+                <a class = "dropdown-toggle" data-toggle="dropdown" href="#" id = "testP">Projects
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">                  
+                  <li class="dropdown-submenu" >
+                    <a class="test" tabindex="-1" href="#" id = "am1">Websites
+                      <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu" id = 'ds1'>
+                      <li><a tabindex="-1" href="#">George Carlin Tribute</a></li>
+                      <li><a tabindex="-1" href = "http://ryanrw81.wix.com/joes-fruit" target= "blank">Wix Site</a></li>                  
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu" >
+                    <a class="test" tabindex="-1" href="#" id = "am2">Websites with AJAX/JSON
+                     <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu" id = 'ds2'>
+                      <li><a tabindex="-1" href="#">Twitch Streamer Status</a></li></li>
+                      <li><a tabindex="-1" href="#">Wikipedia Search</a></li>                     
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu" >
+                    <a class="test" tabindex="-1" href="#" id = "am3">Gadgets
+                      <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu" id = 'ds3'>
+                      <li><a tabindex="-1" href = "#" target= "blank">Calculator</a></li>
+                      <li><a tabindex="-1" href = "#" target= "blank">Pomodoro Clock</a></li>
+                      <li><a tabindex="-1" href="#">Digital Clock</a></li>                     
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu" >
+                    <a class="test" tabindex="-1" href="#" id = "am4">Games
+                      <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu" id = 'ds4'>
+                      <li><a tabindex="-1" href = "#" target= "blank">Simon</a></li></a></li>
+                      <li><a tabindex="-1" href="#">Tic Tac Toe</a></li> 
+                      <li><a tabindex="-1" href = "#" target= "blank">Battleship</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>         
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+<div class="circle">
+  <button class="sector" id = "red"></button>
+  <button class="sector" id = "green"></button>
+  <div class = "center">
+    <div class="score">
+      <h3 id = "title">Simon</h3>
+      <button class="button ui btn-primary" id="start">Start</button>
+      <button class="button ui btn-info" id ="reset">Reset</button>
+      <button class="button ui btn-warning" id="strict">Strict Off</button>
+      <div id="count">Count<br>
+        <span id="count_display"></span>
+      </div>
+    </div>
+  </div>
+  <button class="sector" id = "blue"></button>
+  <button class="sector" id = "yellow"></button>
+</div>
+
+<h1 id = "win"></h1>
+
+
+</div>
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+// https://codepen.io/adambeagle/pen/qOamaz?editors=0010
+//http://codepen.io/Rafase282/pen/JYeVmx?editors=0010
+//the above codepens were helpful as was free code camp chat in completing this project
+//For the lightup function I can do something like this  setInterval(Lighter, 1000)  and then the lighter function can be a setTimeout(light1, 250) light2 500 etc
+var sound0 = new Audio ('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+var sound1 = new Audio ('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+var sound2 = new Audio ('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+var sound3 = new Audio ('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+var buzz = new Audio('https://s3-us-west-2.amazonaws.com/guylemon/Buzzer.mp3');
+var order = [];
+var lights = document.querySelectorAll('.sector');
+var count= 0;//variable that determines if a new rng light is added to the order array
+document.getElementById('count_display').innerHTML = count;
+var player = [];
+var orderCheck = [];
+var strict = false;
+var buttons = 
+{
+  brightRed : function()
+  {
+    $('#red').css('background-color',"#FF0000");
+    setTimeout(buttons.red,600);
+    sound0.play();
+  },
+  brightGreen : function() 
+  {
+    $('#green').css('background-color',"#00FF00");
+    setTimeout(buttons.green,600);
+    sound1.play();
+  },
+  brightBlue : function() 
+  {
+    $("#blue").css('background-color',"#0000FF");
+    setTimeout(buttons.blue,600);
+    sound2.play();
+  },
+  brightYellow : function() 
+  {
+    $("#yellow").css('background-color',"#FFFF00");
+    setTimeout(buttons.yellow,600);
+    sound3.play();
+  },
+  red : function() 
+  {
+   $('#red').css('background-color','#aa0000'); 
+  },
+  green : function() 
+  {
+    $('#green').css('background-color', '#00aa00');
+  },
+  blue : function() 
+  {
+    $('#blue').css('background-color','#0000aa');
+  },
+  yellow : function() 
+  {
+    $('#yellow').css('background-color','#CCCC00');
+  },
+  
+   lightUp : function(light)//lights up the corresponding color
+  {
+    switch (light)
+    {
+      
+      case 'red':
+      buttons.brightRed();
+      console.log("Light up function works");
+      break;
+      
+      case 'green':
+      buttons.brightGreen();
+      console.log("Light up function works");
+      break;
+  
+      case 'blue':
+      buttons.brightBlue();
+      console.log("Light up function works");
+      break;
+
+      case 'yellow':
+      buttons.brightYellow();
+      console.log("Light up function works");
+      break;
+   }
+ },
+  
+};
+
+var redder = function()
+{
+  $('#red').css('background-color',"#FF0000");
+  setTimeout(buttons.red, 250);
+}
+
+var greener = function()
+{
+  $('#green').css('background-color',"#00FF00");
+  setTimeout(buttons.green, 500);
+}
+
+var yellower = function()
+{
+  $("#yellow").css('background-color',"#FFFF00");
+  setTimeout(buttons.yellow, 250);
+}
+
+var bluer = function()
+{
+  $("#blue").css('background-color',"#0000FF");
+  setTimeout(buttons.blue, 250);
+}
+
+$(document).ready(function(){
+
+})
+
+
+var end = function()
+{
+  
+  redder();
+  setTimeout(greener, 250);
+  setTimeout(yellower, 500);
+  setTimeout(bluer, 750);
+  
+}
+    
+    
+/*********************************************************************************************************************************************/
+function starter ()
+{
+  $('#start').on('click',function()//resets the order array when the start button is clicked
+  {
+    order = [];
+    count = 0;
+    var rng = Math.floor(Math.random() * 4);
+    order.push(lights[rng].id);
+    beeper();
+    player = [];
+    document.getElementById('count_display').innerHTML = count;
+  })//ends the start on click handler
+}//ends the starter function
+/********************************************************************************************************************************************/
+function beeper()//creates the randomly generated lights and adds them to the order array to keep the sequence
+{  
+  if (count == order.length)
+  {
+    var rng = Math.floor(Math.random() * 4);
+    order.push(lights[rng].id);//adds the randomly generated light to the order array
+  }
+  order.forEach(function(el,idx)
+    {
+      if (el == "red")
+      {
+         setTimeout(function() 
+         { 
+             buttons.brightRed(); 
+         },1100 * (idx + 1));
+      }
+      else if (el == "green")
+      {
+        setTimeout(function() 
+        {
+            buttons.brightGreen(); 
+        }, 1100 * (idx + 1));
+     }
+     else if (el == "blue"){
+        setTimeout(function()
+        {  
+           buttons.brightBlue();
+        },1100 * (idx + 1));
+     }
+     else if (el == "yellow")
+     {
+        setTimeout(function()
+        {
+            buttons.brightYellow();
+        },1100 * (idx + 1));
+     } 
+   })//ends order.forEach function
+  orderCheck = [];//resets the orderCheck array
+}//ends beeper function
+/********************************************************************************************************************************/
+$('.sector').on('click',clicker).on('mousedown',function()
+ {
+  buttons.lightUp(this.id); 
+ });
+function clicker()
+{
+  player.push(this.id);
+  console.log("Player " + player);
+  console.log("Order " + order);
+  player.forEach(function(el,idx)//this was the key, making the foreach loop through the player array and not the order array, now I need to add a strict mode and this is el finito
+  {
+    if (player[idx] !== order[idx] && strict == true)//if strict mode is enabled the game starts over when a mistake is made
+      {
+       buzz.play();
+       order = [];
+       count = 0;
+       $('#count_display').html(0);
+       var rng = Math.floor(Math.random() * 4);
+       order.push(lights[rng].id);
+       beeper();
+       player = [];
+      }
+    else if (player[idx] !== order[idx])
+      {
+        buzz.play();
+        player = [];
+        beeper();
+      }
+  });
+  /*if (player.length == 4)//20
+  {
+    document.getElementById('count_display').innerHTML = "WE HAVE A WINNER";//I should have this scroll across the screen
+  } */
+  
+  if (orderCheck.length == 20)
+  
+  if (player.length == order.length)
+  {
+  order.forEach(function(el,idx)
+   {
+      if (player[idx] == order[idx])
+     {
+       orderCheck.push(true);
+       console.log("orderCheck truthy " + orderCheck);
+     }
+     else 
+     {
+       orderCheck.push(false);
+       console.log("orderCheck falsy " + orderCheck);
+       buzz.play();
+     }
+  });//ends for each
+}//ends the if player.length == order.length statement
+   if (player.length == order.length && order.length == 20)//establishes the win condition at turn 20
+     /****************************************************************************************************END FUNCTION*****************************************************************************************************/
+   {
+     document.getElementById('win').innerHTML = "WE HAVE A WINNER";
+      var lighter = setInterval(end,1000);
+      var finish = setTimeout(clearL,10000);
+      function clearL ()
+      {
+        clearInterval(lighter)
+      }
+   }
+   else if (player.length == order.length)
+   {
+     player = [];
+     var btnCheck =
+        orderCheck.every(function(n)
+        { 
+          return n == true;
+        });
+   }
+  if (btnCheck == true)
+  {
+    count ++;
+    document.getElementById('count_display').innerHTML = count;
+    beeper();
+  }
+}//ends the clicker function        
+/**********************************************************************************************************************************************/
+function strct()//need to have some indication on the game screen that strict is suppressed
+{
+  $('#strict').on('click',function()
+  {
+   strict = !strict;
+   console.log(strict);
+   if (document.getElementById('strict').innerHTML == "Strict On")
+   {
+      document.getElementById('strict').innerHTML = "Strict Off";
+      $('#win').html("");
+   }
+   else 
+   {
+      document.getElementById('strict').innerHTML = "Strict On";
+      $('#win').html("Strict Mode Enabled");
+   }
+  });//ends strict button on click handler
+}
+/**********************************************************************************************************************************************/
+function toReset()
+{
+  $('#reset').on('click',function()
+  {
+    order = [];
+    count = 0;
+    var rng = Math.floor(Math.random() * 4);
+    order.push(lights[rng].id);
+    beeper();
+    player = [];
+  })
+}
+/**********************************************************************************************************************************************/
+function game()//main game function
+{
+  starter();
+  strct();
+  toReset();
+}//ends game function
+game();
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+<style>
+#left
+{
+  font-size:115%;
+}
+
+#right {
+  text-align:right;
+  float:right;
+  
+}
+
+.centerLink > a
+{
+  text-decoration:none !important;
+  color:#bf00ff;
+  
+}
+
+body
+{
+  background-image:url("https://liveknowledgeworld.files.wordpress.com/2013/12/silent-ocean-waves-219841.jpg");
+  background-size:cover;
+  color:white;
+  font-family:Georgia, serif;;
+  background-repeat:no-repeat;
+  }
+#header{
+  background:black;
+    border:5px white solid;
+  
+  color:white;
+  
+}
+img{
+  width:100px;
+  border-radius:50%;
+}
+.col-md-4
+{
+  padding:10px;
+  font-size:75%;
+  font-family:Georgia, serif;
+}
+
+.col-md-4:nth-child(2)
+{
+  font-family:Georgia, serif;
+  font-size:125%;
+}
+
+.col-md-4:last-child
+{
+   font-family:Georgia, serif;
+   font-size:125%;
+}
+.row {
+  background:white;
+  border:7px solid black;
+  //box-shadow: 3px 3px black;
+  border-radius:5px;
+  margin:5px auto;
+  color:black;
+  
+  width:90%;
+}
+
+
+hr
+{
+  border:black solid 1px;
+}
+
+
+/***********************************************************************************************/
+@media screen and (max-width:990px)
+
+
+{
+  .row 
+  {
+  background:white;
+  border:4px black solid;
+  
+  margin:5px auto;
+  color:black;
+  
+  width:90%;
+  }
+  
+  h1
+  {
+    font-size:200%;
+    
+  }
+  #middle
+  {
+    position:relative;
+    right:90px;
+  }
+  
+  #left
+  {
+    text-align:left;
+    float:left;
+  }
+  #right
+  {
+    
+    text-align:right;
+    position:relative;
+    bottom:57px;
+  }
+}
+/*******************************************************************************************************/
+@media screen and (max-width:551px)
+{
+  
+  .row {
+  background:white;
+  border:4px black solid;
+  
+  margin:5px auto;
+  color:black;
+  
+  width:90%;
+}
+  
+  #left,#middle,#right
+  {
+    width:100%;
+    margin:auto;
+    text-align:center;    
+  }
+  #right
+  {
+    bottom:0px;
+  }
+  #middle
+  {
+    right:0px;
+  }
+}
+</style>
+</head>
+<body>
+<div class = "container">
+  <div class = "text-center" id = "header">
+    <h1 id = "fccStat"></h1>
+    <h2>
+    <a href="https://www.twitch.tv/freecodecamp" target= "blank">Free Code Camp Twitch Stream</a>
+    </h2>
+    <h3 id = "fccStatus"></h3>
+  </div>
+  <h1>
+  <div class = "row text-center" id = "rtc">
+    <div class = "col-md-4" id = "left">Logo
+    </div>
+    <div class = "col-md-4" id = "middle">Name
+    </div>
+    <div class = "col-md-4" id = "right">Game/Status
+    </div>
+  </h1>
+  </div>
+  
+  <div id = "streamer">
+  </div>
+</div>
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+/*These youtube videos helpmed me a lot https://www.youtube.com/watch?v=Nm2bXBlELZU
+https://static-cdn.jtvnw.net/jtv_user_pictures/n33bl3t-profile_image-2a26b0370247ab35-300x300.png
+if the streamer doesn't have a logo I should use the no logo pic */
+
+$(document).ready(function(){   
+  var following = [];  
+      following.push('freecodecamp');
+      following.push('ESL_SC2');
+      following.push('TrumpSC');
+      following.push('itsHafu');
+      following.push('nl_Kripp');
+      following.push('RyzenTV');
+      following.push('koyuki0');
+      following.push('bobross');
+      following.push('reynad27');
+      following.push('AsmodaiTV');
+      following.push('RotterDaM08');
+      following.push('Artosis');
+      following.push('bradfordlee');
+      following.push('totalbiscuit');
+      following.push('sc2_proleague');
+      following.push('starcraft');
+      following.push('GSL');
+      following.push('sc2starleague');
+      following.push('HSdogdog');
+      following.push('x5_pig');
+      following.push('day9tv');
+      following.push('adampod');
+      following.push('incontroltv');
+      following.push('eschamp');
+      following.push('byunprime');
+      following.push('starladder_sc2_en');
+      following.push('basetradetv');
+      following.push('nathanias');
+      following.push('darbian');
+      following.push('playhearthstone');
+      //following.push('n33bl3t'); his logo is a blank image
+      following.push('brunofin');
+      following.push('comster404');
+  
+  var i = 0;
+  var len = following.length;
+  
+  for (i;i<len;i++)    
+    {
+      var wa = 'https://api.twitch.tv/kraken/streams/' + following[i]
+      var title = following[i]
+      $.ajax({
+              type:'GET',
+              url: wa,              
+              headers: 
+              {
+                'Client-ID': 'cu9lfhkek722wgt2uui2ebini225k2v'
+              },
+              success: function(data) {
+               
+                var logo;
+                var status ;
+                var name = data._links.channel.substring(38);//following[i] wasnt' working so this works just as well
+                
+                if (name == 'freecodecamp')
+                  {
+                    if(data.stream===null){
+                      $("#fccStatus").html("Free Code Camp stream is out to lunch.");
+                    }
+                    else {
+                      $("#fccStatus").html("Get your Free Code Camp videos or stream here");
+                    }
+                  }//ends if name is freecodecamp
+                
+                    var nwa = 'https://api.twitch.tv/kraken/channels/' + name;
+                  
+                  $.ajax(
+                  {
+                    type:'GET',
+                    url: nwa,
+                    headers: {
+                      'Client-ID': 'cu9lfhkek722wgt2uui2ebini225k2v'
+                    },
+                    success: function(data1)
+                    {
+                      console.log(data1);
+                      if (!data.stream)
+                    {
+                      status = "offline";
+                      if (data1.logo)
+                      {
+                        logo = data1.logo;
+                      }
+                      else
+                        {
+                          logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeF9yiuuOJBNO8VpXsVp2VQIpBSTPdLKW6uB3AI-jmSX9G74bX1g";
+                        }
+                      
+                      $("#streamer").append("<div class = 'row text-center'>" + "<div class ='col-md-4'>" + "<img src='" + logo + "'>" + "</div>" + "<div class='col-md-4'>" + name + "</div>" + "<div class='col-md-4'>" + status + "</div></div>");
+                      
+                    }
+                     else 
+                       {
+                      
+                      status = "Playing " + '"' + data1.game +'"' + '<br>' + '<hr>' + data1.status ;
+                      
+                         if (data1.logo)
+                      {
+                        logo = data1.logo;
+                      }
+                      else
+                        {
+                          logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeF9yiuuOJBNO8VpXsVp2VQIpBSTPdLKW6uB3AI-jmSX9G74bX1g";
+                        }
+                         
+                      $("#streamer").prepend("<div class = 'row text-center'>" + "<div class ='col-md-4'>" + "<img src='" + logo + "'>" + "</div>" + "<div class='col-md-4 centerLink'>" + '<a target=_blank href=https://www.twitch.tv/' + name + '>' +  "<b>" +name + "</b>" + '</a>' + '</a>' + "</div>" + "<div class='col-md-4'>" + status + "</div></div>");
+                       
+                       }
+                     
+                    }//ends success function
+                  })//ends ajax new web address (channels)
+                  //ends else (data.stream)statement  
+      },//ends the success ajax function
+        error: function(dataF)
+        {
+          var status;
+          
+           
+               logo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeF9yiuuOJBNO8VpXsVp2VQIpBSTPdLKW6uB3AI-jmSX9G74bX1g";
+          
+           $("#streamer").after("<div class = 'row text-center' style= 'background:grey;'>" + "<div class ='col-md-4'>" + "<img src='" + logo + "'>" +  "</div>" + "<div class ='col-md-4'>" +  dataF.responseText.slice(41,-32) +  "</div>" + "<div class ='col-md-4'>" +"Not an active twitch account" + "</div>" );
+        }
+    });//ends initial ajax
+      
+  }//ends the for loop iterating through the following array
+  
+  
+  
+  
+});
+
+
+</script>
+
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Trirong"/>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+<style>
+/*have the x's and o's flip into view like this https://youtu.be/U7anheKJSaI?t=2108 I have done this in my carousel demo page http://codereese.com/carousel1.html*/
+
+
+/*table cellpadding = "0" cellspacing = "0" was removed*/
+
+.btn-primary 
+{
+  width:35px;
+  height:35px;
+  text-align:center;
+}
+
+#rst 
+{
+  width: 100px;
+  position:relative;
+  height:38px;
+  top:75px;
+  text-align: center;  
+  font-size: 20px;  
+  background:#b84dff; 
+  border-radius:0%;
+  outline:5px outset pink;
+}
+
+.btn-default 
+{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h1 
+{
+  font-family: Courier new;
+}
+
+.container 
+{
+  text-align: center;
+}
+
+table 
+{
+  margin: auto;
+  position: relative;
+  top: 50px;
+}
+
+td 
+{
+  border: black solid;
+  width: 100px;
+  height: 100px;
+}
+
+#c1
+{
+  border-style: none solid solid none;
+}
+
+#c2 
+{
+  border-style: none solid solid solid;
+}
+
+#c3 
+{
+  border-style: none none solid solid;
+}
+
+#c4 
+{
+  border-style: solid solid solid none;
+}
+
+#c6 
+{
+  border-style: solid none solid solid;
+}
+
+#c7 
+{
+  border-style: solid solid none none;
+}
+
+#c8 
+{
+  border-style: solid solid none solid;
+}
+
+#c9 
+{
+  border-style: solid none none solid;
+}
+
+button 
+{
+  width: 100px;
+  height: 100px;  
+}
+
+#X, #O
+{
+  outline:outset 4px pink ;
+  border-radius:0%;
+}
+
+#X
+{
+  color:black;
+  background:white;
+}
+
+#O
+{
+  background:black;
+}
+
+.btn
+{
+  border: none;
+}
+
+#gameDisplay
+{
+  font-family:"Trirong";
+}
+
+</style>
+</head>
+<body>
+<div class = "container" id = "game">
+  <h1><div id="gameDisplay"></div>  
+    <div id = "choice">Please choose
+    <button type = "button" class = "btn btn-primary " id = "X">X</button>
+      or
+    <button type = "button" class = "btn btn-primary " id = "O">O</button>
+    </div>
+    <table>
+    <tr>
+      <td id="c1"><button type = "button" class="btn btn-default"></button></td>
+      <td id = "c2"><button type = "button" class="btn btn-default"></button></td>
+      <td id = "c3"><button type = "button" class="btn btn-default"></button></td>
+    </tr>
+    <tr>
+      <td id = "c4"><button type = "button" class="btn btn-default"></button></td>
+      <td id = "c5"><button type = "button" class="btn btn-default"></button></td>
+      <td id = "c6"><button type = "button" class="btn btn-default"></button></td>
+    </tr>
+    <tr>
+      <td id = "c7"><button type = "button" class="btn btn-default"></button></td>
+      <td id = "c8"><button type = "button" class="btn btn-default"></button></td>
+      <td id = "c9"><button type = "button" class="btn btn-default"></button></td>
+    </tr>      
+    </table>  
+    <button class = "btn btn-danger" id = 'rst'>Reset</button>
+  </h1>  
+</div>
+
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+// https://github.com/formigone/tictactoe-challenge/blob/master/version-01.html
+//http://codepen.io/ThiagoFerreir4/pen/EjwGoX?editors=0010  this has the ai I am looking for
+//http://codepen.io/douglasmitchell/pen/YXOZbm  ai algorithm not quite optimal but helpful
+//http://codepen.io/1hella/pen/GJwpRj  
+//http://codepen.io/robert77/pen/VaVwdz  this is a nice style of pop out and displaying the tic tac toe after selection is made
+//Player wins if they choose a side middle square then a caddy side square so that the corner in between is vacant, when that corner is marked for the player there is 2 possible places to win and thus the computer can only block one.  To fix this I need the computer to fill that corner so the player can never place there.  The player also wins if they take middle, then whatever computer corner square it taken take the opposite corner so the diagonal is already blocked.  Then there will be an opening corner that will present 2 possible victory conditions and the computer can only block one.  
+var isGameOver = false;//checks for end of game
+var isPlayerX; //checks if player chose player x or o
+var players; //array to be assigned once player chooses
+var count = 0;
+
+function checkPlayer() {
+  $('#O').on('click', function() {
+    $('#choice').hide();
+    players = ["O", "X"];
+  });
+  $('#X').on('click', function() {
+    $('#choice').hide();
+    players = ["X", "O"];
+  });
+};
+
+var DISPLAY = function(displayElement) { //creates game display constructor
+  var display = displayElement;
+
+  function setText(message) {
+    display.innerText = message;
+  }
+  return {
+    setMessage: setText
+  };
+};
+
+function isValid(button) {
+  console.log("isValid");
+  if (button.innerHTML.length == 0) {
+    return true;
+  }
+  return false;
+}
+
+function setMark(btn, players, currentTurn) { //sets the mark for a players turn, create the addEventListener here, addeventlistener needs to encompass all of SetMark
+  console.log("setMark");
+  btn.innerHTML = players[currentTurn];
+}
+
+function isBoardFull(squares) {
+  for (var i = 0, len = squares.length; i < len; i++)
+    if (squares[i].innerHTML.length == 0) {
+
+      return false;
+    }
+
+  console.log("isBoardFull");
+  return true;
+}
+
+function compTurn(squares, players, currentTurn, count) { //computes ai move and marks board
+  console.log("compTurn");
+  var free = [];
+  var rand = 1;
+  console.log("Count is " + count);
+  if (count == 0) { //first computer turn, checks to see if center is marked and if not marks the center, if so marks a random corner
+    if (squares[4].innerText.length == 0) {
+      squares[4].innerText = players[currentTurn];
+    } else if (squares[4].innerText.length !== 0) {
+      rand = Math.floor(Math.random() * 4);
+      console.log("Rando is " + rand);
+      free.push(0, 2, 6, 8);
+      console.log(free);
+      squares[free[rand]].innerText = players[currentTurn];
+    }
+  }// ends first comp turn
+  if (count == 1) { //second computer turn
+    if ((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[1].innerText.length !== 0 && squares[1].innerText !==                        players[currentTurn]) || (squares[8].innerText.length !== 0 && squares[8].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 &&                        squares[5].innerText !== players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] &&                                    squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn]) && (squares[2].innerText.length == 0)) {
+      squares[2].innerText = players[currentTurn];
+    } else if ((squares[1].innerText.length !== 0 && squares[1].innerText !== players[currentTurn] && squares[2].innerText.length !== 0 && squares[2].innerText !==                  players[currentTurn]) || (squares[3].innerText.length !== 0 && squares[3].innerText !== players[currentTurn] && squares[6].innerText.length !== 0 &&                        squares[6].innerText !==players[currentTurn]) || (squares[8].innerText.length !== 0 && squares[8].innerText !== players[currentTurn] &&                                    squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn]) && (squares[0].innerText.length == 0)) {
+      squares[0].innerText = players[currentTurn];
+    } else if (squares[3].innerText.length !== 0 && squares[3].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 && squares[4].innerText !==                  players[currentTurn] || (squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                        squares[8].innerText !==players[currentTurn]) && (squares[5].innerText.length == 0)) {
+      squares[5].innerText = players[currentTurn];
+    } else if (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 && squares[5].innerText !==                  players[currentTurn] || (squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[6].innerText.length !== 0 &&                        squares[6].innerText !==players[currentTurn]) && (squares[3].innerText.length == 0)) {
+      squares[3].innerText = players[currentTurn];
+    }  else if ((squares[7].innerText.length !== 0 && squares[7].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 && squares[8].innerText !==                players[currentTurn]) || (squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[3].innerText.length !== 0 &&                        squares[3].innerText !==players[currentTurn]) || (squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] &&                                    squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn]) && (squares[6].innerText.length == 0)) {
+      squares[6].innerText = players[currentTurn];
+    }   else if (squares[1].innerText.length !== 0 && squares[1].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 && squares[4].innerText !==                players[currentTurn] || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                        squares[8].innerText !==players[currentTurn]) && (squares[7].innerText.length == 0)) {
+      squares[7].innerText = players[currentTurn];
+    } else if (squares[7].innerText.length !== 0 && squares[7].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 && squares[4].innerText !==                  players[currentTurn] || (squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[2].innerText.length !== 0 &&                        squares[2].innerText !==players[currentTurn]) && (squares[1].innerText.length == 0)) {
+      squares[1].innerText = players[currentTurn];
+    } else if (((squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 && squares[5].innerText !==                 players[currentTurn]) || (squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 &&                       squares[4].innerText !== players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] &&                                   squares[7].innerText.length !== 0 && squares[7].innerText !==players[currentTurn])) && ((squares[8].innerText.length == 0))) {
+      squares[8].innerText = players[currentTurn];
+    }
+    else {
+      for (var i = 0, len = squares.length; i < len; i++) {
+          if (squares[i].innerHTML.length == 0) {
+            free.push(i);
+            rand = Math.floor(Math.random() * (free.length)); 
+            console.log(rand);
+            console.log(free);
+            console.log(squares[free[rand]]);
+    }
+  }
+  
+  if (squares[free[rand]].innerText.length == 0) {
+    squares[free[rand]].innerText = players[currentTurn];
+  
+  }
+    }
+  }//ends comp second turn
+  if (count == 2){//third computer turn
+    if (((squares[1].innerText == players[currentTurn] && squares[2].innerText == players[currentTurn]) || (squares[3].innerText == players[currentTurn] &&                        squares[6].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] && squares[8].innerText == players[currentTurn]))  &&                       ((squares[0].innerText.length == 0))){
+    squares[0].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[2].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] &&                        squares[7].innerText == players[currentTurn])) && ((squares[1].innerText.length == 0))){
+    squares[1].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[1].innerText == players[currentTurn]) || (squares[5].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] && squares[6].innerText == players[currentTurn]))  &&                       ((squares[2].innerText.length == 0))){
+    squares[2].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[6].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] &&                        squares[5].innerText == players[currentTurn])) && ((squares[3].innerText.length == 0))){
+    squares[3].innerText = players[currentTurn];
+    }
+    else if (((squares[3].innerText == players[currentTurn] && squares[4].innerText == players[currentTurn]) || (squares[2].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn])) && ((squares[5].innerText.length == 0))){
+    squares[5].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[3].innerText == players[currentTurn]) || (squares[7].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] && squares[2].innerText == players[currentTurn]))  &&                       ((squares[6].innerText.length == 0))){
+    squares[6].innerText = players[currentTurn];
+    }
+    else if (((squares[1].innerText == players[currentTurn] && squares[4].innerText == players[currentTurn]) || (squares[6].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn])) && ((squares[7].innerText.length == 0))){
+    squares[7].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[4].innerText == players[currentTurn]) || (squares[6].innerText == players[currentTurn] &&                        squares[7].innerText == players[currentTurn]) || (squares[2].innerText == players[currentTurn] && squares[5].innerText == players[currentTurn]))  &&                       ((squares[8].innerText.length == 0))){
+    squares[8].innerText = players[currentTurn];
+    }
+    
+    else if (((squares[1].innerText.length !== 0 && squares[1].innerText !== players[currentTurn] && squares[2].innerText.length !== 0 && squares[2].innerText !==                 players[currentTurn]) || (squares[3].innerText.length !== 0 && squares[3].innerText !== players[currentTurn] && squares[6].innerText.length !== 0 &&                       squares[6].innerText !== players[currentTurn]) || (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] &&                                   squares[8].innerText.length !== 0 && squares[8].innerText !==players[currentTurn])) && ((squares[0].innerText.length == 0))) {
+      squares[0].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[2].innerText.length !== 0 && squares[2].innerText !==                 players[currentTurn]) || (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] && squares[7].innerText.length !== 0 &&                       squares[7].innerText !== players[currentTurn])) && ((squares[1].innerText.length == 0))) {
+      squares[1].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[1].innerText.length !== 0 && squares[1].innerText !==                 players[currentTurn]) || (squares[5].innerText.length !== 0 && squares[5].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                       squares[8].innerText !== players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] &&                                   squares[4].innerText.length !== 0 && squares[4].innerText !==players[currentTurn])) && ((squares[2].innerText.length == 0))) {
+      squares[2].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[6].innerText.length !== 0 && squares[6].innerText !==                 players[currentTurn]) || (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 &&                       squares[5].innerText !== players[currentTurn])) && ((squares[3].innerText.length == 0))) {
+      squares[3].innerText = players[currentTurn];
+    } else if (((squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 && squares[8].innerText !==                 players[currentTurn]) || (squares[3].innerText.length !== 0 && squares[3].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 &&                       squares[4].innerText !== players[currentTurn])) && ((squares[5].innerText.length == 0))) {
+      squares[5].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[3].innerText.length !== 0 && squares[3].innerText !==                 players[currentTurn]) || (squares[7].innerText.length !== 0 && squares[7].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                       squares[8].innerText !== players[currentTurn]) || (squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] &&                                   squares[4].innerText.length !== 0 && squares[4].innerText !==players[currentTurn])) && ((squares[6].innerText.length == 0))) {
+      squares[6].innerText = players[currentTurn];
+    } else if (((squares[1].innerText.length !== 0 && squares[1].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 && squares[4].innerText !==                 players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                       squares[8].innerText !== players[currentTurn])) && ((squares[7].innerText.length == 0))) {
+      squares[7].innerText = players[currentTurn];
+    } else if (((squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 && squares[5].innerText !==                 players[currentTurn]) || (squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 &&                       squares[4].innerText !== players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] &&                                   squares[7].innerText.length !== 0 && squares[7].innerText !==players[currentTurn])) && ((squares[8].innerText.length == 0))) {
+      squares[8].innerText = players[currentTurn];
+    }
+    else {
+      for (var i = 0, len = squares.length; i < len; i++) {
+    if (squares[i].innerHTML.length == 0) {
+      free.push(i);
+      rand = Math.floor(Math.random() * (free.length)); 
+
+    }
+  }
+  
+  if (squares[free[rand]].innerText.length == 0) {
+    squares[free[rand]].innerText = players[currentTurn];
+  
+  }
+    }
+  
+  }//ends comp third turn
+  if (count == 3){//fourth computer turn
+    if (((squares[1].innerText == players[currentTurn] && squares[2].innerText == players[currentTurn]) || (squares[3].innerText == players[currentTurn] &&                        squares[6].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] && squares[8].innerText == players[currentTurn]))  &&                       ((squares[0].innerText.length == 0))){
+    squares[0].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[2].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] &&                        squares[7].innerText == players[currentTurn])) && ((squares[1].innerText.length == 0))){
+    squares[1].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[1].innerText == players[currentTurn]) || (squares[5].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] && squares[6].innerText == players[currentTurn]))  &&                       ((squares[2].innerText.length == 0))){
+    squares[2].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[6].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] &&                        squares[5].innerText == players[currentTurn])) && ((squares[3].innerText.length == 0))){
+    squares[3].innerText = players[currentTurn];
+    }
+    else if (((squares[3].innerText == players[currentTurn] && squares[4].innerText == players[currentTurn]) || (squares[2].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn])) && ((squares[5].innerText.length == 0))){
+    squares[5].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[3].innerText == players[currentTurn]) || (squares[7].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn]) || (squares[4].innerText == players[currentTurn] && squares[2].innerText == players[currentTurn]))  &&                       ((squares[6].innerText.length == 0))){
+    squares[6].innerText = players[currentTurn];
+    }
+    else if (((squares[1].innerText == players[currentTurn] && squares[4].innerText == players[currentTurn]) || (squares[6].innerText == players[currentTurn] &&                        squares[8].innerText == players[currentTurn])) && ((squares[7].innerText.length == 0))){
+    squares[7].innerText = players[currentTurn];
+    }
+    else if (((squares[0].innerText == players[currentTurn] && squares[4].innerText == players[currentTurn]) || (squares[6].innerText == players[currentTurn] &&                        squares[7].innerText == players[currentTurn]) || (squares[2].innerText == players[currentTurn] && squares[5].innerText == players[currentTurn]))  &&                       ((squares[8].innerText.length == 0))){
+    squares[8].innerText = players[currentTurn];
+    }
+    
+    else if (((squares[1].innerText.length !== 0 && squares[1].innerText !== players[currentTurn] && squares[2].innerText.length !== 0 && squares[2].innerText !==                 players[currentTurn]) || (squares[3].innerText.length !== 0 && squares[3].innerText !== players[currentTurn] && squares[6].innerText.length !== 0 &&                       squares[6].innerText !== players[currentTurn]) || (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] &&                                   squares[8].innerText.length !== 0 && squares[8].innerText !==players[currentTurn])) && ((squares[0].innerText.length == 0))) {
+      squares[0].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[2].innerText.length !== 0 && squares[2].innerText !==                 players[currentTurn]) || (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] && squares[7].innerText.length !== 0 &&                       squares[7].innerText !== players[currentTurn])) && ((squares[1].innerText.length == 0))) {
+      squares[1].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[1].innerText.length !== 0 && squares[1].innerText !==                 players[currentTurn]) || (squares[5].innerText.length !== 0 && squares[5].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                       squares[8].innerText !== players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] &&                                   squares[4].innerText.length !== 0 && squares[4].innerText !==players[currentTurn])) && ((squares[2].innerText.length == 0))) {
+      squares[2].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[6].innerText.length !== 0 && squares[6].innerText !==                 players[currentTurn]) || (squares[4].innerText.length !== 0 && squares[4].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 &&                       squares[5].innerText !== players[currentTurn])) && ((squares[3].innerText.length == 0))) {
+      squares[3].innerText = players[currentTurn];
+    } else if (((squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 && squares[8].innerText !==                 players[currentTurn]) || (squares[3].innerText.length !== 0 && squares[3].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 &&                       squares[4].innerText !== players[currentTurn])) && ((squares[5].innerText.length == 0))) {
+      squares[5].innerText = players[currentTurn];
+    } else if (((squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[3].innerText.length !== 0 && squares[3].innerText !==                 players[currentTurn]) || (squares[7].innerText.length !== 0 && squares[7].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                       squares[8].innerText !== players[currentTurn]) || (squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] &&                                   squares[4].innerText.length !== 0 && squares[4].innerText !==players[currentTurn])) && ((squares[6].innerText.length == 0))) {
+      squares[6].innerText = players[currentTurn];
+    } else if (((squares[1].innerText.length !== 0 && squares[1].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 && squares[4].innerText !==                 players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] && squares[8].innerText.length !== 0 &&                       squares[8].innerText !== players[currentTurn])) && ((squares[7].innerText.length == 0))) {
+      squares[7].innerText = players[currentTurn];
+    } else if (((squares[2].innerText.length !== 0 && squares[2].innerText !== players[currentTurn] && squares[5].innerText.length !== 0 && squares[5].innerText !==                 players[currentTurn]) || (squares[0].innerText.length !== 0 && squares[0].innerText !== players[currentTurn] && squares[4].innerText.length !== 0 &&                       squares[4].innerText !== players[currentTurn]) || (squares[6].innerText.length !== 0 && squares[6].innerText !== players[currentTurn] &&                                   squares[7].innerText.length !== 0 && squares[7].innerText !==players[currentTurn])) && ((squares[8].innerText.length == 0))) {
+      squares[8].innerText = players[currentTurn];
+    }
+    else {
+      for (var i = 0, len = squares.length; i < len; i++) {
+    if (squares[i].innerHTML.length == 0) {
+      free.push(i);
+      rand = Math.floor(Math.random() * (free.length)); 
+
+    }
+  }
+  
+  if (squares[free[rand]].innerText.length == 0) {
+    squares[free[rand]].innerText = players[currentTurn];
+  
+  }
+    }
+  
+  }//ends comp fourth turn
+} //ends compTurn function
+
+function reset() {
+  $('#rst').on('click', function() {
+    $('.btn-default').contents().filter(function() { //this function finds all of the text in the button elements and removes them
+      return this.nodeType === 3;
+    }).remove();
+    document.getElementById('gameDisplay').innerHTML = "Game restarted";
+    console.log("Reset clicked " + isGameOver);
+    count = 0; //hopefully resets turn timer to 0 so compturn works
+    return isGameOver = false;
+  });
+
+}
+
+function checkForWinner(squares, players, currentTurn) {
+  console.log("checkForWinner");
+  if (squares[0].innerHTML == players[currentTurn] &&
+    squares[1].innerHTML == players[currentTurn] &&
+    squares[2].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[3].innerHTML == players[currentTurn] &&
+    squares[4].innerHTML == players[currentTurn] &&
+    squares[5].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[6].innerHTML == players[currentTurn] &&
+    squares[7].innerHTML == players[currentTurn] &&
+    squares[8].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[0].innerHTML == players[currentTurn] &&
+    squares[3].innerHTML == players[currentTurn] &&
+    squares[6].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[0].innerHTML == players[currentTurn] &&
+    squares[3].innerHTML == players[currentTurn] &&
+    squares[6].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[2].innerHTML == players[currentTurn] &&
+    squares[5].innerHTML == players[currentTurn] &&
+    squares[8].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[0].innerHTML == players[currentTurn] &&
+    squares[4].innerHTML == players[currentTurn] &&
+    squares[8].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[2].innerHTML == players[currentTurn] &&
+    squares[4].innerHTML == players[currentTurn] &&
+    squares[6].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+
+  if (squares[1].innerHTML == players[currentTurn] &&
+    squares[4].innerHTML == players[currentTurn] &&
+    squares[7].innerHTML == players[currentTurn]) {
+    console.log("WC true");
+
+    return true;
+  }
+  console.log("checkForWinner");
+  return false;
+};
+
+function main() { // entire game function
+  var squares = document.querySelectorAll('.btn-default');
+  console.log(players);
+  var i = 0;
+  var display = new DISPLAY(document.querySelector("#gameDisplay"));
+  display.setMessage("Tic Tac Toe");
+
+  reset();
+  checkPlayer();
+  for (var len = squares.length; i < len; i++) {
+
+    var currentTurn = 0;
+
+    squares[i].addEventListener('click', function() {
+      console.log("Player X var before turn starts " + isPlayerX);
+      console.log(players);
+      if (currentTurn == 0) {
+        console.log(currentTurn);
+        display.setMessage("Player " + players[currentTurn] + "'s turn")
+        console.log("Start of X's turn " + isGameOver);
+        if (!isValid(this) || isGameOver == true) { // checks button clicked is valid and game is still going
+          display.setMessage("Can't place there");
+        } else {
+          setMark(this, players, currentTurn); //marks the clicked square
+          console.log("After X's turn " + isGameOver);
+          isGameOver = checkForWinner(squares, players, currentTurn);
+
+          if (isGameOver) {
+            display.setMessage("Player " + players[currentTurn] + " won");
+            console.log("Game is over " + isGameOver);
+            return;
+          }
+
+          if (isBoardFull(squares) && isGameOver == false) { //checks to see if board is full
+            display.setMessage("Draw!");
+            return;
+
+          }
+
+          currentTurn = 1;
+        }
+      }; //ends if statement and X's turn
+
+      if (currentTurn == 1) { 
+        console.log(currentTurn);
+        compTurn(squares, players, currentTurn, count);
+        isGameOver = checkForWinner(squares, players, currentTurn);
+        count++;
+
+        if (isBoardFull(squares) && isGameOver == false) { //checks to see if board is full and that there's no winner
+          display.setMessage("Draw!");
+          return (isGameOver = true); //restart game
+        }
+        console.log(isGameOver);
+        if (isGameOver) {
+          display.setMessage("Player " + players[currentTurn] + " won");
+          
+          currentTurn = 0;
+          return (isGameOver = true);
+        }
+
+        currentTurn = 0;
+        return (isGameOver = false);
+      };
+
+    }); //ends the addEventListener function
+
+  } //ends for loop
+
+}
+main();
+</script>
+
+</html>

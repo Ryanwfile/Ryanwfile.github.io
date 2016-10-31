@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Jacques Francois Shadow"/>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+<style>
+/* I used this https://www.youtube.com/watch?v=24UvjYFDID0  for some CSS advice
+https://fonts.google.com/
+
+*/
+
+body
+{
+  font-family:"Frank Ruhl Libre", serif;  
+}
+
+
+#key
+{
+  float:left;
+  text-align:center;
+  width:19vw;
+  padding:5px;
+  
+  border:2px black dashed;
+  font-family: "Frank Ruhl Libre";   
+  position:relative;
+  top:-55px;
+}
+
+#name
+{  
+  font-family:"Jacques Francois Shadow";
+  //font-family: "Frank Ruhl Libre";
+  text-shadow:2px 1px 3px grey;
+  position:relative;
+  text-align:center;  
+  font-size:250%;
+}
+
+#cout
+{
+  width:50vw;
+  height:125px;
+  background-color:pink;
+  margin:auto;
+  margin-top:25px;
+  margin-bottom:2px;
+  border-top-left-radius:2em;
+  border-top-right-radius:2em;
+  padding:25px; 
+  -moz-box-shadow:inset  0px 0px 5px 5px #000000;
+  -webkit-box-shadow: inset  0px 0px 5px 5px #000000;
+  box-shadow: inset  0px 0px 5px 5px #000000;  
+}
+
+#calc
+{
+  width:50vw;
+  background-color:pink;
+  border-bottom-left-radius:2em;
+  border-bottom-right-radius:2em;
+  margin:auto;
+  padding:15px;  
+  -moz-box-shadow:inset 0px 0px 5px 5px #000000;
+  -webkit-box-shadow:inset 0px 0px 5px 5px #000000;
+  box-shadow:inset 0px 0px 5px 5px #000000;
+}
+
+#shell
+{
+  font-size:2em;
+  font-weight:bold;   
+  font-family: "Frank Ruhl Libre";  
+  -moz-box-shadow:inset 0 0 10px #000000;
+  -webkit-box-shadow:inset 0 0 10px #000000;
+  box-shadow:inset 0 0 10px #000000; 
+  background:white;
+  text-align:right;
+  padding:5px;
+  width:100%;
+  height:110%;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;  
+}
+
+#step
+{
+  color:black;
+}
+
+#store
+{
+  font-size:75%; 
+  border-top:1px dotted black;
+  color:grey;  
+}
+
+.btn
+{
+  padding:15px;
+  color:black;
+  text-shadow:1px;
+  font-weight:bold;
+  font-size:255%;
+  box-shadow:2px 2px;
+  width:9vw;
+  height:9vh;
+  margin:10px;
+}
+
+.num
+{
+  color:white;
+  box-shadow:2px 2px black;
+}
+
+.num:hover
+{
+  color:black;
+}
+
+.bigger
+{
+  width:19.7vw;
+}
+
+#pii
+{
+  width:3vw;
+  height:3vw;
+}
+/*************************** ends initial css ***************************************/
+@media screen and (max-width:870px)
+{
+  
+  body
+{
+  font-family:"Frank Ruhl Libre", serif;  
+}
+
+  .wrap
+  {
+    display:flex;    
+    flex-wrap:wrap;
+  }
+
+#key
+{  
+  float:left;
+  text-align:center;
+  //width:19vw;
+  padding:5px;  
+  border:2px black dashed;
+  font-family: "Frank Ruhl Libre";   
+  position:relative;
+  top:5px;
+  order:3;
+  width:100%;
+}
+
+#name
+{  
+  font-family:"Jacques Francois Shadow";
+  //font-family: "Frank Ruhl Libre";
+  text-shadow:2px 1px 3px grey;
+  position:relative;
+  text-align:center;  
+  font-size:250%;
+  order:0;
+  width:100%;
+}
+
+#cout
+{
+  width:100%;
+  height:125px;
+  background-color:pink;
+  margin:auto;
+  margin-top:25px;
+  margin-bottom:2px;
+  border-top-left-radius:2em;
+  border-top-right-radius:2em;
+  padding:25px; 
+  -moz-box-shadow:inset  0px 0px 5px 5px #000000;
+  -webkit-box-shadow: inset  0px 0px 5px 5px #000000;
+  box-shadow: inset  0px 0px 5px 5px #000000;  
+  order:1;
+}
+
+#calc
+{
+  width:100%;
+  background-color:pink;
+  border-bottom-left-radius:2em;
+  border-bottom-right-radius:2em;
+  margin:auto;
+  padding:15px;  
+  -moz-box-shadow:inset 0px 0px 5px 5px #000000;
+  -webkit-box-shadow:inset 0px 0px 5px 5px #000000;
+  box-shadow:inset 0px 0px 5px 5px #000000;
+  order:2;
+}
+
+#shell
+{
+  font-size:2em;
+  font-weight:bold;   
+  font-family: "Frank Ruhl Libre";  
+  -moz-box-shadow:inset 0 0 10px #000000;
+  -webkit-box-shadow:inset 0 0 10px #000000;
+  box-shadow:inset 0 0 10px #000000; 
+  background:white;
+  text-align:right;
+  padding:5px;
+  width:100%;
+  height:110%;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;  
+}
+
+#step
+{
+  color:black;
+}
+
+#store
+{
+  font-size:75%; 
+  border-top:1px dotted black;
+  color:grey;  
+}
+
+.btn
+{
+  padding:15px;
+  color:black;
+  text-shadow:1px;
+  font-weight:bold;
+  font-size:170%;
+  box-shadow:2px 2px;
+  width:16vw;
+  height:8vh;
+  margin:5px;
+}
+  
+  .bigger
+{
+  width:34vw;
+}
+
+.num
+{
+  color:white;
+}
+
+.num:hover
+{
+  color:black;
+}
+
+
+#pii
+{
+  width:3.5vw;
+  height:3.5vw;
+}
+  
+}/***************ends media query max width 870px***********************************/
+
+@media screen and (max-width:355px)
+{
+  .btn
+  {
+    width:3vw;
+    height:2vw;
+    font-size:75%;
+  }
+  
+    .bigger
+  {
+    width:22vw;
+  }
+}
+
+</style>
+</head>
+<body>
+<!--need a note that decimal places have been fixed to max out at 10 decimal places, I could fix this with scientific notation
+
+Do not use the eval function
+-->
+<div class = "container-fluid wrap">
+  <h2 id = "name">Javascript Calculator</h2>
+<div id = "key">
+  <h2>Notes</h2>
+  Keyboard/Number pad can be used<br></br>
+  Only supports real numbers<br></br>
+AC(All Clear) or ESC key removes all data<br></br>
+CE,(Clear Entry) Backspace, or Delete keys remove last inputted value<br>
+For example an input of 123 CE will result with an input of 12<br><br>
+CE can be used multiple times in succession but the keyboard buttons associated may have alternative functionality inside the browser
+  
+</div>
+
+
+<div class = "text-center" id = "cout">
+  <div id = "shell" tabindex="0">
+  <div id = "step">0</div>
+  <div id = "store"></div>
+  </div>      
+  
+</div>
+<div class = "text-center" id ="calc">
+  <a class = "btn btn-danger bigger" id = "ac">AC</a>
+  <a class = "btn btn-danger" id = "ce">CE</a>
+  <a class = "btn btn-success" id = "pi"><img src = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Pi-symbol.svg" id ='pii' alt = "image of pi"/></a>  
+  <br>  
+  <a class = "btn btn-success" id = "square">a<sup>2</sup></a>
+  <a class = "btn btn-success" id = "sqrt">&#8730</a>
+  <a class = "btn btn-success" id = "multiply">*</a>
+  <a class = "btn btn-success" id = "division">/</a>  
+  <br>
+  <a class = "btn btn-primary num" id = "seven">7</a>
+  <a class = "btn btn-primary num" id = "eight">8</a>
+  <a class = "btn btn-primary num" id = "nine">9</a>
+  <a class = "btn btn-success" id = "minus">-</a>
+  <br>
+  <a class = "btn btn-primary num" id = "four">4</a>
+  <a class = "btn btn-primary num" id = "five">5</a>
+  <a class = "btn btn-primary num" id = "six">6</a>
+  <a class = "btn btn-success" id = "add">+</a>
+  <br>
+  <a class = "btn btn-primary num" id = "one">1</a>
+  <a class = "btn btn-primary num" id = "two">2</a>
+  <a class = "btn btn-primary num" id = "three">3</a>
+  <a class = "btn btn-success" id = "decimal">.</a>  
+  <br>
+  <a class = "btn btn-primary bigger num" id = "zero">0</a>
+  <a class = "btn btn-success bigger" id = "total">=</a>
+  </div>
+</div>
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+//future work on this should include exponents with the ^ symbol as well as show imaginary numbers or at the very least say something like Not part of real number set, or not real number, or simply NaN maybe
+//should add a button to check whether or not a number is a prime number and if not what are it's factors and a button for euler's number (e)
+//this helped figure out keycodes http://codepen.io/chriscoyier/pen/mPgoYJ
+//need to update the isvalid function to include decimal points so that only one may be used
+//need to correct the input array when only one number is inputted with no operator and just an equal sign, right now it will look like this "Input array is -3, -3, +, 2
+//I should have a fixed place for decimal length so when javascript computes a number where it's memory prevents the numbers from being exact at least the numbers won't be very long and ugly on the eyes
+
+//this is greyed because it kept restarting the browser every time I typed, it should be gtg when finished
+
+$(document).ready(function()//sets focus to the calculator output so user can immediately use keyboard/numpad without having to click screen
+{
+  $('#shell').focus();
+}) 
+
+var user = '';
+var t1 = 0;
+var s1 = 0;
+var input = [];
+
+function format(num)
+{
+  var str = num.toString();  
+  var len = str.length;
+  var i = 0;  
+  for (i; i<len; i++)
+    {     
+      console.log("Format is acting upon the number " + num);
+      if (str.charAt(i) == '.')
+        {                      
+          var splitter = str.split('.');
+          var comma = splitter[0];
+          var dec = splitter[1];
+          var result = cs(comma) + '.' + dec;          
+          console.log("Format answer is "  + result);
+          return result;
+        } 
+      else return num;
+    }//ends for statement
+}
+
+//this function works for non decimal numbers, got it from here http://stackoverflow.com/questions/3883342/add-commas-to-a-number-in-jquery
+ function cs(val)
+{
+    while (/(\d+)(\d{3})/.test(val.toString())){
+      val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+    }
+    return val;
+  }
+
+function isValid(op,us)//checks to be sure only one operator at a time is being used
+{
+  if (op == '+' | (op == '-' && us.charAt(0) == '-') | op == '*' | op == '/')
+    {
+      return false;
+    }
+  else
+    {
+      return true;
+    }
+}
+
+function isNegVal(op,us)
+{
+  if ((op == '+' && us.charAt(0) == '-')|(op == '-' && us.charAt(0) == '-')|(op == '*' && us.charAt(0) == '-')|(op == '/' && us.charAt(0) == '-'))
+    {
+      return false;
+    }
+  else
+    {
+      return true;
+    }
+}
+
+function isNoDecimal(us)
+{
+      var len = us.length - 1;      
+      if (us.charAt(len) == '.')
+      {        
+        return false;
+      }      
+       else
+      {   
+        return true;
+      }              
+} 
+
+ var add = function(a,b)
+  {
+    return parseFloat(a + b);
+  }
+
+var subtract = function(a,b)
+  {
+    return parseFloat(a - b);
+  }
+
+var multiply = function(a,b)
+  {
+    return parseFloat(a * b);
+  }
+
+var divide = function(a,b)
+  {
+    return parseFloat(a / b);
+  }
+
+var square = function(a)
+  {
+    return parseFloat(a * a);
+  }
+
+var sqrt = function(a)
+
+{
+  return parseFloat(Math.sqrt(a));
+}
+  
+$('#zero').on('click',function()
+{
+  if (user)
+    {
+      user += 0;
+    }
+  
+   $('#store').html(user);
+})
+
+$('#one').on('click',function()
+{
+  user += 1;  
+  $('#store').html(user);
+})
+
+$('#two').on('click',function()
+{
+  user += 2;  
+  $('#store').html(user);
+})
+
+$('#three').on('click',function()
+{
+  user += 3;  
+  $('#store').html(user);
+})
+
+$('#four').on('click',function()
+{
+  user += 4;
+  $('#store').html(user);
+})
+
+$('#five').on('click',function()
+{
+  user += 5;
+  $('#store').html(user);
+})
+
+$('#six').on('click',function()
+{
+  user += 6;
+  $('#store').html(user);
+})
+
+$('#seven').on('click',function()
+{
+  user += 7;
+  $('#store').html(user);
+})
+
+$('#eight').on('click',function()
+{
+  user += 8;
+  $('#store').html(user);
+})
+
+$('#nine').on('click',function()
+{
+  user += 9;
+  $('#store').html(user);
+})
+
+$('#add').on('click',function()
+{  
+  
+  if (isValid(input[1],user))
+  {
+    
+    if (!s1)
+         {
+           var arr = user.split('+');
+           console.log("User array " + arr);
+           t1 = arr;
+           input.push(t1);
+           isValid(input[1]);
+           input.push('+');
+           user = '';
+         }
+        else
+         {
+           input.push('+');
+         }
+        $('#op').html('+');
+        $('#store').html(input);
+  }
+       
+})
+
+$('#minus').on('click',function()
+{     
+  //console.log("User string " + user);
+  //console.log(input);
+  if (isNegVal(input[1],user))
+  {
+        if (!user && input[0] && ((input[1] == '+'| input[1] == '-' | input[1] == '*' | input[1] =='/')))
+          {
+            console.log("I'm in the isNegVal and user if statement which seems impossible");
+            user = '-';
+          }
+
+       else if (user | input[0] )//allows computation of negative numbers
+        {
+          //console.log("I'm in the user or input[0] logical statement");
+          if (!s1)
+            {
+                var arr = user.split(/(?!^)[\+\-\*\/]/);
+                t1 = arr;
+
+                input.push(t1);
+                console.log(t1 + " has been pushed to input");
+
+                input.push('-');
+                console.log('-' + " has been pushed to input");
+                user = '';
+            }
+          else
+            {              
+              input.push('-');
+            }        
+        }
+        else if (user.charAt(0) == "-")
+          
+          {
+            //console.log("Fix me and this might be good to go");
+            var negFloat = parseFloat(user);
+            input.push(negFloat);
+            input.push("-");
+            user = '';
+          }
+        else
+          {
+            //console.log("I'm in the else statement");
+            user = '-';//allows negative numbers
+          }  
+     $('#op').html('-');
+     $('#store').html(input);  
+  }
+})
+
+$('#multiply').on('click',function()
+{
+  if (isValid(input[1],user))
+    {
+      if (!s1)
+         {
+           var arr = user.split('*');
+           t1 = arr;
+           input.push(t1);
+           input.push('*');
+           user = '';       
+         }
+       else
+         {
+           input.push('*');
+         }
+       $('#op').html('*');
+       $('#store').html(input);
+    }       
+})
+
+$('#division').on('click',function()
+{
+  if (isValid(input[1],user))
+  {
+       if (!s1)
+         {
+           var arr = user.split('/');
+           t1 = arr;
+           input.push(t1);
+           input.push('/');
+           user = '';       
+         }
+       else
+         {
+           input.push('/');
+         }
+       $('#op').html('/');
+       $('#store').html(input);
+  }
+})
+
+$('#square').on('click',function()
+{ 
+  if(input[0])
+    {
+      s1 = square(parseFloat(input[0]))     
+    }
+  else 
+    {
+     var arr = user.split(/(?!^)[\+\-\*\/]/);
+     s1 = square(arr);
+    }
+     input = [];
+     user = '';
+     input.push(s1);
+     if(s1.toString().length > 10)
+       {
+         $('#step').html(s1.toFixed(10));
+       }
+       else 
+       {
+         $('#step').html(s1);
+       }  
+})
+
+$('#sqrt').on('click',function()
+{ 
+  if(input[0])
+    {
+      s1 = sqrt(parseFloat(input[0]))     
+    }
+  else 
+    {
+     var arr = user.split(/(?!^)[\+\-\*\/]/);
+     s1 = sqrt(arr);
+    }
+     input = [];
+     user = '';
+     input.push(s1);
+       if(s1.toString().length > 10)
+       {
+         $('#step').html(s1.toFixed(10));
+         console.log(s1.toString().length);
+       }
+       else 
+       {
+         $('#step').html(s1);
+       }
+})
+
+
+
+$('#decimal').on('click',function()
+{ 
+  
+ if (user)
+   {
+     if(isNoDecimal(user))
+       {        
+         user = user + ".";
+       }
+   }
+  else
+    user = ".";  
+})
+
+$('#pi').on('click',function()
+{
+   user += Math.PI; 
+  console.log(user);
+  
+   $('#step').html((parseFloat(user)).toFixed(10));
+  
+})
+
+$('#total').on('click',function()
+{  
+  var arr = user.split(/(?!^)[\+\-\*\/]/); 
+  input.push(arr);
+  console.log("Input array is " + input); 
+  console.log(input.length);
+  if (input.length < 2)
+      {            
+        $('#step').html(input); 
+        input = [];
+      }
+  
+  else 
+      {
+        switch (input[1])
+        {
+          case '+':
+            var num1 = parseFloat(input[0]);
+            var num2 = parseFloat(input[2]);
+            s1 = add(num1,num2);
+            break;
+
+          case '-':
+            var num1 = parseFloat(input[0]);
+            var num2 = parseFloat(input[2]);
+            s1 = subtract(num1,num2);
+            break;
+
+          case '*':
+            var num1 = parseFloat(input[0]);
+            var num2 = parseFloat(input[2]);
+            s1 = multiply(num1,num2);
+            break;
+
+          case '/':
+            var num1 = parseFloat(input[0]);
+            var num2 = parseFloat(input[2]);
+            s1 = divide(num1,num2);
+            break;
+        }
+      input = [];
+      user = '';
+      input.push(s1);
+        console.log("Final value before formatted is " + s1);
+      var final = format(s1);
+        console.log("Final result is " + final);
+      $('#step').html(final);
+      $('#store').html('');        
+      }  
+})
+
+$('#ac').on('click',function(){
+  user = '';
+  input = [];
+  t1 = 0;
+  s1 = 0;
+  $('#step').html(0); 
+  $('#store').html(0);
+})
+
+$('#ce').on('click',function()
+{  
+  var splitter = user.split('');  
+  splitter.pop();  
+  user = splitter.join(''); 
+  $('#store').html(user);
+})
+
+/***********************************Keyup Events***********************************************/
+window.addEventListener("keyup",checkKey,false);
+function checkKey(key)
+{    
+  
+  switch (key.which) 
+    {
+      case 48:   
+      case 96:
+        console.log("0 KEY IS WORKING");
+        user += 0;
+        $('#store').html(user);
+        break;
+        
+      case 49:
+      case 97:
+        user += 1;
+        $('#store').html(user);
+        console.log("1 KEY IS WORKING");
+        break;
+        
+      case 50:
+      case 98:
+        user += 2;
+        $('#store').html(user);
+        console.log("2 KEY IS WORKING");
+        break;
+        
+      case 51:
+      case 99:
+        user += 3;
+        $('#store').html(user);
+        console.log("3 KEY IS WORKING");
+        break;
+      
+      case 52:
+      case 100:
+        user += 4;
+        $('#store').html(user);
+        console.log("4 KEY IS WORKING");
+        break;
+        
+      case 53:
+      case 101:
+        user += 5;
+        $('#store').html(user);
+        console.log("5 KEY IS WORKING");
+        break;
+        
+      case 54:
+      case 102:
+        user += 6;
+        $('#store').html(user);
+        console.log("6 KEY IS WORKING");
+        break;
+        
+      case 55:
+      case 103:
+        user += 7;
+        $('#store').html(user);
+        console.log("7 KEY IS WORKING");
+        break;
+      
+      case 56:
+        console.log("Shiftkey is pressed "+ key.shiftKey)
+        if (key.shiftKey === true)
+          {
+            console.log("* KEY IS WORKING");
+            if (isValid(input[1],user))
+              {
+                if (!s1)
+                   {
+                     var arr = user.split('*');
+                     t1 = arr;
+                     input.push(t1);
+                     input.push('*');
+                     user = '';       
+                   }
+                 else
+                   {
+                     input.push('*');
+                   }
+                 $('#op').html('*');
+                 $('#store').html(input);
+              }   
+          }
+          else {
+            console.log("8 KEY IS WORKING");
+            user += 8;
+            $('#store').html(user);
+          }
+        break;
+        
+      case 104:
+        console.log("8 KEY IS WORKING");
+        user += 8;
+        $('#store').html(user);
+        break;
+        
+      case 57:
+      case 105:
+        user += 9;
+        $('#store').html(user);
+        console.log("9 KEY IS WORKING");
+        break;
+     
+      case 13:
+      case 187:
+        console.log("ENTER KEY IS WORKING or the equal key way up top of the numpad");
+          var arr = user.split(/(?!^)[\+\-\*\/]/); 
+          input.push(arr);
+          console.log("Input array is " + input); 
+          console.log(input.length);
+          if (input.length < 2)
+              {
+                    $('#step').html(input);       
+              }
+
+          else 
+              {
+                switch (input[1])
+                {
+                  case '+':
+                    var num1 = parseFloat(input[0]);
+                    var num2 = parseFloat(input[2]);
+                    s1 = add(num1,num2);
+                    break;
+
+                  case '-':
+                    var num1 = parseFloat(input[0]);
+                    var num2 = parseFloat(input[2]);
+                    s1 = subtract(num1,num2);
+                    break;
+
+                  case '*':
+                    var num1 = parseFloat(input[0]);
+                    var num2 = parseFloat(input[2]);
+                    s1 = multiply(num1,num2);
+                    break;
+
+                  case '/':
+                    var num1 = parseFloat(input[0]);
+                    var num2 = parseFloat(input[2]);
+                    s1 = divide(num1,num2);
+                    break;
+                }
+              input = [];
+              user = '';
+              input.push(s1);
+              var final = format(s1);
+                console.log(final);
+              $('#step').html(final);
+              $('#store').html('');        
+              } 
+        break;
+        
+      case 107:     
+        console.log("+ KEY IS WORKING");
+          if (isValid(input[1],user))
+            {
+
+              if (!s1)
+                   {
+                     var arr = user.split('+');
+                     console.log("User array " + arr);
+                     t1 = arr;
+                     input.push(t1);
+                     isValid(input[1]);
+                     input.push('+');
+                     user = '';
+                   }
+                  else
+                   {
+                     input.push('+');
+                   }
+                  $('#op').html('+');
+                  $('#store').html(input);
+            }
+        break;
+      
+      case 187:
+        if (key.shiftKey === true)
+          {
+              console.log("+ KEY IS WORKING");
+              if (isValid(input[1],user))
+                {
+
+                  if (!s1)
+                       {
+                         var arr = user.split('+');
+                         console.log("User array " + arr);
+                         t1 = arr;
+                         input.push(t1);
+                         isValid(input[1]);
+                         input.push('+');
+                         user = '';
+                       }
+                      else
+                       {
+                         input.push('+');
+                       }
+                      $('#op').html('+');
+                      $('#store').html(input);
+                }
+              }
+       else 
+            {
+            console.log("= KEY IS WORKING"); 
+              var arr = user.split(/(?!^)[\+\-\*\/]/); 
+              input.push(arr);
+              console.log("Input array is " + input); 
+              console.log(input.length);
+              if (input.length < 2)
+                  {
+                        $('#step').html(input);       
+                  }
+
+              else 
+                  {
+                    switch (input[1])
+                    {
+                      case '+':
+                        var num1 = parseFloat(input[0]);
+                        var num2 = parseFloat(input[2]);
+                        s1 = add(num1,num2);
+                        break;
+
+                      case '-':
+                        var num1 = parseFloat(input[0]);
+                        var num2 = parseFloat(input[2]);
+                        s1 = subtract(num1,num2);
+                        break;
+
+                      case '*':
+                        var num1 = parseFloat(input[0]);
+                        var num2 = parseFloat(input[2]);
+                        s1 = multiply(num1,num2);
+                        break;
+
+                      case '/':
+                        var num1 = parseFloat(input[0]);
+                        var num2 = parseFloat(input[2]);
+                        s1 = divide(num1,num2);
+                        break;
+                    }
+                  input = [];
+                  user = '';
+                  input.push(s1);
+                  var final = format(s1);
+                    console.log(final);
+                  $('#step').html(final);
+                  $('#store').html('');        
+                  } 
+        }
+        break;
+        
+      case 109:
+      //case 189*1:
+        console.log("- KEY IS WORKING");
+         if (isNegVal(input[1],user))
+          {
+                if (!user && input[0] && ((input[1] == '+'| input[1] == '-' | input[1] == '*' | input[1] =='/')))
+                  {
+                    console.log("I'm in the isNegVal and user if statement which seems impossible");
+                    user = '-';
+                  }
+
+               else if (user | input[0] )//allows computation of negative numbers
+                {
+                  //console.log("I'm in the user or input[0] logical statement");
+                  if (!s1)
+                    {
+                        var arr = user.split(/(?!^)[\+\-\*\/]/);
+                        t1 = arr;
+
+                        input.push(t1);
+                        console.log(t1 + " has been pushed to input");
+
+                        input.push('-');
+                        console.log('-' + " has been pushed to input");
+                        user = '';
+                    }
+                  else
+                    {              
+                      input.push('-');
+                    }        
+                }
+                else if (user.charAt(0) == "-")
+
+                  {
+                    //console.log("Fix me and this might be good to go");
+                    var negFloat = parseFloat(user);
+                    input.push(negFloat);
+                    input.push("-");
+                    user = '';
+                  }
+                else
+                  {
+                    //console.log("I'm in the else statement");
+                    user = '-';//allows negative numbers
+                  }  
+             $('#op').html('-');
+             $('#store').html(input);  
+          }
+        break;
+        
+      case 189:
+        if (key.shiftKey === true)
+          {
+            console.log("- Underscore is working")
+          }
+        else
+          {
+            console.log("- KEY IS WORKING");
+            if (isNegVal(input[1],user))
+            {
+                  if (!user && input[0] && ((input[1] == '+'| input[1] == '-' | input[1] == '*' | input[1] =='/')))
+                    {
+                      user = '-';
+                    }
+
+                 else if (user | input[0] )//allows computation of negative numbers
+                  {
+                    if (!s1)
+                      {
+                          var arr = user.split(/(?!^)[\+\-\*\/]/);
+                          t1 = arr;
+
+                          input.push(t1);
+                          console.log(t1 + " has been pushed to input");
+
+                          input.push('-');
+                          console.log('-' + " has been pushed to input");
+                          user = '';
+                      }
+                    else
+                      {
+                        input.push('-');
+                      }        
+                  }
+                  else
+                    {
+                      user = '-';//allows negative numbers
+                    }                 
+               $('#store').html(input);  
+            }
+         }
+      break;
+        
+      case 106:      
+         console.log("* KEY IS WORKING");
+         if (isValid(input[1],user))
+            {
+              if (!s1)
+                 {
+                   var arr = user.split('*');
+                   t1 = arr;
+                   input.push(t1);
+                   input.push('*');
+                   user = '';       
+                 }
+               else
+                 {
+                   input.push('*');
+                 }               
+               $('#store').html(input);
+            }   
+      break;
+        
+      case 111:
+      case 191:
+        console.log("/ KEY IS WORKING");
+       if (isValid(input[1],user))
+          {
+               if (!s1)
+                 {
+                   var arr = user.split('/');
+                   t1 = arr;
+                   input.push(t1);
+                   input.push('/');
+                   user = '';       
+                 }
+               else
+                 {
+                   input.push('/');
+                 }
+               $('#op').html('/');
+               $('#store').html(input);
+          }
+      break;
+        
+      case 110:
+      case 190:     
+          console.log(". KEY IS WORKING");
+           if (user)
+             {
+               if(isNoDecimal(user))
+                 {        
+                   user = user + ".";
+                 }
+             }
+            else
+              user = "."; 
+        break;
+        
+      case 27:
+          console.log("ESC KEY IS WORKING");
+          user = '';
+          input = [];
+          t1 = 0;
+          s1 = 0;
+          $('#step').html(0);
+          $('#store').html(0);
+        break;
+        
+      case 46://delete key
+      case 8://backspace          
+          var splitter = user.split('');  
+          splitter.pop();  
+          user = splitter.join(''); 
+          $('#store').html(user);
+        break;
+        
+        
+      default:
+        console.log(key.which + " Has been pressed");
+        break;
+    }
+}
+</script>
+
+</html>

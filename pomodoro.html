@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Jacques Francois Shadow"/>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Abhaya Libre"/>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cormorant Garamond"/>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cuprum"/>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+<link rel = "stylesheet" href = "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+body 
+{
+  font-family:Georgia; 
+  background:pink;
+}
+
+.wrap
+{  
+  margin:auto;
+}
+
+/*.cIn  first column*/
+
+.cIn > label
+{  
+  position:absolute;  
+  left:5.5vw;
+  font-size:125%;
+  line-height:2.2;
+}
+
+.cusIn/*custom input class*/
+{
+  border:1px outset grey;
+  transition: box-shadow 0.3s;
+  margin:3px;
+  width:4.5vw;
+  height:1.6vw;
+  position:relative;
+  left:15.5vw;
+}
+
+#dtl
+{
+  text-align:center;
+  font-size:155%;
+}
+
+#muter/*mute button images*/
+{
+  width: 2.0vw;
+  height:1.5vw;
+}
+
+.dlabel/*default timers label*/
+{
+  font-size:85%;
+}
+
+.dtlin /*default input boxes*/
+{
+  width:4.5vw;
+  border:1px outset grey;
+  transition: box-shadow 0.3s;
+}
+
+#cat
+{
+  text-align:center;
+  font-family:"Jacques Francois Shadow";
+  //text-shadow:1px;
+  font-size:175%; 
+}
+
+#ntv/*default timer paragraph*/
+{
+  font-size:70%;
+}
+
+#wP/*headline under pomodoro technique paragraph*/
+{
+ font-family:"Abhaya Libre";
+ font-size:235%;
+ text-decoration:underline;
+}
+
+#heading/*main title heading*/
+{
+  text-align:center;
+  font-family:"Abhaya Libre";
+  text-shadow:2px 2px 5px;
+}
+
+#sas/*sample alarm sounds div*/
+{
+  border:2px solid black;
+  outline:4px outset #cc80ff;
+  padding:10px;
+  margin:5px;
+}
+
+#vol/*volume slider*/
+{
+  width:75%;
+  margin:auto;
+}
+
+.btn
+{
+  font-family:"Cuprum";
+  border-radius: 24px;
+  box-shadow: 0 3px 0 0 #000000;
+  margin:5px;
+  color:black;
+}
+
+#pausePic
+{
+  width:4.5vw;
+  height:4.5vw;
+  border-radius:50%;
+}
+
+hr
+{
+  border:1px solid black;
+}
+
+#pTD/*paragraph on pomodoro description*/
+{
+  font-size:125%;
+  text-align:center;
+  font-family:"Cormorant Garamond";
+  font-weight:bold;
+}
+
+.clock/*the actual timer*/
+{
+  font-size:250%;
+  font-weight:bold;
+  font-family:"Frank Ruhl Libre";  
+}
+
+#mid/*middle column*/
+{
+  text-align:center;  
+}
+
+#lastCol/*last column*/
+{
+  top:35px;
+}
+
+#wave/*audio player element*/
+{  
+  text-align:center;
+  
+}
+
+.time/*total time elapsed div*/
+{
+  font-size:150%;
+  text-align:center;
+}
+
+#rngSong
+{
+  text-align:center;
+  margin:auto;  
+  clear:both;
+}
+
+#pa/*pause picture*/
+{
+  text-decoration:none;
+  background:none;
+  box-shadow:none;
+}
+
+input[type=text]
+{
+  text-align:center;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #cc80ff;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/**************************************************************************************end of first media query min-width 991px **********************************************************************************************/
+@media screen and (max-width:990px) /*not sure if this should be max width or min width*/
+{
+  .dlabel
+  {
+    font-size:55%;
+  }
+  
+  #control > button
+  
+  {
+    width:9.5vw;
+    font-size:95%;
+  }
+  
+  #mid
+  {
+    font-size:85%;
+  }
+  
+  #heading
+  {
+    text-align:center;
+    font-family:"Abhaya Libre";
+    text-shadow:2px 1px 3px;
+    font-size:255%;
+  }
+  
+    .cIn > label
+  {  
+    position:absolute;  
+    left:5.5vw;
+    font-size:95%;
+    line-height:1.6;
+  }
+  
+  .clock/*the actual timer*/
+  {
+    font-size:220%;
+    font-weight:bold;
+    font-family:"Frank Ruhl Libre";
+  }
+  
+  #pTD/*paragraph on pomodoro description*/
+  {
+    font-size:130%;
+    text-align:center;
+    font-family:"Cormorant Garamond";
+    font-weight:bold;
+  }
+  
+  #wP/*Heading above main timer*/
+  {
+   font-family:"Abhaya Libre";
+   font-size:200%;
+   text-decoration:underline;
+  }
+  
+   #dtl
+  {
+    text-align:center;
+    font-size:155%;
+  }
+  
+  #firstCol > label
+  {
+    font-size:115%;
+    line-height:2.4
+  }
+  
+  .cusIn
+  {
+    width:5vw;
+    height:2.4vw;
+  }
+  
+  .time/*total time elapsed div*/
+  {
+    font-size:110%;
+    text-align:center;
+  }
+  
+  #tte
+  {
+    font-size:150%;
+  }
+  
+  #sas >button
+  {
+    font-size:90%;
+  }
+  
+  
+  #sas
+  {
+    font-size:85%;
+  }
+  
+  #rngSong
+  {
+    font-size:80%
+  }
+  
+  #randoS
+  {
+    font-size:105%;
+  }
+  
+  #songName
+  {
+    font-size:170%;
+  }
+  
+}
+
+/***************************************************************************************/
+@media screen and  (min-width:990px) and (max-width:1390px)
+{
+  #firstCol > label
+  {
+    font-size:120%;
+  }
+  
+  .cusIn
+  {
+    width:5vw;
+    height:3vw;
+  }
+}
+/***************************************************************************************/
+@media screen and  (min-width:680px) and (max-width:990px)
+{
+  #firstCol > label
+  {
+    font-size:100%;
+  }
+  
+  .cusIn
+  {
+    width:5vw;
+    height:3vw;
+  }
+  
+  audio
+  {
+    width:100%;
+  }
+  
+  #lastCol
+  {
+    
+    padding:0px;
+  }
+  
+  #prng, #alarmN
+  {
+    font-size:135%;
+  }
+}
+/***************************************************************************************/
+@media screen and  (min-width:500px) and (max-width:680px)
+{
+  #wrap
+  {
+    display:flex; 
+    flex-direction:column;
+  }
+  
+  #firstCol
+  {
+    order:2;
+    
+    width:100%;
+    display:block;
+  }  
+  
+  #mid
+  {
+    order:1;    
+    width:100%;    
+  }
+  
+  #lastCol
+  {
+    order:3;    
+    width:100%;
+  }
+  
+  #pTD
+  {
+    font-size:110%;
+  }
+  
+  #firstCol > label
+  {
+    font-size:150%;
+    line-height:1.8;
+    margin:2px;
+    padding:2px;
+    left:150px;
+  }
+  
+  .cusIn
+  {
+    width:9vw;
+    height:6vw;
+    left:320px;
+  }
+  
+  #pausePic
+  {
+    width:9vw;
+    height:9vw;
+    border-radius:50%;
+  }
+  
+  #control > button
+  {
+    font-size:120%;
+    width:14vw;
+    height:8vw;
+    padding:1px;
+  }
+  
+  #muter
+  {
+    width:7vw;
+    height:7vw;
+  }
+  
+  .time/*total time elapsed div*/
+  {
+    font-size:140%;
+    text-align:center;
+  }
+}
+
+@media screen and (max-width:500px)
+{
+  
+  #wrap
+  {
+    display:flex; 
+    flex-direction:column;
+  }
+  
+  #firstCol
+  {
+    order:2;
+    
+    width:100%;
+    display:block;
+  }  
+  
+  #mid
+  {
+    order:1;    
+    width:100%;    
+  }
+  
+  #lastCol
+  {
+    order:3;    
+    width:100%;
+  }
+  
+  #pTD
+  {
+    font-size:135%;
+  }
+  
+  #muter
+  {
+    width:9vw;
+    height:9vw;
+  }
+  
+  #firstCol > label
+  {
+    font-size:150%;
+    line-height:1.1;
+    margin:2px;
+    padding:2px;
+    left:70px;
+  }
+  
+  .cusIn
+  {
+    width:9vw;
+    height:6vw;
+    left:250px;
+  }
+  
+  #control > button
+  {
+    font-size:100%;
+    width:16vw;
+    height:8vw;
+    padding:3px;
+  }
+  
+  #pausePic
+  {
+    width:16vw;
+    height:16vw;
+    border-radius:50%;
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+<!--sie nav bar with links to every sound/song-->
+
+  <!--
+The total time elapsed displays hours with a minute behind since it waits until minutes is 60 and seconds is 60, this should be fixed
+
+fieldset formatting http://www.pixy.cz/blogg/clanky/css-fieldsetandlabels.html
+
+clock <img src = 'http://etc.usf.edu/clipart/48400/48481/48481_nclockb_sm.gif' alt = 'Image of a circular clock with no hands' id = 'clPic'>-->
+<div class = 'container-fluid wrap' id = 'wrap'>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 cIn" id = "firstCol">   
+    <h2 id = "cat" >Customize Alert Timer</h2>    
+        <label for ='cHour'>+ Hours</label><input type = 'text' id = 'cHour'   class = "cusIn" /><br>   
+        <label for ='cMin'>+ Minutes</label><input type = 'text' id = 'cMin'   class = "cusIn" /><br>
+        <label for ='cSec'>+ Seconds</label><input type = 'text' id = 'cSec'   class = "cusIn"/><br>   
+        <label for ='cHours'>- Hours</label><input type = 'text' id = 'cHours'   class = "cusIn" /><br>
+        <label for ='cMins'>- Minutes</label><input type = 'text' id = 'cMins'   class = "cusIn"/><br>
+        <label for ='cSecs'>- Seconds</label><input type = 'text' id = 'cSecs'   class = "cusIn"/>
+    <hr>
+    <div id = "dtl" >        
+          Timer Length<p id = "smaller">(Default is 25 minutes)</p>
+          <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label class = "dlabel">Hour<br />
+            <input type = 'text' id = dtH  class = "dtlin" placeholder = "0"/></label><br />
+          </div>
+          <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label class = "dlabel">Minute<br />
+            <input type = 'text' id = dtM  class = "dtlin" placeholder = "24"/></label><br />
+          </div>
+          <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label class = "dlabel">Second<br />
+            <input type = 'text' id = dtS  class = "dtlin" placeholder = "60"/><label><br />
+          </div><hr>
+              Break Length<p id = "smaller">(Default is 5 minutes)</p>
+              <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label class = "dlabel">Hour<br />
+            <input type = 'text' id = dbH  class = "dtlin" placeholder = "0"/></label><br />
+          </div>
+          <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label class = "dlabel">Minute<br />
+            <input type = 'text' id = dbM  class = "dtlin" placeholder = "4"/></label><br />
+          </div>
+          <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label class = "dlabel">Second<br />
+            <input type = 'text' id = dbS  class = "dtlin" placeholder = "60"/><label><br />
+          </div>
+        
+            <p id = 'ntv'>The timers will change to these new values after the current timer expires, if you would like these settings to be implemented immediately please click the appropriate button below or the reset timer button.</p>
+            <button class = 'btn btn primary' id = "dtReset">New Timer</button>
+            <button class = 'btn btn primary' id = "stBreak">Start Break</button>
+      </div>
+           
+  </div>
+
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" id = 'mid'>
+      <div><h1 id = 'heading'>Pomodoro Timer with Game Sounds</h1>
+      <hr>
+      <p id = "pTD">The Pomodoro technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks.  The method is based on the idea that frequent breaks can improve mental agility.  This information and more can be found at <a href = "https://en.wikipedia.org/wiki/Pomodoro_Technique" target="blank">this wikipedia page</a>.</p>
+    </div> 
+      
+      <h2 id = "wP">Time Until Next Break</h2>
+      <div id="testH" class = "clock"></div>
+      <div id="testM" class = "clock"></div>
+      <div id="testS" class = "clock"></div> 
+      <button id="pa" class = 'btn img'><img id = "pausePic" alt = "image of pause button" src = "https://image.freepik.com/free-icon/pause-button-outline_318-40569.jpg"></button>
+            
+      <div id = 'control'><h3>Current Timer Controls</h3>
+        <button class="btn btn-info" id="reset">Reset Timer</button><br>
+        <button class="btn btn-primary" id="add">+ 5 Minutes</button>
+        <button class="btn btn-primary" id="sub">- 5 Minutes</button><br>
+        <button class="btn btn-primary" id="addS">+ 5 Seconds</button>
+        <button class="btn btn-primary" id="subS">- 5 Seconds</button><br>
+      </div>   
+  </div>
+
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center" id = "lastCol" >      
+        <!--the volume controls should be in a separate div at the top-->
+      <input id="vol" type="range" min="0" max="100" step="1" value="100"></input><br>
+  <p id = "slidertxt">Sounds are enabled, this slider sets the volume of the buttons, sample alarm, and alarm sounds.</p><br>
+      
+      <p id = "nostxt">To disable sounds please click this button</p>
+      <button id = 'noSound' class = 'btn btn-danger'><img id = 'muter' src = 'https://media-curse.cursecdn.com/attachments/117/680/508c7cfd8e99263dbf4d08f41fe19fa7.png' alt ='sound disabled image'> </button>
+      <h2 id = 'tte'>Total Time Elapsed</h2>
+      <div id="totalH" class = 'time'></div>
+      <div id="total" class = 'time'></div>
+      <div id="totalS" class = 'time'></div>
+      <div id = "sas">
+        <button class = "btn btn-primary" id="test">Sample Alarm Sounds</button><br>
+        <input type = 'checkbox' value = 'Alarm Sound' id = "alarm"/><br>
+        <p id = 'alarmN'>Check box if you want the current sample as the alarm sound, it will remain until another sample is checked, if no sound is selected the alarm sound will be random</p>
+      </div><br>
+      <div id = "rngSong">  
+        <p id = "prng">To generate some random music from video games please click Random Songs which will generate an audio player as well as the randomly selected music.</p>
+        <button id = "randoS" class = "btn btn-info">Random Songs</button>
+        <h2 id = "songName"></h2>
+        <div id = "wave"></div>
+      </div>     
+  </div>
+  
+  
+  
+</div>
+ 
+   
+
+
+
+
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+//http://noproblo.dayjo.org/ZeldaSounds/LOZ/index.html
+//http://downloads.khinsider.com/game-soundtracks/album/duck-hunt
+//http://www.thanatosrealms.com/war2/horde-sounds  Warcraft sounds
+//I should learn how to have the user govern the volume of sound on the site
+//Duckhunt quack sound http://66.90.91.26/ost/duck-hunt/sfqjcisyqd/99-quack-sfx-.mp3
+//https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
+//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio   <-- this page will help me with creating a volume button
+
+//http://downloads.khinsider.com/game-soundtracks   is the website I got most of these sounds from
+//songs to add Rogue legacy whale and shark, super hexagon  good version of red carpet https://www.youtube.com/watch?v=2aWMXpKSJHs
+//sounds over 10 seconds here
+var audio = {};
+
+audio.song0 = {src:'http://66.90.94.162/ost/metroid/jybsygeyqf/01-metroid-title.mp3', name:"Metroid: Title Theme"},//Metroid Title Theme
+audio.song1 = {src:'http://66.90.91.26/ost/super-mario-bros-2/nxegwqpkxh/15-end-of-dream-cast.mp3', name:"Super Mario Brothers 2: Ending Dream"},//Super Mario Bros 2 Dream
+audio.song2 = {src:'http://66.90.94.162/ost/metroid/vevyyrpwld/04-bridge.mp3', name:"Metroid: Bridge"},//metroid bridge
+audio.song3 = {src:'http://66.90.94.162/ost/metroid/nzraqodccw/09-tourian.mp3', name:"Metroid: Tourian"},
+audio.song4 = {src:'http://66.90.94.162/ost/metroid/iytcuwpfiu/11-escape.mp3', name:"Metroid: Escape"},//Metroid Escape
+audio.song5 = {src:'http://66.90.94.162/ost/metroid/ufrikafmuc/07-kraid-s-lair.mp3', name:"Metroid: Kraid's Lair"},
+audio.song6 = {src:'http://66.90.94.162/ost/the-legend-of-zelda-nes-/vwrdjmppbs/01-intro.mp3', name:"The Legend of Zelda: Title Theme"},//Legend of Zelda Theme
+audio.song7 = {src:'http://66.90.94.162/ost/the-legend-of-zelda-nes-/gppjwcttpr/09-death-mountain.mp3', name:"The Legend of Zelda: Death Mountain"},
+audio.song8 = {src:'http://66.90.91.26/ost/castlevania-symphony-of-the-night/omksvjmpfa/04-nocturne-in-the-moonlight.mp3', name:"Castlevania Symphony of the Night: Nocturne in the Moonlight"},
+audio.song9 = {src:'http://66.90.91.26/ost/castlevania-symphony-of-the-night/lveoobwsux/31-finale-toccata.mp3', name:"Castlevania Symphony of the Night: Finale Toccata"},//sotn finale toccata
+audio.song10 = {src:'http://66.90.91.26/ost/castlevania-symphony-of-the-night/gdghdpjvuj/11-wood-carving-partita.mp3', name:"Castlevania Symphony of the Night: Wood Carving Parita"},//sotn wood carving parita
+audio.song11 = {src:'http://66.90.91.26/ost/castlevania-symphony-of-the-night/gomcuzjlhm/16-requiem-for-the-gods.mp3', name:"Castlevania Symphony of the Night: Requiem for the Gods"},//sotn Requiem for the gods
+audio.song12 = {src:'http://66.90.91.26/ost/castlevania-symphony-of-the-night/eokwmpaigv/22-cursed-sanctuary.mp3', name:"Castlevania Symphony of the Night: Cursed Sanctuary"},
+audio.song13 = {src:'http://66.90.94.162/ost/ghouls-n-ghosts-sega-genesis-/miqbhgsjtz/06-level-1-the-hill-of-torture.mp3', name:"Ghouls N Ghosts: The Hill of Torture"},
+audio.song14 = {src:'http://66.90.94.162/ost/duck-tales/cabuxnpeli/01-title.mp3', name:"Ducktales: Title Theme"},//ducktales nes theme
+audio.song15 = {src:'http://66.90.94.162/ost/duck-tales/dfvnlbfgnz/02-land-select.mp3', name:"Ducktales: Land Select Screen"},
+audio.song16 = {src:'http://66.90.94.162/ost/duck-tales/rxptsshqfq/09-the-moon.mp3', name:"Ducktales: The Moon"},//ducktales the moon
+audio.song17 = {src:'http://66.90.94.162/ost/world-of-goo/bgknkbjdfp/25.-red-carpet-extend-o-matic.mp3', name:"World of Goo: Red Carpet (Extend-o-matic)"},//World of Goo Red Carpet, (Extended version unfortunately, has raptors or something)
+audio.song18 = {src:'http://66.90.94.162/ost/mega-man-nes-/ytnrymvpwr/01-stage-select.mp3', name:"Mega Man: Stage Select"},
+audio.song19 = {src:'http://66.90.94.162/ost/mega-man-nes-/beioqegror/04-fire-man.mp3', name:"Mega Man: Fireman"},
+audio.song20 = {src:'http://66.90.94.162/ost/hotline-miami/ikplylquuj/02.-m.o.o.n.-hydrogen.mp3', name:"Hotline Miami: Moon Hydrogen"},//5min starts the hotline miami section 
+audio.song21 = {src:'http://66.90.94.162/ost/hotline-miami/ebjcmufxvc/03.-m.o.o.n.-paris.mp3', name:"Hotline Miami: Moon Paris"},//5min
+audio.song22 = {src:'http://66.90.94.162/ost/hotline-miami/xqlsetxunv/05.-perturbator-vengeance.mp3', name:"Hotline Miami: Perturbator Vengeance"},//5min
+audio.song23 = {src:'http://66.90.94.162/ost/hotline-miami/kfapziinjc/10.-eliott-berlin-musikk-per-automatikk.mp3', name:"Hotline Miami: Eliott Berlin Musik per Automatik"},
+audio.song24 = {src:'http://66.90.94.162/ost/hotline-miami/rgzinmygwl/12.-m.o.o.n.-release.mp3', name:"Hotline Miami: Moon Release"},//over 5 mins but probably best song on this list since Red Carpet isn't good version
+audio.song25 = {src:'http://66.90.94.162/ost/street-fighter-2-turbo/qvifdxccss/02.-player-select.mp3', name:"Street Fighter 2 Turbo: Player Select"},
+//there are duplicate entries here song24 25 26, need to fix that and change the rng algorithm
+audio.song26 = {src:'http://66.90.94.162/ost/quest-for-glory-1-original-soundtrack/kpgenvibzc/02-introduction.mp3', name:"Quest for Glory: Introduction"},//QFG
+audio.song27 = {src:'http://66.90.91.26/ost/kid-icarus/oazupmpfgz/06-boss-battle.mp3', name:"Kid Icarus: Boss Battle"},
+audio.song28 = {src:'http://66.90.94.162/ost/super-mario-bros/otyzqgflmr/03-hurry-super-mario-bros.mp3', name:"Super Mario Brothers: Hurry Up"},
+audio.song29 = {src:'http://66.90.91.26/ost/diablo-1/vspvvixgix/02-town.mp3', name:"Diablo: Tristram Village"},//5min Diablo Tristram 
+audio.song30 = {src:'http://66.90.94.162/ost/blaster-master/dlpujopnzx/01-intro.mp3', name:"Blaster Master: Introduction"},
+audio.song31 = {src:'http://66.90.91.26/ost/mike-tysons-punch-out-original-game-rip/yciwddktqq/18-training-theme.mp3', name:"Mike Tyson's Punch Out: Training Theme"},//Tyson's Punch Out
+audio.song32 = {src:'http://66.90.94.162/ost/mighty-bomb-jack-nes-/hhhoemsowd/10-mighty-bomb-jack.mp3', name:"Mighty Bomb Jack: Game Clear"},
+audio.song33 = {src:'http://66.90.91.26/ost/zelda-1/filyhgqlhs/02-overworld.mp3', name:"The Legend of Zelda: Overworld"},
+//before ended song30
+
+//this helped me a lot here http://stackoverflow.com/questions/8995503/randomly-select-enumerable-property-of-object-in-javascript
+
+
+
+audio.sound0 = 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Fanfare.wav';
+audio.sound1 = 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Recorder.wav';
+audio.sound2 = 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Link_Die.wav';
+audio.sound3 = 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Get_Item.wav';
+audio.sound4 = 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Key_Appear.wav';
+audio.sound5 = 'http://noproblo.dayjo.org/ZeldaSounds/LOZ/LOZ_Secret.wav';
+audio.sound6 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_Fanfare_Item.wav';
+audio.sound7 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_GoldSkulltula_Token.wav';
+audio.sound8 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_Fanfare_HeartContainer.wav';
+audio.sound9 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_Fanfare_SmallItem.wav';
+audio.sound10 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_FaroresWind_Cast.wav';
+audio.sound11 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_SilverRupee1.wav';
+audio.sound12 = 'http://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_Secret.wav';
+audio.sound13 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_flagpole.wav';
+audio.sound14 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_gameover.wav';
+audio.sound15 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_mariodie.wav';
+audio.sound16 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_stage_clear.wav';
+audio.sound17 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_world_clear.wav';
+audio.sound18 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_1-up.wav';
+audio.sound19 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_warning.wav';
+audio.sound20 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_pause.wav';//CB
+audio.sound21 = 'http://www.mariomayhem.com/downloads/sounds/super_mario_bros/smb_powerup.wav';
+audio.sound22 = 'http://www.mariomayhem.com/downloads/sounds/NSMBWiiSoundEffects/nsmbwii1up1.wav';
+audio.sound23 = 'http://www.mariomayhem.com/downloads/sounds/NSMBWiiSoundEffects/nsmbwii1up2.wav';
+audio.sound24 = 'http://www.mariomayhem.com/downloads/sounds/NSMBWiiSoundEffects/nsmbwiiCoinAppear2.wav';
+audio.sound25 = 'http://www.mariomayhem.com/downloads/sounds/NSMBWiiSoundEffects/nsmbwiiCoinAppear3.wav';
+audio.sound26 = 'http://www.mariomayhem.com/downloads/sounds/NSMBWiiSoundEffects/nsmbwiiCoinBattleCoinsCounting.wav';
+audio.sound27 = 'http://66.90.91.26/ost/duck-hunt/eeufkyifxg/01-title-screen.mp3';//this is the main ALERT right now
+audio.sound28 = 'http://66.90.91.26/ost/duck-hunt/jvdkfcwant/02-duck-hunt-intro.mp3';
+audio.sound29 = 'http://66.90.91.26/ost/duck-hunt/vfvzgzcxen/03-clay-shooting-intro.mp3';
+audio.sound30 = 'http://66.90.91.26/ost/duck-hunt/ahjmlykurm/04-got-duck-s-.mp3';//pps
+audio.sound31 = 'http://66.90.91.26/ost/duck-hunt/dqaiwyiveo/05-round-clear.mp3';
+audio.sound32 = 'http://66.90.91.26/ost/duck-hunt/phydtjdjxv/06-perfect.mp3';
+audio.sound33 = 'http://66.90.91.26/ost/duck-hunt/mtadebvztm/07-you-failed.mp3';
+audio.sound34 = 'http://66.90.91.26/ost/duck-hunt/ogudomgglg/08-game-over.mp3';
+//
+
+//quack sound
+audio.sound38 = 'http://66.90.94.162/ost/castlevania/hhmxpwjfob/all-clear.mp3';
+audio.sound39 = 'http://66.90.94.162/ost/castlevania/nmtztuijrh/game-over.mp3';
+audio.sound40 = 'http://66.90.94.162/ost/castlevania/duvcnfoiwc/game-start-prologue.mp3';
+audio.sound41 = 'http://66.90.94.162/ost/castlevania/suevyauatd/life-lost.mp3';
+audio.sound42 = 'http://66.90.94.162/ost/castlevania/zuejrmiuqb/stage-clear.mp3';
+audio.sound43 = 'http://66.90.94.162/ost/castlevania-ii-simon-s-quest/wczjzevixk/game-over.mp3';
+audio.sound44 = 'http://66.90.91.26/ost/castlevania-bloodlines/trlobhnxad/11-gameover.mp3';
+audio.sound45 = 'http://66.90.94.162/ost/castlevania-iii-dracula-s-curse/wmgedqmxoi/boss-defeated.mp3';
+audio.sound46 = 'http://66.90.94.162/ost/castlevania-iii-dracula-s-curse/lffuervtio/game-over.mp3';
+audio.sound47 = 'http://66.90.94.162/ost/castlevania-iii-dracula-s-curse/vrupimtjvg/life-lost.mp3';
+audio.sound48 = 'http://66.90.94.162/ost/castlevania-iii-dracula-s-curse/zfxbmgxdwa/stage-clear.mp3';
+audio.sound49 = 'http://66.90.94.162/ost/super-castlevania-iv-snes-original-soundtrack/mauuhxsyuo/12-stage-clear.mp3';
+audio.sound50 = 'http://66.90.94.162/ost/super-castlevania-iv-snes-original-soundtrack/bchhzokvzq/32-game-over.mp3';
+audio.sound51 = 'http://66.90.94.162/ost/super-castlevania-iv-snes-original-soundtrack/yejbnoyjgw/35-death-of-simon.mp3';
+audio.sound52 = 'http://66.90.91.26/ost/contra-arcade-/hbanybrhlp/01-contra.mp3';
+//
+
+audio.sound54 = 'http://66.90.91.26/ost/contra-arcade-/azignilqvr/06-triumphal-return-1.mp3';
+audio.sound55 = 'http://66.90.91.26/ost/contra-arcade-/dtzoyoehct/13-game-over.mp3';
+audio.sound56 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/nljzyjcuxt/01-it-s-a-me-mario-.mp3';//It's a Me, MARIO
+audio.sound57 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/ykysxskprr/03-peach-s-message.mp3';
+audio.sound58 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/avavtigvdm/19-correct-solution.mp3';
+audio.sound59 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/upxldosplc/20-toad-s-message.mp3';
+audio.sound60 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/rddqurfhst/21-power-star.mp3';
+audio.sound61 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/uigtpioxqn/22-race-fanfare.mp3';
+audio.sound62 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/cuknizixns/23-star-catch-fanfare.mp3';
+audio.sound63 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/hhcdennyzr/24-game-start.mp3';
+audio.sound64 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/cmtvutrfed/25-course-clear.mp3';
+audio.sound65 = 'http://66.90.94.162/ost/super-mario-64-soundtrack/obiktfhvzm/31-koopa-clear.mp3';
+audio.sound66 = 'http://66.90.94.162/ost/super-mario-bros/hzwvlwzaqs/04-area-clear.mp3';
+audio.sound67 = 'http://66.90.94.162/ost/super-mario-bros/tcfxeksmdd/05-warp-pipe.mp3';
+audio.sound68 = 'http://66.90.94.162/ost/super-mario-bros/kgnpwngrju/12-world-clear.mp3';
+//
+
+audio.sound70 = 'http://66.90.94.162/ost/super-mario-bros/txjdsqjrlt/15-1-down.mp3';//S5M
+audio.sound71 = 'http://66.90.94.162/ost/super-mario-bros/rdtgyvjkyn/16-game-over.mp3';
+audio.sound72 = 'http://66.90.91.26/ost/super-mario-bros-2/cxepicsllj/06-power-up.mp3';//AS
+audio.sound73 = 'http://66.90.91.26/ost/super-mario-bros-2/kazpbfviql/16-game-over.mp3';
+audio.sound74 = 'http://66.90.91.26/ost/super-mario-bros-2/yfdmeitwpu/10-world-clear.mp3';
+audio.sound75 = 'http://66.90.91.26/ost/super-mario-bros-2/pcawuwotqu/12-1-up.mp3';
+//
+
+audio.sound77 = 'http://66.90.91.26/ost/super-mario-bros.-3/uytymzxyva/29-world-clear.mp3';
+audio.sound78 = 'http://66.90.94.162/ost/metroid/chkkntbxeh/02-entrance.mp3';
+audio.sound79 = 'http://66.90.94.162/ost/metroid/djbqiqycgl/05-upgrade.mp3';
+audio.sound80 = 'http://66.90.94.162/ost/ghouls-n-ghosts-sega-genesis-/yqrwafhebi/04-level-start.mp3';
+audio.sound81 = 'http://66.90.94.162/ost/ghouls-n-ghosts-sega-genesis-/monanwtdhj/05-level-complete.mp3';
+audio.sound82 = 'http://66.90.94.162/ost/ghouls-n-ghosts-sega-genesis-/urtegexbtn/20-death.mp3';
+audio.sound83 = 'http://66.90.94.162/ost/ghouls-n-ghosts-sega-genesis-/blwnrmklml/22-game-over.mp3';
+audio.sound84 = 'http://66.90.91.26/ost/sonic-the-hedgehog-game-gear-sega-master-system-gamerip-/abtqvsfcja/act-complete.mp3';
+audio.sound85 = 'http://66.90.94.162/ost/duck-tales/khfavdsjhy/11-land-clear.mp3';
+audio.sound86 = 'http://66.90.94.162/ost/duck-tales/wwqlunzvmy/12-game-over.mp3';
+//missing sound 87
+
+audio.sound88 = 'http://www.thanatosrealms.com/war2/sounds/orcs/basic-orc-voices/work-complete.wav';//Work Complete
+
+
+audio.sound89 = 'http://www.thanatosrealms.com/war2/sounds/humans/basic-human-voices/annoyed4.wav';//Finish Break
+audio.sound90 = 'http://www.thanatosrealms.com/war2/sounds/humans/dwarven-demolition-squad/annoyed3.wav';//Tilt one back with me dog
+audio.sound91 = 'http://www.thanatosrealms.com/war2/sounds/humans/mage/acknowledge1.wav';//As you command    
+audio.sound92 = 'http://www.thanatosrealms.com/war2/sounds/humans/peasant/work-complete.wav';//Jobs done
+
+audio.sound94 = 'http://66.90.91.26/ost/zelda-2/msuqmzgxkc/16.-palace-clear.mp3';
+audio.sound95 = 'http://66.90.91.26/ost/zelda-2/ydklwqbbhi/06.-level-up.mp3';
+audio.sound96 = 'http://66.90.91.26/ost/mike-tysons-punch-out-original-game-rip/xpokgrbmre/02-title-screen.mp3';
+/******************************************************************************************************************************/
+//need to replace numbers 35, 36, 53, 69, 76, 87, 93
+//non random sounds below
+audio.unpause = 'http://www.thanatosrealms.com/war2/sounds/humans/basic-human-voices/annoyed1.wav';//Resume
+audio.pause = 'http://66.90.91.26/ost/duck-hunt/bdnfrkmtzx/99-pause-sfx-.mp3';//OPS
+audio.ss = 'http://66.90.91.26/ost/contra-arcade-/tfciegxglk/02-coin.mp3';//SS
+audio.as = 'http://www.thanatosrealms.com/war2/sounds/humans/peasant/annoyed4.wav';
+audio.am = 'http://66.90.94.162/ost/super-mario-bros/wqaxcidvfh/14-1-up.mp3';//A5M 1-UP
+audio.reset = 'http://66.90.91.26/ost/super-mario-bros-2/jpavnwamtj/11-bonus-game.mp3';//RESET sorry Mario
+audio.sm = 'http://www.thanatosrealms.com/war2/sounds/humans/elven-archer/annoyed2.wav';//S5M
+audio.default = {min:24, sec:60, hour:0};
+audio.breakTime = {hour:0, min:4, sec:60};
+
+
+//var sound97 = new Audio('http://66.90.91.26/ost/duck-hunt/sfqjcisyqd/99-quack-sfx-.mp3');
+//var sound9 = new Audio('http://66.90.94.162/ost/castlevania-iii-dracula-s-curse/zfxbmgxdwa/stage-clear.mp3');
+//var sound9 = new Audio('http://66.90.94.162/ost/castlevania-iii-dracula-s-curse/zfxbmgxdwa/stage-clear.mp3'); */
+/*******************************************************************************************************************************************/
+var seconds = 60;
+var minutes = 24;
+var hours = 0;
+var pause = false;
+var breakTime = false;
+var sound = true;
+var totalMin = 0; 
+var totalSec = 0;
+var totalHour = 0;
+var myVol = 1;
+var minCount = setInterval(oneMin, 1000);
+
+$('#vol').on('change',function()
+{  
+  myVol = (this.value)/100;  
+})
+
+$('#vol').on('input',function()
+{  
+  myVol = (this.value)/100; 
+})
+
+$('#test').on('click',function(){
+    document.getElementById('alarm').checked = false;
+    var num1 = ((Math.round(Math.random() * 88)) + 34).toString();//tmp[122] is last index needed
+    var tmp = Object.keys(audio);            
+    var randSong = tmp[num1];
+    console.log(randSong); 
+    var rngSound = new Audio(audio[randSong]);         
+    if (sound == true)
+      {
+       rngSound.volume = myVol;
+       rngSound.play();       
+      }
+       audio.rng = rngSound;        
+    
+   
+})
+
+$('#alarm').on('change', function()
+{  
+  var almChk = document.getElementById('alarm').checked;  
+  if (almChk == true)
+    {
+      audio.alarm = audio.rng;      
+    }
+})
+
+function rng()//produces the random songs
+{  
+      var num = (Math.round(Math.random() * 33)).toString();  
+      var tmp = Object.keys(audio);
+      var randSong = tmp[num];     
+      console.log(randSong);      
+      audio.random = audio[randSong].src;
+      $('#songName').html(audio[randSong].name);
+      if (sound == true)
+        {
+         document.getElementById('wave').innerHTML = "<audio controls><source src = " + audio.random + "></audio>"; //replaced audio.random with audio.0.src
+        }
+      else
+        {
+          document.getElementById('wave').innerHTML = "Sound is disabled, please enable sound to play songs";
+        }
+}
+$('#randoS').on('click', rng);
+
+var isValid = function(str)
+{
+  for (i =0;i<str.length;i++)//there's a much better way to do this but for now this will suffice
+    {
+      if ( (str.charAt(i) == 0) | (str.charAt(i) == 1) | (str.charAt(i) == 2) | (str.charAt(i) == 3) | (str.charAt(i) == 4) | (str.charAt(i) == 5) | (str.charAt(i) == 6) | (str.charAt(i) == 7) | (str.charAt(i) == 8) | (str.charAt(i) == 9) )
+          {
+            //console.log("This is a number");
+            return true;
+          }
+  
+   else
+          {
+            //console.log('Not a number');
+            return false;
+          }
+    }
+}
+
+$('#noSound').on('click',function()
+{
+  var imgSrc = document.getElementById('muter').src;  
+  if (sound == true)
+    {
+      sound = false;
+      $('#nostxt').text("To enable sounds please click this button");
+      document.getElementById('muter').src = 'http://cdn.osxdaily.com/wp-content/uploads/2010/11/sound-icon-300x300.png';
+      document.getElementById('muter').alt = "sound enabled image";
+      document.getElementById('wave').innerHTML = "Sound is disabled, please enable sound to play songs";
+      $('#slidertxt').text("Sound is disabled");
+      $("#vol").val(0);
+    }
+  else if (sound == false)
+    {
+      sound = true; 
+      $('#nostxt').text("To disable sounds please click this button");
+      document.getElementById('muter').src = "https://media-curse.cursecdn.com/attachments/117/680/508c7cfd8e99263dbf4d08f41fe19fa7.png";
+      document.getElementById('muter').alt = "sound disabled image";
+      $('#slidertxt').text("Sounds are enabled, this slider sets the volume of the buttons, sample alarm, and alarm sounds.");
+      $("#vol").val(100);
+      if (audio.random)
+        {
+          document.getElementById('wave').innerHTML = "<audio controls><source src = " + audio.random + "></audio>";
+        }
+      else
+        {
+          document.getElementById('wave').innerHTML = '';
+        }
+    }
+})
+
+//all of the functions below on change can be switched to on input and use an enter key so that I can subtract/add the same amount twice in a row which doesn't work with the on change event because nothing has changed
+$('#dbH').on('change',function()
+{
+  var customH = document.getElementById('dbH').value;
+  if (isValid(customH))
+    {      
+      audio.breakTime.hour = customH;
+    }
+})
+
+$('#dbM').on('change',function()
+{
+  var customM = document.getElementById('dbM').value;
+  if (isValid(customM))
+    {      
+      audio.breakTime.min = customM;
+    }
+})
+
+$('#dbS').on('change',function()
+{
+  var customS = document.getElementById('dbS').value;
+  if (isValid(customS))
+    {      
+      audio.breakTime.sec = customS;
+    }
+})
+
+
+$('#dtH').on('change',function()
+{
+  var customH = document.getElementById('dtH').value;
+  if (isValid(customH))
+    {      
+      audio.default.hour = customH;
+    }
+})
+
+$('#dtM').on('change',function()
+{
+  var customM = document.getElementById('dtM').value;
+  if (isValid(customM))
+    {
+      if (customM >= 59)
+        {
+          customM = 59;
+        }
+        
+      audio.default.min = customM;
+    }
+})
+
+$('#dtS').on('change',function()
+{
+  var customS = document.getElementById('dtS').value;
+  if (isValid(customS))
+    {
+      if (customS >= 59)
+        {
+          customS = 59;
+        }
+      
+      audio.default.sec = customS;
+    }
+})
+
+$( "#cHour" ).on('change',function()
+{  
+  var customH = document.getElementById('cHour').value;  
+  if (isValid(customH))
+    {
+      hours = hours + Number(customH);
+    }
+})
+
+$( "#cHours" ).on('change',function()
+{  
+  var customHs = document.getElementById('cHours').value;  
+  if (isValid(customHs))
+    {      
+      hours = hours - Number(customHs);      
+    }
+})
+
+$( "#cMin" ).on('change',function()
+{  
+  var customM = document.getElementById('cMin').value;  
+  if (isValid(customM))
+    {
+      minutes = minutes + Number(customM);
+    }
+})
+
+$( "#cMins" ).on('change',function()
+{  
+  var customM = document.getElementById('cMins').value;  
+  if (isValid(customM))
+    {
+      minutes = minutes - Number(customM);
+    }
+})
+
+$( "#cSec" ).on('change',function()
+{
+  var customS = document.getElementById('cSec').value; 
+  if (isValid(customS))
+    {
+      seconds = seconds + Number(customS);
+    }  
+})
+
+$( "#cSecs" ).on('change',function()
+{
+  var customS = document.getElementById('cSecs').value;  
+  if (isValid(customS))
+    {
+      seconds = seconds - Number(customS);
+    }  
+})
+
+function oneMin()//MAIN FUNCTION*********************************************
+{  
+  $('#totalS').html('Seconds: ' + totalSec); 
+   if (totalHour)
+     {       
+       $('#totalH').html("Hours:  "+ totalHour);
+     }
+  
+   if (totalMin)
+     {
+       $('#total').html("Minutes: "+ totalMin);
+     }
+  
+  if (totalSec >= 60)
+    {
+      totalMin += 1;
+      totalSec = 0;
+    }   
+  
+   $('#testM').html(minutes + " Minutes");
+   $('#testS').html(seconds + " Seconds");
+   if (hours)
+     {
+       $('#testH').html(hours + " Hours");
+     }
+   else
+    {
+      $('#testH').html('');
+    }
+   if(minutes > 60)
+    {                      
+      hours =  hours + Math.floor(minutes/60);
+      minutes = minutes - (hours * 60);           
+    }
+  
+  if (hours<0)
+      {
+        hours = 0;
+      }
+  
+    if (pause == false)
+      {
+        seconds -= 1;
+        totalSec += 1;
+        
+        if (breakTime == false)
+            {
+             if ((hours) && minutes < 0)
+               {
+                  hours -= 1;
+                  minutes = 60;
+               }
+              
+          if ((seconds <=0 && minutes <= 0 && hours <=0)| minutes <0)
+              {    
+                  var num1 = ((Math.round(Math.random() * 88)) + 34).toString();   //this is duplicate code and should be refined into the one function
+                  var tmp = Object.keys(audio);
+                  var randSong = tmp[num1];
+                  //console.log(randSong);            
+                  var rngSound = new Audio(audio[randSong]);
+                  rngSound.volume = myVol;
+                  var btnChk = document.getElementById('alarm').checked;
+                  if (audio.alarm && sound == true)
+                    {
+                      audio.alarm.volume = myVol;
+                      audio.alarm.play();
+                    }
+                  else if (sound == true)
+                    {
+                      rngSound.play();
+                    }
+                  breakTime = true;                  
+                  seconds = audio.breakTime.sec;
+                  minutes = audio.breakTime.min;
+                  hours = audio.breakTime.hour;
+                  totalMin += 1;
+                  totalSec = 0;
+              }
+          else if (seconds <=0)
+              {     
+                  minutes -= 1;
+                  totalMin += 1;
+                  seconds = 60;                 
+                  totalSec = 0;
+                
+                if(totalMin >= 60)
+                    {    //this is where I was having issues with totalMin not showing so this function is forcing it, which I don't like                                       
+                      totalMin = 0;
+                      $('#total').html("Minutes: "+ totalMin);
+                      totalHour +=1;
+                    }      
+              }
+        }//ends if breakTIme == false statement
+        else if (breakTime == true && pause == false)
+          {    
+            $('#cAT').text("Customize Break Timer");
+            $('#wP').text("It's Break Time");
+            if (seconds <=0)
+              {
+                totalMin += 1;
+                totalSec = 0;                
+                minutes -= 1;
+                seconds = 60;      
+              }
+           
+               if ((seconds <=0 && minutes <= 0 && hours <=0)| minutes < 0)
+              {
+                
+                $('#cAT').text("Customize Alert Timer");
+                $('#wP').text("Time Until Next Break");
+                minutes = audio.default.min;
+                seconds = audio.default.sec;
+                hours = audio.default.hour;
+                var unBreak = new Audio(audio.sound89);
+                unBreak.play();
+                breakTime = false;
+                
+              } 
+          }
+      }//ends if pause == false statement
+}
+
+
+
+
+function pauser() 
+    {
+      if (pause == false)
+        {
+          pause = true;
+          document.getElementById('pausePic').src = 'https://image.freepik.com/free-icon/play-triangular-button-symbol-in-a-circle_318-53734.png';
+          var toPause = new Audio(audio.pause);
+          toPause.volume = myVol;
+          if (sound == true)
+            {
+              toPause.play();
+            }
+          
+        }
+      else
+        {
+          pause = false;
+          document.getElementById('pausePic').src = 'https://image.freepik.com/free-icon/pause-button-outline_318-40569.jpg';
+          var unPause = new Audio(audio.unpause);
+          unPause.volume = myVol;
+          if (sound == true)
+            {
+              unPause.play();
+            }
+          
+        }      
+    } 
+
+function reset()
+{
+   if (audio.default.min)
+     {
+       minutes = audio.default.min;
+     }
+   else 
+     {
+       minutes = 24;
+     }
+  
+   if (audio.default.hour)
+     {
+       hours = audio.default.hour;
+     }
+    else 
+      hour = 0;
+  
+  if (audio.default.sec)
+     {
+       seconds = audio.default.sec;
+     }
+   else 
+     {
+       seconds = 60;
+     }   
+    
+   var resetSound = new Audio(audio.reset);
+   resetSound.volume = myVol;
+    if (sound == true)
+      {
+        resetSound.play();
+      }
+   
+} 
+
+function adder()
+{
+   minutes = minutes + 5;
+   var add5 = new Audio(audio.am); 
+   add5.volume = myVol;
+    if (sound == true)
+      {
+        add5.play(); 
+      }
+     
+}
+
+function subtract()
+{
+   minutes = minutes - 5;
+   var sub5 = new Audio(audio.sm);
+   sub5.volume = myVol;
+    if (sound == true)
+      {
+        sub5.play();
+      }
+   
+}
+
+function adderS()
+{
+  seconds = seconds + 5;
+  var addSec = new Audio(audio.as);
+  addSec.volume = myVol;
+  if (sound == true)
+    {
+      addSec.play();
+    }
+  
+}
+
+function subtractS()
+{
+  seconds = seconds -5;
+  var subSec = new Audio(audio.ss);
+  subSec.volume = myVol;
+  if (sound == true)
+    {
+      subSec.play();
+    }
+  
+}
+
+$('#dtReset').on('click',function()
+{
+  hours = audio.default.hour;
+  minutes = audio.default.min;
+  seconds = audio.default.sec;  
+  var txtChk = document.getElementById('wP').innerHTML;  
+  breakTime = false;
+  if (txtChk == "It's Break Time")
+    {
+      document.getElementById('wP').innerHTML = "Time Until Next Break";
+    }
+})
+
+$('#stBreak').on('click',function()
+{
+  breakTime = true;
+  hours = audio.breakTime.hour;
+  minutes = audio.breakTime.min;
+  seconds = audio.breakTime.sec;
+})
+
+$('#pa').on('click',pauser);
+$('#reset').on('click',reset);
+$('#add').on('click',adder);
+$('#sub').on('click',subtract);
+$('#addS').on('click',adderS);
+$('#subS').on('click',subtractS);
+
+</script>
+
+</html>

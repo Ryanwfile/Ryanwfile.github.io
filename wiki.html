@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+<style>
+body
+{
+  background:#f7e6ff;
+}
+
+.wrap {
+  text-align:center;
+  margin-top:25px;
+  width:97%;  
+}
+
+#sf
+{
+  text-align:center;
+}
+.btn{
+  width:100px;
+  height:100px;
+}
+ul li {		
+		list-style:none;		
+		}
+.item
+{
+  border:1px solid black;
+  margin:auto;
+  width:100%;
+  margin-bottom:25px;
+  justify-content:center;
+  font-size:130%;
+}
+
+</style>
+</head>
+<body>
+<div class = "wrap">
+  <form>
+    <p>Search Wikipedia for</p><a href='https://en.wikipedia.org/wiki/Special:Random' target="_blank">Random Article</a>
+    <input id = "sf" type = "text" name="sf" placeholder = "input search here"></input>
+    
+  </form>
+  <ul class="hide"></ul>
+</div>
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+
+$(document).ready(function() {
+  var sv = document.querySelector("ul");
+  $('#sf').focus();
+  $("input").on("keyup", function() 
+  {
+    if (this.value === "") //if nothing is inputted
+    {
+      
+    } 
+    else { 
+    
+    $.getJSON('https://en.wikipedia.org/w/api.php?action=opensearch&datatype=json&limit=10&search=' + this.value + '&callback=?',function(data){
+      console.log(data[1]);
+      sv.innerHTML = "<p></p>";//removing this messes up the search somehow   
+      sv.classList.remove("hide");
+    var i = 0;
+       for (i; i< data[1].length; i++)
+       sv.innerHTML += "<div class = 'item'><a href='" + data[3][i] + "' target='_new'>" + data[1][i] + "</a> " +  data[2][i] + "</div>"; 
+    }) //ends JSON function
+    } //ends else clause
+}) //ends input keyup function 
+  });
+
+             
+
+</script>
+
+</html>

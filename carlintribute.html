@@ -1,0 +1,3055 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset='UTF-8'">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Jacques Francois Shadow"/>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+<style>
+@media screen and (min-width:1500px)
+{
+  .panel
+  {
+    height:50vw;
+  }
+} 
+
+@media screen and (max-width:1500px) and (min-width:1255px)
+{
+  .panel
+  {
+    height:60vw;
+  }
+} 
+
+@media screen and (max-width:1255px) and (min-width:1200px)
+{
+  .panel
+  {
+    height:75vw;
+  }
+}
+
+@media screen and (max-width:1200px) and (min-width:1150px)
+{
+  .panel
+  {
+    height:85vw;
+  }
+}
+
+
+
+@media screen and (max-width:1150px) and (min-width:1100px)
+{
+  .panel
+  {
+    height:90vw;
+  }
+}
+
+@media screen and (max-width:1100px) and (min-width:1050px)
+{
+  .panel
+  {
+    height:95vw;
+  }
+}
+
+@media screen and (max-width:1050px) and (min-width:992px)
+{
+  .panel
+  {
+    height:105vw;
+  }
+}
+
+@media screen and (max-width:991px) and (min-width:900px)
+{
+  .panel
+  {
+    height:1050px;
+  }
+}
+
+@media screen and (max-width:900px) and (min-width:850px)
+{
+  .panel
+  {
+    height:1070px;
+  }
+}
+
+@media screen and (max-width:850px) and (min-width:800px)
+{
+  .panel
+  {
+    height:1070px;
+  }
+}
+
+
+@media screen and (max-width:799px) and (min-width:725px)
+{
+  .panel
+  {
+    height:165vw;
+  }
+}
+
+@media screen and (max-width:725px) and (min-width:670px)
+{
+  .panel
+  {
+    height:185vw;
+  }
+}
+
+@media screen and (max-width:670px) and (min-width:637px)
+{
+  .panel
+  {
+    height:225vw;
+  }
+}
+
+@media screen and (max-width:637px) and (min-width:550px)
+{
+  .panel
+  {
+    height:175vw;
+  }
+}
+
+@media screen and (max-width:550px) and (min-width:460px)
+{
+  .panel
+  {
+    height:210vw;
+  }
+}
+
+@media screen and (min-width:992px){/*original, smallest is max-width:460px, next should be min-width:461, max-width:990px*/
+  #wrapper /*container for all elements*/
+  {    
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-family: "Courier New";
+    color:black;
+    display:flex;
+    flex-wrap:wrap; 
+    width:100%;
+  }  
+  
+  #smalls 
+  {
+    display:none;
+  }
+  
+  .navbar
+  {        
+    margin:auto;
+  } 
+  
+  .jumbotron
+  {
+    font-size:35px;    
+    background-image: url('http://zingerzcomedyclub.com/wp-content/uploads/2014/11/o-STAGE-MICROPHONE-facebook.jpg');
+    width: 100%;     
+    background-size: 100% 100%;  
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+    white-space: nowrap;
+  }  
+  
+  #topRow
+  {
+    
+    margin-bottom:-50px;
+    position:relative;
+    top:-25px;
+  }
+  
+  #col1/*first column of top row*/
+  {
+    width:42%;            
+    padding-top:5px;    
+  }
+  
+    #myCarousel 
+    { 
+      height:400px;      
+      padding: 2%;
+      margin:auto;
+      background-color: black; 
+    }  
+      
+     .carousel-inner > .item > img
+     {
+        margin: 0 auto !important;
+        width:100% !important;
+        height:320px !important;
+     }
+  
+      .carousel-indicators 
+      {
+        top: 84%;     
+      }        
+
+      .carousel-indicators li 
+      {
+        background-color: #999;
+        background-color: rgba(70, 70, 70, .25);
+        padding:5px;
+      }
+
+      .carousel-indicators .active 
+      {
+        background-color: #ffffff;
+      } 
+  
+      .glyphicon-chevron-left 
+      {
+        position: absolute;
+        top: 50%;
+        left: 0px;  
+        opacity: 0.5;   
+        color: #ffffff;    
+      }
+
+      .glyphicon-chevron-right 
+      {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        opacity: 0.5;  
+        color: #ffffff;  
+      }   
+   /***********************************************Ends the myCarousel div***************************************************/  
+    #hboact/*Div row underneath the slideshow*/
+    {
+      font-size:100%;
+      color:black;
+      background-color:white;
+      
+      position:relative;
+      top:-30px;
+    }
+  
+    .h4adj /*Heading for the div below slideshow in first column*/
+    {
+      font-size:120%;
+      text-align:center;
+      font-family:Georgia;
+    }  
+    
+    #hboact > .col-sm-6 /*font for the 2 columns underneath slideshow*/
+    {
+      font-family:"Lucida Console";
+      position:relative;
+      
+      font-size:97%;
+    }
+  
+  #hboact > .col-sm-6 > hr 
+  {
+    position:relative;
+    top:-10px;
+  }
+  
+  
+  #hbosp
+  {
+    border-right:.5px black solid;
+  }
+    
+  /*#actbreak
+    {    
+      border-left:.5px black solid;    
+    }*/  
+ 
+  /***********************************end of column 1***********************/  
+  #col2
+  {     
+    position:relative;    
+    width:16%;
+    top:-15px;    
+    float:left;
+  }   
+  
+  .quote
+  {
+    /*font-size:115%;
+    position:relative;
+    height:510px;*/
+    
+    position: relative;
+    font-size:115%;
+    height:400px;
+   
+    
+  }
+  
+    #finger /*2nd div inside 2nd column(the picture)*/
+    {
+      position:relative;
+      width:120%;
+      //top:620px;
+      height:250px;
+      left:-10px;
+    }  
+  
+  #finghr
+  {
+   display:none;
+  } 
+  
+  #img23
+  {
+    height:480px;
+  }
+  /***********************************end of column 2***********************/
+  #col3
+  {    
+    width:40%;    
+    top:-20px;    
+  }  
+  
+    #abut:first-letter 
+    {
+      font-size:150%;
+      text-shadow:1px 1px 5px #111111;
+    }
+  
+    .panel > .panel-heading 
+    {
+      background-image: none;
+      background-color: white;
+      color: black;
+      font-family:Georgia;
+      text-shadow:1px #111111;
+    }   
+       
+    .panel
+    {
+      border: black 2px;
+      background-color:black;
+      color:white;
+      box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+      position:relative;
+      top:5px;   
+      
+    }  
+  
+    .read-more-1,.read-more-2
+    {
+      display:none;
+    }    
+  /***********************************end of column 3***********************/
+ #intro,#excerpt, #appearance, #standup
+  {
+    font-family:"Times New Roman";
+    font-size:155%;
+  }
+  
+ 
+  
+  #introhid
+  {    position:relative;
+       top:-12px;
+       
+  }
+  
+  #link,#intro,#excerpt, #appearance, #standup
+  {
+    margin:auto;/*this div actually encompasses the entire page as it doesn't end, I need to remove it and apply these properties to the appropriate divs*/
+    position:relative;
+    top:-25px;
+  }
+    
+  #webLink/*first div of Links*/
+  {
+    border:solid yellow 5px;
+    padding:4px;      
+  }
+  
+  .fiveWay
+  {
+    width:20%;
+    float:left;
+    border-left:1px solid black;
+    font-size:125%;
+  }
+  
+  #fivew1
+  {
+    border-left:none;
+  }
+  
+  .fiveWay > a
+  {
+    font-family:"Book Antiqua";
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+  }
+  
+  .fiveWay > hr
+  {
+    display:none;
+  
+  }
+    
+  #merch
+  {
+    border:solid black 2px;
+    margin:3px;
+    background:black;
+    color:white;
+  }
+    
+  .linkPic  /*class for the images in weblink*/
+  {
+    width:150px;
+    height:150px;
+  }  
+  
+  #twitPic  /*twitter image*/
+  {
+    width:85%;
+    height:150px;
+  }
+  
+  li > a > img    
+  {    
+    width:50px;
+    height:50px;
+    float:left;
+  }   
+  
+  col-md-4 > a /*anchors for the 3 columns of merchandise*/
+  {
+    font-size:155%;
+    white-space:nowrap;
+    line-height:40%;
+  } 
+  
+  .box
+  {
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    background:yellow;
+    margin:auto;
+    text-align:center; 
+    /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    justify-content:center;
+    border:solid black 2px;
+  }
+  
+  .box > a > img 
+  {
+    width:150px;
+    height:150px;  
+    border:solid black 1px;
+    margin:10px;
+  }
+  
+  .box > a 
+  {
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;    
+  }
+     
+  #merch2 /*div id for the middle column of merchandise row*/
+  {
+    border-left:1px white solid;
+    border-right:1px white solid;
+    
+  }
+  
+  li {
+    list-style:none;
+  }
+  
+  #exLW,#exBD,#exJPC,#exNSP
+  {
+    float:left;
+    width:150px;
+    height:250px;
+    margin-right:5px;
+  }
+  
+  #tabber/*I had issues centering the ul, turns out it's a block and so need to be made inline to have margin auto workhttp://stackoverflow.com/questions/15135851/how-to-set-margin-auto-to-an-unordered-list-ul*/
+  {
+   display:inline-block;
+ *display:inline; /* For IE7 */
+ *zoom:1; /* For IE7 */
+ vertical-align:top;
+  }
+  
+  .read-more-3
+  {
+    display:none;
+  }
+  
+          
+  img,
+  embed,
+  object,
+  video 
+  {
+    max-width: 100%;
+  }
+  
+   h1
+  {
+    font-family:"Times New Roman", Courier New, Arial;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  
+  h2
+  {
+    color:#000000;
+    postition:relative; 
+    font-family:Georgia;
+  }
+  
+  h3
+  {
+    font-weight:bold;
+    font-family: "Book Antiqua";
+  }
+  
+  h4
+  {
+    font-size:257%;
+    font-weight:bold;
+  }
+
+  .btn 
+  {
+    background-color: #ffffff;
+    color: #000000;
+    text-shadow: 1px 1px 7px #111111;
+    border: solid black 2px;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;    
+  } 
+  
+  .btn:hover
+  {
+    background-color: #417cb8;
+    color:white;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+  }
+  
+  hr 
+  {
+    border: black solid 1px;  
+    width:90%;
+  }       
+ 
+  iframe 
+  {
+    width:420px;
+    height:315px;      
+  }
+  
+  .vid  
+  {  
+    padding:1px;
+    border-radius:2%;
+    margin:15px;
+    background:#99ffff;
+    box-shadow:2px 2px 2px 2px black;    
+  }
+  .vid1
+  {
+    padding:1px;
+    box-shadow:2px 2px 2px 2px black;
+    margin:4%;
+    background:#b3d9ff;    
+  }
+  
+  .nav-tabs > li > a
+  {
+    color:black;
+    font-weight:bold;
+  }
+  
+  .nav-tabs>li.active>a  /*targets the active tabs*/
+  {
+    color:#6600cc;
+    background:#ffff99;
+  }  
+    
+}
+/****************************************************end of min-width 992px breakpoint********************************************************/
+@media screen and (min-width:637px) and (max-width:992px)
+{
+  #wrapper /*container for all elements*/
+  {    
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-family: "Courier New";
+    color:black;
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+  }  
+  
+  #smalls 
+  {
+    display:none;
+  }
+  
+  .navbar
+  {        
+    margin:auto;
+  } 
+  
+  .jumbotron
+  {
+    font-size:35px;    
+    background-image: url('http://zingerzcomedyclub.com/wp-content/uploads/2014/11/o-STAGE-MICROPHONE-facebook.jpg');
+    width: 100%;     
+    background-size: 100% 100%;  
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+    white-space: nowrap;
+  }  
+  
+  #topRow
+  {    
+    margin-bottom:-50px;
+    position:relative;
+    top:-25px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+  
+  #col1/*first column of top row*/
+  {
+    width:48%;            
+    padding-top:5px; 
+    order:0;
+  }
+  
+    #myCarousel 
+    { 
+      height:336px;      
+      padding: 2%;
+      margin:auto;
+      background-color: black; 
+    }  
+      
+     .carousel-inner > .item > img
+     {
+        margin: 0 auto !important;
+        width:100% !important;
+        height:320px !important;
+     }
+  
+      .carousel-indicators 
+      {
+        display:none;
+      }        
+
+      .carousel-indicators li 
+      {
+        
+        display:none;
+      }       
+  
+      .glyphicon-chevron-left 
+      {
+        position: absolute;
+        top: 50%;
+        left: 0px;  
+        opacity: 0.5;   
+        color: #ffffff;    
+      }
+
+      .glyphicon-chevron-right 
+      {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        opacity: 0.5;  
+        color: #ffffff;  
+      }   
+   /***********************************************Ends the myCarousel div***************************************************/  
+    #hboact/*Div row underneath the slideshow*/
+    {
+      font-size:90%;
+      color:black;
+      background-color:white;
+      margin:0 .3% 0 .3%; 
+      position:relative;
+    }
+  
+    .h4adj /*Heading for the div below slideshow in first column*/
+    {
+      font-size:120%;
+      text-align:center;
+      font-family:Georgia;
+    }
+  
+    #hboact > .col-sm-6 /*font for the 2 columns underneath slideshow*/
+    {
+      font-family:"Lucida Console";
+      position:relative;
+      top:-10px;
+      font-size:97%;
+      width:50%;
+    }
+  
+  #hboact > .col-sm-6 > hr 
+  {
+    position:relative;
+    top:-10px;
+  }
+  
+    #actbreak
+    {    
+      border-left:1px black solid;    
+    }  
+ 
+  /***********************************end of column 1***********************/  
+  #col2
+  {     
+    position:relative;    
+    width:80%;
+    top:-25px;      
+    order:3;
+    margin:auto;
+    
+    /*if I put order: 4 here, this col2 goes to bottom of entire page*/
+    
+  }   
+  
+  .quote
+  {
+    font-size:115%;
+    position:relative;
+    height:180px;
+  }
+  
+    #finger /*2nd div inside 2nd column(the picture)*/
+    {
+      position:relative;                
+    }  
+  
+  #finghr
+  {
+    display:none;
+  } 
+  /***********************************end of column 2***********************/
+  #col3
+  {    
+    width:52%;    
+    top:-30px;
+    float:right;
+    order:1;
+    
+  }  
+  
+    #abut:first-letter 
+    {
+      font-size:150%;
+      text-shadow:1px 1px 5px #111111;
+    }
+  
+    
+  
+    #achieve
+    {
+      position:relative;
+      top:-1px;
+    }
+    .panel > .panel-heading 
+    {
+      background-image: none;
+      background-color: white;
+      color: black;
+      font-family:Georgia;
+      text-shadow:1px #111111;
+    }   
+       
+    .panel
+    {
+      border: black 2px;
+      background-color:black;
+      color:white;
+      box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+      position:relative;
+      width:45%;
+      margin:4px;
+      float:left;
+      //height:200vw;
+    }  
+  
+    .read-more-1,.read-more-2
+    {
+      display:none;
+    }    
+  /***********************************end of column 3***********************/
+ #intro,#excerpt
+  {
+    font-family:"Times New Roman";
+    font-size:155%;
+  }
+  
+  #introhid
+  {
+    display:none;
+  }
+  
+  #link
+  {
+    margin:auto;
+    position:relative;
+    top:-25px;
+  }
+    
+  #webLink/*first div of Links*/
+  {
+    border:solid yellow 5px;
+    padding:4px;      
+  }
+  
+  .fiveWay
+  {
+    width:20%;
+    float:left;
+    border-left:1px solid black;
+    font-size:125%;
+  }
+  
+  #fivew1
+  {
+    border-left:none;
+  }
+  
+  .fiveWay > a
+  {
+    font-family:"Book Antiqua";
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+  }
+  
+  .fiveWay > hr
+  {
+    display:none;
+  
+  }
+    
+  .linkPic  /*class for the images in weblink*/
+  {
+    width:150px;
+    height:150px;
+  }  
+  
+  #twitPic  /*twitter image*/
+  {
+    width:85%;
+    height:150px;
+  }
+  
+ .box
+  {
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    background:yellow;
+    margin:auto;
+    text-align:center; 
+    /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    justify-content:center;
+    border:solid black 2px;
+  }
+  
+  .box > a > img 
+  {
+    width:150px;
+    height:150px;  
+    border:solid black 1px;
+    margin:10px;
+  } 
+  
+  .box > a 
+  {
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;    
+  }
+  
+  col-md-4 > a /*anchors for the 3 columns of merchandise*/
+  {
+    font-size:155%;
+    white-space:nowrap;
+    line-height:40%;
+  } 
+  
+  li
+  {
+    list-style:none;
+  }
+  
+  #merch > .col-md-4
+  {
+   width:33%; 
+  }
+  
+  #merch
+  {
+    background:black;
+    color:white;
+  }
+  
+  #merch2 /*div id for the middle column of merchandise row*/
+  {
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+  }
+  
+  #exLW,#exBD,#exJPC,#exNSP
+  {
+    float:left;
+    width:150px;
+    height:250px;
+    margin-right:5px;
+  }
+  
+  
+          
+  img,
+  embed,
+  object,
+  video 
+  {
+    max-width: 100%;
+  }
+  
+   h1
+  {
+    font-family:"Times New Roman", Courier New, Arial;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  
+  h2
+  {
+    color:#000000;
+    postition:relative; 
+    font-family:Georgia;
+  }
+  
+  h3
+  {
+    font-weight:bold;
+    font-family: "Book Antiqua";
+  }
+  
+  h4
+  {
+    font-size:257%;
+    font-weight:bold;
+  }
+
+  .btn 
+  {
+    background-color: #ffffff;
+    color: #000000;
+    text-shadow: 1px 1px 7px #111111;
+    border: solid black 2px;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;       
+    font-size:12px
+  } 
+  
+  .btn:hover
+  {
+    background-color: #417cb8;
+    color:white;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+  }
+  
+  hr 
+  {
+    border: black solid 1px;  
+    width:90%;
+  }       
+ 
+  iframe 
+  {
+    width:420px;
+    height:315px;      
+  }
+  
+  .vid  
+  {  
+    padding:1px;
+    border-radius:2%;
+    margin:15px;
+    background:#99ffff;
+    box-shadow:2px 2px 2px 2px black;    
+  }
+  .vid1
+  {
+    padding:1px;
+    box-shadow:2px 2px 2px 2px black;
+    margin:4%;
+    background:#b3d9ff;    
+  }
+  
+  .nav-tabs > li > a
+  {
+    color:black;
+    font-weight:bold;
+  }
+  
+  .nav-tabs>li.active>a  /*targets the active tabs*/
+  {
+    color:#6600cc;
+    background:#ffff99;
+  } 
+} 
+
+/*end of max-width 992px breakpoint*/
+  /*************************************************************************************************************************************************************/
+
+
+/*************************************************************************************************************************************************************/
+@media screen and (min-width:460px) and (max-width:636px){/*original, smallest is max-width:460px, next should be min-width:461, max-width:990px*/
+  #wrapper /*container for all elements*/
+  {    
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-family: "Courier New";
+    color:black;
+    display:flex;
+    flex-wrap:wrap;
+    font-size:16px;
+    line-height:1.2em;
+    width:100%;
+  }  
+  
+  #mainNav
+  {        
+    display:none;
+    /*collapsible navbar video   https://www.youtube.com/watch?v=qpWlaOeGZ_4
+    I can create a div that is display none at every media query but the smallest that way this might work
+    */
+  } 
+  
+  .jumbotron
+  {
+    font-size:16px;
+    line-height:1.2em;
+    background-image: url('http://zingerzcomedyclub.com/wp-content/uploads/2014/11/o-STAGE-MICROPHONE-facebook.jpg');
+    width: 100%;     
+    height:150px;
+    background-size: 100% 100%;  
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;   
+  }    
+  
+  #col1/*first column of top row*/
+  {
+    width:100%;       
+  }
+  
+  .jumbo/*hr for the jumbotron*/
+  {
+    margin:auto;
+    display:none;
+  }
+  
+  
+  
+  #hr2
+  {
+    display:none;
+  }
+    #myCarousel 
+    { 
+      height:200px;      
+      padding: 2%;
+      margin:auto;
+      background-color: black;
+       width:75%;
+    }  
+      
+      .item > img 
+      {
+        height:200px;
+        width:100%;
+      }
+  
+      .carousel-inner > .item > img 
+      {
+        margin: 0 auto !important;
+        width:100% !important;
+        height:180px !important;
+      }              
+
+      .carousel-indicators li 
+      {        
+        display:none;
+        
+        /*background: url(images/triangle.png) no-repeat;
+        background-size:120px 60px;
+        width:120px;
+        height:60px;
+        cursor: pointer;
+        text-align:center; */
+      }
+
+      .carousel-indicators .active 
+      {
+        display:none;
+      } 
+  
+      .glyphicon-chevron-left 
+      {
+        position: absolute;
+        top: 50%;
+        left: 0px;  
+        opacity: 0.5;   
+        color: #ffffff;    
+      }
+
+      .glyphicon-chevron-right 
+      {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        opacity: 0.5;  
+        color: #ffffff;  
+      }   
+   /***********************************************Ends the myCarousel div***************************************************/  
+    #hboact/*Div row underneath the slideshow*/
+    {
+      font-size:16px;
+      color:black;
+      background-color:white; 
+      width:100%;
+      margin:auto;
+    }
+  
+    .h4adj /*Heading for the div below slideshow in first column*/
+    {
+      font-size:17px;
+      text-align:center;
+      font-family:Georgia;
+    }
+  
+    #hboact > .col-sm-6 /*font for the 2 columns underneath slideshow*/
+    {
+      font-family:"Lucida Console";
+      width:50%;
+  }
+  
+  #actbreak{
+    border-left:black solid 2px;
+  }
+   
+  /***********************************end of column 1***********************/  
+  #col2
+  {     
+    position:relative;    
+    width:100%;
+    
+  }   
+  
+  .quote
+  {
+    font-size:16px;
+    line-height:1.2em;
+    height:120px;
+  }
+  
+    #finger /*2nd div inside 2nd column(the picture)*/
+    {
+      position:relative;      
+      border-radius:2%;          
+    }  
+  /***********************************end of column 2***********************/
+  #col3
+  {    
+    width:100%;         
+  }  
+  
+    #abut:first-letter 
+    {
+      font-size:110%;
+      text-shadow:1px 1px 5px #111111;
+    }
+  
+    .panel > .panel-heading 
+    {
+      background-image: none;
+      background-color: white;
+      color: black;
+      font-family:Georgia;
+      text-shadow:1px #111111;
+    }   
+       
+    .panel
+    {
+      border: black 2px;
+      background-color:black;
+      color:white;
+      box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+     position:relative;
+      
+      //top:5px;
+    }  
+  
+     .col-md-6 
+  {
+    width:50%;
+    float:left;
+  }
+  
+    .read-more-1,.read-more-2
+    {
+      display:none;
+    }    
+  /***********************************end of column 3***********************/
+ #intro,#excerpt
+  {
+    font-family:"Times New Roman";    
+  }
+  
+  #introhid
+  {
+    display:none;
+  }
+  
+  #link
+  {
+    margin:auto;
+    position:relative;
+    width:100%;
+  }
+    
+  #webLink/*first div of Links*/
+  {
+    border:solid yellow 5px;
+    padding:2px;
+    width:100%;
+    margin:auto;
+    
+  }
+  
+  .tab-pane > img 
+  {
+    width:30%;
+    height:150px;
+  }
+    
+  #fivew1
+  {
+    border-left:none;
+  }
+  
+  .fiveWay > a
+  {
+    font-family:"Book Antiqua";
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    margin:5px;
+  }
+    
+  .linkPic  /*class for the images in weblink*/
+  {
+    width:125px;
+    height:100px;
+  }    
+  
+ .box
+  {
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    background:yellow;
+    margin:auto;
+    text-align:center; 
+    /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    justify-content:center;
+    border:solid black 2px;
+  }
+  
+   .box > a 
+  {
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;    
+  }
+  
+  .box > a > img 
+  {
+    width:150px;
+    height:150px;  
+    border:solid black 1px;
+    margin:10px;
+  }  
+  
+  .fiveWay
+  {
+    margin:25px;
+  }
+  
+  #merch
+  {
+    background:black;
+    color:white;
+  }
+  
+ 
+  
+  col-md-4 > a /*anchors for the 3 columns of merchandise*/
+  {
+    font-size:155%;
+    white-space:nowrap;
+  }
+  
+  li {
+    list-style:none;
+  }
+  
+  .uncut
+  {
+    width:100%;
+  }
+  
+  .tab-content > li > a
+  {
+    width:100%;
+  }
+            
+  img,
+  embed,
+  object,
+  video 
+  {
+    max-width: 100%;
+  }
+  
+   h1
+  {
+    font-family:"Times New Roman", Courier New, Arial;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  
+  h2
+  {
+    color:#000000;
+    postition:relative; 
+    font-family:Georgia;
+  }
+  
+  h3
+  {
+    font-weight:bold;
+    font-family: "Book Antiqua";
+  }
+  
+  h4
+  {
+    font-size:257%;
+    font-weight:bold;
+  }
+
+  .btn 
+  {
+    background-color: #ffffff;
+    color: #000000;
+    text-shadow: 1px 1px 7px #111111;
+    border: solid black 2px;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047; 
+    
+    font-size:16px;
+  } 
+  
+  .btn:hover
+  {
+    background-color: #417cb8;
+    color:white;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+  }
+  
+  hr 
+  {
+    border: black solid 1px;  
+    width:90%;
+  }  
+  
+  iframe 
+  {
+    width:90%;
+    height:200px;
+      
+  }
+ 
+  .vid  
+  {  
+    padding:1px;
+    border-radius:2%;
+    margin:15px;
+    background:#99ffff;
+    box-shadow:2px 2px 2px 2px black;    
+  }
+  .vid1
+  {
+    padding:1px;
+    box-shadow:2px 2px 2px 2px black;
+    margin:4%;
+    background:#b3d9ff;    
+  }
+  
+  .nav-tabs > li > a
+  {
+    color:black;
+    font-weight:bold;
+  }
+  
+  .nav-tabs>li.active>a  /*targets the active tabs*/
+  {
+    color:#6600cc;
+    background:#ffff99;
+  }
+  
+  .cut
+  {
+    display:none;
+  } 
+    
+}/**************end of min-width 461px max-width:636px breakpoint************************************************/
+ @media screen and (max-width:460px)/*smallest screen*/
+{
+  #wrapper /*container for all elements*/
+  {    
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-family: "Courier New";
+    color:black;
+    display:flex;
+    flex-wrap:wrap;
+    font-size:16px;
+    line-height:1.2em;
+    width:100%;
+  }  
+  
+  #mainNav
+  {        
+    display:none;
+    /*collapsible navbar video   https://www.youtube.com/watch?v=qpWlaOeGZ_4
+    I can create a div that is display none at every media query but the smallest that way this might work
+    */
+  } 
+  
+  .jumbotron
+  {
+    font-size:16px;
+    line-height:1.2em;
+    background-image: url('http://zingerzcomedyclub.com/wp-content/uploads/2014/11/o-STAGE-MICROPHONE-facebook.jpg');
+    width: 100%;     
+    height:90px;
+    background-size: 100% 100%;  
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;   
+  }    
+  
+  #col1/*first column of top row*/
+  {
+    width:100%;       
+  }
+  
+  .jumbo/*hr for the jumbotron*/
+  {
+    margin:auto;
+  }
+  
+  #hr2
+  {
+    display:none;
+  }
+    #myCarousel 
+    { 
+      height:200px;      
+      padding: 2%;
+      margin:auto;
+      background-color: black;
+       
+    }  
+      
+      .item > img 
+      {
+        height:200px;
+        width:100%;
+      }
+  
+      .carousel-inner > .item > img 
+      {
+        margin: 0 auto !important;
+        width:100% !important;
+        height:180px !important;
+      }
+  
+              
+
+      .carousel-indicators li 
+      {        
+        display:none;
+        
+        /*background: url(images/triangle.png) no-repeat;
+        background-size:120px 60px;
+        width:120px;
+        height:60px;
+        cursor: pointer;
+        text-align:center; */
+      }
+
+      .carousel-indicators .active 
+      {
+        display:none;
+      } 
+  
+      .glyphicon-chevron-left 
+      {
+        position: absolute;
+        top: 50%;
+        left: 0px;  
+        opacity: 0.5;   
+        color: #ffffff;    
+      }
+
+      .glyphicon-chevron-right 
+      {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        opacity: 0.5;  
+        color: #ffffff;  
+      }   
+   /***********************************************Ends the myCarousel div***************************************************/  
+    #hboact/*Div row underneath the slideshow*/
+    {
+      font-size:16px;
+      color:black;
+      background-color:white;           
+    }
+  
+    .h4adj /*Heading for the div below slideshow in first column*/
+    {
+      font-size:17px;
+      text-align:center;
+      font-family:Georgia;
+    }
+  
+    #hboact > .col-md-6 /*font for the 2 columns underneath slideshow*/
+    {
+      font-family:"Lucida Console";
+  }
+   
+  /***********************************end of column 1***********************/  
+  #col2
+  {     
+    position:relative;    
+    width:100%;        
+  }   
+  
+  .quote
+  {
+    font-size:16px;
+    line-height:1.2em;
+    height:110px;
+  }
+  
+    #finger /*2nd div inside 2nd column(the picture)*/
+    {
+      position:relative;
+       
+      
+      border-radius:2%;          
+    }  
+  /***********************************end of column 2***********************/
+  #col3
+  {    
+    width:100%;         
+  }  
+  
+    #abut:first-letter 
+    {
+      font-size:110%;
+      text-shadow:1px 1px 5px #111111;
+    }
+  
+    .panel > .panel-heading 
+    {
+      background-image: none;
+      background-color: white;
+      color: black;
+      font-family:Georgia;
+      text-shadow:1px #111111;
+    }   
+       
+    .panel
+    {
+      border: black 2px;
+      background-color:black;
+      color:white;
+      box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+      position:relative;
+      //top:5px;
+    }  
+  
+    .read-more-1,.read-more-2
+    {
+      display:none;
+    }    
+  /***********************************end of column 3***********************/
+ #intro,#excerpt
+  {
+    font-family:"Times New Roman";    
+  }
+  
+  #introhid
+  {
+    display:none;
+  }
+  
+  #link
+  {
+    margin:auto;
+    position:relative;
+    width:100%;
+  }
+    
+  #webLink/*first div of Links*/
+  {
+    border:solid yellow 5px;
+    padding:2px;
+    width:100%;
+    margin:auto;
+    
+  }
+  
+  .tab-pane > img 
+  {
+    width:30%;
+    height:150px;
+  }
+  /*.fiveWay
+  {
+    width:20%;
+    float:left;
+    border-left:1px solid black;
+    font-size:125%;
+  } */
+  
+  #fivew1
+  {
+    border-left:none;
+  }
+  
+  .fiveWay > a
+  {
+    font-family:"Book Antiqua";
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    margin:5px;
+  }
+    
+  .linkPic  /*class for the images in weblink*/
+  {
+    width:125px;
+    height:100px;
+  }    
+  
+  .box
+  {
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    background:yellow;
+    margin:auto;
+    text-align:center; 
+    /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    justify-content:center;
+    border:solid black 2px;
+  }
+  
+  .box > a > img 
+  {
+    width:150px;
+    height:150px;  
+    border:solid black 1px;
+    margin:10px;
+  } 
+  
+  .box > a 
+  {
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;    
+  }
+  
+  .fiveWay
+  {
+    margin:25px;
+  }  
+  
+  #merch
+  {
+    background:black;
+    color:white;
+  }
+  
+  col-md-4 > a /*anchors for the 3 columns of merchandise*/
+  {
+    font-size:155%;
+    white-space:nowrap;
+  }
+  
+  li {
+    list-style:none;
+  }
+  
+  .uncut
+  {
+    width:100%;
+  }
+  
+  .tab-content > li > a
+  {
+    width:100%;
+  }
+            
+  img,
+  embed,
+  object,
+  video 
+  {
+    max-width: 100%;
+  }
+  
+   h1
+  {
+    font-family:"Times New Roman", Courier New, Arial;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  
+  h2
+  {
+    color:#000000;
+    postition:relative; 
+    font-family:Georgia;
+  }
+  
+  h3
+  {
+    font-weight:bold;
+    font-family: "Book Antiqua";
+  }
+  
+  h4
+  {
+    font-size:257%;
+    font-weight:bold;
+  }
+
+  .btn 
+  {
+    background-color: #ffffff;
+    color: #000000;
+    text-shadow: 1px 1px 7px #111111;
+    border: solid black 2px;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047; 
+    
+    font-size:16px;
+  } 
+  
+  .btn:hover
+  {
+    background-color: #417cb8;
+    color:white;
+    box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+  }
+  
+  hr 
+  {
+    border: black solid 1px;  
+    width:90%;
+  }  
+  
+  iframe 
+  {
+    width:90%;
+    height:200px;
+      
+  }
+ 
+  .vid  
+  {  
+    padding:1px;
+    border-radius:2%;
+    margin:15px;
+    background:#99ffff;
+    box-shadow:2px 2px 2px 2px black;    
+  }
+  .vid1
+  {
+    padding:1px;
+    box-shadow:2px 2px 2px 2px black;
+    margin:4%;
+    background:#b3d9ff;    
+  }
+  
+  .nav-tabs > li > a
+  {
+    color:black;
+    font-weight:bold;
+  }
+  
+  .nav-tabs>li.active>a  /*targets the active tabs*/
+  {
+    color:#6600cc;
+    background:#ffff99;
+  }
+  
+  .cut
+  {
+    display:none;
+  }
+}/*end of max-width:460px breakpoint*/
+  
+
+</style>
+</head>
+<body>
+<!--I also finished the project that the tribute page replaced, Camper news  http://codepen.io/Ryanwfile/pen/OMBdXq but the JSON doesn't seem to work anymore -->
+<!-----Need to figure out why I have to put a break after the hr above Standup Routines or else the heading touches the hr, no where else does this occur and  Ican't seem to click on the hr with developer tools  
+
+the middle break point could use something below Carlin's Work columns as there's a bit of barren space
+stuff to add  https://www.youtube.com/watch?v=rVXekzwkz10&feature=youtu.be
+----------------------------------------->
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>George Carlin Tribute</title>
+  <div class = "navbar navbar-default navbar-static-top" id = "smalls"><!-- video about collapsible navbar  https://www.youtube.com/watch?v=qpWlaOeGZ_4  -->
+    <div class = "container">
+      
+      <button class = "navbar-toggle" data-toggle= "collapse" data-target = ".navHeaderCollapse">
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+        <div class = "collapse navbar-collapse navHeaderCollapse">
+          <ul class = "nav navbar-nav navbar-right">
+            <li><a href = "#intro">Introduction</a></li>
+            <li><a href = "#link">Links</a></li>
+            <li><a href = "#excerpt">Excerpts</a></li>
+            <li><a href = "#guest">Appearances</a></li>
+            <li><a href = "#routine">Standup Routines</a></li>          
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div id="wrapper" class="container">
+    <div class="jumbotron" id="topper">George Carlin Tribute Page
+      <hr class = "jumbo"></hr>
+      <nav id="mainNav" class="navbar ">
+        <a href="#intro"><button  class="btn ">Introduction</button></a>
+        <a href="#link"><button  class="btn ">Links</button></a>
+        <a href="#excerpt"><button class="btn ">Excerpts</button></a>
+        <a href="#guest"><button  class="btn ">Appearances</button></a>
+        <a href="#routine"><button  class="btn ">Standups</button></a>
+      </nav>
+      <hr class = "jumbo" id ="hr2"></hr>
+    </div>
+</head>
+<div class="row" id ="topRow">  
+  <div class="col-md-4" id="col1">   
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">      
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+        <li data-target="#myCarousel" data-slide-to="9"></li>
+        <li data-target="#myCarousel" data-slide-to="10"></li>
+        <li data-target="#myCarousel" data-slide-to="11"></li>
+        <li data-target="#myCarousel" data-slide-to="12"></li>
+        <li data-target="#myCarousel" data-slide-to="13"></li>
+        <li data-target="#myCarousel" data-slide-to="14"></li>
+        <li data-target="#myCarousel" data-slide-to="15"></li>
+        <li data-target="#myCarousel" data-slide-to="16"></li>
+        <li data-target="#myCarousel" data-slide-to="17"></li>
+        <li data-target="#myCarousel" data-slide-to="18"></li>
+        <li data-target="#myCarousel" data-slide-to="19"></li>
+       <!--  -->
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        <!-- -->
+
+        <div class="item active">
+          <img id='img13' alt="George Carlin picture" src="http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/carlinhed.jpg" />
+        </div>
+        
+        
+
+        <div class="item">
+          <img id="img6" alt="George Carlin picture" src="http://thelaughbutton.com/site2/wp-content/uploads/2014/10/georgecarlin1.jpg" />
+        </div>       
+
+        <div class="item">
+          <img id="img8" alt="George Carlin picture" src="https://media.timeout.com/images/101764991/617/347/image.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img9" alt="George Carlin picture" src="https://i.ytimg.com/vi/AyifuNC0MT8/maxresdefault.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img10" alt="George Carlin picture" src="https://www.loc.gov/exhibits/hope-for-america/politicalhumor/thenewwave/Assets/bhp0019_standard.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img11" alt="George Carlin picture" src="https://i.ytimg.com/vi/hkhUivqzWv0/maxresdefault.jpg" />
+        </div>    
+        
+        <div class="item">
+          <img id="img14" alt="George Carlin picture" src="http://www.versusbattle.com/wp-content/uploads/2013/04/george-carlin.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img15" alt="George Carlin picture" src="http://www.grammymuseum.org/assets/img/george_carlin_comedian_performance_2.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img16" alt="George Carlin picture" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTXTT2Qk6vAxA_wDwLY6Rfl20t96OygL0bzK6yDBfPQyHiZDiZz9Q" />
+        </div>
+
+        <div class="item">
+          <img id="img5" alt="George Carlin picture" src="http://i.huffpost.com/gen/1205182/images/o-GEORGE-CARLIN-facebook.jpg" />
+        </div>
+        
+        <div class="item">
+          <img id="img18" alt="George Carlin picture" src="http://images.amcnetworks.com/ifc.com/wp-content/uploads/2013/09/george-carlin-jokes.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img20" alt="George Carlin picture" src="https://i.ytimg.com/vi/qDO6HV6xTmI/hqdefault.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img21" alt="George Carlin picture" src="http://images.hngn.com/data/images/full/75766/george-carlin.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img23" alt="George Carlin picture" src="http://assets.nydailynews.com/polopoly_fs/1.2683889.1466620954!/img/httpImage/image.jpg_gen/derivatives/article_750/george-carlin.jpg" />
+        </div>
+
+        <div class="item">
+          <img id="img25" alt="George Carlin picture" src="http://media.cmgdigital.com/shared/lt/lt_cache/thumbnail/600/img/photos/2015/03/27/db/8c/CELEB-GEORGE-CARLIN.jpg" />
+        </div>
+        
+        <div class="item">
+          <img id="img26" alt="George Carlin picture" src="http://3.bp.blogspot.com/-qdvyopz5nZU/Tn6agXV9TXI/AAAAAAAABkk/LkcnJuMU4sY/s1600/GeorgeCarlin_7.jpg" />
+        </div> 
+        
+        <div class="item">
+            <img id="img27" alt="George Carlin picture" src="http://dh1rvgpokacch.cloudfront.net/atavist/1511/image/raw/screenshot-1465930599-31.png" />
+          </div> 
+
+        <div class="item">
+          <img id="img28" alt="George Carlin picture" src="http://blog.pennlive.com/entertainment_impact_general/2008/06/large_george-carlin.jpg" />
+        </div>
+        
+        <div class="item">
+          <img id="img29" alt="George Carlin picture" src="http://67.media.tumblr.com/tumblr_l8pvdmlDBs1qb66jeo1_500.png" />
+        </div>
+
+        <div class="item">
+          <img id="img30" alt="George Carlin picture" src="http://www.gannett-cdn.com/-mm-/ab0ee6978b6d6b4996b808bb03fdb24dfc4fc336/c=106-0-2726-1970&r=x404&c=534x401/local/-/media/2015/02/03/USATODAY/USATODAY/635585916245594388-SNL-George-Carlin.jpg" />
+        </div>
+
+      </div>
+      <!--------------------------------ends carousel-inner ---------------------------------->
+
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+    <!-----------------ends myCarousel-------------->
+    <div class="row" id = "hboact">
+      <h2>George Carlin's Work</h2>
+      <div class="col-sm-6 col-xs-12" id ="hbosp">
+        <h4 class = "h4adj">HBO<br>Specials</h4>
+        <hr></hr>
+      On Location: George Carlin at USC<br>
+      George Carlin: Again<br> 
+      Carlin at Carnegie<br>
+      Carlin on Campus<br> 
+      Playin' With Your Head<br> 
+      What am I Doing in NJ?<br> 
+      Doin' it Again<br> 
+      Jammin' in New York<br> 
+      Back in Town<br>
+      George Carlin: 40 Years of Comedy<br> 
+      You are All Diseased<br>
+      Complaints and Grievances<br> 
+      Life is Worth Losing<br>
+      It's Bad For Ya<br>
+      </div>
+      <div class="col-sm-6 col-xs-12" id="actbreak">
+        <h4 class ="h4adj">Acting<br> Credits</h4><hr></hr>
+    That Girl<br>
+    With Six You Get Eggroll<br>
+    <!--Tony Orlando and Dawn<br>-->
+    <!--Car Wash<br> -->
+    Welcome Back, Kotter<br>
+    <!--Americathon<br>-->
+    Outrageous Fortune<br> 
+    <!--Walt Disney's Wonderful World of Color<br>-->
+    Bill & Ted's Excellent Adventure<br> 
+    <!--Working Trash<br>-->
+    <!--Bill & Ted's Bogus Journey<br>-->
+    The Prince of Tides<br> 
+    Shining Time Station<br> 
+    Thomas & Friends<br>
+    The George Carlin Show<br>
+    <!--The Simpsons<br>-->
+    Dogma<br>
+   <!-- Streets of Laredo<br>-->
+    MADtv<br> 
+    Jay and Silent Bob Strike Back<br> 
+    Scary Movie 3<br> 
+    Jersey Girl<br>
+    <!--Tarzan 2<br>-->
+    Cars<br>
+   <!-- Happily N'ever After<br>-->
+    <!--Mater's Tall Tales<br>-->
+      </div>
+    </div>
+  </div>    
+  <!-------------------------------- ends 1st column -------------------------------------------->    
+    <div class="col-md-3 col-xs-12" id="col2">
+      
+      <h2>George Carlin Quotes</h2>
+      <hr></hr>
+      
+      <div class="quote">
+        <p>Honesty may be the best policy, but it’s important to remember that, apparently, by elimination, dishonesty is the second best policy.  Second is not all that bad.</p>
+        <p>Isn't it a bit unnerving that doctors call what they do 'practice'?</p>
+        <p><b>E-I-E-I-O</b> is actually a gross misspelling of the word <i>farm</i></p>        
+        <p>Best seller really only means "good seller." There can only be one best seller. All the rest are good sellers. Each succeeding book on the list is a "better seller."</p>
+        
+        <p>If you mail a letter to the post office, who delivers it?</p>
+        <p>Is it illegal to charge admission to a free-for-all?</p>
+        <p>As a matter of principle I never attend the first annual anything.</p>
+        <p>I was reading a fitness magazine that had an article about cross-training, and I realized this would have been a good idea for Jesus.</p>
+        <p>Recent polls reveal that some people have never been polled.  Until recently.</p>
+        <p>If you vote once, you’re considered a good citizen.  If you vote twice, you face four years in jail.</p>
+        <p>I've never owned a telescope, but it's something I'm thinking of looking into.</p>
+        <p>How do you know when a moth farts? <br></br>It flies in a straight line</p>
+        <p><b>TRUE FACT</b>: A radio commercial says that a certain diet pill works three times faster than starvation.  Question: Are they guessing, or did they really run these tests?</p>
+        <p>If a man smiles all the time he's probably selling something that doesn't work</p>
+        <p>Think of how stupid the average person is, and then realize half of them are stupider than that.</p>     
+        <p>How can <i>crash course</i> and <i>collision course</i> have two different meanings?</p>
+        <p>No one is ever more herself or himself than when they really laugh.</p>
+        <p>If you love someone, set them free; if they come home, set them on fire</p>
+        <p>The straightest line between a short distance is two points.</p>
+        <p>Elevators and escalators do more than elevate and escalate. They also lower. The names tell only half the story.</p>
+        <p>I was taken to the hospital for observation.  I stayed several days, didn’t observe anything, and left.</p>
+        <p>I was expelled from cooking school, and it left a bad taste in my mouth.</p>
+        <p>Don’t you lose faith in your dog’s intelligence when he takes a piss and then steps in it? </p>
+        <p>I recently went to a new doctor and noticed he was located in something called the Professional Building. I felt better right away.</p>
+        <p>I have no ax to grind, but I do have an ivory letter opener that could use sharpening.</p>
+        <p>I don't have to tell you it goes without saying there are some things better left unsaid. I think that speaks for itself. The less said about it the better.</p>
+        <p>I had no shoes, and I felt sorry for myself until I met a man with no feet.  I took his shoes.  Now I feel better.</p>
+        <p>When someone is impatient and says, "I haven't got all day, "I always wonder, How can that be? How can you not have all day?</p>
+        <p>Shouldn’t a complimentary beverage tell you what a fine person you are?</p>
+        <p>If the bouncer gets drunk, who throws <i>him</i> out?</p>
+        <p>Whenever I see a large crowd I always think of all the dry cleaning they have out.</p>
+        <p>Why does <i>Filipino</i> start with an <i>F</i> and <i>Philippines</i> start with <i>Ph</i>?</p>
+        <p>How come none of these boxers seem to have a losing record?</p>
+        <p>Well, if crime fighters fight crime and fire fighters fight fire, what do freedom fighters fight? They never mention that part to us, do they?</p>
+        <p>The word bipartisan usually means some larger-than-usual deception is being carred out.</p>
+        <p>No one can ever know for sure what a deserted area looks like.</p>
+        <p>I read that some guy was giving up the governor's chair to run for a Sentate seat. Why would he give up a chair to run for a seat? Why not be a judge and sit on the bench?</p>
+        <p>Hard work is for people short on talent</p>
+        <p>If you can't beat them arrange to have them beaten</p>
+        <p>When will the rhetorical questions all end?</p>
+        <p>If you want to keep your dog in line, walk him past the fur shop a couple of times a week.</p>
+        <p>There are only two places in the world:over here and over there.</p>
+        <p>I have a photograph of Judge Bork, but it doesn't do him justice.</p>
+        <p>Although the photographer and the art thief were close friends, neither had ever taken the other's picture</p>
+        <p>"Tonight's forecast: DARK!  Continued mostly dark tonight turning to widely scattered LIGHT in the morning"</p>
+      </div>
+      <div id="finger">        
+        <img id="fingpic" alt="George Carlin picture" src="http://roadtips.typepad.com/.a/6a00d8341cad8253ef00e5538817778834-600wi" />
+        <!-------images of mics
+
+------------->
+      </div>
+
+<hr id = "finghr"></hr>
+    </div>
+    <!-------------------------------- ends 2nd column -------------------------------------------->
+    <div class="col-md-5" id="col3">      
+      <h2 id = "abut"><i>About George Carlin</i></h2>      
+      
+        <div class="col-md-6" id = "bio">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><b>Bio</b></div>
+            <div class="panel-body">Born on May 12, 1937<br> in New York City <br></br> Died June 22, 2008 <br>in Santa Monica, CA<br></br> Served in United States Air Force<br> where he trained as a radio technician.<br></br>Occupations:Stand-up comedian, actor, writer, social critic, producer.<br>Was a comedian from
+         1959 until his death<br></br>Loved creamed spinach<br></br>
+              <b>Parents</b><br>Patrick John Carlin <br>Mary Carlin <br></br>
+              <b>Spouses</b><br>Brenda Hosbrook<br>Sally Wade</br><br><b>Sibling</b><br>Patrick Carlin Jr.<br></br><b>Children</b><br>Kelly Carlin<br></br>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" id ="achieve">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><b>Achievements</b></div>
+            <div class="panel-body">
+              <i>Mark Twain Prize for American Humor</i> 2008(posthumously)<br></br><i>Grammy Award for Best Comedy Album</i> <u>FM & AM</u> 1973, <u>It's Bad For Ya</u><br>2009<br></br><i>Grammy Award for Best Spoken Comedy Album</i>,
+              <u>Jammin in NY</u>, 1994<br> <u>Brain Droppings</u>, 2001<br> <u>Napalm & Silly Putty</u>, <br>2002<br></br><i>American Comedy Awards Lifetime Achievement</i> Awarded in 2001<br></br>
+              <i>CableACE Award for Writing an Entertainment Special</i><br></br>Multiple Award Winning Books<br></br>First guest host of Saturday Night Live<br></br><i>Freedom of Speech Award 2002</i>, awarded by the First Amendment Center<br></br>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    <!-- ends 3rd column -->
+  </div>
+  <!---------------------------- ends top row div ----------------------------------------------------->
+  <div id="intro">
+    <hr></hr>
+    <h1>Introduction</h1>
+     George Carlin was a prolific standup comedian whose exceptional talent for invoking laughter and critical thought has placed him as one of the best comedians on record.  Carlin enjoyed pointing out the absurdities of the human condition in nearly all facets of life but didn't use topical humor which made his comedy easily relatable.  Along with a healthy amount of subversive and counter-establishment material he was strongly opposed to euphemistic language and censorship which got him into legal trouble as his routine "7 Dirty Words" got him arrested for <i>disturbing the peace</i> in Milwaukee and a radio broadcast of his "Filthy Words" routine eventually led to the supreme court case <a href = "https://en.wikipedia.org/wiki/FCC_v._Pacifica_Foundation" target = "blank">FCC vs. Pacifica Foundation</a>.</div>
+<hr></hr>
+<div id = "link"> <!--- this div doesn't end
+
+video on how to get images and text to flow together better using flexbox https://classroom.udacity.com/courses/ud893/lessons/3581758575/concepts/35736889230923#----------->
+  <h1>Website Links</h1>   
+  <div id = "webLink">    
+    <div class = "row">
+      
+      <div class = "fiveWay" id ="fivew1">
+        <a href = "https://en.wikipedia.org/wiki/George_Carlin" target = "blank">George Carlin Wikipedia<br><img alt = "Wikipedia Logo" src = "https://upload.wikimedia.org/wikipedia/commons/5/53/Wikipedia-logo-en-big.png" class = "linkPic"></a><hr></div>
+  
+      <div class = "fiveWay">
+        <a href = "https://twitter.com/TheGeorgeCarlin" target = "blank">George Carlin Twitter page<br><img id = "twitPic" alt = "Twitter Logo" src = "http://dailygenius.com/wp-content/uploads/2014/09/twittercloud.png" class = "linkPic"></a><hr></div>
+      
+      <div class = "fiveWay">
+        <a href = "http://georgecarlin.com/" target = "blank">George Carlin Website<br><img alt = "George Carlin Picture" src = "http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=150%2C150" class = "linkPic"></a><hr></div>
+
+      <div class = "fiveWay">
+        <a href = "https://en.wikiquote.org/wiki/George_Carlin" target = "blank">George Carlin Wikiquote<br><img alt = "Wikiquote Logo" src = "https://upload.wikimedia.org/wikipedia/commons/5/50/Ncwikiquote2.png" class = "linkPic"></a><hr></div>
+
+      <div class = "fiveWay">
+        <a href = "http://www.imdb.com/name/nm0137506/?ref_=nv_sr_1" target = "blank">George Carlin IMDB<br><img alt = "IMDB Logo" src = "http://www.itsmovietime.net/wp-content/uploads/2015/09/300.imdb_.cm_.101911.jpg" class = "linkPic"></a></div>
+    </div></div><!---------------------------Ends Weblink div------------------------------------------------------>
+<hr>
+
+  <h1>Links to Carlin Stuff</h1>
+<h2>Books (on Amazon)</h2><br>
+<div class = "box" id = "merch1">
+  
+  <a href = "https://www.amazon.com/Last-Words-George-Carlin/dp/1439191107/ref=sr_1_1?s=books&ie=UTF8&qid=1473241083&sr=1-1&keywords=george+carlin" target = "blank"><u>Last Words</u><br><br><br><img alt="Last Words Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51Ci9Naaz0L._SX322_BO1,204,203,200_.jpg"></a>
+  
+ 
+  <a href = "https://www.amazon.com/Brain-Droppings-George-Carlin/dp/0786883219/ref=sr_1_3?s=books&ie=UTF8&qid=1473241148&sr=1-3&keywords=george+carlin" target = "blank"><u>Brain Droppings</u><br><br><br><img alt = "Brain Droppings Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51lXgxnM5ZL._SX365_BO1,204,203,200_.jpg"></a>
+  
+
+
+<a href = "https://www.amazon.com/Carlin-Home-Companion-Growing-George/dp/1250058252/ref=pd_rhf_ee_s_cp_1?ie=UTF8&pd_rd_i=1250058252&pd_rd_r=F1Q180H7HR6RYX89ZHFP&pd_rd_w=JKKI1&pd_rd_wg=r95gl&psc=1&refRID=F1Q180H7HR6RYX89ZHFP" target = "blank"><u>A Carlin Home<br> Companion</u><br><br><img alt = "Carlin Home Companion Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51CepVsIZsL._SX323_BO1,204,203,200_.jpg"></a>
+  
+
+
+<a href = "https://www.amazon.com/Napalm-Silly-Putty-George-Carlin/dp/0786887583/ref=pd_rhf_ee_s_cp_2?ie=UTF8&pd_rd_i=0786887583&pd_rd_r=F1Q180H7HR6RYX89ZHFP&pd_rd_w=JKKI1&pd_rd_wg=r95gl&psc=1&refRID=F1Q180H7HR6RYX89ZHFP" target = "blank"><u>Napalm & Silly Putty</u><br><br><br><img alt = "Napalm & Silly Putty Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/61vG7tuf7nL._SY497_BO1,204,203,200_.jpg"></a>
+
+
+
+<a href = "https://www.amazon.com/When-Will-Jesus-Bring-Chops/dp/140130821X/ref=pd_rhf_ee_s_cp_3?ie=UTF8&pd_rd_i=140130821X&pd_rd_r=F1Q180H7HR6RYX89ZHFP&pd_rd_w=JKKI1&pd_rd_wg=r95gl&psc=1&refRID=F1Q180H7HR6RYX89ZHFP" target = "blank"><u>When Will Jesus <br>Bring the <br>Pork Chops</u><br><img alt = "When Will Jesus Bring the Pork Chops Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/5199NVE9YBL._SX359_BO1,204,203,200_.jpg"></a>
+
+
+
+<a href = "https://www.amazon.com/Seven-Dirty-Words-Crimes-George/dp/0306819694/ref=pd_rhf_dp_s_cp_3?ie=UTF8&pd_rd_i=0306819694&pd_rd_r=HKCENZNE22RDERJH63WR&pd_rd_w=EEIzG&pd_rd_wg=qqDtY&psc=1&refRID=HKCENZNE22RDERJH63WR" target = "blank"><u>7 Dirty Words</u><br><br><br><img alt = "7 Dirty Words Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51IXDc7cJgL._SX322_BO1,204,203,200_.jpg"></a>
+
+
+
+<a href = "https://www.amazon.com/3-x-Carlin-Orgy-George/dp/1401310559/ref=pd_sim_14_5?ie=UTF8&psc=1&refRID=A614WXV9XYFAF7JHDVYF" target = "blank"><u>3 X Carlin</u><br><br><br><img alt = "3 X Carlin Book Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51FKa41ZciL._SX369_BO1,204,203,200_.jpg"></a>
+
+</div>
+<h2>Audio Recordings (on Amazon)</h2><br>
+<div class = "box" id = "merch2">
+
+  
+  
+  <a href = "https://www.amazon.com/Killer-Carlin/dp/B000054853/ref=la_B00J343NUI_1_1?s=books&ie=UTF8&qid=1473241160&sr=1-1" target = "blank"><u>Killer Carlin</u><br><br><br><img alt = "Killer Carlin Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51NLlKDlLiL._AA300_.jpg"></a>
+  
+  
+  
+  <a href = "https://www.amazon.com/George-Carlin-Reads-You-Braindroppings/dp/1598879243/ref=sr_1_1?ie=UTF8&qid=1473797068&sr=8-1&keywords=george+carlin+audio+books" target = "blank"><u>George Carlin<br> Reads to You</u><br><br><img alt = "George Carlin Reads to You Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51c4kqjmyRL._SX423_BO1,204,203,200_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Brain-Droppings-Carlin-George/dp/1565113713/ref=sr_1_3_twi_aud_1?ie=UTF8&qid=1473797068&sr=8-3&keywords=george+carlin+audio+books" target = "blank"><u>Brain Droppings</u><br><br><br><img alt = "Brain Droppings Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51gWjD6-BLL._SY497_BO1,204,203,200_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/When-Will-Jesus-Bring-Chops/dp/1401399169/ref=sr_1_5_twi_aud_1?ie=UTF8&qid=1473797068&sr=8-5&keywords=george+carlin+audio+books" target = "blank"><u>When Will Jesus<br>Bring the<br> Pork Chops?</u><br>
+    <img alt = "When Will Jesus Bring the Pork Chops? Picture" src = "https://images-na.ssl-images-amazon.com/images/I/5199NVE9YBL._SX359_BO1,204,203,200_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Napalm-Silly-Putty-George-Carlin/dp/1565114515/ref=sr_1_6_twi_aud_1?ie=UTF8&qid=1473797068&sr=8-6&keywords=george+carlin+audio+books" target = "blank"><u>Napalm and Silly Putty</u><br><br><br>
+    <img alt = "Napalm and Silly Putty Picture" src = "https://images-na.ssl-images-amazon.com/images/I/61vG7tuf7nL._SY497_BO1,204,203,200_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Seven-Dirty-Words-Crimes-George/dp/1400164699/ref=sr_1_7_twi_mp3_1?ie=UTF8&qid=1473797068&sr=8-7&keywords=george+carlin+audio+books" target = "blank"><u>7 Dirty Words</u><br><br><br>
+    <img alt = "7 Dirty Words Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51Vr6KuPoIL._SX376_BO1,204,203,200_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/George-Carlin-Judy-Gold-Street/dp/B002MVI1DI/ref=sr_1_10_twi_audd_1?ie=UTF8&qid=1473797068&sr=8-10&keywords=george+carlin+audio+books" target = "blank"><u>George Carlin with<br> Judy Gold at the <br>92nd Street Y</u><br>
+    <img alt = "George Carlin with Judy Gold at the 92nd Street Y Picture" src = "https://images-na.ssl-images-amazon.com/images/I/41666DNLgVL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/WHAT-AM-DOING-NEW-JERSEY/dp/B00A2JNSG2/ref=sr_1_24_twi_cd__2?ie=UTF8&qid=1473797521&sr=8-24&keywords=george+carlin+audio+books" target = "blank"><u>What am I Doing<br> in New Jersey?</u><br><br>
+    <img alt = "What am I Doing in New Jersey? Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51f6DBOIGSL._AC_US160_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Carlin-Home-Companion-Growing-George/dp/B01438UEJ6/ref=pd_sim_129_3?ie=UTF8&psc=1&refRID=65MGHF3QARF6S13HAYJ6" target = "blank"><u>A Carlin<br> Home Companion</u><br><br>
+    <img alt = "A Carlin Home Companion Picture" src = "https://images-na.ssl-images-amazon.com/images/I/519NWMCJmbL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Back-in-Town/dp/B000TD16IS/ref=pd_sim_129_5?ie=UTF8&psc=1&refRID=N95QFJF1JY7CGXFDFSPS" target = "blank"><u>Back in Town</u><br><br><br>
+    <img alt = "Back in Town Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51LyxA4-pcL._AA300_.jpg"></a>
+ 
+
+
+ <a href = "https://www.amazon.com/Parental-Advisory-Explicit-Lyrics/dp/B000TD16HO/ref=pd_sim_129_3?ie=UTF8&psc=1&refRID=QKWW0SJ615MK9W452ZG9" target = "blank">
+  
+  <u>Parental Advisory: <br>Explicit Lyrics</u><br><br>
+    <img alt = "Parental Advisory:Explicit Lyrics Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51LQDywF4FL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Classic-Gold/dp/B000TD16II/ref=pd_sim_129_2?ie=UTF8&psc=1&refRID=DAK0BBYGJR9ZX5N8W9BN" target = "blank"><u>Classic Gold</u><br><br><br>
+    <img alt = "Classic Gold Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51r1m4NK%2BUL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Complaints-Grievances/dp/B000TD16JC/ref=pd_sim_129_1?ie=UTF8&psc=1&refRID=DAK0BBYGJR9ZX5N8W9BN" target = "blank"><u>Complaints and<br> Grievances</u><br><br>
+    <img alt = "Complaints and Grievances Picture" src = "https://images-na.ssl-images-amazon.com/images/I/61GMCKtxcXL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/A-Place-for-My-Stuff/dp/B000TK5CJK/ref=pd_sim_129_6?ie=UTF8&psc=1&refRID=QKWW0SJ615MK9W452ZG9" target = "blank"><u>A Place For<br>My Stuff</u><br><br>
+    <img alt = "A Place For My Stuff Picture" src = "https://images-na.ssl-images-amazon.com/images/I/61Qmjl6dEEL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Life-Is-Worth-Losing/dp/B000TD16MO/ref=pd_sim_129_6?ie=UTF8&psc=1&refRID=YKQ9FSFAF4NSVEVPJTHD" target = "blank"><u>Life is Worth<br> Losing</u><br><br>
+    <img alt = "Life is Worth Losing Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51eTIMbgYdL._AA300_.jpg"></a>
+  
+
+
+  <a href = "https://www.amazon.com/Jammin-in-New-York/dp/B000TD16JM/ref=pd_sim_129_3?ie=UTF8&psc=1&refRID=FS35MHW3D606P9Y6FP66" target = "blank"><u>Jammin' in New York</u><br><br><br>
+    <img alt = "Jammin' in New York Picture" src = "https://images-na.ssl-images-amazon.com/images/I/519fREyrbRL._AA300_.jpg"</a>
+  
+
+
+  <a href = "https://www.amazon.com/You-Are-All-Diseased/dp/B000TD16ME/ref=pd_sim_129_2?ie=UTF8&psc=1&refRID=FS35MHW3D606P9Y6FP66" target = "blank"><u>You Are All<br> Diseased</u><br><br>
+    <img alt = "You Are All Diseased Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51h5g07eD4L._AA300_.jpg"></a>
+  
+  </div>
+  
+  <h2>Standup Specials</h2><br>
+<div class = "box" id ="merch3">
+  
+  <a href = "http://store.hbo.com/detail.php?p=264596" target = "blank"><u>All My Stuff</u><br> on HBO Store<br><br>
+  
+  <img alt = "All My Stuff DvD Picture" src = "http://store.hbo.com/imgcache/product/resized/000/264/596/catl/george-carlin-all-my-stuff-dvd_670.jpg?k=036dc5aa&pid=264596&s=catl&sn=hbo"></a>
+    
+<a href = "http://store.hbo.com/george-carlin-its-bad-for-ya-dvd/detail.php?p=104758" target = "blank"><u>It's Bad For Ya</u><br> on HBO Store<br><br>
+  <img alt = "It's Bad For Ya DvD Picture" src = "http://store.hbo.com/imgcache/property/resized/000/172/325/catl/george-carlin-its-bad-for-ya-dvd-860_670.jpg?k=715e7723&pid=104758&s=catl&sn=hbo"></a>
+
+<a href = "https://www.amazon.com/George-Carlin-You-Are-Diseased/dp/B002PSV9EG/ref=sr_1_1?ie=UTF8&qid=1473430074&sr=8-1&keywords=carlin+hbo" target = "blank"><u>You Are All Diseased</u><br> on Amazon<br><br>
+  <img alt = "You Are All Diseased DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/71XjVDDdXwL._UY200_RI_UY200_.jpg"></a>
+
+<a href = "https://www.amazon.com/George-Carlin-Back-Rocco-Urbisci/dp/B00M0DBXTC/ref=sr_1_3?ie=UTF8&qid=1473430074&sr=8-3&keywords=carlin+hbo" target = "blank"><u>Back In Town</u><br> on Amazon<br><br>
+  <img alt = "Back In Town DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/7148uE30JhL._UY200_RI_UY200_.jpg"></a>
+
+<a href = "https://www.amazon.com/gp/product/B002PSVNTW/ref=pd_cbs_318_1" target = "blank"><u>Doin' It Again</u><br> on Amazon<br><br>
+  <img alt = "It's Bad For Ya DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/515maHma7PL._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/gp/product/B00FALO7XA/ref=pd_cbs_318_2" target = "blank"><u>What Am I<br> Doing in NJ</u><br> on Amazon<br>
+  <img alt = "It's Bad For Ya DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51f6DBOIGSL._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/gp/product/B002PSXNPE/ref=pd_cbs_318_5" target = "blank"><u>Jammin' In <br>New York</u><br> on Amazon<br>
+  <img alt = "It's Bad For Ya DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/5150TLG+YYL._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/George-Carlin-Personal-Favorites/dp/B00H57M7HU/ref=sr_1_7?ie=UTF8&qid=1473430074&sr=8-7&keywords=carlin+hbo" target = "blank"><u>Personal Favorites</u><br> on Amazon<br><br>
+  <img alt = "Personal Favorites DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/41EDqOOIm-L._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/George-Carlin-Complaints-Grievances/dp/B002PUNOM4/ref=sr_1_8?ie=UTF8&qid=1473430074&sr=8-8&keywords=carlin+hbo" target = "blank"><u>Complaints and Grievances</u><br> on Amazon<br><br>
+  <img alt = "Complaints and Grievances DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/41lAKGZ9MdL._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/George-Carlin-Life-Worth-Losing/dp/B00EW6W35S/ref=sr_1_9?ie=UTF8&qid=1473430074&sr=8-9&keywords=carlin+hbo" target = "blank"><u>Life is Worth Losing</u><br> on Amazon<br><br>
+  <img alt = "Life is Worth Losing DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51oPSm1VMML._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/George-Carlin-Playin-Your-Head/dp/B002PUROQQ/ref=sr_1_11?ie=UTF8&qid=1473430074&sr=8-11&keywords=carlin+hbo" target = "blank"><u>Playin' With<br> Your Head</u><br> on Amazon<br>
+  <img alt = "Playin' With Your Head DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/51jCWCx-GDL._AC_US160_.jpg"></a>
+
+<a href = "https://www.amazon.com/gp/product/B002PSXNPY/ref=pd_cbs_318_3" target = "blank"><u>Carlin at Carnegie</u><br> on Amazon<br><br>
+  <img alt = "Carlin at Carnegie DvD Picture" src = "https://images-na.ssl-images-amazon.com/images/I/71XggUOCz5L._UY200_RI_UY200_.jpg"></a>
+
+</div> 
+  <br>
+<a href ="#topper"><button class="btn ">Back to Top of Page</button></a>
+</div> <!---------------------------------------ends the Link div I think------------------------------------------------------>
+<br></br>
+
+<!--ends link div -->
+<hr></hr>
+
+<div id = "excerpt">   
+<h1>Excerpts</h1>
+Here are some excerpts from his books on various topics ranging from humorous ideas to events in his life.<br></br>
+<ul class="nav nav-tabs" id ="tabber">
+    <li class = "active uncut" ><a href="#LWTH" data-toggle="tab"><u>Last Words with Tony Hendra</u></a></li>    
+    <li class = "uncut"><a href="#bd" data-toggle="tab"><u>Brain Droppings</u></a></li>
+    <li class = "uncut"><a href="#wwj" data-toggle="tab"><u>When Will Jesus Bring the Pork Chops</u></a></li>
+    <li class = "uncut"><a href="#nsp" data-toggle="tab"><u>Napalm & Silly Putty</u></a></li>
+  </ul>
+<br></br>
+
+<div class="tab-content">
+<div id ="LWTH" class ="tab-pane fade in active">
+<u>Last Words with Tony Hendra</u><!--Have a picture of the book here for the text to float around, same with Brain Droppings-->
+<br></br>
+  <img src = "https://images-na.ssl-images-amazon.com/images/I/51Ci9Naaz0L._SX322_BO1,204,203,200_.jpg" id = "exLW">
+  <p>"Sliding headfirst down a vagina with no clothes on and landing in the freshly shaven crotch of a screaming woman did not seem to be part of God's plan for me.  At least not at first.  I'm not one of those people who can boast of having been a sparkle in his mother's eye.  A cinder comes closer." <br></br>"Popular ethnic slurs to the contrary, the Irish do enjoy sex-at least the last ten seconds or so.  But we must admit that Irish foreplay consists of little more than 'You awake?' Or the more caring, sensitive 'Brace yourself, Agnes!'"<br></br>
+
+(Referring to his father) Best of all there was a station sign-off he said he'd like to deliver; and this was at the height of World War 2 and its patriotic fervor:  "I pledge allegiance to the people of the United States of America and all the poltical crap for which they stand.  Big dough shall be divisible with union dues for all."  As conclusive evidence it's scanty, but suggests to me that my father saw through the bullshit that is the glue of America.  That makes me proud.  If he transmitted it to me genetically, it was the greatest gift he could have given.<p><br>
+<button class="btn btn-default" id="sm1">See More</button>
+
+<div class="read-more-1">
+
+She (his mother) sat me down on a little stepladder that doubled as a chair-I still have it- and handed me a death notice from that day's New York Journal-American.  I didn't need to read beyond his name (his father); I knew what death notices looked like.  I don't recall any emotion.  I just knew my brother would be happy and my mother relieved.<br></br>
+
+And he got his wish, though there are very few people alive to whom it matters.  Not only did I outlive the gossip-by which I'm sure he meant my mother's quite public and vocal negative opinion of him-but I lived to write this book which will serve as testimony to my old man's great heart and soul.<br></br>
+
+My mother's capacity for good living had long been blunted by the realities of salaried employment, but she retained her clasc pretensions and tried to realize some of them by using us kids as advertisement for her taste.  Pat, when he was young, had always been dressed like a little sissy in Eton collars and short pants, explaining in part why his fighting skills developed so rapidly.  I escaped the worst of that because she couldn't affort it, but she still took me to have my hair cut at Best & Co. on Fifth Avenue, because she knew that was where "the better people" had their kids' hair cut.  The better people went to Best.<br></br>
+
+And yet she was my mother, so she's deep in my art, both for what she gave me-especially that love of words- and for what I rebelled against in her.  And she made me laugh, she had a way with a punch line.  Once she told Pat and me about coming home on the bus that day.  A big fat German man plonked down beside her.  "A big Hun sat next to me,"  she said, "a big mess!  He was taking up far too much room.  So I took out my hatpin and showed it to him and said:'Condense yourself!'"<br></br>
+  I'll never forget the moment when I made my mother laugh for the first time.  That I actually took an idea and twisted it and she laughed.  And it was real-not just cute-kid stuff.  I provoked a laugh in her by means of something I thought of.  How magic that was, the power it gave me.<br></br>  
+  
+After much effort I learned "Frere Jacques" and one day played it for the class.  My first ever public appearance!  A real charge!  Having thirty people (okay, six-year-olds, but they had pulses) sit without fidgeting and watch something you were doing- which they <i>couldn't do</i>- was intensely satisfying.  Having them applaud at the end, even though many had dfficulty bringing their hands together with any accuracy, produced an odd sense of power.  It was an intoxicant.  As would be the case with many intoxicants, I immediately wanted more.<br></br>  
+
+Class clowns are dedicated to attracting attention to themselves.  Traditional Freudians might attribute my chronic need for attention to the fact that I had no father and half a mother.  Naaah.  The truth was much simpler.  Then as now, I was a consummate show-off.<br></br>  
+
+A fifth-grade autobiography assignment I still have required a closing paragraph on "What I want to be when I grow up."  I wrote, "When I grow up I'd like to be an actor, impersonator, comedian, disc jockey announcer or trumpet player." <br></br>
+
+Lenny was incredibly important to me.  I’d come across his album <i>Interviews of Our Times</i> when I was in Shreveport and I was changed forever.  The defiance inherent in that material, the brilliance of the mimicry, the intellect at work, the freedom he had.  I had no sense I could approach it ever, but I wanted to emulate it in any way I could.  <br></br>
+
+Later still, throughout the eighties, my Irish street guy was a powerful element in the evolution of what finally became in the early nineties my authentic voice.  He and his White Harlem relatives are the core of the family of characters that still live inside me.  <br></br>
+
+(After being falsely accused of armed robbery)It was clear that the cops had fucked up big-time, but they wouldn’t let us go.  …  The lead cop… later turned up as the guy in charge of investigating the Kennedy assassination, Will Fritz.  He interrogated Oswald after his arrest.  The obvious conclusion:  Oswald had as much to do with the assassination as the three of us did with the Motor Club robbery in Chicago. <br></br>  
+
+Only a couple months and it was kicking in just how hard this shit was.  How few places there were where I felt secure.  How many times I had to repeat to myself after the died-a-death nights: “Remember that terrific set three Fridays ago?  Hang your hopes on that.  <br></br>
+
+(Referring to Second City)  I could do material in these places I didn’t always trust to a nightclub: about integration, the John Birch Society, the Ku Klux Klan. <br> 
+There’s a textile mill in South Carolina where the lunchroom has been integrated but the restrooms are still segregated.  That’s like, “Hell, I’ll break bread with ‘em but not wind” … The textile industry moved south for one reason- there’s a bigger demand for sheets. <br></br>
+
+As Brenda’s mother was dying, our child was born.  A daughter.  We named her Kelly. <br></br>
+
+Like most people, I remember where I was when the (JFK's)assassination happened and what I was doing…  I went into Rexall’s or Liggett’s or some drugstore and called Brenda.  I said, “Turn on the television,” and I realized I was crying.  <br></br>
+Two years earlier, in 1961, Lenny Bruce had begun to be hit with a series of arrests for obscenity in San Francisco, Los Angeles (at three different clubs), Chicago and finally in New York<br>
+By now it was becoming pretty clear that Lenny wasn’t being arrested for obscenity.  He was being arrested for being funny about religion and in particular Catholicism. <br></br>  
+That I knew intellectually there was an anal, uptight world out there I didn’t feel part of didn’t erase the fact that I was a living, breathing example of it. <br></br> 
+That felt wonderfully subversive.  I’ve never been a full-blown radical.  I wasn’t cut out to man the barricades.  But any time the subversive part of me is satisfied, it delights me. <br></br>  
+In short:Acting.
+And I was NOT ABLE to do that!  I was absolutely at sea, completely lost.  Whatever competence I might have had going in had vanished. <br></br>  
+It was traditional for comedians to try out a bit in clubs to see if it worked and then do it on <i>Sullivan</i>.  I tried out things on <i>Sullivan</i> and if they worked, I’d do them in clubs. <br></br>
+We were together all the time, on the road or back in New York,  And just like before, Brenda was my manager and bookkeeper, collaborator and comforter. <br> 
+She had to be mother and father to Kelly.  Then I’d come home with an armful of presents and it would be: “Daddy’s home! Fun time!”  Which cast her as the domestic tyrant, the one who said No.  Time for bed.  Time for school.  She hated being that.  So she got drunk. <br></br>
+
+The establishment was winning-its war, its assassins, its secret government-and that fact overpowered and debilitated me more than it enraged me.  <br></br>
+And however much kinship I had with the counterculture, it brought up again the eternal dilemma: of longing to belong but not liking to belong-even though the group I wanted to belong to now were non-belongers. <br></br>
+
+Dropping acid was a profound turning point for me, a seminal experience. <br></br>  
+This is what devout-Catholic-Eisenhower-Republican Mary had to say to her wayward son about his latest developments:<br>
+Dear George:<br></br>
+I should be on the check-out line at the supermarket but I must say these words to you.  Please read these reviews.  You will someday be a Beckett or a Joyce or maybe a Bernard Shaw.  You seem to have their kind of disturbance… Some day you will release what you have down inside of you and it will be listened to and heard.  They condemn you for idolizing Lenny Bruce-how little they really know what you see in his courage, sincerity and daring.  Please George insist on being yourself.  Don’t let anyone change you or silence you.  I am so hungry for a heart-to-heart with you…Why have I got this restlessness-this groping for answers which I sometimes feel I have passed on to you?  Do you follow me George?  Why can’t I quiet this undisciplined questioning of what goes on around us?  Why am I caught up by it? <br></br>
+I ripped up Representative Bob Dornan… when he’d just become a congressman.  He talked about “these hippies desecrating the flag” … So I called him on it: “Wait a minute.  A flag is supposed to represent everything that a country does.  It doesn’t only represent the good things.  If you burn the flag, you’re burning the flag for what you perceive to be the bad things the country has done.”<br></br>
+My sense of US versus Them had been alive and well on the streets around Columbia; and in the air force, where I rejected everything they put on me.  But it had been submerged when I got into the nightclubs and the smothering chatter of television. <br></br>
+So it was really disturbing when the time came to record FM & AM in June 1971 and somehow a lot of my confidence had vanished.  … I walked around Georgetown, crying all night.  I’d had my chance; the sound truck wouldn’t be back the next night.  <br></br>
+As usual, a price had to be paid for all this pleasure.  I discovered in July of ’72 that not only could you not say the Heavy Seven on television, you couldn’t say them in Milwaukee either.  Here’s how the AP reported it: <br>  Comedian George Carlin was taken into custody Friday night and charged with disorderly condust after he allegedly used profanity during a performance at Summerfest, a ten-day festival on the city’s lakefront.  Henry Jordan, executive director of Summerfest, said, “Carlin got up on stage and … he used a lot of profanity.  The police went up on stage after he had finished his act and arrested him.”  Jordan said he supported the police, adding that many in the crowd of 70,000 were children.<br></br>
+(Referring to the Supreme Court Case FCC vs Pacific Foundation)Justice William Brennan wrote the dissent:  “In our land of cultural pluralism there are many who think, act, and talk differently from the members of the Court and who do not share their fragile sensibilities.  It is only an acute ethnocentric myopia that enables the Court to approve censorship of the communications solely because of the words they contain.  The Court’s decision … is another of the dominant culture’s efforts to force those groups who do not share its mores to conform to its own way of thinking, acting, and speaking.” <br>
+Which in turn means that the only thing you can safely broadcast anytime, anywhere, in any medium, is material that’s suitable for kids.  Could this be why our society shows so many signs of arrested development?  <br></br>
+The timetable on this downward path is not exact-it never is, I guess- except that it began to happen with the success of my first three records…  The money didn’t help because she felt she(Brenda) was losing me.  She didn’t have a husband.  She had a man who was out there for everybody else, but was hardly ever there for her.  Or Kelly.  I don’t remember this-there’s a lot I don’t remember- but she said that once an interviewer asked me how old Kelly was, and I didn’t know.  <br></br>
+That’s when Kelly sat us down and said, “This has got to stop.”  She was crying and sobbing:  “I have to tell you about how I feel about all this… It’s my turn to talk!”  Then and there she wrote a contract for us, which read: “You/I will not drink or snort coke or smoke pot for the next X days of our vacation.  We’re going to have a family vacation and we’re going to have a good time.”  She made us sign it.  …What she’d written and done was like a roundhouse punch to the solar plexus.  Even if it didn’t have immediate results, it had a dramatic long-term impact.  From then on I tried harder to do right.  <br></br>
+When it came to Kelly’s problems-especially pregnancy-I really abdicated my responsibilities.  And yet it was all directed at me, all designed to get my attention.  I just took an emotional walk on that.  What I should have done was to be more aware; intervened, opened up.  But I was afraid of what lay behind that door; afraid of what might come out.  One of my biggest fears-the most difficult area of my existence- has always been unleashing my feelings.<br></br>
+It’s impossible to overestimate the importance of Jerry Hamza in my career and life.  Without Jerry I don’t think I would’ve escaped from the financial and creative swamp that bad choices and drugs had landed me in by the late seventies.<br></br>
+(After having a near death heart attack)I don’t think I’d let surgery change my personality.  First of all, I’m extremely optimistic and positive.  Secondly, I hate to behave in clichés.<br></br>
+Liberal orthodoxy was as repugnant to me as conservative orthodoxy.<br></br>
+The noisier the culture becomes, the stronger your voice has to be to be heard above the din.  This was a conscious thought-that I’d better raise the level of my voice and therefore the intensity of my metaphors and images and words and topics to get and keep people’s attention.<br></br>
+When are we going to start assassinating the right people in this country?  (Why is it, by the way, that the right-wing guys assassins have tried to shoot survived?  Like Wallace and Reagan?  Don’t we have any marksmen on our side?)<br></br>
+No one is ever more herself or himself than when they really laugh.  Their defenses are down.  It’s very Zen-like, that moment.  They are completely open, completely themselves when that message hits the brain and the laugh begins.  That’s when new ideas can be implanted.  If a new idea slips in at that moment, it has a chance to grow.  So for that moment, that tiny moment, I own them.  <br></br>
+When we’re in the womb, we’re in the oceanic state, we are completely part of nature.  We are attached to nature, literally, physically.  Everything comes through tubes, you don’t have to do a goddam thing, everything’s cool.  You are at one.  You are in union with nature.  <br>Then you get torn out of this fucking place there’s pain and screaming and the violence starts…UNION IS OVER.<br>The rest of your life is spent yearning for reunion.  <br></br>
+I hate topical material because I hate to throw anything away.  <br></br>
+I hadn’t seen her(Brenda) for a week or more.  Jaundice had made her skin yellow.  All her hair was gone from the chemo.  She was unconscious and unresponsive but her eyes were open.  I have no idea if she was aware of anyone, but I saw her eyes were tearing up a little.  <br>I took a tissue and gently wiped away her tears.  <br></br>
+You may know exactly what you’re going to do and that they’re predisposed to like you… But the instant I get out there it all starts over again.  Right from the beginning.  Win them over, and get ’em where I want ‘em!  That’s living!  That’s the thing that feeds me, that’s my nourishment.  <br></br>
+The larger the group, the more toxic, the more of your beauty as an individual you have to surrender for the sake of group thought.  And when you suspend your individual beauty you also give up a lot of your humanity. <br></br>
+
+
+<a href ="#excerpt"><button class= "btn" id ="sm2">See Less</button></a>
+
+</div><!--ends the read more div-->
+</div>
+
+<div id = "bd" class = "tab-pane fade">
+<u>Brain Droppings</u><br></br>
+
+<img src = "https://images-na.ssl-images-amazon.com/images/I/51lXgxnM5ZL._SX365_BO1,204,203,200_.jpg" id = "exBD">
+I don't believe there's any problem in this country, no matter how tough it is, that Americans, when they roll up their sleeves, can't completely ignore.<br></br>
+
+At one point in my haste to improve myself, I mixed up the telephone numbers of Shick Center for the Control of Smoking and the Evelyn Woods Speed Reading School.  As a result, I can now smoke up to 300 cigaretts a minute, but I gave up reading.<br></br>
+
+On the other hand, the founders of the major religions had names that seem quite suitable.  There's still a certain mystery surrounding the names Buddha, Moses, and Mohammed.  But the poor Mormons.  All they could come up with was Joseph Smith.  Not too impressive. <br> 
+"Listen, Caleb, we got a new religion.  You wanna join?"<br>
+"Who started it?"<br>
+"Joe Smith."<br>
+"See ya later."<br>
+"C'mon, we're goin' to Utah."<br>
+"Why?"<br>
+"Joe Smith said that's where we're supposed to be."<br>
+"Well, I'm gonna finish this crossword.  Why don'tcha drop me a postcard."<br></br> 
+
+If something in the future is canceled, what is canceled?  What has really happened?  Something that didn't occur yet is now never going to occur at all.  Does that qualify as an event?<br></br>
+<button class="btn btn-default" id="sm3">See More</button>
+
+<div class="read-more-2">
+  I've adopted a new lifestyle that doesn't require my presence.  In fact, if I don't want to, I don't have to get out of bed at all, and I still get credit for a full day.<br></br>
+
+I'm not going to apologize for this, but I have my own personal psychic.  He doesn't predict the future, and he can't tell you much about your past.  But he does a really fantastic job of describing the present.  For instance, he can tell you exactly what you're wearing, but he can't do it over the phone. <br></br>
+
+If JFK Jr. got into a taxi in New York to go to the airport, do you think he would say, "Take me to JFK?" How would he feel about that?  And how does Lee Harvey Oswald's mother feel when she walks through JFK, knowing that if she had stayed single it would probably be Martin Luther King Jr. Airport?<br></br>Sometimes the same words mean opposite things.  Sometimes the opposite is true.  Shock absorbers are called shocks.  Slow down and slow up are interchangeable.  Bad taste is tasteless.  Sports fans say "turf" when they mean artificial turf.  Something invaluable is very valuable.  I'll bet you could care less.  Or maybe you couldn't care less.  Same difference.  By the way, is it "from here on in" or "from here on out"? <br>
+
+</br>I thought it would be nice to get a job at a duty-free shop, but it doesn't sound like there's a whole lot to do in a place like that. 
+Weyerhauser, a company that makes its money by cutting down trees, calls itself “The tree-growing company.”<br></br>
+Not only do I not know what’s going on, I wouldn’t know what to do about it if I did.<br></br>
+They said some guy arrested for murder in Las Vegas had “a history of questionable actions.”  Can you imagine if we were all held to that standard?<br></br>
+A lot of these people who keep a gun at home for safety are the same ones who refuse to wear a seat belt.<br></br>
+I wanted to get a job as a gynecologist, but I couldn’t find an opening. <br></br>
+Why don’t they have dessert at breakfast?  <br></br>
+You rarely meet a wino with perfect pitch. <br></br>
+There’s a moment coming.  It’s not here yet.  It’s still on the way.  It’s in the future.  It hasn’t arrived.  Here it comes.  Here it is…shit! It’s gone. <br></br>
+Even instant replay is a form of token nostalgia: a brief visit to the immediate past for reexamination, before slapping it onto a highlight video for further review and re-review on into the indefinite future. <br></br>
+Momentarily means <i>for</i> a moment, not <i> in </i> a moment.  The word for “in a moment” is <i>presently</i>.  “I will be there presently, Dad, and then, after pausing momentarily, I will kick you in the nuts.” <br></br> 
+I have a suggestion that I think would help fight serious crime.  Signs.  There are lots of signs for minor infractions: No Smoking, Stay Off the Grass, Keep Out, and they seem to work fairly well.  I think we should also have signs for major crimes: Murder Strictly Prohibited, No Raping People, Thank You for Not Kidnapping Anyone.  It’s certainly worth a try.  I’m convinced Watergate would never have happened if there had just been a sign in the Oval Office that said, Malfeasance of Office Is Strictly Against the Law, or Thank You for Not Undermining the Constitution.  <br></br>
+Here’s a sign I don’t like: Authorized Personnel Only.  Now, if there’s one thing I know about myself, it’s that I am definitely not authorized.  I wouldn’t even know where to go to <i> get </i>authorized.  Can you do it by mail?  Wouldn’t baptism sort of authorize you?  It doesn’t matter; I go through the door anyway.  If I get stopped, I say, “Well, I may not be authorized for this, but I am authorized for other things.  And your sign doesn’t mention which things.” <br></br>
+I’ve got a terrific sign in front of my house that keeps intruders out:  Retarded Put Bull High on Angel Dust.  No one’s come over the wall yet.  Except a couple of retarded guys who were high on angel dust.  <br></br>
+This is for health food fiends, the natural-fabrics gang, and all those green-head environmental hustlers who stomp around in the “natural”: Your key word is meaningless.  Everything is natural.  Everything in the universe is a part of nature.  Polyester, pesticides, oil slicks, and whoopee cushions.  Nature is not just trees and flowers.  It’s everything.  Human beings are part of nature.  And if a human being invents something, that’s part of nature, too.  Like the whoopee cushion.  <br></br>
+Sometimes on television they tell you a product is “good for headaches.”  I don’t want something that’s good for headaches.  I want something that’s bad for headaches.  And good for me.  <br></br>
+
+Why do we say <b>OUT LIKE A LIGHT</b>?  The primary function of a light is to be lit, not to be out.  Why choose a light to represent the concept of being out?  Why not, “<i>On</i> like a light?”The same is true of <b>DROPPING LIKE FLIES</b>;  the wrong quality is being emphasized.  Flies are known for flying, no dropping.  And let’s forget <b>METEORIC RISE</b>.  Meteors don’t rise, they fall.  <br></br>
+When they say someone is <b>NOT GOING TO WIN ANY POPULARITY CONTESTS</b>, what popularity contests are they talking about?  I’ve never heard of these contests.  Where do they have them?  And who wins?  Whoever is winning these popularity contests can’t be that popular.  You never hear about them.<br>
+<b>YOU COULD HEAR A PIN DROP</b>.  Well, you can’t hear a pin drop.  Not even a bowling pin.  When a pin is dropping, it’s just floating through the air.  There’s very little noise.  You might be able to hear a pin land but certainly not drop.  <br></br>
+And I think it’s time to start slapping around these people who can’t tell a simple story without repeatedly saying, “Ya know what I’m sayin’?”  Here I am, trying to listen to the guy, and he’s a person who is constantly checking on how he’s doing.  <br></br>
+I don’t like euphemisms.  Euphemisms are a form of lying.  Fat people are not gravitationally disadvantaged.  They’re fat.  I prefer seeing things the way they are, not the way some people wish they were.<br></br>
+Labels divide people.  We need fewer labels, not more.<br></br>
+The real news is that there are millions upon millions of sick babies and cripples and addicts and criminals and misfits and diseased and mentally ill and hungry people who need help.  Not to mention all the middle-class normal who swear things are just fine but spend three hours a day commuting, and whose dull, meaningless lives are being stolen from them by soulless corporations.  But the media don’t bother with all that.  They like to simply cover their designated Victims of the Week, so they can see themselves as somehow noble.  They highlight certain cases, making them appear exceptional.  And when they do, they admit they are simply unable and unwilling to report the totality of the Great American Social Nightmare.<br></br>
+I only respect horoscopes that are specific:  “Today, Neil Perleman, wearing tight-fitting wool knickers, will kill you on the crosstown bus.”<br></br>
+
+<i>Alter</i> and <i>change</i> are supposed to be synonyms, but altering your trousers and changing your trousers are quite different things. <br></br>
+
+I put a dollar in one of those change machines.  Nothing changed. <br></br>
+It’s hard for me to believe that the small amount of water I take from the water cooler can produce such a large bubble. <br></br>
+
+When primitive people practice the rain dance, does it rain at the end of practice?  And if it doesn’t how do they know they did the dance correctly? <br></br>
+They keep saying you can’t compare apples and oranges.  I can.  An apple is red and distinctly non-spherical; an orange is orange and nearly spherical.  So, what’s the big problem? <br></br>
+George Washington’s brother was the Uncle of Our Country. <br></br>
+
+The New Testament is not new anymore; it’s thousands of years old.  It’s time to start calling it The Less Old Testament.  <br></br>
+“It’s neither here nor there.”  Well, folks, it’s gotta be somewhere.  I certainly don’t have it. <br></br>
+Isn’t it interesting that only sex and excretion can be found legally obscene in this country?  Not violence, not neglect, not abuse of humans… two of nature’s most necessary functions and irresistible forces.  We’re always trying to control and thwart nature, even in our language.  <br></br>
+
+Religion was always an easy class.  All you had to do was suspend the logic and reasoning you were being taught in all the other classes. <br></br>
+And it’s always struck me that our two most-used gasses produce only tears and laughter.  How about a gas that creates crippling self-doubt?  Or a gas that conjures up terrifying childhood memories?  Okay, last one:  How about a gas that fills you with a unquenchable desire for vanilla pudding?<br></br>
+I’m also uneasy about the sheer number of scientific experiments performed on animals.  First of all, animals are not always good models for medical experimentation: penicillin kills guinea pigs; an owl is not bothered by cyanide; monkeys can survive strychnine, etc., etc.  Couldn’t these scientific tests just as easily be performed on humans?  Condemned prisoners, old people, the feeble, the terminally ill?  I’m sure there are plenty of ignorant, desperate Americans who would be willing to volunteer in exchange for some small electrical appliance.<br></br>
+<b>Limericks</b><br>
+There was a young man from St. Maarten<br>
+Who saved all his odors from faartin.<br>
+If it passed through his crack<br>
+It went straight in a sack<br>
+And mistakes were all kept in a caarton<br></br>
+A flatulent actor named Barton<br>
+Had a lifestyle exceedingly Spartan<br>
+Till a playwright one day<br>
+Wrote a well-received play<br>
+With a part in which Barton could fart in.<br></br>
+
+<a href ="#excerpt"><button class= "btn" id ="sm4">See Less</button></a>
+</div>
+
+</div>
+
+<div id = "wwj" class = "tab-pane fade">
+  <u>When Will Jesus Bring the Pork Chops</u><br></br>
+<img src = "https://images-na.ssl-images-amazon.com/images/I/5199NVE9YBL._SX359_BO1,204,203,200_.jpg" id = "exJPC">
+THOU SHALT NOT COVET THY NEGHBOR’S GOODS<br>
+This one is just plain stupid.  Coveting your neighbor’s goods is what keeps the economy going: Your neighbor gets a vibrator that plays “O Come All Ye Faithful,” you want to get one, too.  Coveting creates jobs.  <br></br>
+Ninety-nine percent of all the truly horrifying shit going on in this world was initiated, established, perpetrated, enabled or continued by men.  And that includes the wave and the high five, two of history’s truly low points. <br></br>
+(Referring to men in general)His manliness also requires that he refuse to go to a doctor or a hospital unless it can be demonstrated to him that he has, in fact, been clinically dead for six months.  “No sense going’ to the hospital, honey, I don’t seem to be in a coma.”  Therefore, he must learn to ignore pain.  “It doesn’t really hurt.  Bleeding from six holes in the head doesn’t really hurt.  Just gimme the remote and get me a beer.” <br></br>
+(Referring to the FBI 10 Most Wanted)One last question: Does the FBI search harder for number three than they do for number seven?  I would.  Otherwise why have the numbers at all?  These are the kinds of thoughts that keep me from making any real progress in life. <br></br>
+
+<button class="btn btn-default" id="sm5">See More</button>
+<div class="read-more-3">
+  
+Political correctness is America’s newest form of intolerance, and it is especially pernicious because it comes disguised as tolerance.  It presents itself as fairness, yet attempts to restrict and control people’s language with strict codes and rigid rules.  I’m not sure that’s the way to fight discrimination.  I’m not sure silencing people or forcing them to alter their speech is the best method for solving problems that go much deeper than speech.  <br></br>
+The use of <i>physically challenged </i>is an obvious attempt to make people feel better, the idea being, “As long as we can’t cure these people, let’s give their condition a more positive name, and maybe it will distract everyone.”  It’s verbal sleight of hand.<br></br>
+These allegedly well-intentioned people have strayed so far from reality that it will not be a surprise for me to someday hear a rape victim referred to as an <i>unwilling sperm recipient</i>.<br></br>
+
+
+
+How would you like to be told that about your child?  “He’s minimally exceptional.”  “Oh, thank God for that!  We thought he was just kind of, I don’t know, slow.  But minimally exceptional!  Wow!  Wait’ll I tell our friends.”<br></br>
+Political correctness cripples discourse, creates ugly language and is generally stupid.<br></br>
+“Is Bruno a sadist?”<br>
+“Beats me.”<br></br>
+Or they might say, “I’m leaving Armando.  He beat me up yesterday in the frozen-food section of the supermarket.  He struck me in the head repeatedly with a Stouffer’s Lean Cusine.  I believe it was the Chicken Cordon Bleu.  I’m moving on.”  Occasionally, I get impatient with these people.  When they tell me they’re moving on, I look at my watch and say, “Well, isn’t it about time you got started?  No sense standing around here, talking to me, when you could be out there… moving on.”  <br>
+I don’t know, I guess it all works out, because when I run into the same person a few months later, they usually say, “I’m in a <i>whole different place now</i>.”  And I don’t think they’re referring to Pittsburgh.  <br></br>
+
+Why not be a schmuck?  A licensed, practicing schmuck.  Or, if you qualify, a CPS, a certified public schmuck.  It may not seem like it when you look around, but there’s actually a shortage of schmucks in America.  As a result, there’s big money in schmucking.  The average schmuck earns $28,000 a year, plus benefits.  And there are openings for schmucks in every field:  The government is run by schmucks; big business is run by schmucks; and the retail field is crawling with schmucks.  And, more and more, people are becoming independent, freelance schmucks on their own.  Call the Schmuck Technical Institute today and get our free booklet,  <i>Hey Putz, Be a Schmuck!</i>  Most people only manage to be schmucks at parties, but here’s your chance to become a fulltime, year-round schmuck.  Give us a call.  Don’t be a schmuck, be a schmuck.<br></br>
+
+Uncle Tonto had a tough life; intercourse with a pelican is not an easy thing to live down.  He drank excessively.  One time he was so hungover he had to consult a cottage cheese carton to determine the approximate date.  At parties, he was the designated drinker, his preference being crème de menthe, Sterno and goat droppings.  When stopped and tested by police, he usually set the Breathalyzer on fire.  Refusing to drive when he was sober, in the mornings he rode to work on an electric floor buffer, claiming the one drawback was the time he wasted traveling from side to side.  He was sentenced to ten years for defecating in a cathedral, but was released immediately when the warden felt Tonto was lowering the prison’s standards.  After his release, he hitchhiked through Pennsylvania where he was beaten to death by a buggyload of Quakers.  <br></br>
+The same is true of the word <i> cuisine</i>.  The difference between food and cuisine is sixty dollars.  That’s it.  They’re stealing from you.  You want to know some real gourmet food?  Toasted snail penises; candied filet of panda asshole; deep-dish duck dick.<br></br>
+
+KEVIN: Boy, a lot has changed in twenty years.<br>
+RAY: Yeah.<br>
+KEVIN: Is Naughton still around?<br>
+RAY: Frankie?<br>
+KEVIN: No Jimmy.</br>
+RAY: Jimmy’s dead.  And Frankie died at the funeral.  They’re both dead.<br>
+KEVIN: What about Bobby? How’s he?<br>
+RAY: He’s dead, too.  A lot of ‘em are dead.<br>
+KEVIN: What was the other Naughton kid’s name?  Tommy?  Is he dead?<br>
+RAY: No.  Tommy’s not dead.<br>
+KEVIN: Thank God for that.<br>
+RAY: He’s dying.<br>
+KEVIN: Jeez! The mother must be heartbroken.<br>
+RAY: The mother was killed in a boiler explosion.  Blown to pieces.<br>
+KEVIN: Jeez.  I’ll never forget that house the Naughtons lived in.  Kind of a cute little place with the green shutters.<br>
+RAY: Hit by lighting fifteen years ago.  Burned to the ground.  All the pets were killed.<br>
+KEVIN: Jeez.  That’s too bad.  I remember the Naughtons always like that house because it was so close to the church.<br>
+RAY: Our Lady of Perpetual Suffering?<br>
+KEVIN: Yeah<br>
+RAY: The church is gone.  Condemned by the city last year and demolished on Good Friday.<br>
+KEVIN: So where do the neighborhood kids go to school?<br>
+RAY: Most of the neighborhood kids were killed a few years ago by a rapist who worked at the grocery store.<br>
+KEVIN: Dorian’s?<br>
+RAY: No, Babington’s.<br>
+KEVIN: I liked Dorian’s.  They always had good produce.</br>
+RAY: Dorian’s collapse ten years ago and killed nineteen customers.  The entire Halloran family was decapitated at the butcher counter while they were pickin’ out meat.<br>
+KEVIN: Jeez.  Times really change.<br>
+RAY: Well, life goes on.<br></br>
+
+I don’t often write about my own experiences; it’s not my style.  But I had a recent incident in traffic that that I’d like to tell you about.  And before I being, there are a couple of things you ought to know about me: I drive kind of recklessly, I take a lot of chances, I never maintain my vehicles and I don’t believe in traffic laws.  And so, because of these practices, I tend to have what a picky person would probably refer to as a lot of traffic accidents.  <br>
+And wouldn’t you know, last week I ran over a sheep.  <br>
+Or, possibly, I ran over a small man wearing a sheepskin coat.  I’m not sure, really, because I didn’t stop.  That’s another rule of mine: I never stop when I have a traffic accident.  Do you?  No.  You can’t.  Who has time?  Not me.<br>
+If I hit something, or I run somebody over, I keep moving!  Especially if I’ve injured someone.  I refuse to involve myself in other people’s injuries.  I’m not a doctor, I’ve had no medical training; I’m just another guy, out, driving around looking ofr a little fun.  And I can’t be stopping for everything.  <br>
+Listen, folks.  Let’s be logical about it.  If you stop at the scene of the accident, all you do is add to the confusion.  These people you ran over have enough troubles of their own without you stopping and making things worse.  Think about it – they’ve just been involved in a major traffic accident!  The last thing they need is for you to stop, get out of your car, go over to the wreckage and start bothering them with stupid questions:  “Are you hurt?”<br>
+Well, of course they’re hurt.  Look at all the blood!  You just hit them with a ton and a half of steel- of course they’re hurt.  Leave these people alone.  Haven’t you done enough?  For once in your life do the decent thing- don’t get involved... <br>
+Now, folks.  There are two sides to this.  Helping people by leaving them alone when they’re injured is one thing, that’s my altruistic side; people need to be self-reliant, and I want to do what I can to foster that.  But it’s often hard for me to drive away from a nice fiery accident scene, because I have a self-indulgent side, and that needs to be honored too… <br>
+And if the traffic situation is such that I can’t quite see what’s going on- can’t get a good enough look- I’m not the least bit shy about asking the police to bring the bodies over a little closer to the car.  <br>
+“Pardon me, Officers.  Would you fellows mind dragging that twisted-looking chap over here a little closer to the car?  My wife has never seen anyone shaped quite like that.”<br><br>
+Also, I never say, “ A merry Christmas to you and yours.”  I don’t like the possibilities suggested by that use of the possessive pronoun <i>yours</i>.  One never knows when the other person may be a slave owner.  I certainly wouldn’t want to encourage that sort of behavior. <br><br>
+
+
+
+<a href ="#excerpt"><button class= "btn" id ="sm6">See Less</button></a>
+</div>
+</div>
+
+<div id = "nsp" class = "tab-pane fade">
+  <u>Napalm and Silly Putty</u><br></br>
+<img src = "https://images-na.ssl-images-amazon.com/images/I/61vG7tuf7nL._SY497_BO1,204,203,200_.jpg" id = "exNSP">
+<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+</div>
+</div>
+  <br></br>
+
+<a href ="#excerpt"><button class="btn ">Back to Excerpts</button></a>
+  <a href="#topper"><button class="btn ">Back to Top of Page</button></a>
+  </div>
+  
+  
+  <hr></hr>
+  <div id="appearance">
+
+    <h1 id="guest">Carlin Appearances</h1>
+    <div class="row" id="appear">
+      <div class="col-md-6 col-xs-12 col-sm-12">
+        <div class = "vid">
+        <h2>Chris Rock Interview</h2>
+        <h5>9:02</h5>
+        <iframe src="https://www.youtube.com/embed/hwCHMM23B18" allowfullscreen></iframe></div>        
+      
+        <div class = "vid">
+        <h2>Real Time with Bill Maher</h2>
+        <h5>29:03</h5>
+        <iframe  src="https://www.youtube.com/embed/OxwfkQd2oRM" allowfullscreen></iframe></div>
+        
+        <div class = "vid">
+        <h2>Muhammad Ali War Refusal</h2>
+        <h5>2:06</h5>
+        <iframe  src="https://www.youtube.com/embed/l0ZMuLaZ3pU" allowfullscreen></iframe></div>
+        
+
+        <div class = "vid">
+        <h2>A&E Biography</h2>
+        <h5>44:12</h5>
+        <iframe  src="https://www.youtube.com/embed/AgqXsW8X92E" allowfullscreen></iframe></div>
+        
+        
+        <div class = "vid">
+        <h2><u>Napalm and Silly Putty</u> Part 1</h2>
+        <h5>2:28:13</h5>
+        <iframe  src="https://www.youtube.com//embed/-sdQgLmZgqs" allowfullscreen></iframe></div>
+        
+        <div class = "vid">
+        <h2>George Carlin<br>Unmasked</h2>
+        <h5>1:20:51</h5>
+        <iframe  src="https://www.youtube.com/embed/s-clvDxl8qI" allowfullscreen></iframe></div>
+        
+
+        
+      </div>
+
+      <div class="col-md-6 col-xs-12">
+        <div class = "vid">
+        <h2>Jon Stewart Interview</h2>
+        <h5>9:59</h5>
+        <iframe  src="https://www.youtube.com/embed/lfQDMDff0jI" allowfullscreen></iframe></div>
+        
+        
+        <div class = "vid">
+        <h2>Charlie Rose Interview</h2>
+        <h5>16:01</h5>
+        <iframe  src="https://www.youtube.com/embed/szFyD3jm5t0" allowfullscreen></iframe></div>
+        
+
+        <div class = "vid">
+        <h2>Hannity & Colmes Interview</h2>
+        <h5>6:36</h5>
+        <iframe  src="https://www.youtube.com/embed/RV9sAZ09s1c" allowfullscreen></iframe></div>
+        
+
+        <div class = "vid">
+        <h2><u>Brain Droppings</u></h2>
+        <h5>2:27:42</h5>
+        <iframe  src="https://www.youtube.com/embed/Uf2QgFqOwsc" allowfullscreen></iframe></div>
+        
+
+        <div class = "vid">
+        <h2><u>Napalm and Silly Putty</u> Part 2</h2>
+        <h5>2:28:31</h5>
+        <iframe  src="https://www.youtube.com/embed/ooYCwd4uGN8" allowfullscreen></iframe></div>
+        
+
+        <div class = "vid" id = "bpc">
+        <h2><u>When Will Jesus Bring the Pork Chops</u></h2>
+        <h5>7:29:51</h5>
+        <iframe  src="https://www.youtube.com/embed/AOSL8t8FG-Y" allowfullscreen></iframe></div>
+        
+        
+      </div>
+    </div><br>
+    <a href="#topper"><button class="btn ">Back to Top of Page</button></a>
+    <!-- ends row guest -->
+    <hr></hr><br>
+
+    <div id="standup">
+      <h1 id="routine">Stand up Routines</h1>
+      <div class="row">
+          <div class="col-md-6 col-xs-12">
+          <!-- div 11 link col 1 -->
+            <div class = "vid1">
+            <h2>Seven Dirty Words</h2>
+          <h5>15:41</h5>
+          <iframe  src="https://www.youtube.com/embed/FMkNsMMvrqk" allowfullscreen></iframe></div>
+                  
+          
+          <div class = "vid1">
+          <h2>Best Liars</h2>
+          <h5>10:23</h5>
+          <iframe  src="https://www.youtube.com/embed/8r-e2NDSTuE" allowfullscreen></iframe></div>
+                
+      
+      <div class = "vid1">    
+      <h2>Stuff</h2>
+          <h5>5:08</h5>
+          <iframe  src="https://www.youtube.com/embed/MvgN5gCuLac" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Airplane Announcements</h2>
+          <h5>11:10</h5>
+          <iframe  src="https://www.youtube.com/embed/vdPy5Ikn7dw" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">         
+<h2>Baseball Vs. Football</h2>
+          <h5>4:47</h5>
+          <iframe  src="https://www.youtube.com/embed/aIkqNiBASfI" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>People's Children</h2>
+          <h5>6:50</h5>
+          <iframe  src="https://www.youtube.com/embed/yIXlwYoOV9k" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Education</h2>
+          <h5>5:07</h5>
+          <iframe  src="https://www.youtube.com/embed/ILQepXUhJ98" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Parenting</h2>
+          <h5>6:55</h5>
+          <iframe  src="https://www.youtube.com/embed/u-ryuJDTpEc" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Persian Gulf War<br></h2>
+          <h5>8:26</h5>
+          <iframe  src="https://www.youtube.com/embed/G91892EuhyU" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Magazines</h2>
+          <h5>1:22</h5>
+          <iframe  src="https://www.youtube.com/embed/i2PiDtHbLOY" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Dogs</h2>
+          <h5>6:59</h5>
+          <iframe  src="https://www.youtube.com/embed/bqW8riZ7lQg" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Stupid People</h2>
+          <h5>2:06</h5>
+          <iframe  src="https://www.youtube.com/embed/AyifuNC0MT8" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Things You Never See</h2>
+          <h5>4:06</h5>
+          <iframe  src="https://www.youtube.com/embed/9X0F1Qjn0Ac" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Expressions and Sayings</h2>
+          <h5>9:15</h5>
+          <iframe  src="https://www.youtube.com/embed/k3Zad39QXL4" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">         
+<h2>Fussy Eater</h2>
+          <h5>6:24</h5>
+          <iframe  src="https://www.youtube.com/embed/LwYFMzOGOnM" allowfullscreen></iframe></div>
+          
+
+<div class = "vid1">          
+<h2>Flame Throwers</h2>
+          <h5>1:10</h5>
+          <iframe  src="https://www.youtube.com/embed/V4nknAzQPHE" allowfullscreen></iframe></div>
+            
+            <div class = "vid1">          
+<h2>Honest Politicians</h2>
+          <h5>1:09</h5>
+          <iframe  src="https://www.youtube.com/embed/0twWuMAUqrQ" allowfullscreen></iframe></div>
+            
+            
+
+        </div>
+        <!-- end first column of standup div -->
+        <div class="col-md-6 col-xs-12 col-sm-12">
+          <!-- div 12 row col 2 -->
+          <div class = "vid1">
+          <h2>Other Drivers</h2>
+          <h5>:20</h5>
+          <iframe  src="https://www.youtube.com/embed/XWPCE2tTLZQ" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Fat People</h2>
+          <h5>8:25</h5>
+          <iframe  src="https://www.youtube.com/embed/nLRQvK2-iqQ" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>People Who Should Be Killed</h2>
+          <h5>20:43</h5>
+          <iframe  src="https://www.youtube.com/embed/tVlkxrNlp10" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Saving the Planet</h2>
+          <h5>8:03</h5>
+          <iframe  src="https://www.youtube.com/embed/7W33HRc1A6c" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Modern Man</h2>
+          <h5>4:19</h5>
+          <iframe  src="https://www.youtube.com/embed/Lk_dRzaBoUM" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Fart Jokes</h2>
+          <h5>2:53</h5>
+          <iframe  src="https://www.youtube.com/embed/CCtiQTQQ7QA" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Child Worship</h2>
+          <h5>6:23</h5>
+          <iframe  src="https://www.youtube.com/embed/K0MKBdD2FGA" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Everyday Expressions</h2>
+          <h5>9:05</h5>
+          <iframe  src="https://www.youtube.com/embed/wUG0IMjfxCE" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Our Similarities</h2>
+          <h5>10:28</h5>
+          <iframe  src="https://www.youtube.com/embed/8v2SWE15zms" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Advertising</h2>
+          <h5>9:43</h5>
+          <iframe  src="https://www.youtube.com/embed/AtK_YsVInw8" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Euphemisms</h2>
+          <h5>9:00</h5>
+          <iframe  src="https://www.youtube.com/embed/vuEQixrBKCc" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Sports</h2>
+          <h5>10:20</h5>
+          <iframe  src="https://www.youtube.com/embed/xSJRIKuNJBA" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Driving</h2>
+          <h5>6:02</h5>
+          <iframe  src="https://www.youtube.com/embed/yZUwNXfG2ys" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Germs</h2>
+          <h5>6:26</h5>
+          <iframe  src="https://www.youtube.com/embed/X29lF43mUlo" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Have A Nice Day</h2>
+          <h5>3:51</h5>
+          <iframe  src="https://www.youtube.com/embed/xJZ6ixiVgCs" allowfullscreen></iframe></div>
+          
+
+          <div class = "vid1">
+          <h2>Cats</h2>
+          <h5>5:15</h5>
+          <iframe  src="https://www.youtube.com/embed/Nzvm8k5kSjs" allowfullscreen></iframe></div>
+          
+          <div class = "vid1">
+          <h2>The Public Sucks</h2>
+          <h5>3:15</h5>
+          <iframe  src="https://www.youtube.com/embed/rVXekzwkz10" allowfullscreen></iframe></div>
+
+        </div>
+        <!-- ends div 12 row col 2 -->
+        <a href="#topper"><button class="btn ">Back to Top of Page</button></a>
+      </div>
+      <!-- ends div 10 row links -->
+    </div>
+  </div>
+  <!-- end div 1 wrapper -->
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+$(".quote > p").hide();//Controls the quote display slideshow
+$(".quote > p:first").fadeIn(1500);
+setInterval(function() 
+ { 
+  $('p:first ')
+    .show()
+    .fadeToggle(11000)
+    .appendTo('.quote');
+ },  12000);
+
+$('#sm1').on('click',function()//controls the first set of see more, see less buttons
+{
+  var seeme = $('#sm1').text();
+  console.log(seeme);
+  
+  $('.read-more-1').show();
+  if (seeme == "See Less" || seeme == "See A LOT Less")
+    {
+      $('.read-more-1').hide();
+      $('#sm1').text("See More");
+    }
+  else
+    {
+      $('#sm1').text("See Less");
+    }
+})
+
+$('#sm3').on('click',function()//controls the 2nd set of see more, see less buttons
+{
+  var seeme = $('#sm3').text();
+  
+  
+  $('.read-more-2').show();
+  if (seeme == "See Less" || seeme == "See A LOT Less")
+    {
+      $('.read-more-2').hide();
+      $('#sm3').text("See More");
+    }
+  else
+    {
+      $('#sm3').text("See Less");
+    }
+})
+
+$('#sm5').on('click',function()//controls the 2nd set of see more, see less buttons
+{
+  var seeme = $('#sm5').text();
+  
+  
+  $('.read-more-3').show();
+  if (seeme == "See Less" || seeme == "See A LOT Less")
+    {
+      $('.read-more-3').hide();
+      $('#sm5').text("See More");
+    }
+  else
+    {
+      $('#sm5').text("See Less");
+    }
+})
+
+$('#sm1').hover(hIN,hOUT);
+
+function hIN()
+{
+  var seeme = $('#sm1').text();
+  console.log("Hover in " + seeme);
+  if (seeme == "See More")
+  {
+    $('#sm1').text("See A LOT More");
+  }
+  
+  else 
+  {
+    $('#sm1').text("See A LOT Less");
+  }
+}
+function hOUT()
+{
+  var seeme = $('#sm1').text();
+  console.log("Hover out " + seeme);
+  if (seeme == "See A LOT More" || seeme == "See More")
+    {
+      $('#sm1').text('See More')
+    }
+  else
+    {
+      $('#sm1').text('See Less');
+    }
+}
+
+$('#sm2').on('click',function()
+{
+  $('.read-more-1').hide();
+  $('#sm1').text('See More');
+  //$( "#excerpt" ).focus();
+})
+
+$('#sm4').on('click',function()
+{
+  $('.read-more-2').hide();
+  $('#sm3').text('See More');
+  //$( "#excerpt" ).focus();
+})
+
+$('#sm6').on('click',function()
+{
+  $('.read-more-3').hide();
+  $('#sm5').text('See More');
+  //$( "#excerpt" ).focus();
+})
+</script>
+
+</html>
