@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+<link rel = "stylesheet" href = "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+/*
+for projects I can have an image of each project flip over to allow reading about the project on the other side
+
+possible background images 
+background-image: url("https://farm6.staticflickr.com/5773/22916762659_2dee04d7e9_o.jpg");
+  //background-size: 100% 100%;
+  background-repeat:no-repeat;  
+  background-size:cover;
+
+images site  http://www.pixelstalk.net/ocean-backgrounds-free-download/
+
+
+http://www.pixelstalk.net/wp-content/uploads/2016/04/Ocean-backgrounds-free-download-620x349.jpg      beach sunset
+http://wallpapercave.com/wp/pPgpCBM.jpg     city
+the only way to make these divs line up is with negative margins so I have no clue what's going on
+
+possibly something with the way images scale/responsiveness
+
+https://teamtreehouse.com/community/divs-background-in-bootstrap-full-width
+*/
+
+/*.wrap
+{
+  //margin:auto;  
+ // margin-top:15px;
+  width:90%;
+  text-align:center;
+  background-image:url('http://wallpapercave.com/wp/pPgpCBM.jpg');
+  background-size:100% 300px;
+  background-repeat:no-repeat;  
+} */
+.wrap
+{
+  text-align:center;
+  margin:20px;
+}
+
+#top
+{  
+  height:10vw; 
+  width:100%; 
+  background:grey;
+}
+
+.divide {
+  float: right;
+  border-left: solid 1px black;
+  margin-top: 1px;  
+  width: 250px;
+  line-height: 55px;
+  font-family: times;
+  font-size: 25px;
+}
+
+#about >img
+{
+  border-radius:50%;
+  width:170px;
+  height:170px;
+  border:1px solid black;
+  float:left;
+}
+
+#about
+{  
+  background-color:green;
+  height:250px;
+  //margin:-15px;
+}
+
+#project
+{  
+  background-color:lightblue;
+  //margin:-15px;
+  display:flex;
+  flex-wrap:wrap;   
+}
+
+.proj
+{
+  width:20vw;
+  height:20vw;
+  background-color:#cc33ff;
+  border:1px solid black;
+  float:left;
+  margin:15px;
+}
+
+#website, #ajax, #gadget, #game, #books
+{
+  margin:auto;
+}
+
+#resource
+{  
+  background-color:yellow;
+  //margin:-15px;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.res
+{
+  width:20vw;
+  height:20vw;
+  background-color:#cc33ff;
+  border:1px solid black;
+  float:left;
+  margin:15px;  
+}
+
+.pic/*images of books*/
+{
+  width:15vw;
+  height:20vw;
+  float:left;  
+} 
+
+#contact
+{
+  display:flex;
+  height:200px;
+  background-color:black;
+  margin:auto;
+  text-align:center;
+}
+
+
+/*************************************************************navbar also needs js function stop propagtion up the DOM*********************************************************************/
+.dropdown-submenu
+{
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.navbar-default/*governs the background and border*/
+{
+  background:none;
+  border:none;
+}
+
+.navbar .navbar-nav 
+{
+  display: inline-block;
+  float: none;
+  vertical-align: top;  
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div class = "container-fluid wrap"> 
+
+  <div class = "navbar navbar-default">
+     <ul class = 'nav navbar-nav'>
+       <li><a href = "#">Home</a></li>
+       <li><a href = "#">Contact</a></li>
+       <li><a href = "#">About</a></li>
+       <li class="dropdown">
+         <a class = "dropdown-toggle" data-toggle="dropdown" href="#" id = "testP">Projects
+         <span class="caret"></span></a>
+         <ul class="dropdown-menu">                  
+           <li class="dropdown-submenu">
+             <a class="test" tabindex="-1" href="#" id = "am1">Websites
+             <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+             <ul class="dropdown-menu" id = 'ds1'>
+               <li><a tabindex="-1" href="carlintribute.html">George Carlin Tribute</a></li>
+               <li><a tabindex="-1" href="randomquote.html">Random Quote Generator</a></li>
+               <li><a tabindex="-1" href = "http://ryanrw81.wix.com/joes-fruit" target= "blank">Wix Site</a></li>             
+             </ul>
+           </li>
+           <li class="dropdown-submenu">
+             <a class="test" tabindex="-1" href="#" id = "am2">Websites with AJAX/JSON
+               <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+             <ul class="dropdown-menu" id = 'ds2'>
+               <li><a tabindex="-1" href="weather.html">Local Weather Forecast</a></li> 
+               <li><a tabindex="-1" href="twitch.html">Twitch Streamer Status</a></li></li>
+               <li><a tabindex="-1" href="wiki.html">Wikipedia Search</a></li>
+
+             </ul>
+          </li>
+          <li class="dropdown-submenu">
+             <a class="test" tabindex="-1" href="#" id = "am3">Gadgets
+             <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+             <ul class="dropdown-menu" id = 'ds3'>               
+               <li><a tabindex="-1" href = "pomodoro.html" target= "blank">Pomodoro Clock</a></li>
+               <li><a tabindex="-1" href = "calculator.html" target= "blank">Calculator</a></li>
+               <li><a tabindex="-1" href="clock.html">Digital Clock</a></li>                     
+             </ul>
+           </li>
+           <li class="dropdown-submenu" >
+             <a class="test" tabindex="-1" href="#" id = "am4">Games
+             <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+             <ul class="dropdown-menu" id = 'ds4'>
+               <li><a tabindex="-1" href = "simon.html" target= "blank">Simon</a></li></a></li>
+               <li><a tabindex="-1" href="tictactoe.html">Tic Tac Toe</a></li> 
+               <li><a tabindex="-1" href = "battleship.html" target= "blank">Battleship</a></li>
+             </ul>
+      </ul> 
+  </div>
+  
+   <div id="top">
+      <div class="divide">Mobile First</div>
+      <div class="divide">Always Learning</div>
+      <div class="divide">Responsive Design</div>
+   </div>
+   <div id = "about">
+      <img src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "Picture of me">
+        yada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada         blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah             blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blah
+    </div>
+
+    <div id = "project">
+      
+      <div id = "website"><h1>Projects</h1><br><h2>Websites</h2>
+        <div class = "proj" id = "gc" >GC PAGE</div>
+        <div class = "proj" id = "rqg" >Random Quote Generator</div>
+        <div class = "proj" id = "wix" >Wix</div>
+      </div>
+      <div id = "ajax"><h2>Websites with AJAX/JSON</h2>
+        <div class = "proj" id = "lw" >Local Weather</div>
+        <div class = "proj" id = "tsc" >Twitch Streamer Check</div>
+        <div class = "proj" id = "wv" >Wikipedia Viewer</div>
+      </div>
+      <div id = "gadget"><h2>Gadgets</h2>
+        <div class = "proj" id = "calc" >Calculator</div>
+        <div class = "proj" id = "pc" >Pomodoro Clock</div>
+        <div class = "proj" id = "dc" >Digital Clock</div>
+      </div>
+      <div id = "game"><h2>Games</h2>
+        <div class = "proj" id = "simon" >Simon</div>
+        <div class = "proj" id = "bs" >Battleship</div>
+        <div class = "proj" id = "ttt" >Tic Tac Toe</div>      
+      </div>
+    </div>
+   <div id = "resource">
+     <div id = "books"><h1>Resources</h1><br><h2>Books</h2>
+       
+    <div class = "res" id = "html">
+      <img class = "pic" src = "https://images-na.ssl-images-amazon.com/images/I/41Z2swEmwaL._SX396_BO1,204,203,200_.jpg" alt = "image of HTML and CSS:Design and Build Websites book"/>
+      <a href = "https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189">HTML and CSS:Design and Build Websites</a></div>
+    <div class = "res" id = "jq">
+      <img class = "pic" src = "https://images-na.ssl-images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg" alt = "image of Javascript & Jquery:Interactive Front-end Web Development book "/> 
+      <a href = "https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=pd_bxgy_14_img_2?ie=UTF8&psc=1&refRID=PGD3KQRB46AXT87EERP1"><u>Javascript & Jquery:Interactive Front-end Web Development</u></a></div>
+     </div></div>
+  <div id = "contact">Contact Email</div>
+</div>
+
+</body>
+<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    console.log(this.id);
+    if (this.id == 'am1')
+      {
+        $('#ds2').hide();
+        $('#ds3').hide();
+        $('#ds4').hide();
+      }   
+    else if (this.id == 'am2')
+      {
+         $('#ds1').hide();
+         $('#ds3').hide();
+         $('#ds4').hide();
+      }
+    else if (this.id == 'am3')
+      {
+         $('#ds1').hide();
+         $('#ds2').hide();
+         $('#ds4').hide();
+      }
+     else if (this.id == 'am4')
+      {
+         $('#ds1').hide();
+         $('#ds2').hide();
+         $('#ds3').hide();
+      }
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+ (function($) {
+        $.fn.textWidth = function(){
+             var calc = '<span style="display:none">' + $(this).text() + '</span>';
+             $('body').append(calc);
+             var width = $('body').find('span:last').width();
+             $('body').find('span:last').remove();
+            return width;
+        };
+        
+        $.fn.marquee = function(args) {
+            var that = $(this);
+            var textWidth = that.textWidth(),
+                offset = that.width(),
+                width = offset,
+                css = {
+                    'text-indent' : that.css('text-indent'),
+                    'overflow' : that.css('overflow'),
+                    'white-space' : that.css('white-space'),
+                     'border-right' : that.css('1px solid black')
+                },
+                marqueeCss = {
+                    'text-indent' : width,
+                    'overflow' : 'hidden',
+                    'white-space' : 'nowrap'
+                    
+                },
+                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false }, args),
+                i = 0,
+                stop = textWidth*-1,
+                dfd = $.Deferred();
+            
+            function go() {
+                if(!that.length) return dfd.reject();
+                if(width == stop) {
+                    i++;
+                    if(i == args.count) {
+                        that.css(css);
+                        return dfd.resolve();
+                    }
+                    if(args.leftToRight) {
+                        width = textWidth*-1;
+                    } else {
+                        width = offset;
+                    }
+                }
+                that.css('text-indent', width + 'px');
+                if(args.leftToRight) {
+                    width++;
+                } else {
+                    width--;
+                }
+                setTimeout(go, args.speed);
+            };
+            if(args.leftToRight) {
+                width = textWidth*-1;
+                width++;
+                stop = offset;
+            } else {
+                width--;            
+            }
+            that.css(marqueeCss);
+            go();
+            return dfd.promise();
+        };
+    })(jQuery);
+
+$('#top').marquee(); 
+</script>
+
+</html>
