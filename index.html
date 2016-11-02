@@ -16,36 +16,67 @@
 }
 
 #top
-{  
-  height:10vw; 
+{    
   width:100%; 
-  background:grey;
+  //background:grey;
+  display:flex;
+  flex-wrap:wrap;  
+  
+}
+
+#top:last-child
+{
+  text-align:center;
+  margin:auto;
+  justify-content:center;
+  //color:blue;
+}
+
+hr
+{
+  border-top:1px solid black;
+  width:100%;
 }
 
 .divide {
-  float: right;
-  border-left: solid 1px black;
-  margin-top: 1px;  
-  width: 250px;
+  
+  border-right: solid 1px black;
+  //margin-top: 1px;  
+  //width: 250px;
   line-height: 55px;
   font-family: times;
   font-size: 25px;
+  text-align:center;
+  width:20%;
+  
 }
 
-#about >img
+.divide:last-of-type /*this worked but last-child did not*/
+{
+  border-right:none;
+}
+
+#aboutpic
 {
   border-radius:50%;
   width:170px;
   height:170px;
   border:1px solid black;
   float:left;
+  margin:10px;
 }
 
 #about
 {  
-  background-color:green;
-  height:250px;
+  //background-color:green;
+  height:350px;
   //margin:-15px;
+  margin:auto;
+}
+
+#techlist
+{
+  background:orange;
 }
 
 #project
@@ -53,7 +84,8 @@
   background-color:lightblue;
   //margin:-15px;
   display:flex;
-  flex-wrap:wrap;   
+  flex-wrap:wrap; 
+  
 }
 
 .proj
@@ -64,6 +96,12 @@
   border:1px solid black;
   float:left;
   margin:15px;
+}
+
+.projpic
+{
+  width:15vw;
+  height:15vw;
 }
 
 #website, #ajax, #gadget, #game, #books
@@ -105,7 +143,43 @@
   text-align:center;
 }
 
+/*********************************css scroll**********************************************/
+/*https://www.youtube.com/watch?v=tsrsSiYueTk*/
 
+@-webkit-keyframes scroll 
+{
+  0%{
+    -webkit-transform: translate(0, 0);
+  }
+  100%{
+    -webkit-transform: translate(-100%, 0);
+  }
+}
+
+#marq
+{
+  display:block;
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  font-size:250%;
+}
+
+#marq > span 
+{
+  display:inline-block;
+  padding-left:100%;
+  -webkit-animation:scroll 40s infinite linear;/*controls text scroll speed*/
+  
+}
+
+#pone,#ptwo, #pthree, #pfour, #pfive, #psix
+{
+  //border-right:2px solid black;
+  display:inline;
+  margin:5px;
+  padding-right:15px;
+}
 /*************************************************************navbar also needs js function stop propagtion up the DOM*********************************************************************/
 .dropdown-submenu
 {
@@ -131,16 +205,38 @@
   vertical-align: top;  
 }
 
-
-
-
+@media screen and (max-width:940px)
+{
+  .divide
+  {
+    width:100%;
+    border-right:none;
+  }
+  
+  #about
+  {
+    display:flex;
+    flex-direction:column;
+    height:500px;
+    
+  }
+  
+  #about > div
+  {
+    width:100%;
+  }
+  #techlist
+  {
+    
+    
+  }
+}
 </style>
 </head>
 <body>
 <div class = "container-fluid wrap"> 
-
   <div class = "navbar navbar-default">
-     <ul class = 'nav navbar-nav'>
+     <ul class = 'nav navbar-nav'>  
        <li><a href = "#">Home</a></li>
        <li><a href = "#">Contact</a></li>
        <li><a href = "#">About</a></li>
@@ -164,7 +260,6 @@
                <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target= "_blank">Local Weather Forecast</a></li> 
                <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target= "_blank">Twitch Streamer Status</a></li></li>
                <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target= "_blank">Wikipedia Search</a></li>
-
              </ul>
           </li>
           <li class="dropdown-submenu">
@@ -184,42 +279,85 @@
                <li><a tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target= "_blank">Tic Tac Toe</a></li> 
                <li><a tabindex="-1" href = "https://ryanwfile.github.io/battleship.html" target= "_blank">Battleship</a></li>
              </ul>
-      </ul> 
+        </ul>
+    </ul> 
   </div>
   
    <div id="top">
-      <div class="divide">Mobile First</div>
-      <div class="divide">Always Learning</div>
-      <div class="divide">Responsive Design</div>
+     <div class="divide col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Responsive Design</div>         
+     <div class="divide col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Current Technologies</div>
+     <div class="divide col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Enjoys Problem Solving</div>
+     <div class="divide col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Reliable</div> 
+     <div class="divide col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Mobile First</div>           
    </div>
-   <div id = "about">
-      <img src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "Picture of me">
-        yada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada         blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah             blahyada yada blah blahyada yada blah blahyada yada blah blahyada yada blah blah
-    </div>
+   <hr>
+    <div id = "about">
+     <div class = "col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+       <img id = "aboutpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "Picture of me">
+     
+     
+        <h3>About Me</h3>
+         I have been teaching myself web development in the hope of finding a job.  I love learning everything I can in thist fast changing field.<br><br>Some personal information about me.  Wherever I go I always strive to be one of the kindest and funniest people in the room, however I am not a funny person so this is usually a futile endeavor.  I enjoy reading and learning probably way too much. I’m into video games especially puzzle and strategy games, I love most adrenaline producing activities and anything involving nature.  I adore all animals, well not mosquitoes or any animals actively trying to kill me but other than that I’m the kind of person to take a spider outside instead of killing it.  I enjoy nearly any media content in the comedy genre.
+     </div>
+      <div id = "techlist" class = "col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+        <h4>Technologies</h4>
+        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <h5 class = "techhead">I'm Comfortable Using</h5>
+           HTML<br>
+          CSS<br>
+          Javascript<br>
+          JQuery<br>
+          Bootstrap
+        </div>
+        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <h5 class = "techhead">I'm Familiar With</h5>
+          PHP<br>
+         SQL<br>
+         Python<br>
+         XML<br>
+          SASS<br>
+         Wordpress
+        </div>
+        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <h5 class = "techhead">I am Learning</h5>
+          React
+          
+        </div>
+        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <h5 class = "techhead">I Plan to Learn</h5>
+          Angular<br>
+          SASS<br>
+         Node.js<br>
+          MongoDB
+        </div>
+      </div>
+     
+  </div>
 
     <div id = "project">
       
       <div id = "website"><h1>Projects</h1><br><h2>Websites</h2>
-        <div class = "proj" id = "gc" >GC PAGE</div>
-        <div class = "proj" id = "rqg" >Random Quote Generator</div>
-        <div class = "proj" id = "wix" >Wix</div>
+        <div class = "proj" id = "gc" ><img class = "projpic" src = "http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=450%2C450">GC PAGE</div>
+        <div class = "proj" id = "rqg" ><img class = "projpic"src ="https://ryanwfile.github.io/randomquote.png">Random Quote Generator</div>
+        <div class = "proj" id = "wix"><img class = "projpic" src = "https://ryanwfile.github.io/wix.png">Wix</div>
       </div>
       <div id = "ajax"><h2>Websites with AJAX/JSON</h2>
-        <div class = "proj" id = "lw" >Local Weather</div>
-        <div class = "proj" id = "tsc" >Twitch Streamer Check</div>
-        <div class = "proj" id = "wv" >Wikipedia Viewer</div>
+        <div class = "proj" id = "lw" ><img class = "projpic" src = "https://ryanwfile.github.io/weather.png">Local Weather</div>
+        <div class = "proj" id = "tsc" ><img class = "projpic" src = "https://d13yacurqjgara.cloudfront.net/users/802553/screenshots/2268094/twitch_logo_animation.gif ">Twitch Streamer Check</div>
+        <div class = "proj" id = "wv" ><img class = "projpic" src = "https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png">Wikipedia Viewer</div>
       </div>
       <div id = "gadget"><h2>Gadgets</h2>
-        <div class = "proj" id = "calc" >Calculator</div>
-        <div class = "proj" id = "pc" >Pomodoro Clock</div>
-        <div class = "proj" id = "dc" >Digital Clock</div>
+        <div class = "proj" id = "calc" ><img class = "projpic" src = "https://ryanwfile.github.io/calculator.png">Calculator</div>
+        <div class = "proj" id = "pc" ><img class = "projpic" src = "https://ryanwfile.github.io/pomodoro.png">Pomodoro Clock</div>
+        <div class = "proj" id = "dc" ><img class = "projpic" src = "https://ryanwfile.github.io/clock.png">Digital Clock</div>
       </div>
       <div id = "game"><h2>Games</h2>
-        <div class = "proj" id = "simon" >Simon</div>
-        <div class = "proj" id = "bs" >Battleship</div>
-        <div class = "proj" id = "ttt" >Tic Tac Toe</div>      
+        <div class = "proj" id = "simon"><img class = "projpic" src = "https://ryanwfile.github.io/simon.png">Simon</div>        
+        <div class = "proj" id = "ttt"><img class = "projpic" src = "https://ryanwfile.github.io/tictactoe.png">Tic Tac Toe</div>
+        <div class = "proj" id = "bs"><img class = "projpic" src = "https://ryanwfile.github.io/battleship.png">Battleship</div>
       </div>
     </div>
+<h5 id = 'marq'><span><p id = "pone">Thank you for reading this far, if you are reading this you might not need glasses or perhaps you do need glasses, how would I know I’m not an optometrist or perhaps you are already wearing glasses and/or contact lenses, well not and, that would be weird wearing glasses and contact lenses.</p><!--<p id = 'ptwo'>Reliable</p><p id = "pthree">Mobile First</p><p id = "pfour">Always Learning</p><p id = "pfive">Aim to Use Current Technologies</p><p id = "psix">Enjoy Problem Solving</p>--></span></h5>
    <div id = "resource">
      <div id = "books"><h1>Resources</h1><br><h2>Books</h2>
        
@@ -232,7 +370,6 @@
      </div></div>
   <div id = "contact">Contact Email</div>
 </div>
-
 </body>
 <script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -270,74 +407,6 @@ $(document).ready(function(){
     e.preventDefault();
   });
 });
-
- (function($) {
-        $.fn.textWidth = function(){
-             var calc = '<span style="display:none">' + $(this).text() + '</span>';
-             $('body').append(calc);
-             var width = $('body').find('span:last').width();
-             $('body').find('span:last').remove();
-            return width;
-        };
-        
-        $.fn.marquee = function(args) {
-            var that = $(this);
-            var textWidth = that.textWidth(),
-                offset = that.width(),
-                width = offset,
-                css = {
-                    'text-indent' : that.css('text-indent'),
-                    'overflow' : that.css('overflow'),
-                    'white-space' : that.css('white-space'),
-                     'border-right' : that.css('1px solid black')
-                },
-                marqueeCss = {
-                    'text-indent' : width,
-                    'overflow' : 'hidden',
-                    'white-space' : 'nowrap'
-                    
-                },
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false }, args),
-                i = 0,
-                stop = textWidth*-1,
-                dfd = $.Deferred();
-            
-            function go() {
-                if(!that.length) return dfd.reject();
-                if(width == stop) {
-                    i++;
-                    if(i == args.count) {
-                        that.css(css);
-                        return dfd.resolve();
-                    }
-                    if(args.leftToRight) {
-                        width = textWidth*-1;
-                    } else {
-                        width = offset;
-                    }
-                }
-                that.css('text-indent', width + 'px');
-                if(args.leftToRight) {
-                    width++;
-                } else {
-                    width--;
-                }
-                setTimeout(go, args.speed);
-            };
-            if(args.leftToRight) {
-                width = textWidth*-1;
-                width++;
-                stop = offset;
-            } else {
-                width--;            
-            }
-            that.css(marqueeCss);
-            go();
-            return dfd.promise();
-        };
-    })(jQuery);
-
-$('#top').marquee(); 
 </script>
 
 </html>
