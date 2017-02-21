@@ -8,27 +8,355 @@
 <link rel = "stylesheet" href = "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <style>
+/*changed all hiddens to blank*/
+
+#theForm
+{
+  
+   margin:auto;
+}
+
+#theForm input
+{
+   margin-left:60px;  
+   text-align:center;
+}
+
+#theForm label
+{
+  position:absolute;
+  margin-right:20px;
+}
+
+#collapseFour a
+{
+  color:black;
+  text-decoration:underline;
+  font-size:2em;
+}
+
+body
+{
+  font-family:"Frank Ruhl Libre";
+}
+
 .wrap
 {
   text-align:center;
   margin:20px;
 }
 
-#top
+.navbar-default/*governs the background and border*/
+{
+  background:none;
+  border:none;
+}
+
+.navbar .navbar-nav 
+{
+  display: inline-block;
+  float: none;
+  vertical-align: top;  
+}
+
+a
+{
+  text-decoration:none;
+}
+
+#nav1, #nav2, #nav3
+{
+  background-color:transparent;
+}
+
+.navbar-nav > li
+{ 
+  font-size:125%;
+  font-weight:bold;
+  border-radius:5%;
+  margin:2vw;
+  padding: 6px 12px;
+  margin-bottom: 0;  
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;    
+}
+
+.btn
+{
+  background-color:white;/**/
+  font-size:125%;
+  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
+}
+  
+.dropdown-submenu
+{
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu 
+{
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+ul
+{
+  list-style:none;
+  padding-left:0;
+}
+
+#techSlide /*div that holds techpic images*/
+{  
+  position:absolute;
+  top:-3vw;
+  left:;   
+}
+
+.techpic /*tech images in slideshow*/
+{
+  width:10vw;
+  height:8vw;
+  margin:3vw; 
+}
+
+#pagetitle
+{
+  order:-1;
+  font-family:"Frank Ruhl Libre";
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  position: relative;
+    font-size: 5em;
+    color: #FF;
+    letter-spacing: 0.0625em;
+    animation: drop-shadows;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  //margin:25px;
+  //background-color:yellow;
+margin-bottom:60px;
+}
+
+.fly-in-text {
+                list-style: none;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            .fly-in-text li {
+                display: inline-block;
+                margin-right: 5px;
+                font-family:"Frank Ruhl Libre";
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+                font-weight: 300;
+                font-size: 2em;/*changed from 1 to 2*/
+                color: black;
+                opacity: 1;
+                transition: all 2.5s ease;
+            }
+            .fly-in-text li:last-child {
+                margin-right: 0;
+            }
+            .fly-in-text.blank li {
+                opacity: 0;
+            }
+/*these are what control the actual animations*/
+            .fly-in-text.blank li:nth-child(1) { transform: translateX(-200px) translateY(-200px); }
+            .fly-in-text.blank li:nth-child(2) { transform: translateX(20px) translateY(100px); }
+            .fly-in-text.blank li:nth-child(3) { transform: translateX(-150px) translateY(-80px); }
+            .fly-in-text.blank li:nth-child(4) { transform: translateX(10px) translateY(-200px); }
+            .fly-in-text.blank li:nth-child(5) { transform: translateX(-300px) translateY(200px); }
+            .fly-in-text.blank li:nth-child(6) { transform: translateX(20px) translateY(-20px); }
+            .fly-in-text.blank li:nth-child(7) { transform: translateX(30px) translateY(200px); }
+            .fly-in-text.blank li:nth-child(8) { transform: translateX(10px) translateY(-70px); }
+            .fly-in-text.blank li:nth-child(9) { transform: translateX(-50px) translateY(100px); }
+
+#webD
+{
+  //margin-top; 25px;
+  //background-color:green;
+}
+
+#sunpic
+{ 
+  width:11vw;
+  height:11vw; 
+  margin-right:30px;
+  margin-top:15px;
+  right:0;
+  top:0;
+  position:absolute;
+  display:none;
+}
+
+#top /*5 divider description div*/
 {    
-  width:100%; 
-  //background:grey;
+  width:100%;   
   display:flex;
   flex-wrap:wrap;  
+  margin-top:2vw;
+}
+
+ .panel-default
+{
+  padding:15px;
+  border:none;  
+}
+
+.panel-heading
+{
+  width:20%;
+  margin:auto;
+  margin-bottom:5px; 
+  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;  
+}
+
+.panel > .panel-heading 
+{
+  background-image: none;
+  background-color: #1a8cff;
+  color: white;
+  border:1px solid black;
+}
+
+.accordionBtn/**/
+{
+  background-color: #1a8cff; 
+  color:black; 
+}
+
+#about
+{  
+  background-image:url('http://www.3dcorp.us/blog/wp-content/uploads/2014/01/cloud-part-2.jpg');
+  background-size:100% 100%;
+  height:350px; 
+  margin:auto;
+  display:flex;
+  padding:15px;
+  border:2px solid black;
+  font-weight:bold;  
+}
+
+.colAbout
+{
+  border-right:1px solid black;
+  margin:auto;  
+}
+
+#aboutpic
+{
+  border-radius:50%;
+  width:170px;
+  height:170px;
+  border:1px solid black;
+  float:left;
+  margin:10px;
+}
+
+#describe
+{   
+  font-size:115%;
+}
+
+#describe a
+{
+  color:black;
+  text-decoration:underline;
+}
+
+#topotech/*h4 tag above technologies list*/
+{
+  font-size:145%;
   
+}
+
+.techhead
+{
+  text-decoration:underline;
+  font-weight:bold;
+  font-size:110%;
+}
+
+#techlist
+{  
+  font-size:150%;
+}
+
+.norm /*governs the text on the flip side of images*/
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-tabs > li.active > a
+{
+  background-color:transparent;
+  border:none; 
+}
+
+.nav-tabs > li.active.uncut > a
+{
+  height:50.91px
+}
+
+.nav-tabs > li.active, .nav-tabs > li > a:hover, .nav-tabs > li.active.uncut > a
+{
+  background-color:#eb99ff;  
+}
+
+.subTitle
+{
+  color:white;
+}
+
+.toBig
+{
+  font-weight:bold;
+  font-size:18px;   
+  margin-left:8px;   
+  padding-top:18px; 
 }
 
 #top:last-child
 {
   text-align:center;
   margin:auto;
-  justify-content:center;
-  //color:blue;
+  justify-content:center; 
 }
 
 hr
@@ -37,12 +365,9 @@ hr
   width:100%;
 }
 
-.divide {
-  
-  border-right: solid 1px black;
-  //margin-top: 1px;  
-  //width: 250px;
-  //line-height: 55px;
+.divide 
+{  
+  border-right: solid 1px black; 
   font-family: times;
   font-size: 25px;
   text-align:center;
@@ -57,73 +382,186 @@ hr
   border-right:none;
 }
 
-#aboutpic
-{
-  border-radius:50%;
-  width:170px;
-  height:170px;
-  border:1px solid black;
-  float:left;
-  margin:10px;
-}
-
-#about
+.backup/*div holding the scrollup button*/
 {  
-  //background-color:green;
-  height:350px;
-  //margin:-15px;
-  margin:auto;
-  display:flex;
+  width:100%; 
+  font-size:150%;
 }
 
-#techlist
+.scrollup
 {
-  background:orange;
+  //width:25%;
+  
+  margin:auto;
+  margin-top:8px;
+  margin-bottom:8px;
+  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
+}
+
+.scrollup:hover
+{
+  background-color: #417cb8;
+  color: white;
+  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
+}
+
+#collapseTwo
+{
+  margin:auto !important;
+  text-align:center !important;
+  background-color:lightblue;
+  border:4px solid black;
+  border-radius:15px; 
+  background-image:url('https://static.pexels.com/photos/1188/city-landmark-lights-night.jpg');
+  background-size:  cover;
+}
+
+#tabber  /*the portfolio tabs nav*/
+{
+  display: inline-block;
+  vertical-align: top;
+  font-size:150%;  
+  border:none;  
+}
+
+#tabber > li > a
+{
+  color:white;
+  font-weight:bold;
+  //border-radius:5%;
+  //border-bottom:2px solid black;
+  /border-bottom:2px solid white;
+  //border-right:1px solid white;
+}
+
+#tabber:active
+{
+  background-color:none;
 }
 
 #project
-{  
-  background-color:lightblue;
-  //margin:-15px;
+{    
+  
   display:flex;
   flex-wrap:wrap; 
-  
+  border:none;
 }
 
-.techhead
+#resource
 {
-  text-decoration:underline;
-  font-weight:bold;
-  
+  border:4px solid black;
+  border-radius:15px;
+  background-color:lightpink;
 }
 
 .proj
 {
+   width:20vw;
+   height:20vw;
+}
+
+.projtalk
+{
   width:20vw;
-  height:20vw;
-  background-color:#cc33ff;
+  height:100%;
+  color:black;
+  background-color:white;
   border:1px solid black;
   float:left;
   margin:15px;
+  padding:3px; 
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+/*https://designshack.net/articles/css/5-cool-css-hover-effects-you-can-copy-and-paste/*/
+.projTitle
+{  
+  width:100%;
+  font-size:200%;
+  margin-top:45px;
+  margin-bottom:45px;
 }
 
 .projpic
 {
-  width:15vw;
-  height:15vw;
+  width:100%;
+  height:100%;
+  border:double black; 
 }
 
 #website, #ajax, #gadget, #game, #books
 {
-  margin:auto;
+  margin:auto;  
 }
 
-#resource
-{  
-  background-color:yellow;
-  //margin:-15px;
+#wolfFlip /*calculator flip*/
+{
+  position:relative;  
+  font-size:23px;  
+}
+
+#wolf2/*text after wolfram logo*/
+{
+  position:relative;
+  top:-45px;  
+}
+
+#wolf
+{
+  width:7vw;
+  height:7vw;
+  position:relative;
+  top:-45px;
+}
+
+.box /*resource divs*/
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: lightpink;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  //border: solid black 2px;
+}
+
+.box > a 
+{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;  
+  margin:5px;
+}
+
+.box > a > img
+{
+  width:170px;
+  height:250px;
+}
+
+#fcc 
+{
+  width:225px;
+  height:200px; 
+}
+
+#codeAc
+{
+  width:225px;
+  height:180px;
+}
+
+#books /*new revision*/
+{
   display:flex;
   flex-wrap:wrap;
+  margin:auto;
+  text-align:center;
+  justify-content:center;
 }
 
 .res
@@ -132,36 +570,34 @@ hr
   height:20vw;
   background-color:#cc33ff;
   border:1px solid black;
-  float:left;
+  float:left;/*this is part of the problem*/
   margin:15px;  
 }
 
 .pic/*images of books*/
 {
   width:15vw;
-  height:20vw;
-  float:left;  
+  height:20vw; 
 } 
 
 #contact
-{
-  //display:flex;
+{ 
   height:200px;
   background-color:black;
   margin:auto;
   text-align:center;
   width:100%;
 }
-
-/*********************************css scroll**********************************************/
+/********css scroll********/
 /*https://www.youtube.com/watch?v=tsrsSiYueTk*/
-
 @-webkit-keyframes scroll 
 {
-  0%{
+  0%
+  {
     -webkit-transform: translate(0, 0);
   }
-  100%{
+  100%
+  {
     -webkit-transform: translate(-100%, 0);
   }
 }
@@ -179,128 +615,250 @@ hr
 {
   display:inline-block;
   padding-left:100%;
-  -webkit-animation:scroll 40s infinite linear;/*controls text scroll speed*/
-  
+  -webkit-animation:scroll 10s infinite linear;/*controls text scroll speed*/  
 }
 
 #pone,#ptwo, #pthree, #pfour, #pfive, #psix
 {
-  //border-right:2px solid black;
   display:inline;
   margin:5px;
   padding-right:15px;
 }
 
-.dropdown-submenu
+.glyphicon 
+{ 
+  margin-right:10px; 
+}
+.panel-body 
+{ 
+  padding:0px; 
+}
+.panel-body table tr td 
+{ 
+  padding-left: 15px 
+}
+.panel-body .table 
 {
-    position: relative;
+  margin-bottom: 0px; 
 }
 
-.dropdown-submenu .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -1px;
-}
-
-.navbar-default/*governs the background and border*/
+/*************************************************************** 1st Media screen MIN-WIDTH 1001px FLIP STUFF below ---------------------------------------------------- *****/
+@media screen and (max-width:1150px)
 {
-  background:none;
-  border:none;
-}
-
-.navbar .navbar-nav 
-{
-  display: inline-block;
-  float: none;
-  vertical-align: top;  
-}
-/********************************************************** FLIP STUFF below ---------------------------------------------------- */
-.flip-container 
+  #techSlide
   {
-      -webkit-perspective: 1000;
-      -moz-perspective: 1000;
-      perspective: 1000;
-      border: 1px solid #ccc;
+    left:-4vw;  
   }
-      
+  .fly-in-text li
+  {
+    font-size:110%;
+  }
+}
+/*************************************************************** 2nd Media screen MIN-WIDTH 1001px FLIP STUFF below ---------------------------------------------------- *****/  
+@media screen and (min-width:775px)/*this says MIN-width not max*/
+{
+   
+  .flip-container 
+  {
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			perspective: 1000;
+			border: 1px solid #ccc;
+	}
+			
 .flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper 
   {
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      transform: rotateY(180deg);
-      filter: FlipH;
-      -ms-filter: "FlipH";
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+			filter: FlipH;
+    	-ms-filter: "FlipH";
   }
 
 .flip-container, .front, .back 
   {
-      width: 20vw;
-      height: 20vw;
-  }
+			width: 19.5vw;
+			height: 19.5vw;
+      margin:-1px;
+	}
 
 .flipper 
   {
-      -webkit-transition: 0.6s;
-      -webkit-transform-style: preserve-3d;
-      -moz-transition: 0.6s;
-      -moz-transform-style: preserve-3d;
-      transition: 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-  }
+			-webkit-transition: 0.6s;
+			-webkit-transform-style: preserve-3d;
+			-moz-transition: 0.6s;
+			-moz-transform-style: preserve-3d;
+			transition: 0.6s;
+			transform-style: preserve-3d;
+			position: relative;
+	}
 
 .front, .back 
   {
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-  }
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;   
+	}
 
 .front 
   {
-      background: lightgreen;
-      z-index: 2;
-  }
+			background: white;/*changed from lightgreen*/
+			z-index: 2;
+	}
 
 .back 
-  {
-      background: yellow;
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      transform: rotateY(180deg);
+  {		
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg);      
   }
 
 .vertical.flip-container 
   {
-      position: relative;
-  }
+			position: relative;
+	}
 
 .vertical .back 
   {
-      -webkit-transform: rotateX(180deg);
-      -moz-transform: rotateX(180deg);
-      transform: rotateX(180deg);
-  }
+			-webkit-transform: rotateX(180deg);
+			-moz-transform: rotateX(180deg);
+			transform: rotateX(180deg);
+	}
 
 .vertical.flip-container .flipper 
   {
-      -webkit-transform-origin: 100% 10vw;
-      -moz-transform-origin: 100% 10vw;
-      transform-origin: 100% 10vw;/*I changed this value to 10vw which seemed to fix the flip over the x axis*/
-  }
+			-webkit-transform-origin: 100% 10vw;
+			-moz-transform-origin: 100% 10vw;
+			transform-origin: 100% 10vw;/*I changed this value to 10vw which seemed to fix the flip over the x axis*/
+	}
 
 .vertical.flip-container:hover .flipper 
   {
-      -webkit-transform: rotateX(-180deg);
-      -moz-transform: rotateX(-180deg);
-      transform: rotateX(-180deg);
+			-webkit-transform: rotateX(-180deg);
+			-moz-transform: rotateX(-180deg);
+			transform: rotateX(-180deg);
+	}
+}
+
+  #wolfFlip
+  {
+    padding-top:50px;/*left can be used to fix the slight overlapping to the right*/
+    
   }
-/*************************************************************************************************************************/
-@media screen and (max-width:940px)
-{
+  .vertical .back
+  {
+    position:relative; 
+    margin:-2px;
+  }
+
+/********************************************************3rd media screen MAX-WIDTH 1001px**********************************************************************/
+@media screen and (max-width:1001px)
+{     
+    #about
+  {  
+    background-image:url('http://www.3dcorp.us/blog/wp-content/uploads/2014/01/cloud-part-2.jpg');
+    background-size:100% 100%;
+    /*this doesn't affect anything, although at media screen 475 it fixes everything*/
+    //height:auto; 
+    //display:flex;
+    //margin:auto;    
+    padding:5px;
+    border:2px solid black;
+    font-weight:bold;  
+  }
+  
+  .colAbout
+  {
+    border-right:none;  
+    border-bottom:1px solid black;
+    height:auto; 
+    //height:550px;
+  }
+  
+  /*this fixed the min-height issue causing some of the text to overlap on smaller widths*/
+ .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: inherit;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+  
+  #techlist
+  {
+    //width: 100%;
+    //height:100%;
+    float:none;
+    min-height:;
+  }  
+  
+    .projtalk
+  {
+     display: flex;   
+     flex-direction:row;
+     flex-wrap:wrap;   
+     width:100%;
+     height:100%;
+     margin:0px;
+     margin-top:2vw;
+     border:double black;
+  }
+  
+  .projTitle
+  {
+    //order:0;
+    //background:pink;
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+  
+  #webD
+  {
+    position:relative;
+    top:-130px;
+  }
+  
+  .front /*inside div and also governs image size since it holds those divs*/
+  {
+    width:17vw;
+    height:17vw;
+  }
+  
+  .proj /*container for projpic*/
+  {       
+    margin:auto;
+    margin-top:20px;
+    height:150px;
+    width:150px;
+    //width:25vw;
+    //height:25vw;
+  }    
+  
+  .toBig /*Google page speed text*/
+  {
+    
+    //background-color:grey;
+    margin:auto;
+    margin-top:0px;
+    //position:relative;
+    //top:0px;
+    //left:0px; 
+  }
+  
+  .xp
+  {
+    margin-top:20px;
+    //order:2;
+    //background:lightgreen;
+    margin-left:auto;
+    margin-right:auto;
+    //text-align:center;
+   
+  }
+ /*NEW CSS ABOVE HERE*/   
+  
   .wrap
   {
     display:flex;
@@ -311,36 +869,30 @@ hr
   .navbar-default
   {
     order:-2;
-  }
+  }  
   
    #about
   {
     display:flex;
     flex-direction:column;
     height:620px;
-    order:-1;
-    //margin:15px;
+    order:-1;  
   }
   
   #techlist
   {
-    margin:auto;
-    //margin-top:20px;
-    //margin-bottom:20px;
+    margin:auto; 
   }  
   
    #top
-  {
-    
-    //height:0px;
+  {    
     order:-1;
     margin-top:20px;
   }
   
   #breakline
   {
-    order:-1;
-    //margin-top:-45px;
+    order:-1;   
   }
   
    #project
@@ -366,37 +918,13 @@ hr
   .divide
   {
     font-size:17px;
-  }
-  
-  //.mf1
-  {
-    width:33%;
-  }
-  
-  //.mf1:nth-child(3)
-  {
-    border-right:none;
-  }
-  
-  //.mf2
-  {
-    width:50%;
   }    
   
   #about > div
   {
     width:100%;
-  }
-  
-}
-/******************************************************************************************************************************/
-@media screen and (max-width:767px)/*natural nav collapse breakpoint*/
-{
-  
-}
-@media screen and (max-width:525px)/*at this break point is where the projects start taking up 100% width*/
-  
-{
+  }  
+
   .mf2:last-child
   {
     display:none;
@@ -411,20 +939,187 @@ hr
   .divide:nth-child(4)
   {
     border-right:none;
-  }
-  
-  .proj
-  {
-    width:50%;
-  }
+  }  
   
   .flip-container
   {
-    width:93%;
+   float:left
+  }  
+    
+  .back
+  {
+    //display:none; /*this might need to go back to none until I get the proper dimensions for back*/
+  } 
+  
+  #techSlide
+  {
+    position:absolute;
+    top:10vw;
+    left:50px;
+    width:5vw;
+    height:5vw;
+  }
+  
+  #sunpic
+  {
+    position:absolute;
+    top:11vw;
+    right:50px;
+    width:8vw;
+    height:8vw;
+  }
+  
+}
+
+/**********************************************************5th media screen MAX-WIDTH 846px********************************************************************/
+@media screen and (max-width:846px)
+{
+    .btn
+  {    
+    font-size:75%;   
+  }
+  
+    #techSlide /*div that holds techpic images*/
+  {  
+    position:absolute;
+    top:9vw;
+    //left:;   
+  }
+  
+    #sunpic
+  { 
+    width:11vw;
+    height:11vw; 
+    margin-right:30px;
+    margin-top:15px;
+    right:0;
+    top:9vw;
+    position:absolute;
+  }
+  
+}
+/**********************************************************6th media screen MAX-WIDTH 775px********************************************************************/
+@media screen and (max-width:775px)/*natural nav collapse breakpoint*/
+{
+    .panel-heading
+  {
+    width:40%;
+    margin:auto;
+    margin-bottom:5px;
+    background:#0073e6;
+  }
+  
+  #techSlide /*div that holds techpic images*/
+  {  
+    position:absolute;
+    top:45px;
+    width:75px;
+    height:75px;
+    left:20px;
+  }  
+  
+  .techpic /*tech images in slideshow*/
+  {
+    width:13vw;
+    height:12vw;
+   // margin:3vw; 
+  }
+  
+  #pagetitle
+  {
+    position:relative;
+    top:-50px;
+  }
+  
+  #webD
+  {
+    top:-200px;
+  }
+  
+  .fly-in-text li
+  {
+    font-size:75%;
+  }
+  
+  #sunpic
+  { 
+    width:75px;
+    height:75px; 
+   // margin-right:50px;
+   // margin-top:35px;
+    right:25px;
+    top:55px;
+    position:absolute;
   }
 }
-@media screen and (max-width:450px)
+
+/*********************************************************7th media screen MAX-WIDTH 479px **************************************************************/
+@media screen and (max-width:600px)/*changed this from 450 to 479px*/
 {
+  /*https://jsbin.com/nulayufufe/edit?html,css,output*/
+  #techSlide
+  {
+    //position:absolute;
+    top:0;
+  }
+  
+  #sunpic
+  {
+    top:0;
+    right:65px;
+  }
+  .projtalk
+  {
+     display:inline;  
+     //background:lightgreen;
+  }
+  
+  .front
+  {
+    width:150px;
+    height:150px;
+  }
+  
+  .projpic
+  {
+    width:100%;
+    height:100%;
+  }
+  
+  .projTitle
+  {
+    order:0;
+    //background:pink;
+  }
+  
+  .flip-container /*container for projpic*/
+  {
+    flex: none;
+    order:1;   
+    //width:45vw;
+    //height:45vw;
+    float:none;   
+    //background: red;
+    margin:auto;
+  }    
+  
+  .toBig /*Google page speed text*/
+  {
+    flex:none;    
+    width:100%;
+    order:2;
+    //background:grey;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .xp
+  {    
+    order:3;    
+    //background:purple;
+  }  
   
   .mf2
   {
@@ -434,210 +1129,684 @@ hr
   .divide
   {
     width:33%;
-  }
+  } 
   
   #aboutpic
-  {
-    //border-radius:50%;
-    width:45vw;
-    height:45vw;
-    //border:1px solid black;
-    float:none;
-    //margin:10px;
+  {   
+    width:25vw;
+    height:25vw; 
+    float:none;  
   }
   
   #about
   {
     height:100%;
-  }
+  }  
   
-  #describe
+    .techhead
   {
-    //height:85vw;
-    background:pink;
+    //text-decoration:underline;
+    //font-weight:bold;
+    font-size:90%;
+  }
+
+  #techlist
+  {  
+    font-size:100%;
   }
   
   .divide
-  {
-    //width:100%;
-    //border-right:none;
-    font-size:16px;
-    //height:6vw;
+  {   
+    font-size:16px;   
     padding:5px;
-  }
-  
-  .techs
-  {
-    width:50%;
-    height:75vw;
-    margin-top:35px;
-  }
-  
-  
+  }  
 }
 
 </style>
 </head>
 <body>
-<div class = "container-fluid wrap"> 
+<!---change some of the accordion buttons into the span images, specifically the portfolio image -->
+<meta http-equiv="Content-Type" content="text/html; charset='UTF-8'">
+<title>Ryan's Portfolio</title>
+<div class = "container-fluid wrap">  
   <div class = "navbar navbar-default">
-    <button id ="navSmall" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">                       
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-    
+    <button id ="navSmall" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>    
     <div class="collapse navbar-collapse" id="myNavbar">
-     <ul class = 'nav navbar-nav'>  
-       <li><a href = "#">Home</a></li>
-       <li><a href = "#">Contact</a></li>
-       <li><a href = "#">About</a></li>
-       <li class="dropdown">
-         <a class = "dropdown-toggle" data-toggle="dropdown" href="#" id = "testP">Projects
-         <span class="caret"></span></a>
-         <ul class="dropdown-menu">                  
-           <li class="dropdown-submenu">
-             <a class="test" tabindex="-1" href="#" id = "am1">Websites
-             <span class="fa fa-caret-right" aria-hidden="true"></span></a>
-             <ul class="dropdown-menu" id = 'ds1'>
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target= "_blank">George Carlin Tribute</a></li>
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target= "_blank">Random Quote Generator</a></li>
-               <li><a tabindex="-1" href = "http://ryanrw81.wix.com/joes-fruit" target= "_blank">Wix Site</a></li>             
-             </ul>
-           </li>
-           <li class="dropdown-submenu">
-             <a class="test" tabindex="-1" href="#" id = "am2">Websites with API's
-               <span class="fa fa-caret-right" aria-hidden="true"></span></a>
-             <ul class="dropdown-menu" id = 'ds2'>
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target= "_blank">Local Weather Forecast</a></li> 
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target= "_blank">Twitch Streamer Status</a></li></li>
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target= "_blank">Wikipedia Search</a></li>
-             </ul>
-          </li>
+       <ul class = 'nav navbar-nav'>  
+         <li><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class = "accordionBtn" id = "nav1"><button class = "btn">About</button></a></li>
+         <li><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class = "accordionBtn" id = "nav2"><button class = "btn">Contact</button></a></li>
+         <li><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class = "accordionBtn" id = "nav3"><button class = "btn">Resources</button></a></li>
+         <li class="dropdown">
+           <a class = "dropdown-toggle" data-toggle="dropdown" href="#" id = "testP">
+             <button class = "btn">Projects
+               <span class="caret"></span>
+             </button>
+           </a>
+           <ul class="dropdown-menu">                  
+             <li class="dropdown-submenu">
+               <a class="test" tabindex="-1" href="#" id = "am1">Websites
+                 <span class="fa fa-caret-right" aria-hidden="true"></span>
+               </a>
+               <ul class="dropdown-menu" id = 'ds1'>
+                 <li><a tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target= "_blank">George Carlin Tribute</a></li>
+                 <li><a tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target= "_blank">Random Quote Generator</a></li>
+                 <li><a tabindex="-1" href = "http://ryanrw81.wix.com/joes-fruit" target= "_blank">Wix Site</a></li>             
+               </ul>
+             </li>
+             <li class="dropdown-submenu">
+               <a class="test" tabindex="-1" href="#" id = "am2">Websites with API's
+                 <span class="fa fa-caret-right" aria-hidden="true"></span>
+               </a>
+               <ul class="dropdown-menu" id = 'ds2'>
+                 <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target= "_blank">Local Weather Forecast</a></li> 
+                 <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target= "_blank">Twitch Streamer Status</a></li></li>
+                 <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target= "_blank">Wikipedia Search</a></li>
+               </ul>
+             </li>
           <li class="dropdown-submenu">
              <a class="test" tabindex="-1" href="#" id = "am3">Gadgets
-             <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
              <ul class="dropdown-menu" id = 'ds3'>               
                <li><a tabindex="-1" href = "https://ryanwfile.github.io/pomodoro.html" target= "_blank">Pomodoro Clock</a></li>
                <li><a tabindex="-1" href = "https://ryanwfile.github.io/calculator.html" target= "_blank">Calculator</a></li>
                <li><a tabindex="-1" href="https://ryanwfile.github.io/clock.html" target= "_blank">Digital Clock</a></li>                     
              </ul>
            </li>
-           <li class="dropdown-submenu" >
+           <li class="dropdown-submenu">
              <a class="test" tabindex="-1" href="#" id = "am4">Games
-             <span class="fa fa-caret-right" aria-hidden="true"></span></a>
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
              <ul class="dropdown-menu" id = 'ds4'>
-               <li><a tabindex="-1" href = "https://ryanwfile.github.io/simon.html" target= "_blank">Simon</a></li></a></li>
+               <li><a tabindex="-1" href = "https://ryanwfile.github.io/simon.html" target= "_blank">Simon</a></li>
                <li><a tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target= "_blank">Tic Tac Toe</a></li> 
                <li><a tabindex="-1" href = "https://ryanwfile.github.io/battleship.html" target= "_blank">Battleship</a></li>
              </ul>
+           </li>
         </ul>
-    </ul> 
-</div>
-  </div>
+      </ul> 
+    </div>  
+    <div id = "techSlide"><!--currently the slides only runs once and don't repeat--->               
+      <img src = "https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt = "html css and JS logo" class = "techpic">
+      <img src = "http://www.webgiant.co.nz/wp-content/themes/beanstalk01/images/services-bootstrap.gif" alt = "bootstrap logo" class = "techpic">
+      <img src = "http://seeklogo.com/images/P/PHP-logo-A28168CFD0-seeklogo.com.gif " alt = "PHP logo" class = "techpic">
+      <img src = "https://brand.jquery.org/resources/jquery-mark-light.gif " alt = "jquery logo" class = "techpic"><!--this one needs to go-->
+      <img src = "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAMlAAAAJDU4ZjlmOTc2LWM1MjAtNDdiMy04YjIzLTQ5YjBmYWRjNTRiNw.png" alt = "canvas logo" class = "techpic">               
+      <img src = "http://www.acuitytraining.co.uk/wp-content/uploads/2015/05/SQL-logo-transparent.png " alt = "sql logo" class = "techpic">
+      <img src = "https://s.w.org/about/images/logos/wordpress-logo-stacked-rgb.png" alt = "wordpress logo" class = "techpic">
+      <img src = "http://www.potenzaglobalsolutions.com/images/blogImages/9077f0ad-b71e-454d-9e5b-2f3389547982.png" alt = "Angular logo" class = "techpic">
+      <img src = "http://sass-lang.com/assets/img/styleguide/color-1c4aab2b.png " alt = "SASS logo" class = "techpic">
+    </div>    
+  </div> <!--end navbar navbar-default-->
+   <div id = "pagetitle">    
+    <h1 id = cR>
+    <ul class = "fly-in-text blank">
+      <li>C</li>
+      <li>o</li>
+      <li>d</li>
+      <li>e</li>
+      <li>R</li>
+      <li>e</li>
+      <li>e</li>
+      <li>s</li>
+      <li>e</li>      
+    </ul>
+    </h1>
   
-   <div id="top">   
+</div>
+   <h2 id = "webD">Web Development</h2>
+<!--possible images
+http://clipartix.com/wp-content/uploads/2016/04/Sunshine-happy-sun-clipart-3.gif   The sun pic
+http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-skyline-2010-by-Theo-Wargo-Getty-Images-300x200.jpg   NYC skyline
+-->
+  <img id = "sunpic" src = "http://clipartix.com/wp-content/uploads/2016/04/Sunshine-happy-sun-clipart-3.gif" alt = "Image of Happy Sun"/>
+  <div id="top">   
      <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Mobile First</div>     
      <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Current Technologies</div>
-     <div class="divide mf2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Enjoys Problem Solving</div>
+     <div class="divide mf2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Reliable & Secure</div>
      <div class="divide  col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Responsive Design</div>
-     <div class="divide mf2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Reliable</div> 
-                
-   </div>
-   <hr id = "breakline">
-    <div id = "about">
-     <div class = "col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
-       <img id = "aboutpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "Picture of me">
-       <div id = "describe">     
-        <h3>About Me</h3>
-         I have been teaching myself web development in the hope of finding a job.  I love learning everything I can in this fast changing field.<br><br>Some personal information about me.  Wherever I go I always strive to be one of the kindest and funniest people in the room, however I am not a funny person so this is usually a futile endeavor.  I enjoy reading and learning probably way too much. I’m into video games especially puzzle and strategy games, I love most adrenaline producing activities and anything involving nature.  I adore all animals, well not mosquitoes or any animals actively trying to kill me but other than that oh and jellyfish because well they're jellyfish.  I enjoy nearly any media content in the comedy genre.
-       </div>
-     </div>
-      <div id = "techlist" class = "col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-        <h4>Technologies</h4>
-        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 techs">
-          <h5 class = "techhead">Comfortable Using</h5>
-           HTML<br>
-          CSS<br>
-          Javascript<br>
-          JQuery<br>
-          Bootstrap<br>
-          Google Pagespeed<br>
-          Google Analytics
-        </div>
-        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 techs">
-          <h5 class = "techhead">Have Experience With</h5>
-          PHP<br>
-         SQL<br>
-         Python<br>
-         XML<br>
-          SASS<br>
-         Wordpress
-        </div>
-        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 techs">
-          <h5 class = "techhead">Currently Learning</h5>
-          React
-          
-        </div>
-        <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 techs">
-          <h5 class = "techhead">Intend to Learn</h5>
-          Angular<br>
-          SASS<br>
-         Node.js<br>
-          Python<br>
-          MongoDB
-        </div>
-      </div>
-     
+     <div class="divide mf2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Clean UX</div>                 
   </div>
-
-    <div id = "project">
-      
-      <div id = "website"><h1>Projects</h1><br><h2>Websites</h2>
-        <div class = "proj flip-container" id = "gc" ><div class="flipper"><div class="front"><img class = "projpic" src = "http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=450%2C450">GC PAGE</div>
-          <div class="back">Here is a test back, it's only a test</div></div></div>
-      
-        <div class = "proj vertical flip-container" id = "rqg" ><div class="flipper"><div class="front"><img class = "projpic"src ="https://ryanwfile.github.io/randomquote.png">Random Quote Generator</div><div class="back">Here is a test back, it's only a test</div></div></div>
-      
-        <div class = "proj flip-container" id = "wix"><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/wix.png">Wix</div><div class="back">Here is a test back, it's only a test</div></div></div>
-      
+  <hr id = "breakline">  
+  <div class="panel-group" id="accordion">       
+    <div class="panel panel-default" id = "sectionAbout">                     
+      <div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class = "accordionBtn">  
+          <h4 class="panel-title">              
+            <span class="glyphicon glyphicon-user"></span>About
+          </h4>
+        </a>  
+      </div>                    
+      <div id="collapseOne" class="panel-collapse collapse in">                        
+        <div class="panel-body" id ="about">                           
+          <div class = "col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 colAbout">         
+            <img id = "aboutpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "Picture of me"/>         
+            <div id = "describe">          
+           Ryan has been teaching himself web development in the hope of starting a career.  He is based in the New York City metro area.  Ryan is eager to learn everything he can in this fast changing field and hopes his love of problem solving will help make him a better developer. <br><br>Here are links to his <a href = "https://github.com/Ryanwfile">github</a>
+           and <a href = "http://codepen.io/Ryanwfile/">codepen</a>
+            </div>
+          </div>              
+          <div id = "techlist" class = "col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">           
+            <h4 id = "topotech">Technologies</h4>               
+            <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
+              <h5 class = "techhead">Comfortable Using</h5>                 
+                <ul>
+                  <li>HTML</li>                  
+                  <li>CSS</li>                 
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>JQuery</li>                 
+                  <li>Bootstrap</li>                 
+               </ul>
+            </div>            
+            <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
+              <h5 class = "techhead">Experienced With</h5>
+                <ul>                  
+                  <li>PHP</li>                  
+                  <li>SQL</li>
+                  <li>SASS/SCSS</li> 
+                  <li>Python</li>                   
+                  <li>XML</li>                   
+                  <li>Canvas</li>                    
+                  <li>Wordpress</li>                  
+               </ul>
+            </div>               
+            <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
+              <h5 class = "techhead">Currently Learning</h5>
+                <ul>                                     
+                  <li>Angular</li>                     
+                </ul>
+            </div>    
+          </div>  <!--end techlist div -->               
+        </div>
       </div>
-      <div id = "ajax"><h2>Websites with API's</h2>
-        <div class = "proj vertical flip-container" id = "lw" ><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/weather.png">Local Weather</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-        <div class = "proj flip-container" id = "tsc" ><div class="flipper"><div class="front"><img class = "projpic" src = "https://d13yacurqjgara.cloudfront.net/users/802553/screenshots/2268094/twitch_logo_animation.gif ">Twitch Streamer Check</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-        <div class = "proj vertical flip-container" id = "wv" ><div class="flipper"><div class="front"><img class = "projpic" src = "https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png">Wikipedia Viewer</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-      </div>
-      <div id = "gadget"><h2>Gadgets</h2>
-        <div class = "proj flip-container" id = "calc" ><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/calculator.png">Calculator</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-        <div class = "proj vertical flip-container" id = "pc" ><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/pomodoro.png">Pomodoro Clock</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-        <div class = "proj flip-container" id = "dc" ><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/clock.png">Digital Clock</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-      </div>
-      <div id = "game"><h2>Games</h2>
-        <div class = "proj vertical flip-container" id = "simon"><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/simon.png">Simon</div><div class="back">Here is a test back, it's only a test</div></div></div>   
-        
-        <div class = "proj flip-container" id = "ttt"><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/tictactoe.png">Tic Tac Toe</div><div class="back">Here is a test back, it's only a test</div></div></div>
-        
-        <div class = "proj vertical flip-container" id = "bs"><div class="flipper"><div class="front"><img class = "projpic" src = "https://ryanwfile.github.io/battleship.png">Battleship</div><div class="back">Here is a test back, it's only a test</div></div></div>
+    </div>                
+    <div class="panel panel-default">        
+      <div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class = "accordionBtn">
+          <h4 class="panel-title">
+            <span class="glyphicon glyphicon-folder-close"></span> Portfolio<!--The portfolio section should be in a tab format for easy navigation-->
+          </h4>
+        </a>
+      </div>    
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <ul class="nav nav-tabs" id ="tabber">
+          <li class = "active uncut" ><a href="#website" data-toggle="tab">Websites</a></li>    
+          <li class = "uncut"><a href="#ajax" data-toggle="tab">Websites with API's</a></li>
+          <li class = "uncut"><a href="#gadget" data-toggle="tab">Gadgets</a></li>
+          <li class = "uncut"><a href="#game" data-toggle="tab">Games</a></li>
+        </ul>        
+        <div class="panel-body tab-content" id = "project">          
+          <div id = "website" class ="tab-pane fade in active">
+            <h2 class = "subTitle">Websites</h2>            
+            <div class = "projtalk">              
+              <h4 class ="projTitle">George Carlin Tribute</h4>   
+              
+              <div class = "proj flip-container" id = "gc">                
+                <div class="flipper">                  
+                  <div class="front">
+                    <img class = "projpic" src = "http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=450%2C450">
+                  </div>                  
+                  <div class="back norm">A page with media and information on the comedian George Carlin.</div>
+                </div>
+              </div>
+              <div class = "toBig">
+              <ul>                
+                <li><a href = "https://ryanwfile.github.io/carlintribute.html" target = "blank"><u>Link to Page</u></a></li><br>          
+                <li>Google Page Speed Scores</li>             
+                <li>Mobile Speed: 42/100</li>
+                <li>Desktop Speed: 35/100</li>
+                <li>User Experience: 99/100</li>
+              </ul>
+                </div>              
+              
+              <p class = "xp">Experiences Gained<br>
+            This was the first site I designed with responsiveness in mind, but since I was taking the udacity course on responsiveness during this projects development I learned that I should develop prioritizing mobile first after most of the project was complete. <br>
+            Linking to too many resources can cause the page to load much slower as reflected in the page speed scores.<br>  
+  Images and various media appear differently in separate browsers as the top image appears incredibly bright in firefox.<br> 
+  How important the meta tag governing encoding is as a lot of the pages contents had weird symbols showing up all over before I inserted the charset = UTF-8. 
+              </p>
+            </div>
+            <div class = "projtalk">
+              <h4 class ="projTitle">Random Quote Generator</h4>
+              <div class = "proj vertical flip-container" id = "rqg">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic"src ="https://ryanwfile.github.io/randomquote.png">
+                  </div>
+                  <div class="back norm">A button click generates a new quote from various sources.</div>
+                </div>
+              </div>
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/randomquote.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+                  <li>User Experience: 89/100</li>
+                </ul>
+              </div>                
+              <p class = "xp">Experiences Gained<br>
+              I learned a great deal about arrays and how to access random indexes using the Math.random method for this project.<br>  In creating the tweet button I learned about incorporating 3rd-Pary software through reading the accompanying  documentation.
+              </p>
+            </div>
+            <div class = "projtalk">
+              <h4 class = "projTitle">Wix Site</h4>
+              <div class = "proj flip-container" id = "wix">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://ryanwfile.github.io/wix.png">
+                  </div>
+                 <div class="back norm">This site was done before I had a extensive knowledge of CSS, after studying css I can safely say I should have stuck with Wix.</div>
+                </div>
+              </div>
+              <div class = "toBig">
+                <ul> 
+                  <li><a href = "http://ryanrw81.wixsite.com/joes-fruit" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 54/100</li>
+                  <li>Desktop Speed: 69/100</li>
+                  <li>User Experience: 96/100</li>
+                </ul>
+              </div>
+             
+              <p class = "xp">Experiences Gained<br>
+             I learned about creating a comfortable user experience with a clean interface.  I also learned about some designer concepts such as spatial awareness, font and color usage, and white space.
+              </p>
+            </div>  
+          </div>
+          
+          
+          
+          <div id = "ajax" class = "tab-pane fade">
+            <h2 class = "subTitle">Websites that use API's</h2>
+            <div class = "projtalk">
+              <h4 class = "projTitle">Local Weather</h4>
+              <div class = "proj vertical flip-container" id = "lw">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://ryanwfile.github.io/weather.png">
+                  </div>
+                  <div class="back norm">Local Weather forecast that uses the Weather Underground API</div>
+                </div>
+              </div> 
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/weather.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+                  <li>User Experience: 96/100</li>
+                </ul>
+              </div>             
+              <p class = "xp">Experiences Gained<br>
+              I originally did this project with the Free Code Camp recommended Open Weather API but after gaining some experience with api’s I decided to use the much more in depth Weather Underground API.
+              </p>
+            </div>
+             <div class = "projtalk">
+              <h4 class = "projTitle">Twitch Streamer Check</h4>
+              <div class = "proj flip-container" id = "tsc">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://d13yacurqjgara.cloudfront.net/users/802553/screenshots/2268094/twitch_logo_animation.gif">
+                  </div>
+                 <div class="back norm">A page that checks whether some Twitch streamers are online and what they are streaming</div>
+                </div>
+              </div>
+              <div class = "toBig">
+                <ul> 
+                  <li><a href = "https://ryanwfile.github.io/twitch.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+                  <li>User Experience: 96/100</li>
+                </ul>
+              </div>
+             
+              <p class = "xp">Experiences Gained<br>
+            I learned how to use JSON to communicate with twitch's API and the importance of console logging the API response.
+              </p>
+            </div>
+            <div class = "projtalk">
+              <h4 class = "projTitle">Wikipedia Viewer</h4>
+              <div class = "proj vertical flip-container" id = "wv">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png">
+                  </div>
+                  <div class="back norm">Search Wikipedia from an input box or generate a random article.</div>
+                </div>
+              </div> 
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/wiki.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+                  <li>User Experience: 96/100</li>
+                </ul>
+              </div>             
+              <p class = "xp">Experiences Gained<br>
+               This project was the first one I used AJAX instead of JSON to communicate with an API.<br>This project helped me understand the importance of the console in accessing data retrieved from on api.<br>I would eventually go on to learn a great deal about using the console through the course <a href = "http://watchandcode.com/courses/practical-javascript" target = "blank">Watch and Code Javascript</a>
+              </p>
+            </div>
+          
+          </div>
+          <div id = "gadget" class = "tab-pane fade">
+            <h2 class = "subTitle">Gadgets</h2>
+            <div class = "projtalk">
+              <h4 class ="projTitle">Pomodoro Clock</h4>
+              <div class = "proj flip-container" id = "pc">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic"src ="https://ryanwfile.github.io/pomodoro.png"></div>
+                  <div class="back norm">Pomodoro is the ancient Egyptian word for touchscreen, you can trust me on this there’s no need to look it up</div>
+                </div>
+              </div>
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/pomodoro" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+                  <li>User Experience: 96/100</li>
+                </ul>
+              </div>             
+              <p class = "xp">Experiences Gained<br>
+             After using the Window.alert method I came to the conclusion that it was too intrusive and provided such a negative user experience that a sound alert would provide a better user experience.  Once I found a few sounds I wanted to use for the alert my curiosity led me to experiment with many facets of the HTML audio element and playing sounds in javascript.  This project also helped me understand the setInterval method.
+              </p>
+            </div> 
+            <div class = "projtalk">
+              <h4 class = "projTitle">Calculator</h4>
+              <div class = "proj vertical flip-container" id = "calc">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://ryanwfile.github.io/calculator.png">
+                  </div>
+                  <div class="back" id = "wolfFlip"><p id = "wolfText">This calculator is modeled after</p><br>
+                    <img src = "http://i0.kym-cdn.com/entries/icons/original/000/018/035/8d81b825e59b928f9da5e9c3416bf53e.media.png" id = "wolf" alt = "image of WolframAlpha logo"><br>
+                    <p id = "wolf2">minus the calculus, algebra, geometry and most other useful parts</p>
+                  </div>
+                </div>
+              </div>
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/calculator.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+                  <li>User Experience: 82/100</li>
+                </ul>
+              </div>
+             
+              <p class = "xp">Experiences Gained<br>
+              I originally finished this project using the javascript eval function but after learning a lot more javascript and jQuery I decided to go back and start from scratch without using eval.  Creating all of the computation functions was a great learning experiences and really helped me grasp how arguments inside a function behave.  
+    Allowing the user to use the keyboard or number pad introduced me to the event object’s keycode property and gave me experience converting keyboard input into the appropriate number/symbol.
+    I also learned how important not only commenting my work is but also naming my variables, functions appropriately so I can go back and have an easier time figuring out what the code means.
+              </p> 
+            </div>        
+            <div class = "projtalk">
+              <h4 class ="projTitle">Digital Clock</h4>
+              <div class = "proj flip-container" id = "dc">
+                  <div class="flipper">
+                    <div class="front">
+                      <img class = "projpic"src ="https://ryanwfile.github.io/clock.png">
+                    </div>
+                    <div class="back norm">A page that displays a 12 hour format clock.  Soon to be updated with a calendar and some React.</div>
+                  </div>
+                </div>
+                <div class = "toBig">
+                  <ul>
+                   <li><a href = "https://ryanwfile.github.io/clock" target = "blank"><u>Link to Page</u></a></li><br>
+                   <li>Google Page Speed Scores</li>
+                   <li>Mobile Speed: 66/100</li>
+                   <li>Desktop Speed: 86/100</li>
+                   <li>User Experience: 100/100</li>
+                 </ul>
+                </div>
+              
+              <p class = "xp">Experiences Gained<br>
+                       This project introduced me to jQuery.  I also learned some lessons in debugging as when I first put it online there were errors including loading jquery from an http site which was blocked until I fixed it to load from an https source.
+              </p>
+            </div>
+           
+          </div>
+          <div id = "game" class = "tab-pane fade">
+            <h2 class = "subTitle">Games</h2>
+            <div class = "projtalk">
+              <h4 class = "projTitle">Simon</h4>
+              <div class = "proj vertical flip-container" id = "wv">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://ryanwfile.github.io/simon.png">
+                  </div>
+                  <div class="back norm">Simon game that has a strict mode, a counter and a short light display upon completion.</div>
+                </div>
+              </div> 
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/simon.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+                  <li>User Experience: 81/100</li>
+                </ul>
+              </div>
+             
+              <p class = "xp">Experiences Gained<br>
+              This project helped me to understand javascript events, particularly the on click function.  It also introduced me to the Audio constructor object as it was the first time I incorporated sounds into a project.
+              </p>
+            </div>
+            <div class = "projtalk">
+              <h4 class ="projTitle">Tic Tac Toe</h4>
+              <div class = "proj flip-container" id = "ttt">
+                <div class="flipper"><div class="front">
+                  <img class = "projpic"src ="https://ryanwfile.github.io/tictactoe.png"></div>
+                  <div class="back norm"> Tic Tac Toe game that has a randomized computer.</div>
+                </div>
+              </div>
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/tictactoe" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 68/100</li>
+                  <li>Desktop Speed: 88/100</li>
+                  <li>User Experience: 100/100</li>
+                </ul>
+              </div>
+              
+              <p class = "xp">Experiences Gained<br>
+              I learned how to construct an algorithm that is presented with different possibilities each step and the final algorithm I developed is similar to the Minmax algorithms I read about in that each turn presents a maximum, minimum possible value move for each player.  Through studying about algorithms I learned some common algorithms such as binary search and also some ways an algorithm’s efficiency is measured, including Big O notation.
+              </p>
+            </div>
+            <div class = "projtalk">
+              <h4 class = "projTitle">Battleship</h4>
+              <div class = "proj vertical flip-container" id = "bs">
+                <div class="flipper">
+                  <div class="front">
+                    <img class = "projpic" src = "https://ryanwfile.github.io/battleship.png">
+                  </div>
+                  <div class="back norm">Battleship game created from the example and code from the book HeadFirst:Javascript</div>
+                </div>
+              </div> 
+              <div class = "toBig">
+                <ul>
+                  <li><a href = "https://ryanwfile.github.io/battleship.html" target = "blank"><u>Link to Page</u></a></li><br>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+                  <li>User Experience: 81/100</li>
+                </ul>
+              </div>           
+              
+              <p class = "xp">Experiences Gained<br>
+              This was one of the first times I used javascript and most of what I did was copied straight from the book <u>HeadFirst: Javascript</u>.  Currently I am working through the book <u>Eloquent Javascript</u> which has an amazing section on how to create grids using a multidimensional array.  I am considering completely overhauling this project and using object oriented programming similar to that presented in the <u>Eloquent Javascript</u> chapter with the terrarium.
+              </p>
+            </div>  
+            
+          </div>
+           <div class = "backup">
+              <a href="#tabber"><button class="btn scrollup">Back to Top of Projects</button></a>
+          </div>
+        </div>                       
       </div>
     </div>
-<h5 id = 'marq'><span><p id = "pone">Thank you for reading this far, if you are reading this you might not need glasses or perhaps you do need glasses, how would I know I’m not an optometrist or perhaps you are already wearing glasses and/or contact lenses, well not and, that would be weird wearing glasses and contact lenses.</p><!--<p id = 'ptwo'>Reliable</p><p id = "pthree">Mobile First</p><p id = "pfour">Always Learning</p><p id = "pfive">Aim to Use Current Technologies</p><p id = "psix">Enjoy Problem Solving</p>--></span></h5>
-   <div id = "resource">
-     <div id = "books"><h1>Resources</h1><br><h2>Books</h2>
-       
-    <div class = "res" id = "html">
-      <img class = "pic" src = "https://images-na.ssl-images-amazon.com/images/I/41Z2swEmwaL._SX396_BO1,204,203,200_.jpg" alt = "image of HTML and CSS:Design and Build Websites book"/>
-      <a href = "https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189">HTML and CSS:Design and Build Websites</a></div>
-    <div class = "res" id = "jq">
-      <img class = "pic" src = "https://images-na.ssl-images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg" alt = "image of Javascript & Jquery:Interactive Front-end Web Development book "/> 
-      <a href = "https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=pd_bxgy_14_img_2?ie=UTF8&psc=1&refRID=PGD3KQRB46AXT87EERP1"><u>Javascript & Jquery:Interactive Front-end Web Development</u></a></div>
-     </div></div>
-  <div id = "contact">Contact Email</div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class = "accordionBtn">
+          <h4 class="panel-title">
+            <span class="glyphicon glyphicon-file"></span> Resources           
+          </h4>
+        </a>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse">
+        <div class="panel-body" id ="resource">
+          <div id = "resIntro">
+            <h4>Ryan has used a wide array of resources for studying web-development and while the list is far too numerous to accurately name them all, what follows are the resources he used the most and has given him the most value for his time commitment</h4>
+          </div>
+          <div id = "books">
+            <h2>Books</h2>
+            <div class = "box">            
+              <a href = "https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189" target = "blank"> 
+                <u>HTML and CSS:Design<br>and Build Websites</u><br><br><br>
+                <img alt="image of HTML and CSS:Design and Build Websites book" 
+                src = "https://images-na.ssl-images-amazon.com/images/I/41Z2swEmwaL._SX396_BO1,204,203,200_.jpg">
+              </a> 
+
+              <a href = "https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=pd_bxgy_14_img_2?ie=UTF8&psc=1&refRID=PGD3KQRB46AXT87EERP1" target = "blank">
+                <u>Javascript & Jquery:Interactive<br>Front-end Web Development</u><br><br><br>
+                <img alt = "image of Javascript & Jquery:Interactive Front-end Web Development book" src = "https://images-na.ssl-images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg"></a>
+
+               <a href = "https://www.amazon.com/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820/ref=sr_1_3?s=books&ie=UTF8&qid=1485821247&sr=1-3&keywords=eloquent+javascript+a+modern+introduction+to+programming" target = "blank"> 
+                <u>Eloquent Javascript: A Modern<br>Introduction to Programming</u><br><br><br>
+                 <img alt="image of Eloquent Javascript: A Modern Introduction to Programming book" 
+                src = "https://images-na.ssl-images-amazon.com/images/I/511ZDqFj28L._SX258_BO1,204,203,200_.jpg">
+              </a>
+
+               <a href = "https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?s=books&ie=UTF8&qid=1485821291&sr=1-1&keywords=headfirst+javascript" target = "blank"> 
+                <u>Headfirst Javascript Programming:<br>A Brain Friendly Guide</u><br><br><br>
+                 <img src = "https://images-na.ssl-images-amazon.com/images/I/51qpyuO-ANL._SX258_BO1,204,203,200_.jpg"
+                  alt="image of Headfirst Javascript Programming:A Brain Friendly Guide book">
+              </a>
+
+               <a href = "https://www.amazon.com/CSS-Missing-David-Sawyer-McFarland/dp/1491918055/ref=sr_1_1?s=books&ie=UTF8&qid=1485821314&sr=1-1&keywords=css+missing+manual" target = "blank"> 
+                <u>CSS:The<br>Missing Manual</u><br><br><br>
+                 <img src = "http://akamaicovers.oreilly.com/images/0636920036357/cat.gif"
+                      alt="image of CSS:The Missing Manual book">
+              </a>
+
+               <a href = "https://www.amazon.com/Learning-PHP-MySQL-JavaScript-Javascript/dp/1491918667/ref=sr_1_1?s=books&ie=UTF8&qid=1485821336&sr=1-1&keywords=learning+php+mysql+%26+javascript+with+jquery+css+%26+html5" target = "blank"> 
+                <u>Learning PHP, MySQL,<br>Javascript & CSS</u><br><br><br>
+                 <img src = "http://t3.gstatic.com/images?q=tbn:ANd9GcQTsU3NBEWoJxVSIdKFTkQYQP0uq71kfl8PPi40Uw3LlJgVBTEc"
+                alt="image of Learning PHP, MySQL, Javascript & CSS book">
+              </a>
+            </div>
+          </div>
+          <div id = "onlineRes">
+            <h2>Online Resources</h2>
+            <div class = "box">            
+              <a href = "https://www.freecodecamp.com" target = "blank"> 
+                <u>FreeCodeCamp</u><br><br><br>
+                <img alt="image of Free Code Camp Logo" 
+                src = "https://softwareengineeringdaily.com/wp-content/uploads/2017/01/freecodecamp.jpeg" id = "fcc">
+              </a>            
+              
+              <a href = "https://www.udemy.com" target = "blank"> 
+                <u>Udemy</u><br><br><br>
+                 <img src = "http://www.jennaedwardsmedia.com/wp-content/uploads/2015/10/udemy-logo-academyofyou-1024x780-1024x780.jpg"
+                      alt="image of Udemy Logo">
+              </a>
+              
+              <a href = "https://www.coursera.org/" target = "blank"> 
+                <u>Coursera</u><br><br><br>
+                 <img src = "http://blog.dognition.com/wp-content/uploads/2016/09/coursera.png"
+                  alt="image of Coursera Logo">
+              </a>
+
+               <a href = "https://classroom.udacity.com" target = "blank"> 
+                <u>Udacity</u><br><br><br>
+                 <img alt="image of Udacity Logo" 
+                src = "http://www.logoinspiration.net/wp-content/uploads/2016/02/160225_udacity_email_logo-loopgif-drib.gif">
+              </a>  
+              
+              <a href = "https://www.khanacademy.org/" target = "blank"> 
+                <u>Khan Academy</u><br><br><br>
+                 <img src = "https://upload.wikimedia.org/wikipedia/commons/8/87/Khan-Academy-logo.jpg"
+                alt="image of Khan Academy Logo">
+              </a>   
+              
+              <a href = "https://www.edx.org/" target = "blank"> 
+                <u>EDX</u><br><br><br>
+                 <img src = "https://www.edx.org/sites/default/files/mediakit/image/thumb/edx_logo_200x200.png"
+                alt="image of EDX Logo">
+              </a>
+              
+              <a href = "https://www.codecademy.com" target = "blank">
+                <u>CodeAcademy</u><br><br><br>
+                <img alt = "image of CodeAcademy Logo" src = "http://www.underconsideration.com/brandnew/archives/codecademy_logo_detail.png" id = "codeAc">
+              </a>
+              
+            </div>
+          </div>
+          <div class = "backup">
+              <a href="#resource"><button class="btn scrollup">Back to Top of Resources</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class = "accordionBtn">
+          <h4 class="panel-title">
+            <span class="glyphicon glyphicon-pencil"></span>Contact
+          </h4>
+        </a>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5 id = 'marq'>
+            <span>
+              <p id = "pone">Thank you for viewing my portfolio page.  Below are various methods to contact me.
+              </p>
+            </span>
+          </h5>
+          <a href = "https://formspree.io/">Email</a>
+          
+          <a href = "https://www.linkedin.com/">Linkedin</a>
+          
+          <form id = "theForm" action = "message.html" method = "post" onSubmit = "return validateTextBox();"><br>
+            
+        <div class = "row">
+              <label for "name"><b>Name</b> :</label>
+              <input type = "text" id = "name" name =""></br></br>
+        </div>
+        
+    <div class = "row">
+              <label for "phone"><b>Phone #</b> :</label>
+              <input type = "tel" id = "phone" name ="" placeholder = "optional"></br></br>
+        </div>
+
+<div class = "row">
+              <label for "email"><b>Email</b> :</label>
+              <input type = "email" id = "email" name ="">
+        </div>
+</br>
+<input type = "submit" value = "Submit">
+</form>
+
+        
+        
+            
+         
+          
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 <script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -645,6 +1814,7 @@ hr
 <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
+  $('#sunpic').slideDown(1000);
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
     console.log(this.id);
@@ -676,6 +1846,38 @@ $(document).ready(function(){
     e.preventDefault();
   });
 });
+
+/**/$(".techpic").hide();
+$(".techpic:first").fadeIn(1500);
+setInterval(function() 
+ { 
+  $('.techpic:first ')
+    .show()
+    .fadeToggle(11000)
+    .appendTo('#techSlide');
+ },  12000);
+
+/************************************Form validation below******************************************/
+function validateTextBox()
+{
+  var box1 = document.getElementById("name");
+  if (box1.value == "")
+    {
+      
+    }
+}
+/************************************fly in text animation below******************************************/
+ $(function() 
+   {                
+      setTimeout(function() 
+      {   
+        $('.fly-in-text').removeClass('blank');
+      }, 500);
+   })();
+
+/************************************slideup animation below******************************************/
+
+
 </script>
 
 </html>
