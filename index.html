@@ -10,31 +10,7 @@
 <style>
 /*changed all hiddens to blank*/
 
-#theForm
-{
-  
-   margin:auto;
-}
-
-#theForm input
-{
-   margin-left:60px;  
-   text-align:center;
-}
-
-#theForm label
-{
-  position:absolute;
-  margin-right:20px;
-}
-
-#collapseFour a
-{
-  color:black;
-  text-decoration:underline;
-  font-size:2em;
-}
-
+/*changed all hiddens to blank*/
 body
 {
   font-family:"Frank Ruhl Libre";
@@ -89,6 +65,8 @@ a
   -ms-user-select: none;
   user-select: none;
   background-image: none;    
+  position: relative;
+  top:-40px;
 }
 
 .btn
@@ -119,20 +97,47 @@ ul
 #techSlide /*div that holds techpic images*/
 {  
   position:absolute;
-  top:-3vw;
-  left:;   
+  top:-1vw;
+  left:-1vw;   
 }
 
 .techpic /*tech images in slideshow*/
 {
-  width:10vw;
-  height:8vw;
+  width:12vw;
+  height:10vw;
   margin:3vw; 
+  border:double black;   
 }
 
 #pagetitle
 {
   order:-1;
+  font-family:"Frank Ruhl Libre";  
+  position: relative;
+  font-size: 5em;
+  color: #FF;
+  letter-spacing: 0.0625em;
+  animation: drop-shadows;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both; 
+  margin-bottom:60px;
+  top:-25px;
+}
+
+.fly-in-text 
+{
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.fly-in-text li 
+{
+  display: inline-block;
+  margin-right: 5px;
   font-family:"Frank Ruhl Libre";
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
@@ -146,81 +151,72 @@ ul
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
-  position: relative;
-    font-size: 5em;
-    color: #FF;
-    letter-spacing: 0.0625em;
-    animation: drop-shadows;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-  //margin:25px;
-  //background-color:yellow;
-margin-bottom:60px;
+   font-weight: 300;
+   font-size: 2em;/*changed from 1 to 2*/
+   color: black;
+   opacity: 1;
+   transition: all 2.5s ease;
+ }
+
+ .fly-in-text li:last-child 
+{
+   margin-right: 0;
 }
 
-.fly-in-text {
-                list-style: none;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-            .fly-in-text li {
-                display: inline-block;
-                margin-right: 5px;
-                font-family:"Frank Ruhl Libre";
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-                font-weight: 300;
-                font-size: 2em;/*changed from 1 to 2*/
-                color: black;
-                opacity: 1;
-                transition: all 2.5s ease;
-            }
-            .fly-in-text li:last-child {
-                margin-right: 0;
-            }
-            .fly-in-text.blank li {
-                opacity: 0;
-            }
-/*these are what control the actual animations*/
-            .fly-in-text.blank li:nth-child(1) { transform: translateX(-200px) translateY(-200px); }
-            .fly-in-text.blank li:nth-child(2) { transform: translateX(20px) translateY(100px); }
-            .fly-in-text.blank li:nth-child(3) { transform: translateX(-150px) translateY(-80px); }
-            .fly-in-text.blank li:nth-child(4) { transform: translateX(10px) translateY(-200px); }
-            .fly-in-text.blank li:nth-child(5) { transform: translateX(-300px) translateY(200px); }
-            .fly-in-text.blank li:nth-child(6) { transform: translateX(20px) translateY(-20px); }
-            .fly-in-text.blank li:nth-child(7) { transform: translateX(30px) translateY(200px); }
-            .fly-in-text.blank li:nth-child(8) { transform: translateX(10px) translateY(-70px); }
-            .fly-in-text.blank li:nth-child(9) { transform: translateX(-50px) translateY(100px); }
-
-#webD
+.fly-in-text.blank li 
 {
-  //margin-top; 25px;
-  //background-color:green;
+   opacity: 0;
+}
+/*these are what control the actual animations*/
+.fly-in-text.blank li:nth-child(1) 
+{ 
+  transform: translateX(-200px) translateY(-200px); 
+}
+.fly-in-text.blank li:nth-child(2) 
+{ 
+  transform: translateX(20px) translateY(100px); 
+}
+.fly-in-text.blank li:nth-child(3) 
+{ 
+  transform: translateX(-150px) translateY(-80px); 
+}
+.fly-in-text.blank li:nth-child(4) 
+{ 
+  transform: translateX(10px) translateY(-200px); 
+}
+.fly-in-text.blank li:nth-child(5) 
+{ 
+  transform: translateX(-300px) translateY(200px); 
+}
+.fly-in-text.blank li:nth-child(6) 
+{ 
+  transform: translateX(20px) translateY(-20px); 
+}
+.fly-in-text.blank li:nth-child(7) 
+{ 
+  transform: translateX(30px) translateY(200px); 
+}
+.fly-in-text.blank li:nth-child(8) 
+{ 
+  transform: translateX(10px) translateY(-70px); 
+}
+.fly-in-text.blank li:nth-child(9) 
+{ 
+  transform: translateX(-50px) translateY(100px); 
 }
 
 #sunpic
 { 
-  width:11vw;
-  height:11vw; 
+  width:12vw;
+  height:12vw; 
   margin-right:30px;
   margin-top:15px;
-  right:0;
-  top:0;
+  right:40px;
+  top:40px;
   position:absolute;
   display:none;
+  border-radius:50%;
+  border:2px solid black;
 }
 
 #top /*5 divider description div*/
@@ -301,7 +297,7 @@ margin-bottom:60px;
 #topotech/*h4 tag above technologies list*/
 {
   font-size:145%;
-  
+  font-weight:bold;
 }
 
 .techhead
@@ -316,7 +312,7 @@ margin-bottom:60px;
   font-size:150%;
 }
 
-.norm /*governs the text on the flip side of images*/
+.norm /*governs the text on the flipped side of images*/
 {
   display: flex;
   justify-content: center;
@@ -389,9 +385,7 @@ hr
 }
 
 .scrollup
-{
-  //width:25%;
-  
+{  
   margin:auto;
   margin-top:8px;
   margin-bottom:8px;
@@ -427,11 +421,7 @@ hr
 #tabber > li > a
 {
   color:white;
-  font-weight:bold;
-  //border-radius:5%;
-  //border-bottom:2px solid black;
-  /border-bottom:2px solid white;
-  //border-right:1px solid white;
+  font-weight:bold;  
 }
 
 #tabber:active
@@ -495,26 +485,6 @@ hr
   margin:auto;  
 }
 
-#wolfFlip /*calculator flip*/
-{
-  position:relative;  
-  font-size:23px;  
-}
-
-#wolf2/*text after wolfram logo*/
-{
-  position:relative;
-  top:-45px;  
-}
-
-#wolf
-{
-  width:7vw;
-  height:7vw;
-  position:relative;
-  top:-45px;
-}
-
 .box /*resource divs*/
 {
   width: 100%;
@@ -524,8 +494,7 @@ hr
   background: lightpink;
   margin: auto;
   text-align: center;
-  justify-content: center;
-  //border: solid black 2px;
+  justify-content: center;  
 }
 
 .box > a 
@@ -642,28 +611,90 @@ hr
   margin-bottom: 0px; 
 }
 
-/*************************************************************** 1st Media screen MIN-WIDTH 1001px FLIP STUFF below ---------------------------------------------------- *****/
+#collapseFour a
+{
+  color:black;
+  text-decoration:underline;
+  font-size:2em;
+}
+
+#collapseFour a:first-of-type
+{
+  margin-right:40px;  
+}
+
+#theForm
+{
+  
+   margin:auto;
+}
+
+#theForm input
+{
+   margin-left:60px;  
+   text-align:center;
+}
+
+#theForm label
+{
+  position:absolute;
+  margin-right:20px;
+}
+
+/*************************************************************** 1st Media screen MIN-WIDTH 1150px ---------------------------------------------------- *****/
+
+
 @media screen and (max-width:1150px)
 {
   #techSlide
   {
-    left:-4vw;  
+    left:-1vw;
+    top:4vw;
   }
-  .fly-in-text li
+  
+  #pagetitle
+{
+ 
+    font-size: 3em;    
+    letter-spacing: 0.0em;
+   
+}  
+   
+  #sunpic
   {
-    font-size:110%;
+    right:4.5vw;
+    top:6.5vw;
   }
+  
+  .techhead
+  {
+    font-size:19px;
+  }
+  
+  .techs
+  {
+    font-size:18px;
+  }
+  
 }
+/**************************************fixed the 1st panel's position slightly*********************************************/
+@media screen and (max-width:1000px)
+{
+  div .panel 
+  {
+   position: relative;
+   top: -70px;
+  }      
+  
+}
+
 /*************************************************************** 2nd Media screen MIN-WIDTH 1001px FLIP STUFF below ---------------------------------------------------- *****/  
-@media screen and (min-width:775px)/*this says MIN-width not max*/
+@media screen and (min-width:768px)
 {
    
   .flip-container 
-  {
-			-webkit-perspective: 1000;
-			-moz-perspective: 1000;
-			perspective: 1000;
-			border: 1px solid #ccc;
+  {		
+			border: double #ccc;
 	}
 			
 .flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper 
@@ -741,8 +772,10 @@ hr
 			-moz-transform: rotateX(-180deg);
 			transform: rotateX(-180deg);
 	}
+  
+ 
 }
-
+/************************************************************************************/
   #wolfFlip
   {
     padding-top:50px;/*left can be used to fix the slight overlapping to the right*/
@@ -754,28 +787,51 @@ hr
     margin:-2px;
   }
 
+
 /********************************************************3rd media screen MAX-WIDTH 1001px**********************************************************************/
 @media screen and (max-width:1001px)
 {     
+  .navbar-nav > li
+  {
+    top: 0px;
+  }
+  
+  #pagetitle
+  {
+    top:5px;  
+    letter-spacing: 0.0em; 
+  }
+  
+  .fly-in-text li
+  {
+    font-size:2em;
+    margin-right:0;
+  }
+  
+    
     #about
   {  
     background-image:url('http://www.3dcorp.us/blog/wp-content/uploads/2014/01/cloud-part-2.jpg');
-    background-size:100% 100%;
-    /*this doesn't affect anything, although at media screen 475 it fixes everything*/
-    //height:auto; 
-    //display:flex;
-    //margin:auto;    
+    background-size:100% 100%;   
     padding:5px;
     border:2px solid black;
-    font-weight:bold;  
+    font-weight:bold; 
+    display:flex;
+    flex-direction:column;
+    height:460px;
+    order:-1;
+  }
+  
+  #techlist
+  {
+    top:-20px;
   }
   
   .colAbout
   {
     border-right:none;  
     border-bottom:1px solid black;
-    height:auto; 
-    //height:550px;
+    height:auto;    
   }
   
   /*this fixed the min-height issue causing some of the text to overlap on smaller widths*/
@@ -807,9 +863,7 @@ hr
   }
   
   .projTitle
-  {
-    //order:0;
-    //background:pink;
+  {   
     margin-top:0px;
     margin-bottom:0px;
   }
@@ -820,44 +874,43 @@ hr
     top:-130px;
   }
   
-  .front /*inside div and also governs image size since it holds those divs*/
+  .flipper
   {
-    width:17vw;
-    height:17vw;
+    width:100%;
+    height:100%;
   }
   
-  .proj /*container for projpic*/
+  .front /*inside div and also governs image size since it holds those divs*/
+  {
+    width:100%;
+    height:100%;
+  }
+  
+  .back
+  {
+   width:100%;
+    height:100%;   
+  }
+  
+  .proj /*container for projpic */
   {       
-    margin:auto;
-    margin-top:20px;
-    height:150px;
-    width:150px;
-    //width:25vw;
-    //height:25vw;
+    margin:auto; 
+    height:20vw;
+    width:20vw;   
   }    
   
   .toBig /*Google page speed text*/
   {
-    
-    //background-color:grey;
     margin:auto;
-    margin-top:0px;
-    //position:relative;
-    //top:0px;
-    //left:0px; 
+    margin-top:0px;   
   }
   
   .xp
   {
-    margin-top:20px;
-    //order:2;
-    //background:lightgreen;
+    margin-top:20px;   
     margin-left:auto;
-    margin-right:auto;
-    //text-align:center;
-   
+    margin-right:auto;   
   }
- /*NEW CSS ABOVE HERE*/   
   
   .wrap
   {
@@ -873,10 +926,7 @@ hr
   
    #about
   {
-    display:flex;
-    flex-direction:column;
-    height:620px;
-    order:-1;  
+      
   }
   
   #techlist
@@ -944,12 +994,7 @@ hr
   .flip-container
   {
    float:left
-  }  
-    
-  .back
-  {
-    //display:none; /*this might need to go back to none until I get the proper dimensions for back*/
-  } 
+  }   
   
   #techSlide
   {
@@ -971,6 +1016,20 @@ hr
   
 }
 
+@media screen and (max-width:900px)
+{
+  #pagetitle
+  {
+   
+  }
+  
+  .fly-in-text li
+  {
+    font-size:1em;
+    margin-right:0;
+  }
+}
+
 /**********************************************************5th media screen MAX-WIDTH 846px********************************************************************/
 @media screen and (max-width:846px)
 {
@@ -982,8 +1041,7 @@ hr
     #techSlide /*div that holds techpic images*/
   {  
     position:absolute;
-    top:9vw;
-    //left:;   
+    top:9vw;      
   }
   
     #sunpic
@@ -997,9 +1055,14 @@ hr
     position:absolute;
   }
   
+  .fly-in-text li
+  {
+    font-size:90%;
+  }
+  
 }
 /**********************************************************6th media screen MAX-WIDTH 775px********************************************************************/
-@media screen and (max-width:775px)/*natural nav collapse breakpoint*/
+@media screen and (max-width:768px)/*natural nav collapse breakpoint*/
 {
     .panel-heading
   {
@@ -1021,57 +1084,85 @@ hr
   .techpic /*tech images in slideshow*/
   {
     width:13vw;
-    height:12vw;
-   // margin:3vw; 
+    height:12vw;   
   }
   
   #pagetitle
   {
     position:relative;
-    top:-50px;
+    top:-25px;
+    z-index:-25;/*prevents the hamburger menu from not being clickable */
   }
   
   #webD
   {
-    top:-200px;
+    top:-170px;
   }
   
   .fly-in-text li
   {
-    font-size:75%;
+    font-size:90%;
   }
   
   #sunpic
   { 
     width:75px;
     height:75px; 
-   // margin-right:50px;
-   // margin-top:35px;
     right:25px;
     top:55px;
     position:absolute;
   }
+  
+    .back
+  {
+    display:none; /*this might need to go back to none until I get the proper dimensions for back*/
+  }
 }
 
-/*********************************************************7th media screen MAX-WIDTH 479px **************************************************************/
+@media screen and (max-width:730px)
+{
+  #pagetitle
+  {
+    letter-spacing: 0.0em;
+  }
+  
+  .fly-in-text li
+  {
+    font-size:90%;
+    margin-right:2px;
+  }
+  
+  #webD
+  {
+    top:-160px;
+    margin-top:0px;
+  }
+  
+}
+/********************************************************* 7th media screen MAX-WIDTH 479px **************************************************************/
 @media screen and (max-width:600px)/*changed this from 450 to 479px*/
 {
   /*https://jsbin.com/nulayufufe/edit?html,css,output*/
   #techSlide
   {
-    //position:absolute;
-    top:0;
+    top:40px;
+    left:5px;
   }
   
   #sunpic
   {
-    top:0;
-    right:65px;
+    top:40px;
+    right:35px;
   }
+  
+  #techlist
+  {
+    top:0px;
+  }
+  
   .projtalk
   {
      display:inline;  
-     //background:lightgreen;
   }
   
   .front
@@ -1089,17 +1180,13 @@ hr
   .projTitle
   {
     order:0;
-    //background:pink;
   }
   
   .flip-container /*container for projpic*/
   {
     flex: none;
-    order:1;   
-    //width:45vw;
-    //height:45vw;
-    float:none;   
-    //background: red;
+    order:1;    
+    float:none;    
     margin:auto;
   }    
   
@@ -1108,7 +1195,6 @@ hr
     flex:none;    
     width:100%;
     order:2;
-    //background:grey;
     margin-top:auto;
     margin-bottom:auto;
     margin-left:auto;
@@ -1118,7 +1204,6 @@ hr
   .xp
   {    
     order:3;    
-    //background:purple;
   }  
   
   .mf2
@@ -1145,8 +1230,6 @@ hr
   
     .techhead
   {
-    //text-decoration:underline;
-    //font-weight:bold;
     font-size:90%;
   }
 
@@ -1161,11 +1244,167 @@ hr
     padding:5px;
   }  
 }
+/************************************************wolfram image flip below ***************************************/ 
+#wolfFlip /*calculator flip*/
+{
+  position:relative;  
+  font-size:18px;  
+}
+
+#wolfText
+{
+  margin-top:-3vw;
+}
+
+#wolf
+{
+  width:7vw;
+  height:7vw;
+  position:relative; 
+  margin:5px;
+}
+
+#wolf2/*text after wolfram logo*/
+{
+  position:relative;
+  margin-top:25px;  
+}
+
+@media screen and (max-width:1450px)
+{
+    #wolfFlip /*calculator flip*/
+  {
+    position:relative;  
+    font-size:18px;      
+  }
+
+  #wolfText
+  {
+    
+   
+  }
+
+  #wolf
+  {
+    width:5vw;
+    height:5vw;
+    position:relative;
+    top:-5px;
+    margin:5px;
+  }
+
+#wolf2/*text after wolfram logo*/
+  { 
+    top:0px; 
+  }
+}
+
+
+@media screen and (max-width:1300px)
+{
+  
+  #wolfFlip /*calculator flip*/
+  {    
+    font-size:16px;      
+  }
+  
+  #wolf
+  {
+    width:6vw;
+    height:6vw;
+    position:relative;
+    top:-5px;
+   margin-top:-10px;
+  }
+
+#wolf2/*text after wolfram logo*/
+  { 
+    top:0px; 
+  }
+}
+
+@media screen and (max-width:1150px)
+{  
+
+  #wolfText
+  {
+     position:absolute;
+    margin-top:0;
+    top:3px
+  }
+
+  #wolf
+  {
+    width:6vw;
+    height:6vw;
+    top:-5px
+  }
+
+#wolf2/*text after wolfram logo*/
+  { 
+    top:-30px; 
+  }
+}
+
+@media screen and (max-width:1000px)/*this should be 1000*/
+{
+  #wolfFlip /*calculator flip*/
+  {
+    position:relative;  
+    font-size:16px;      
+  }
+
+  #wolfText
+  {
+   
+    top:-5px;
+    margin-top:0;    
+  }
+
+  #wolf
+  {
+    width:6vw;
+    height:6vw;
+    top:-25px
+  }
+
+#wolf2/*text after wolfram logo*/
+  { 
+    top:-56px; 
+  }
+}
+
+@media screen and (max-width:850px)
+{
+   #wolfFlip /*calculator flip*/
+  {
+    position:relative;  
+    font-size:14px;      
+  }
+
+  #wolfText
+  {
+    position:absolute;
+    top:-5px;
+    margin-top:0;   
+  }
+
+  #wolf
+  {  
+    top:-25px;
+      
+  }
+
+#wolf2/*text after wolfram logo*/
+  { 
+    top:-55px; 
+  }
+}
+}
 
 </style>
 </head>
 <body>
-<!---change some of the accordion buttons into the span images, specifically the portfolio image -->
 <meta http-equiv="Content-Type" content="text/html; charset='UTF-8'">
 <title>Ryan's Portfolio</title>
 <div class = "container-fluid wrap">  
@@ -1208,7 +1447,7 @@ hr
                </ul>
              </li>
           <li class="dropdown-submenu">
-             <a class="test" tabindex="-1" href="#" id = "am3">Gadgets
+             <a class="test" tabindex="-1" href="#" id = "am3">Tools
                <span class="fa fa-caret-right" aria-hidden="true"></span>
              </a>
              <ul class="dropdown-menu" id = 'ds3'>               
@@ -1230,16 +1469,12 @@ hr
         </ul>
       </ul> 
     </div>  
-    <div id = "techSlide"><!--currently the slides only runs once and don't repeat--->               
-      <img src = "https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt = "html css and JS logo" class = "techpic">
-      <img src = "http://www.webgiant.co.nz/wp-content/themes/beanstalk01/images/services-bootstrap.gif" alt = "bootstrap logo" class = "techpic">
-      <img src = "http://seeklogo.com/images/P/PHP-logo-A28168CFD0-seeklogo.com.gif " alt = "PHP logo" class = "techpic">
-      <img src = "https://brand.jquery.org/resources/jquery-mark-light.gif " alt = "jquery logo" class = "techpic"><!--this one needs to go-->
-      <img src = "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAMlAAAAJDU4ZjlmOTc2LWM1MjAtNDdiMy04YjIzLTQ5YjBmYWRjNTRiNw.png" alt = "canvas logo" class = "techpic">               
-      <img src = "http://www.acuitytraining.co.uk/wp-content/uploads/2015/05/SQL-logo-transparent.png " alt = "sql logo" class = "techpic">
-      <img src = "https://s.w.org/about/images/logos/wordpress-logo-stacked-rgb.png" alt = "wordpress logo" class = "techpic">
-      <img src = "http://www.potenzaglobalsolutions.com/images/blogImages/9077f0ad-b71e-454d-9e5b-2f3389547982.png" alt = "Angular logo" class = "techpic">
-      <img src = "http://sass-lang.com/assets/img/styleguide/color-1c4aab2b.png " alt = "SASS logo" class = "techpic">
+    <div id = "techSlide">             
+      <img src = "https://i.ytimg.com/vi/fYetZf8Pjfg/maxresdefault.jpg" alt = "html css and JS logo" class = "techpic">
+      <img src = "http://www.jsweet.org/wp-content/uploads/2016/04/react-logo-300x289.png" alt = "react logo image" class = "techpic">
+      <img src = "http://www.webgiant.co.nz/wp-content/themes/beanstalk01/images/services-bootstrap.gif" alt = "bootstrap logo" class = "techpic">      
+      <img src = "https://convertintowordpress.com/wp-content/uploads/2015/12/jquery_paging_table_example_code.png" alt = "jquery logo" class = "techpic">   
+      <img src = "https://raygun.com/blog/wp-content/uploads/2015/05/sass-1.png" alt = "SASS logo" class = "techpic">
     </div>    
   </div> <!--end navbar navbar-default-->
    <div id = "pagetitle">    
@@ -1259,11 +1494,7 @@ hr
   
 </div>
    <h2 id = "webD">Web Development</h2>
-<!--possible images
-http://clipartix.com/wp-content/uploads/2016/04/Sunshine-happy-sun-clipart-3.gif   The sun pic
-http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-skyline-2010-by-Theo-Wargo-Getty-Images-300x200.jpg   NYC skyline
--->
-  <img id = "sunpic" src = "http://clipartix.com/wp-content/uploads/2016/04/Sunshine-happy-sun-clipart-3.gif" alt = "Image of Happy Sun"/>
+  <img id = "sunpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "image of Ryan" />
   <div id="top">   
      <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Mobile First</div>     
      <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Current Technologies</div>
@@ -1284,16 +1515,16 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
       <div id="collapseOne" class="panel-collapse collapse in">                        
         <div class="panel-body" id ="about">                           
           <div class = "col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 colAbout">         
-            <img id = "aboutpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "Picture of me"/>         
+                  
             <div id = "describe">          
-           Ryan has been teaching himself web development in the hope of starting a career.  He is based in the New York City metro area.  Ryan is eager to learn everything he can in this fast changing field and hopes his love of problem solving will help make him a better developer. <br><br>Here are links to his <a href = "https://github.com/Ryanwfile">github</a>
-           and <a href = "http://codepen.io/Ryanwfile/">codepen</a>
+           Ryan has been teaching himself web development in the hope of starting a career.  He is based in the New York City metro area.  Ryan is eager to learn everything he can in this fast changing field and hopes his love of problem solving will help make him a better developer. <br><br>Here are links to his work on <a href = "https://github.com/Ryanwfile" target = "blank">github</a>
+           and <a href = "http://codepen.io/Ryanwfile/" target = "blank">codepen</a>
             </div>
           </div>              
           <div id = "techlist" class = "col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">           
             <h4 id = "topotech">Technologies</h4>               
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
-              <h5 class = "techhead">Comfortable Using</h5>                 
+              <h5 class = "techhead">Comfortable With</h5>                 
                 <ul>
                   <li>HTML</li>                  
                   <li>CSS</li>                 
@@ -1304,7 +1535,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                </ul>
             </div>            
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
-              <h5 class = "techhead">Experienced With</h5>
+              <h5 class = "techhead">Some Experience</h5>
                 <ul>                  
                   <li>PHP</li>                  
                   <li>SQL</li>
@@ -1316,7 +1547,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                </ul>
             </div>               
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
-              <h5 class = "techhead">Currently Learning</h5>
+              <h5 class = "techhead">Learning</h5>
                 <ul>                                     
                   <li>Angular</li>                     
                 </ul>
@@ -1329,7 +1560,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
       <div class="panel-heading">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class = "accordionBtn">
           <h4 class="panel-title">
-            <span class="glyphicon glyphicon-folder-close"></span> Portfolio<!--The portfolio section should be in a tab format for easy navigation-->
+            <span class="glyphicon glyphicon-folder-close"></span> Portfolio
           </h4>
         </a>
       </div>    
@@ -1337,7 +1568,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
         <ul class="nav nav-tabs" id ="tabber">
           <li class = "active uncut" ><a href="#website" data-toggle="tab">Websites</a></li>    
           <li class = "uncut"><a href="#ajax" data-toggle="tab">Websites with API's</a></li>
-          <li class = "uncut"><a href="#gadget" data-toggle="tab">Gadgets</a></li>
+          <li class = "uncut"><a href="#gadget" data-toggle="tab">Tools</a></li>
           <li class = "uncut"><a href="#game" data-toggle="tab">Games</a></li>
         </ul>        
         <div class="panel-body tab-content" id = "project">          
@@ -1419,9 +1650,6 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
               </p>
             </div>  
           </div>
-          
-          
-          
           <div id = "ajax" class = "tab-pane fade">
             <h2 class = "subTitle">Websites that use API's</h2>
             <div class = "projtalk">
@@ -1497,7 +1725,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
           
           </div>
           <div id = "gadget" class = "tab-pane fade">
-            <h2 class = "subTitle">Gadgets</h2>
+            <h2 class = "subTitle">Tools</h2>
             <div class = "projtalk">
               <h4 class ="projTitle">Pomodoro Clock</h4>
               <div class = "proj flip-container" id = "pc">
@@ -1541,8 +1769,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                   <li>Desktop Speed: 89/100</li>
                   <li>User Experience: 82/100</li>
                 </ul>
-              </div>
-             
+              </div>             
               <p class = "xp">Experiences Gained<br>
               I originally finished this project using the javascript eval function but after learning a lot more javascript and jQuery I decided to go back and start from scratch without using eval.  Creating all of the computation functions was a great learning experiences and really helped me grasp how arguments inside a function behave.  
     Allowing the user to use the keyboard or number pad introduced me to the event object’s keycode property and gave me experience converting keyboard input into the appropriate number/symbol.
@@ -1567,13 +1794,11 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                    <li>Desktop Speed: 86/100</li>
                    <li>User Experience: 100/100</li>
                  </ul>
-                </div>
-              
-              <p class = "xp">Experiences Gained<br>
+                </div>              
+                <p class = "xp">Experiences Gained<br>
                        This project introduced me to jQuery.  I also learned some lessons in debugging as when I first put it online there were errors including loading jquery from an http site which was blocked until I fixed it to load from an https source.
-              </p>
-            </div>
-           
+                </p>
+            </div>           
           </div>
           <div id = "game" class = "tab-pane fade">
             <h2 class = "subTitle">Games</h2>
@@ -1595,8 +1820,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                   <li>Desktop Speed: 89/100</li>
                   <li>User Experience: 81/100</li>
                 </ul>
-              </div>
-             
+              </div>             
               <p class = "xp">Experiences Gained<br>
               This project helped me to understand javascript events, particularly the on click function.  It also introduced me to the Audio constructor object as it was the first time I incorporated sounds into a project.
               </p>
@@ -1617,8 +1841,7 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                   <li>Desktop Speed: 88/100</li>
                   <li>User Experience: 100/100</li>
                 </ul>
-              </div>
-              
+              </div>              
               <p class = "xp">Experiences Gained<br>
               I learned how to construct an algorithm that is presented with different possibilities each step and the final algorithm I developed is similar to the Minmax algorithms I read about in that each turn presents a maximum, minimum possible value move for each player.  Through studying about algorithms I learned some common algorithms such as binary search and also some ways an algorithm’s efficiency is measured, including Big O notation.
               </p>
@@ -1641,13 +1864,11 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
                   <li>Desktop Speed: 89/100</li>
                   <li>User Experience: 81/100</li>
                 </ul>
-              </div>           
-              
+              </div>
               <p class = "xp">Experiences Gained<br>
               This was one of the first times I used javascript and most of what I did was copied straight from the book <u>HeadFirst: Javascript</u>.  Currently I am working through the book <u>Eloquent Javascript</u> which has an amazing section on how to create grids using a multidimensional array.  I am considering completely overhauling this project and using object oriented programming similar to that presented in the <u>Eloquent Javascript</u> chapter with the terrarium.
               </p>
-            </div>  
-            
+            </div> 
           </div>
            <div class = "backup">
               <a href="#tabber"><button class="btn scrollup">Back to Top of Projects</button></a>
@@ -1770,39 +1991,27 @@ http://wac.450f.edgecastcdn.net/80450F/wibx950.com/files/2014/01/New-York-City-s
         <div class="panel-body">
           <h5 id = 'marq'>
             <span>
-              <p id = "pone">Thank you for viewing my portfolio page.  Below are various methods to contact me.
+              <p id = "pone">Thank you for viewing my portfolio page, below are a few ways to contact me.
               </p>
             </span>
           </h5>
-          <a href = "https://formspree.io/">Email</a>
-          
-          <a href = "https://www.linkedin.com/">Linkedin</a>
-          
-          <form id = "theForm" action = "message.html" method = "post" onSubmit = "return validateTextBox();"><br>
-            
-        <div class = "row">
-              <label for "name"><b>Name</b> :</label>
-              <input type = "text" id = "name" name =""></br></br>
-        </div>
-        
-    <div class = "row">
+          <a href = "https://formspree.io/">Email</a>          
+          <a target = "blank" href = "https://www.linkedin.com/in/ryan-williams-54772610a/">Linkedin</a>          
+          <form id = "theForm" action = "message.html" method = "post" onSubmit = "return validateTextBox();"><br>            
+            <div class = "row">
+                  <label for "name"><b>Name</b> :</label>
+                  <input type = "text" id = "name" name =""></br></br>
+            </div>        
+            <div class = "row">
               <label for "phone"><b>Phone #</b> :</label>
               <input type = "tel" id = "phone" name ="" placeholder = "optional"></br></br>
-        </div>
-
-<div class = "row">
+            </div>
+            <div class = "row">
               <label for "email"><b>Email</b> :</label>
               <input type = "email" id = "email" name ="">
-        </div>
-</br>
-<input type = "submit" value = "Submit">
-</form>
-
-        
-        
-            
-         
-          
+            </div></br>
+            <input type = "submit" value = "Submit">
+          </form>
         </div>
       </div>
     </div>
@@ -1847,15 +2056,16 @@ $(document).ready(function(){
   });
 });
 
-/**/$(".techpic").hide();
-$(".techpic:first").fadeIn(1500);
+/**/
+$(".techpic").hide();
+
 setInterval(function() 
  { 
   $('.techpic:first ')
     .show()
-    .fadeToggle(11000)
+    .fadeToggle(1900)
     .appendTo('#techSlide');
- },  12000);
+ },  2000);
 
 /************************************Form validation below******************************************/
 function validateTextBox()
@@ -1875,7 +2085,8 @@ function validateTextBox()
       }, 500);
    })();
 
-/************************************slideup animation below******************************************/
+
+
 
 
 </script>
