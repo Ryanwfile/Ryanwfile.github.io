@@ -11,8 +11,6 @@
 
 <style>
 /*changed all hiddens to blank*/
-
-/*changed all hiddens to blank*/
 body
 {
   font-family:"Frank Ruhl Libre";
@@ -37,9 +35,28 @@ body
   vertical-align: top;  
 }
 
-a
+.btn:hover
+{
+background-color: #417cb8;
+    color: white;
+    box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
+}
+
+.btn:active
+{
+  background-color:transparent;  
+}
+
+.panel, .route-blurb-container /*removes the box shadow from panels that looked like a border */
+{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.panel > div.panel-heading > a:focus
 {
   text-decoration:none;
+  color:white;  
 }
 
 #nav1, #nav2, #nav3
@@ -94,6 +111,11 @@ ul
 {
   list-style:none;
   padding-left:0;
+}
+
+#testP:active
+{
+  background-color:transparent;
 }
 
 #techSlide /*div that holds techpic images*/
@@ -214,7 +236,7 @@ ul
   margin-right:30px;
   margin-top:15px;
   right:40px;
-  top:40px;
+  top:20px;
   position:absolute;
   display:none;
   border-radius:50%;
@@ -248,13 +270,41 @@ ul
   background-image: none;
   background-color: #1a8cff;
   color: white;
-  border:1px solid black;
+  border:1px dashed black;
+}
+
+.panel > .panel-heading:hover
+{
+  border:1px dashed white;
 }
 
 .accordionBtn/**/
 {
   background-color: #1a8cff; 
-  color:black; 
+  color:black;    
+}
+
+#accordion > div > div.panel-heading /*targets all the accordion buttons*/
+
+{
+  border-radius:10px;
+  width:10%;  
+}
+
+#accordion > div.panel-heading:active,#accordion > div.panel-heading:visited,#accordion > div.panel-heading:focus
+{
+  border:1px solid white;
+}
+
+
+.panel-heading > a > h4:hover
+{
+  color:white;  
+}
+
+.panel-heading > a:hover,.panel-heading > a:active
+{
+  text-decoration:none;
 }
 
 #about
@@ -312,42 +362,6 @@ ul
 #techlist
 {  
   font-size:150%;
-}
-
-.norm /*governs the text on the flipped side of images*/
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-tabs > li.active > a
-{
-  background-color:transparent;
-  border:none; 
-}
-
-.nav-tabs > li.active.uncut > a
-{
-  height:50.91px
-}
-
-.nav-tabs > li.active, .nav-tabs > li > a:hover, .nav-tabs > li.active.uncut > a
-{
-  background-color:#eb99ff;  
-}
-
-.subTitle
-{
-  color:white;
-}
-
-.toBig
-{
-  font-weight:bold;
-  font-size:18px;   
-  margin-left:8px;   
-  padding-top:18px; 
 }
 
 #top:last-child
@@ -426,9 +440,67 @@ hr
   font-weight:bold;  
 }
 
+#tabber > li > .active
+{
+  color:black;
+}
+
 #tabber:active
 {
-  background-color:none;
+  background-color:none; 
+}
+
+.nav-tabs > li.active > a
+{
+  background-color:transparent;
+  border:none; 
+}
+
+.nav-tabs > li.active.uncut > a
+{
+  height:50.91px;
+  color:black;
+}
+
+.nav-tabs > li.active, .nav-tabs > li > a:hover, .nav-tabs > li.active.uncut > a
+{
+  background-color:#eb99ff;
+  color:black;
+}
+
+#tabber > li.active.uncut > a  /*changes just the font of the selected tab*/
+
+{
+  color:black;
+}
+
+//.nav-tabs >li.active
+{
+  border:1px dotted white;
+  
+}
+
+.nav-tabs >li.active > a
+{
+  color:black;
+}
+
+//.nav-tabs >li:hover
+{
+  border:1px dotted white;
+}
+
+.subTitle
+{
+  color:white;
+}
+
+.toBig
+{
+  font-weight:bold;
+  font-size:18px;   
+  margin-left:8px;   
+  padding-top:18px; 
 }
 
 #project
@@ -480,6 +552,13 @@ hr
   width:100%;
   height:100%;
   border:double black; 
+}
+
+.norm /*governs the text on the flipped side of images*/
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #website, #ajax, #gadget, #game, #books
@@ -679,16 +758,8 @@ hr
   }
   
 }
-/**************************************fixed the 1st panel's position slightly*********************************************/
-@media screen and (max-width:1000px)
-{
-  div .panel 
-  {
-   position: relative;
-   top: -70px;
-  }      
   
-}
+
 
 /*************************************************************** 2nd Media screen MIN-WIDTH 1001px FLIP STUFF below ---------------------------------------------------- *****/  
 @media screen and (min-width:768px)
@@ -810,6 +881,27 @@ hr
     margin-right:0;
   }
   
+ div .panel 
+  {
+   position: relative;
+   top: -70px;
+  }   
+  
+    #techSlide 
+  {     
+    top:8.5vw;
+    left:1vw;
+    width:5vw;
+    height:5vw;    
+  }
+  
+  #accordion > div > div.panel-heading /*targets all the accordion buttons*/
+
+{
+  border-radius:10px;
+  width:15%;  
+}
+  
     
     #about
   {  
@@ -845,9 +937,7 @@ hr
 }
   
   #techlist
-  {
-    //width: 100%;
-    //height:100%;
+  {  
     float:none;
     min-height:;
   }  
@@ -874,32 +964,16 @@ hr
   {
     position:relative;
     top:-130px;
-  }
-  
-  .flipper
-  {
-    width:100%;
-    height:100%;
-  }
-  
-  .front /*inside div and also governs image size since it holds those divs*/
-  {
-    width:100%;
-    height:100%;
-  }
-  
-  .back
-  {
-   width:100%;
-    height:100%;   
-  }
-  
-  .proj /*container for projpic */
-  {       
-    margin:auto; 
-    height:20vw;
-    width:20vw;   
   }    
+  
+   .proj /*container for projpic*/
+  {       
+    margin:auto;
+    margin-top:20px;
+    height:150px;
+    width:150px;    
+  }  
+   
   
   .toBig /*Google page speed text*/
   {
@@ -996,16 +1070,7 @@ hr
   .flip-container
   {
    float:left
-  }   
-  
-  #techSlide
-  {
-    position:absolute;
-    top:10vw;
-    left:50px;
-    width:5vw;
-    height:5vw;
-  }
+  }     
   
   #sunpic
   {
@@ -1020,10 +1085,6 @@ hr
 
 @media screen and (max-width:900px)
 {
-  #pagetitle
-  {
-   
-  }
   
   .fly-in-text li
   {
@@ -1115,6 +1176,12 @@ hr
     position:absolute;
   }
   
+  #accordion > div > div.panel-heading /*targets all the accordion buttons*/
+{
+  border-radius:10px;
+  width:20%;  
+}
+  
     .back
   {
     display:none; /*this might need to go back to none until I get the proper dimensions for back*/
@@ -1160,38 +1227,14 @@ hr
   #techlist
   {
     top:0px;
-  }
+  }   
   
-  .projtalk
-  {
-     display:inline;  
-  }
-  
-  .front
-  {
-    width:150px;
-    height:150px;
-  }
-  
-  .projpic
-  {
-    width:100%;
-    height:100%;
-  }
-  
-  .projTitle
-  {
-    order:0;
-  }
-  
-  .flip-container /*container for projpic*/
-  {
-    flex: none;
-    order:1;    
-    float:none;    
-    margin:auto;
-  }    
-  
+   #accordion > div > div.panel-heading /*targets all the accordion buttons*/
+{
+  border-radius:10px;
+  width:25%;  
+}
+
   .toBig /*Google page speed text*/
   {
     flex:none;    
@@ -1201,6 +1244,12 @@ hr
     margin-bottom:auto;
     margin-left:auto;
     margin-right:auto;
+  }   
+  
+  .front
+  {
+    width:100%;
+    height:100%;
   }
   
   .xp
@@ -1208,7 +1257,7 @@ hr
     order:3;    
   }  
   
-  .mf2
+  .mf2 /*last divider*/
   {
     display:none;
   }
@@ -1216,35 +1265,64 @@ hr
   .divide
   {
     width:33%;
-  } 
+  }     
   
-  #aboutpic
+  //.divide /*removed as it did little and looks fine without*/
   {   
-    width:25vw;
-    height:25vw; 
-    float:none;  
+    font-size:16px;   
+    padding:5px;
+  }  
+  
+}
+
+@media screen and (max-width:565px)
+{
+  #techSlide
+  {
+    left:0;
+  }
+  
+  #sunpic
+  {
+    right:-10px;
+  }
+  
+  .fly-in-text 
+  {
+    font-size:25px;    
+  }
+  
+  #webD
+  {
+    font-size:23px;
   }
   
   #about
   {
     height:100%;
-  }  
+  }
   
-    .techhead
+  #topotech
   {
-    font-size:90%;
-  }
-
-  #techlist
-  {  
-    font-size:100%;
+    font-size:24px;
   }
   
-  .divide
-  {   
-    font-size:16px;   
-    padding:5px;
-  }  
+  .techhead
+  {
+   font-size:95%;    
+  }
+  
+  .techs
+  {
+    font-size:75%;    
+  }
+  
+   #accordion > div > div.panel-heading /*targets all the accordion buttons*/
+{
+  border-radius:10px;
+  width:30%;  
+}
+  
 }
 /************************************************wolfram image flip below ***************************************/ 
 #wolfFlip /*calculator flip*/
@@ -1402,12 +1480,16 @@ hr
     top:-55px; 
   }
 }
-}
 
 </style>
 </head>
 <body>
+<!---change some of the accordion buttons into the span images, specifically the portfolio image 
+my pomodoro clock should have an hourglass that empties as the timer ticks
+video on uploading google docs  https://www.youtube.com/watch?v=qIL6K9TsE34 
+-->
 <meta http-equiv="Content-Type" content="text/html; charset='UTF-8'">
+<meta property="og:image" content="https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true">
 <title>Ryan's Portfolio</title>
 <div class = "container-fluid wrap">  
   <div class = "navbar navbar-default">
@@ -1475,7 +1557,8 @@ hr
       <img src = "https://i.ytimg.com/vi/fYetZf8Pjfg/maxresdefault.jpg" alt = "html css and JS logo" class = "techpic">
       <img src = "http://www.jsweet.org/wp-content/uploads/2016/04/react-logo-300x289.png" alt = "react logo image" class = "techpic">
       <img src = "http://www.webgiant.co.nz/wp-content/themes/beanstalk01/images/services-bootstrap.gif" alt = "bootstrap logo" class = "techpic">      
-      <img src = "https://convertintowordpress.com/wp-content/uploads/2015/12/jquery_paging_table_example_code.png" alt = "jquery logo" class = "techpic">   
+      <img src = "https://convertintowordpress.com/wp-content/uploads/2015/12/jquery_paging_table_example_code.png" alt = "jquery logo" class = "techpic">
+      <img src = "http://www.potenzaglobalsolutions.com/images/blogImages/9077f0ad-b71e-454d-9e5b-2f3389547982.png" alt = "Angular logo" class = "techpic">
       <img src = "https://raygun.com/blog/wp-content/uploads/2015/05/sass-1.png" alt = "SASS logo" class = "techpic">
     </div>    
   </div> <!--end navbar navbar-default-->
@@ -1533,25 +1616,27 @@ hr
                   <li>Javascript</li>
                   <li>React</li>
                   <li>JQuery</li>                 
-                  <li>Bootstrap</li>                 
+                  <li>Bootstrap</li>
+                  <li>SASS/SCSS</li>
                </ul>
             </div>            
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
               <h5 class = "techhead">Some Experience</h5>
                 <ul>                  
+                  <li>Angular</li>
                   <li>PHP</li>                  
-                  <li>SQL</li>
-                  <li>SASS/SCSS</li> 
+                  <li>SQL</li>                   
                   <li>Python</li>                   
                   <li>XML</li>                   
                   <li>Canvas</li>                    
-                  <li>Wordpress</li>                  
+                  <li>Wordpress</li>
+                  
                </ul>
             </div>               
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
               <h5 class = "techhead">Learning</h5>
                 <ul>                                     
-                  <li>Angular</li>                     
+                  <li>Node.js</li>            
                 </ul>
             </div>    
           </div>  <!--end techlist div -->               
@@ -1747,7 +1832,7 @@ hr
                 </ul>
               </div>             
               <p class = "xp">Experiences Gained<br>
-             After using the Window.alert method I came to the conclusion that it was too intrusive and provided such a negative user experience that a sound alert would provide a better user experience.  Once I found a few sounds I wanted to use for the alert my curiosity led me to experiment with many facets of the HTML audio element and playing sounds in javascript.  This project also helped me understand the setInterval method.
+             After using the Window.alert method I came to the conclusion that it was too intrusive and provided such a negative user experience that a sound alert would provide a better user experience.  Once I found a few sounds I wanted to use for the alert my curiosity led me to experiment with many facets of the HTML audio element and playing sounds in javascript.  This project also helped me understand the setInterval method.<br>The source for most of the sounds is <a href = "http://downloads.khinsider.com/game-soundtracks" targe = "blank">http://downloads.khinsider.com/game-soundtracks</a> and sometimes they change the url of the sound files so some sound might not work.
               </p>
             </div> 
             <div class = "projtalk">
@@ -1999,18 +2084,18 @@ hr
           </h5>
           <a href = "https://formspree.io/">Email</a>          
           <a target = "blank" href = "https://www.linkedin.com/in/ryan-williams-54772610a/">Linkedin</a>          
-          <form id = "theForm" action = "message.html" method = "post" onSubmit = "return validateTextBox();"><br>            
+          <form name = "contactMe" id = "theForm" action = "https://formspree.io/codereese@hotmail.com" method = "post" onSubmit = "return validateTextBox();"><br>            
             <div class = "row">
                   <label for "name"><b>Name</b> :</label>
                   <input type = "text" id = "name" name =""></br></br>
             </div>        
             <div class = "row">
               <label for "phone"><b>Phone #</b> :</label>
-              <input type = "tel" id = "phone" name ="" placeholder = "optional"></br></br>
+              <input type = "tel" id = "phone" name ="phone number" placeholder = "optional"></br></br>
             </div>
             <div class = "row">
               <label for "email"><b>Email</b> :</label>
-              <input type = "email" id = "email" name ="">
+              <input type = "email" id = "email" name ="email address">
             </div></br>
             <input type = "submit" value = "Submit">
           </form>
@@ -2018,6 +2103,7 @@ hr
       </div>
     </div>
   </div>
+2017 | Ryan Williams
 </div>
 </body>
 <script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -2086,6 +2172,9 @@ function validateTextBox()
         $('.fly-in-text').removeClass('blank');
       }, 500);
    })();
+
+/************************************slideup animation below******************************************/
+
 
 
 
