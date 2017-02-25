@@ -11,6 +11,12 @@
 
 <style>
 /*changed all hiddens to blank*/
+.pers
+{
+  color:blue !important;
+  
+}
+
 body
 {
   font-family:"Frank Ruhl Libre";
@@ -766,85 +772,85 @@ hr
 {
    
   .flip-container 
-  {		
-			border: double #ccc;
-	}
-			
+  {   
+      border: double #ccc;
+  }
+      
 .flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper 
   {
-			-webkit-transform: rotateY(180deg);
-			-moz-transform: rotateY(180deg);
-			transform: rotateY(180deg);
-			filter: FlipH;
-    	-ms-filter: "FlipH";
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      filter: FlipH;
+      -ms-filter: "FlipH";
   }
 
 .flip-container, .front, .back 
   {
-			width: 19.5vw;
-			height: 19.5vw;
+      width: 19.5vw;
+      height: 19.5vw;
       margin:-1px;
-	}
+  }
 
 .flipper 
   {
-			-webkit-transition: 0.6s;
-			-webkit-transform-style: preserve-3d;
-			-moz-transition: 0.6s;
-			-moz-transform-style: preserve-3d;
-			transition: 0.6s;
-			transform-style: preserve-3d;
-			position: relative;
-	}
+      -webkit-transition: 0.6s;
+      -webkit-transform-style: preserve-3d;
+      -moz-transition: 0.6s;
+      -moz-transform-style: preserve-3d;
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+  }
 
 .front, .back 
   {
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			backface-visibility: hidden;
-			position: absolute;
-			top: 0;
-			left: 0;   
-	}
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;   
+  }
 
 .front 
   {
-			background: white;/*changed from lightgreen*/
-			z-index: 2;
-	}
+      background: white;/*changed from lightgreen*/
+      z-index: 2;
+  }
 
 .back 
-  {		
-			-webkit-transform: rotateY(180deg);
-			-moz-transform: rotateY(180deg);
-			transform: rotateY(180deg);      
+  {   
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      transform: rotateY(180deg);      
   }
 
 .vertical.flip-container 
   {
-			position: relative;
-	}
+      position: relative;
+  }
 
 .vertical .back 
   {
-			-webkit-transform: rotateX(180deg);
-			-moz-transform: rotateX(180deg);
-			transform: rotateX(180deg);
-	}
+      -webkit-transform: rotateX(180deg);
+      -moz-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+  }
 
 .vertical.flip-container .flipper 
   {
-			-webkit-transform-origin: 100% 10vw;
-			-moz-transform-origin: 100% 10vw;
-			transform-origin: 100% 10vw;/*I changed this value to 10vw which seemed to fix the flip over the x axis*/
-	}
+      -webkit-transform-origin: 100% 10vw;
+      -moz-transform-origin: 100% 10vw;
+      transform-origin: 100% 10vw;/*I changed this value to 10vw which seemed to fix the flip over the x axis*/
+  }
 
 .vertical.flip-container:hover .flipper 
   {
-			-webkit-transform: rotateX(-180deg);
-			-moz-transform: rotateX(-180deg);
-			transform: rotateX(-180deg);
-	}
+      -webkit-transform: rotateX(-180deg);
+      -moz-transform: rotateX(-180deg);
+      transform: rotateX(-180deg);
+  }
   
  
 }
@@ -1480,9 +1486,9 @@ hr
     top:-55px; 
   }
 }
-
 </style>
 </head>
+
 <body>
 <!---change some of the accordion buttons into the span images, specifically the portfolio image 
 my pomodoro clock should have an hourglass that empties as the timer ticks
@@ -2082,8 +2088,10 @@ video on uploading google docs  https://www.youtube.com/watch?v=qIL6K9TsE34
               </p>
             </span>
           </h5>
-          <a href = "https://formspree.io/">Email</a>          
-          <a target = "blank" href = "https://www.linkedin.com/in/ryan-williams-54772610a/">Linkedin</a>          
+              <p class = "pers" id = "contEm"></p>     
+             <a class = "pers" target = "blank" href = "https://www.linkedin.com/in/ryan-williams-54772610a/">Linkedin</a>     
+             
+          
           <form name = "contactMe" id = "theForm" action = "https://formspree.io/codereese@hotmail.com" method = "post" onSubmit = "return validateTextBox();"><br>            
             <div class = "row">
                   <label for "name"><b>Name</b> :</label>
@@ -2106,11 +2114,20 @@ video on uploading google docs  https://www.youtube.com/watch?v=qIL6K9TsE34
 2017 | Ryan Williams
 </div>
 </body>
+
 <script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <script>
-$(document).ready(function(){
+$(document).ready(function()
+{  
+  var username = "codereese";
+  var hostname = "hotmail.com";
+  var linktext = username + "@" + hostname ;
+  var linker = linktext.fontcolor("blue");
+  document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
+  $(linktext).css('color', 'blue');  
   $('#sunpic').slideDown(1000);
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
@@ -2175,11 +2192,11 @@ function validateTextBox()
 
 /************************************slideup animation below******************************************/
 
-
-
-
-
-
+var username = "codereese";
+var hostname = "hotmail.com";
+var linktext = username + "@" + hostname ;
+//document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>";
 </script>
 
 </html>
