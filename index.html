@@ -2122,13 +2122,14 @@ video on uploading google docs  https://www.youtube.com/watch?v=qIL6K9TsE34
 <script>
 $(document).ready(function()
 {  
+  $('#sunpic').slideDown(1000);
   var username = "codereese";
   var hostname = "hotmail.com";
   var linktext = username + "@" + hostname ;
   var linker = linktext.fontcolor("blue");
   document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
   $(linktext).css('color', 'blue');  
-  $('#sunpic').slideDown(1000);
+  
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
     console.log(this.id);
