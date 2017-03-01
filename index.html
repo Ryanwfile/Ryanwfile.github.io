@@ -2121,14 +2121,7 @@ hr
 <script>
 $(document).ready(function()
 {  
-  $('#sunpic').slideDown(1000);
-  var username = "codereese";
-  var hostname = "hotmail.com";
-  var linktext = username + "@" + hostname ;
-  var linker = linktext.fontcolor("blue");
-  document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
-  $(linktext).css('color', 'blue');  
-  
+  $('#sunpic').slideDown(1000);  
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
     console.log(this.id);
@@ -2159,6 +2152,13 @@ $(document).ready(function()
     e.stopPropagation();
     e.preventDefault();
   });
+  var username = "codereese";
+  var hostname = "hotmail.com";
+  var linktext = username + "@" + hostname ;
+  var linker = linktext.fontcolor("blue");
+  document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
+  $(linktext).css('color', 'blue');  
+  
 });
 
 /**/
@@ -2190,13 +2190,6 @@ function validateTextBox()
       }, 500);
    })();
 
-/************************************slideup animation below******************************************/
-
-var username = "codereese";
-var hostname = "hotmail.com";
-var linktext = username + "@" + hostname ;
-//document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
-document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>";
 </script>
 
 </html>
