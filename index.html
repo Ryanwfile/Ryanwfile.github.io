@@ -2159,6 +2159,15 @@ $(document).ready(function()
     e.stopPropagation();
     e.preventDefault();
   });
+  
+     $(function() 
+   {                
+      setTimeout(function() 
+      {   
+        $('.fly-in-text').removeClass('blank');
+      }, 500);
+   })();
+    
   var username = "codereese";
   var hostname = "hotmail.com";
   var linktext = username + "@" + hostname ;
@@ -2189,13 +2198,7 @@ function validateTextBox()
     }
 }
 /************************************fly in text animation below******************************************/
- $(function() 
-   {                
-      setTimeout(function() 
-      {   
-        $('.fly-in-text').removeClass('blank');
-      }, 500);
-   })();
+
 
 /************************************slideup animation below******************************************/
 
