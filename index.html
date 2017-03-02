@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Ryan Williams Web Development</title>
-  <meta charset="UTF-8">
- 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true">
+<link url = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
@@ -12,13 +11,7 @@
 
 <style>
 /*changed all hiddens to blank*/
-.pers
-{
-  color:blue !important;
-  
-}
-  
-  @media screen and (min-width:1000px)
+@media screen and (min-width:1000px)
 {
     #cR/*needs adjustment*/
   {
@@ -26,6 +19,13 @@
   }
   
 }
+
+.pers
+{
+  color:blue !important;  
+}
+
+
 
 body
 {
@@ -250,7 +250,7 @@ ul
   width:12vw;
   height:12vw; 
   margin-right:30px;
-  margin-top:15px;
+  //margin-top:15px;
   right:40px;
   top:20px;
   position:absolute;
@@ -287,11 +287,13 @@ ul
   background-color: #1a8cff;
   color: white;
   border:1px dashed black;
+  box-shadow: 0 3px black;
 }
 
 .panel > .panel-heading:hover
 {
   border:1px dashed white;
+  box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
 }
 
 .accordionBtn/**/
@@ -2117,7 +2119,6 @@ hr
   </div>
 2017 | Ryan Williams
 </div>
-
 <script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -2125,7 +2126,9 @@ hr
 <script>
 $(document).ready(function()
 {  
-  $('#sunpic').slideDown(1000);  
+  $('#sunpic').slideDown(1000);
+ 
+  
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
     console.log(this.id);
@@ -2194,7 +2197,8 @@ function validateTextBox()
       }, 500);
    })();
 
+/************************************slideup animation below******************************************/
+
 </script>
 </body>
-
 </html>
