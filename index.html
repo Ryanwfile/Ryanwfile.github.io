@@ -10,12 +10,53 @@
 <link rel = "stylesheet" href = "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <style>
-/*changed all hiddens to blank*/
+.target
+{
+  list-style-type:none;
+  display:inline;
+  
+}
+
+#target li
+{
+  display: inline-block;
+  font-size:350%;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  font-weight:bold;
+}
+
+.techs li
+{
+  //display: inline-block;
+  //font-size:175%;
+  text-shadow:                
+              
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  //font-weight:bold;
+  
+}
+
+
+
 @media screen and (min-width:1000px)
 {
     #cR/*needs adjustment*/
   {
-    font-size:75%;
+    font-size:55%;
+    //background-color:red !important;
   }
   
 }
@@ -163,6 +204,7 @@ ul
   animation-fill-mode: both; 
   margin-bottom:60px;
   top:-25px;
+  
 }
 
 .fly-in-text 
@@ -552,9 +594,9 @@ hr
   float:left;
   margin:15px;
   padding:3px; 
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
+  
+  outline:3px solid black;
+  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
 }
 /*https://designshack.net/articles/css/5-cool-css-hover-effects-you-can-copy-and-paste/*/
 .projTitle
@@ -1498,7 +1540,6 @@ hr
     top:-55px; 
   }
 }
-
 </style>
 </head>
 <body>
@@ -1591,7 +1632,23 @@ hr
       <li>e</li>      
     </ul> 
 </div>
-   <h2 id = "webD">Web Development</h2>
+   <ul id = "target">
+  <li>W</li>
+  <li>e</li>
+  <li>b</li>
+  <li> </li>
+  <li>D</li>
+  <li>e</li>
+  <li>v</li>
+  <li>e</li>
+  <li>l</li>
+  <li>o</li>
+  <li>p</li>
+  <li>m</li>
+  <li>e</li>
+  <li>n</li>
+  <li>t</li>
+</ul>
   <img id = "sunpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "image of Ryan" />
   <div id="top">   
      <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Mobile First</div>     
@@ -1627,28 +1684,29 @@ hr
                   <li>HTML</li>                  
                   <li>CSS</li>                 
                   <li>Javascript</li>
-                  <li>React</li>
+                  
                   <li>JQuery</li>                 
                   <li>Bootstrap</li>
-                  <li>SASS/SCSS</li>
+                 
                </ul>
             </div>            
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
               <h5 class = "techhead">Some Experience</h5>
                 <ul>                  
-                  <li>Angular</li>
+                  <li>React</li>
+                  
                   <li>PHP</li>                  
                   <li>SQL</li>                   
                   <li>Python</li>                   
                   <li>XML</li>                   
-                  <li>Canvas</li>                    
-                  <li>Wordpress</li>
+                   <li>SASS/SCSS</li>
                   
                </ul>
             </div>               
             <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
               <h5 class = "techhead">Learning</h5>
-                <ul>                                     
+                <ul>    
+                  <li>Angular</li>
                   <li>Node.js</li>            
                 </ul>
             </div>    
@@ -1671,7 +1729,8 @@ hr
           <li class = "uncut"><a href="#gadget" data-toggle="tab">Tools</a></li>
           <li class = "uncut"><a href="#game" data-toggle="tab">Games</a></li>
         </ul>        
-        <div class="panel-body tab-content" id = "project">          
+        <div class="panel-body tab-content" id = "project">   
+          <!--Only this portfolio page has been put through a markup validation service such as https://validator.w3.org/  so these projects contain all of the many mistakes I learned from-->
           <div id = "website" class ="tab-pane fade in active">
             <h2 class = "subTitle">Websites</h2>            
             <div class = "projtalk">              
@@ -2124,8 +2183,9 @@ hr
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script>
-$(document).ready(function(){
-  $('#sunpic').slideDown(1000);
+$(document).ready(function()
+{  
+  $('#sunpic').slideDown(1000);  
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
     console.log(this.id);
@@ -2156,6 +2216,95 @@ $(document).ready(function(){
     e.stopPropagation();
     e.preventDefault();
   });
+
+$(function($) {
+  var bluePaint = false;
+  var target = $("#target");
+  target.html(target.text().replace(/./g, "<li>$&</li>"));
+
+  setTimeout(runAnimation, 250);
+
+  function runAnimation() {
+    var index, lis;
+
+    index = 0;
+    lis = target.children();
+    paintBlue();
+
+    function paintBlue() {
+      bluePaint = true; 
+      var li = $(lis[index]);
+      if (!$.trim(li.text())) {
+        // Skip blanks
+        next();
+        return;
+      }
+
+      // Do this one
+      li.css({
+        position: "relative",
+      }).animate({
+        top: "-20",
+        color:'#b84dff'
+      }, "fast").animate({
+        top: "0"
+      }, "fast", function() {
+        li.css("position", "");
+        next();
+        
+      });
+    }
+    
+    function paintAlt() {
+      bluePaint = false; 
+      var li = $(lis[index]);
+      if (!$.trim(li.text())) {
+        // Skip blanks
+        next();
+        return;
+      }
+
+      // Do this one
+      li.css({
+        position: "relative",
+      }).animate({
+        bottom: "-20",
+        color:'#ffff1a'
+      }, "fast").animate({
+        bottom: "0"
+      }, "fast", function() {
+        li.css("position", "");
+        next();
+        
+      });
+    }
+
+    function next() {
+      ++index;
+      if (index < lis.length && bluePaint == false) {
+        paintBlue();
+      }
+       else if (index < lis.length && bluePaint == true) {
+        paintAlt();
+      }
+      else {
+        $('#target > li').css('color', "black");
+        setTimeout(runAnimation, 500);
+      }
+    }
+  }
+
+});
+  
+  var username = "codereese";
+  var hostname = "hotmail.com";
+  var linktext = username + "@" + hostname ;
+  var linker = linktext.fontcolor("blue");
+  document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
+  $(linktext).css('color', 'blue');  
+  
+  
+  
 });
 
 /**/
@@ -2179,15 +2328,14 @@ function validateTextBox()
     }
 }
 /************************************fly in text animation below******************************************/
- $(function() 
+   $(function() 
    {                
       setTimeout(function() 
       {   
         $('.fly-in-text').removeClass('blank');
       }, 500);
    })();
-
-
+/************************************slideup animation below******************************************/
 
 
 
