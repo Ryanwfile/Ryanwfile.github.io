@@ -2,2216 +2,1181 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Jacques Francois Shadow"/>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abhaya Libre"/>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cormorant Garamond"/>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cuprum"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
-<!--css below here-->
-<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
+<link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
 
 <style>
-
-.target
-{
-  list-style-type:none;
-  display:inline;
-  
-}
-
-#target li
-{
-  display: inline-block;
-  font-size:350%;
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-  font-weight:bold;
-}
-
-.techs li
-{
-  //display: inline-block;
-  //font-size:175%;
-  text-shadow:                
-              
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-  //font-weight:bold;
-  
-}
-
-
-
-@media screen and (min-width:1000px)
-{
-    #cR/*needs adjustment*/
-  {
-    font-size:55%;
-    //background-color:red !important;
-  }
-  
-}
-
-.pers
-{
-  color:blue !important;  
-}
-
-
-
-body
-{
-  font-family:"Frank Ruhl Libre";
-}
-
-.wrap
-{
-  text-align:center;
-  margin:20px;
-}
-
-.navbar-default/*governs the background and border*/
-{
-  background:none;
-  border:none;
-}
-
-.navbar .navbar-nav 
-{
-  display: inline-block;
-  float: none;
-  vertical-align: top;  
-}
-
-.btn:hover
-{
-background-color: #417cb8;
-    color: white;
-    box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
-}
-
-.btn:active
-{
-  background-color:transparent;  
-}
-
-.panel, .route-blurb-container /*removes the box shadow from panels that looked like a border */
-{
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.panel > div.panel-heading > a:focus
-{
-  text-decoration:none;
-  color:white;  
-}
-
-#nav1, #nav2, #nav3
-{
-  background-color:transparent;
-}
-
-.navbar-nav > li
-{ 
-  font-size:125%;
-  font-weight:bold;
-  border-radius:5%;
-  margin:2vw;
-  padding: 6px 12px;
-  margin-bottom: 0;  
-  line-height: 1.42857143;
+#wrap {
+  margin: 50px 100px;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+  font-family: "Frank Ruhl Libre";
+}
+
+.circleImage {
+  border-radius: 50%;
+}
+
+#navbar {
+  display: flex;
+  position: relative;
+}
+
+#navbar li {
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;    
-  position: relative;
-  top:-40px;
+  font-size: 125%;
 }
 
-.btn
-{
-  background-color:white;/**/
-  font-size:125%;
-  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
-}
-  
-.dropdown-submenu
-{
-  position: relative;
-}
-
-.dropdown-submenu .dropdown-menu 
-{
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-}
-
-ul
-{
-  list-style:none;
-  padding-left:0;
-}
-
-#testP:active
-{
-  background-color:transparent;
-}
-
-#techSlide /*div that holds techpic images*/
-{  
-  position:absolute;
-  top:-1vw;
-  left:-1vw;   
-}
-
-.techpic /*tech images in slideshow*/
-{
-  width:12vw;
-  height:10vw;
-  margin:3vw; 
-  border:double black;   
-}
-
-#pagetitle
-{
-  order:-1;
-  font-family:"Frank Ruhl Libre";  
-  position: relative;
-  font-size: 5em;
-  color: #FF;
-  letter-spacing: 0.0625em;
-  animation: drop-shadows;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both; 
-  margin-bottom:60px;
-  top:-25px;
-  
-}
-
-.fly-in-text 
-{
-  list-style: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.fly-in-text li 
-{
-  display: inline-block;
-  margin-right: 5px;
-  font-family:"Frank Ruhl Libre";
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-   font-weight: 300;
-   font-size: 2em;/*changed from 1 to 2*/
-   color: black;
-   opacity: 1;
-   transition: all 2.5s ease;
- }
-
- .fly-in-text li:last-child 
-{
-   margin-right: 0;
-}
-
-.fly-in-text.blank li 
-{
-   opacity: 0;
-}
-/*these are what control the actual animations*/
-.fly-in-text.blank li:nth-child(1) 
-{ 
-  transform: translateX(-200px) translateY(-200px); 
-}
-.fly-in-text.blank li:nth-child(2) 
-{ 
-  transform: translateX(20px) translateY(100px); 
-}
-.fly-in-text.blank li:nth-child(3) 
-{ 
-  transform: translateX(-150px) translateY(-80px); 
-}
-.fly-in-text.blank li:nth-child(4) 
-{ 
-  transform: translateX(10px) translateY(-200px); 
-}
-.fly-in-text.blank li:nth-child(5) 
-{ 
-  transform: translateX(-300px) translateY(200px); 
-}
-.fly-in-text.blank li:nth-child(6) 
-{ 
-  transform: translateX(20px) translateY(-20px); 
-}
-.fly-in-text.blank li:nth-child(7) 
-{ 
-  transform: translateX(30px) translateY(200px); 
-}
-.fly-in-text.blank li:nth-child(8) 
-{ 
-  transform: translateX(10px) translateY(-70px); 
-}
-.fly-in-text.blank li:nth-child(9) 
-{ 
-  transform: translateX(-50px) translateY(100px); 
-}
-
-#sunpic
-{ 
-  width:12vw;
-  height:12vw; 
-  margin-right:30px;
-  //margin-top:15px;
-  right:40px;
-  top:20px;
-  position:absolute;
-  display:none;
-  border-radius:50%;
-  border:2px solid black;
-}
-
-#top /*5 divider description div*/
-{    
-  width:100%;   
-  display:flex;
-  flex-wrap:wrap;  
-  margin-top:2vw;
-}
-
- .panel-default
-{
-  padding:15px;
-  border:none;  
-}
-
-.panel-heading
-{
-  width:20%;
-  margin:auto;
-  margin-bottom:5px; 
-  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;  
-}
-
-.panel > .panel-heading 
-{
-  background-image: none;
-  background-color: #1a8cff;
-  color: white;
-  border:1px dashed black;
-  box-shadow: 0 3px black;
-}
-
-.panel > .panel-heading:hover
-{
-  border:1px dashed white;
-  box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
-}
-
-.accordionBtn/**/
-{
-  background-color: #1a8cff; 
-  color:black;    
-}
-
-#accordion > div > div.panel-heading /*targets all the accordion buttons*/
-
-{
-  border-radius:10px;
-  width:10%;  
-}
-
-#accordion > div.panel-heading:active,#accordion > div.panel-heading:visited,#accordion > div.panel-heading:focus
-{
-  border:1px solid white;
-}
-
-
-.panel-heading > a > h4:hover
-{
-  color:white;  
-}
-
-.panel-heading > a:hover,.panel-heading > a:active
-{
-  text-decoration:none;
-}
-
-#about
-{  
-  background-image:url('http://www.3dcorp.us/blog/wp-content/uploads/2014/01/cloud-part-2.jpg');
-  background-size:100% 100%;
-  height:350px; 
-  margin:auto;
-  display:flex;
-  padding:15px;
-  border:2px solid black;
-  font-weight:bold;  
-}
-
-.colAbout
-{
-  border-right:1px solid black;
-  margin:auto;  
-}
-
-#aboutpic
-{
-  border-radius:50%;
-  width:170px;
-  height:170px;
-  border:1px solid black;
-  float:left;
-  margin:10px;
-}
-
-#describe
-{   
-  font-size:115%;
-}
-
-#describe a
-{
-  color:black;
-  text-decoration:underline;
-}
-
-#topotech/*h4 tag above technologies list*/
-{
-  font-size:145%;
-  font-weight:bold;
-}
-
-.techhead
-{
-  text-decoration:underline;
-  font-weight:bold;
-  font-size:110%;
-}
-
-#techlist
-{  
-  font-size:150%;
-}
-
-#top:last-child
-{
-  text-align:center;
-  margin:auto;
-  justify-content:center; 
-}
-
-hr
-{
-  border-top:1px solid black;
-  width:100%;
-}
-
-.divide 
-{  
-  border-right: solid 1px black; 
-  font-family: times;
-  font-size: 25px;
-  text-align:center;
-  width:20%;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center;  
-}
-
-.divide:last-of-type /*this worked but last-child did not*/
-{
-  border-right:none;
-}
-
-.backup/*div holding the scrollup button*/
-{  
-  width:100%; 
-  font-size:150%;
-}
-
-.scrollup
-{  
-  margin:auto;
-  margin-top:8px;
-  margin-bottom:8px;
-  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
-}
-
-.scrollup:hover
-{
-  background-color: #417cb8;
-  color: white;
-  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
-}
-
-#collapseTwo
-{
-  margin:auto !important;
-  text-align:center !important;
-  background-color:lightblue;
-  border:4px solid black;
-  border-radius:15px; 
-  background-image:url('https://static.pexels.com/photos/1188/city-landmark-lights-night.jpg');
-  background-size:  cover;
-}
-
-#tabber  /*the portfolio tabs nav*/
-{
-  display: inline-block;
-  vertical-align: top;
-  font-size:150%;  
-  border:none;  
-}
-
-#tabber > li > a
-{
-  color:white;
-  font-weight:bold;  
-}
-
-#tabber > li > .active
-{
-  color:black;
-}
-
-#tabber:active
-{
-  background-color:none; 
-}
-
-.nav-tabs > li.active > a
-{
-  background-color:transparent;
-  border:none; 
-}
-
-.nav-tabs > li.active.uncut > a
-{
-  height:50.91px;
-  color:black;
-}
-
-.nav-tabs > li.active, .nav-tabs > li > a:hover, .nav-tabs > li.active.uncut > a
-{
-  background-color:#eb99ff;
-  color:black;
-}
-
-#tabber > li.active.uncut > a  /*changes just the font of the selected tab*/
-
-{
-  color:black;
-}
-
-//.nav-tabs >li.active
-{
-  border:1px dotted white;
-  
-}
-
-.nav-tabs >li.active > a
-{
-  color:black;
-}
-
-//.nav-tabs >li:hover
-{
-  border:1px dotted white;
-}
-
-.subTitle
-{
-  color:white;
-}
-
-.toBig
-{
-  font-weight:bold;
-  font-size:18px;   
-  margin-left:8px;   
-  padding-top:18px; 
-}
-
-#project
-{    
-  
-  display:flex;
-  flex-wrap:wrap; 
-  border:none;
-}
-
-#resource
-{
-  border:4px solid black;
-  border-radius:15px;
-  background-color:lightpink;
-}
-
-.proj
-{
-   width:20vw;
-   height:20vw;
-}
-
-.projtalk
-{
-  width:20vw;
-  height:100%;
-  color:black;
-  background-color:white;
-  border:1px solid black;
-  float:left;
-  margin:15px;
-  padding:3px; 
-  
-  outline:3px solid black;
-  box-shadow: inset 0 0 0 1px #27496d, 0 5px 15px #193047;
-}
-/*https://designshack.net/articles/css/5-cool-css-hover-effects-you-can-copy-and-paste/*/
-.projTitle
-{  
-  width:100%;
-  font-size:200%;
-  margin-top:45px;
-  margin-bottom:45px;
-}
-
-.projpic
-{
-  width:100%;
-  height:100%;
-  border:double black; 
-}
-
-.norm /*governs the text on the flipped side of images*/
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#website, #ajax, #gadget, #game, #books
-{
-  margin:auto;  
-}
-
-.box /*resource divs*/
-{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background: lightpink;
+li h4 {
   margin: auto;
   text-align: center;
-  justify-content: center;  
 }
 
-.box > a 
-{
-  text-decoration: none;
+li {
+  list-style-type: none;
+  margin: auto;
+}
+/*********************************** Starts about Section  ***************************************/
+#about {
+  position: relative;
+  margin: auto;
+  display: flex;
+}
+
+#titlePic h1 {
+  font-size: 300%;
+}
+
+#describe {
+  margin: 25px;
+  display: flex;
+  font-size: 125%;
+}
+
+.description {
+  width: 50%;
+  padding: 10px;
+}
+
+.description:first-child {
+  border-right: 1px solid black;
+}
+
+/*******************************Starts dividers*********************************/
+
+#dividers {
+  display: flex;
+  text-align: center;
+}
+
+.divide {
+  margin-top: 15px;
+  border-right: 1px solid black;
+  width: 33%;
+  font-size: 150%;
+}
+
+.divide:nth-child(3) {
+  border: none;
+}
+
+hr {
+  border-bottom: 1px solid black;
+}
+
+/************************************Starts Project navigation Section  ********************/
+.nav-tabs > li {
+  float: none;
+  border: none;
+  display: inline-block;
+  *display: inline; /* ie7 fix */
+  zoom: 1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs > li.active,
+.nav-tabs > li > a:hover,
+.nav-tabs > li.active.uncut > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:active,
+.nav-tabs,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border: none;
+  border-bottom: 1px solid black;
   color: black;
-  font-weight: bold;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;  
-  margin:5px;
 }
 
-.box > a > img
-{
-  width:170px;
-  height:250px;
+.nav-tabs {
+  text-align: center;
 }
 
-#fcc 
-{
-  width:225px;
-  height:200px; 
+.nav-tabs > li > a {
+  color: black;
 }
 
-#codeAc
-{
-  width:225px;
-  height:180px;
+a:hover {
+  list-style-type: none;
+  text-decoration: none;
 }
 
-#books /*new revision*/
-{
-  display:flex;
-  flex-wrap:wrap;
-  margin:auto;
-  text-align:center;
-  justify-content:center;
+#projects > ul > li {
+  font-size: 200%;
+}
+/************************************Starts Projects section***************************************/
+#projects {
+  clear: both;
 }
 
-.res
-{
-  width:20vw;
-  height:20vw;
-  background-color:#cc33ff;
-  border:1px solid black;
-  float:left;/*this is part of the problem*/
-  margin:15px;  
+#website, #ajax, #gadget, #game {
+  margin: auto;
+  text-align: center;
 }
 
-.pic/*images of books*/
-{
-  width:15vw;
-  height:20vw; 
-} 
-
-#contact
-{ 
-  height:200px;
-  background-color:black;
-  margin:auto;
-  text-align:center;
-  width:100%;
-}
-/********css scroll********/
-/*https://www.youtube.com/watch?v=tsrsSiYueTk*/
-@-webkit-keyframes scroll 
-{
-  0%
-  {
-    -webkit-transform: translate(0, 0);
-  }
-  100%
-  {
-    -webkit-transform: translate(-100%, 0);
-  }
+a:focus, a:hover {
+  text-decoration: none;
 }
 
-#marq
-{
-  display:block;
-  width:100%;
-  white-space:nowrap;
-  overflow:hidden;
-  font-size:250%;
+#projects h1 {
+  font-size: 300%;
 }
 
-#marq > span 
-{
-  display:inline-block;
-  padding-left:100%;
-  -webkit-animation:scroll 10s infinite linear;/*controls text scroll speed*/  
+img {
+  width: 150px;
+  height: 150px;
 }
 
-#pone,#ptwo, #pthree, #pfour, #pfive, #psix
-{
-  display:inline;
-  margin:5px;
-  padding-right:15px;
+#projects ul {
+  //font-size: 150%;
+  border: none;
+  padding-left: 0; //needed because of bootstrap default css I guess
 }
 
-.glyphicon 
-{ 
-  margin-right:10px; 
-}
-.panel-body 
-{ 
-  padding:0px; 
-}
-.panel-body table tr td 
-{ 
-  padding-left: 15px 
-}
-.panel-body .table 
-{
-  margin-bottom: 0px; 
+.projectInfo {
+  display: flex;
 }
 
-#collapseFour a
-{
-  color:black;
-  text-decoration:underline;
-  font-size:2em;
+.projectSplit {
+  width: 50%;
+  padding: 5px;
 }
 
-//#collapseFour a:first-of-type
-{
-  margin-right:40px;  
+.projectSplit > a {
+  font-size: 175%;
+  color: blue;
 }
 
-#theForm
-{
-  
-   margin:auto;
+.projectSplit > h4, .projectSplit > ul > li > h4, .projectSplit > ul > h4 {
+  text-decoration: underline;
+  font-size: 145%;
 }
 
-#theForm input
-{
-   margin-left:60px;  
-   text-align:center;
+.tabContent {
+  display: flex; /*this needs to be adjusted in order to remove the excess white space on the right hand side*/
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-#theForm label
-{
-  position:absolute;
-  margin-right:20px;
+.project {
+  width: 32%;
+  border: 1px solid black;
+  margin: 5px;
 }
 
-/*************************************************************** 1st Media screen MIN-WIDTH 1150px ---------------------------------------------------- *****/
-
-
-@media screen and (max-width:1150px)
-{
-  #techSlide
-  {
-    left:-1vw;
-    top:4vw;
-  }
-  
-  #pagetitle
-{
- 
-    font-size: 3em;    
-    letter-spacing: 0.0em;
-   
-}  
-   
-  #sunpic
-  {
-    right:4.5vw;
-    top:6.5vw;
-  }
-  
-  .techhead
-  {
-    font-size:19px;
-  }
-  
-  .techs
-  {
-    font-size:18px;
-  }
-  
+.subTitle {
+  margin: auto;
+  text-align: center;
+  width: 100%;
 }
-  
-
-
-/*************************************************************** 2nd Media screen MIN-WIDTH 1001px FLIP STUFF below ---------------------------------------------------- *****/  
-@media screen and (min-width:768px)
-{
-   
-  .flip-container 
-  {		
-			border: double #ccc;
-	}
-			
-.flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper 
-  {
-			-webkit-transform: rotateY(180deg);
-			-moz-transform: rotateY(180deg);
-			transform: rotateY(180deg);
-			filter: FlipH;
-    	-ms-filter: "FlipH";
-  }
-
-.flip-container, .front, .back 
-  {
-			width: 19.5vw;
-			height: 19.5vw;
-      margin:-1px;
-	}
-
-.flipper 
-  {
-			-webkit-transition: 0.6s;
-			-webkit-transform-style: preserve-3d;
-			-moz-transition: 0.6s;
-			-moz-transform-style: preserve-3d;
-			transition: 0.6s;
-			transform-style: preserve-3d;
-			position: relative;
-	}
-
-.front, .back 
-  {
-			-webkit-backface-visibility: hidden;
-			-moz-backface-visibility: hidden;
-			backface-visibility: hidden;
-			position: absolute;
-			top: 0;
-			left: 0;   
-	}
-
-.front 
-  {
-			background: white;/*changed from lightgreen*/
-			z-index: 2;
-	}
-
-.back 
-  {		
-			-webkit-transform: rotateY(180deg);
-			-moz-transform: rotateY(180deg);
-			transform: rotateY(180deg);      
-  }
-
-.vertical.flip-container 
-  {
-			position: relative;
-	}
-
-.vertical .back 
-  {
-			-webkit-transform: rotateX(180deg);
-			-moz-transform: rotateX(180deg);
-			transform: rotateX(180deg);
-	}
-
-.vertical.flip-container .flipper 
-  {
-			-webkit-transform-origin: 100% 10vw;
-			-moz-transform-origin: 100% 10vw;
-			transform-origin: 100% 10vw;/*I changed this value to 10vw which seemed to fix the flip over the x axis*/
-	}
-
-.vertical.flip-container:hover .flipper 
-  {
-			-webkit-transform: rotateX(-180deg);
-			-moz-transform: rotateX(-180deg);
-			transform: rotateX(-180deg);
-	}
-  
- 
-}
-/************************************************************************************/
-  #wolfFlip
-  {
-    padding-top:50px;/*left can be used to fix the slight overlapping to the right*/
-    
-  }
-  .vertical .back
-  {
-    position:relative; 
-    margin:-2px;
-  }
-
-
-/********************************************************3rd media screen MAX-WIDTH 1001px**********************************************************************/
-@media screen and (max-width:1001px)
-{     
-  .navbar-nav > li
-  {
-    top: 0px;
-  }
-  
-  #pagetitle
-  {
-    top:5px;  
-    letter-spacing: 0.0em; 
-  }
-  
-  .fly-in-text li
-  {
-    font-size:2em;
-    margin-right:0;
-  }
-  
- div .panel 
-  {
-   position: relative;
-   top: -70px;
-  }   
-  
-    #techSlide 
-  {     
-    top:8.5vw;
-    left:1vw;
-    width:5vw;
-    height:5vw;    
-  }
-  
-  #accordion > div > div.panel-heading /*targets all the accordion buttons*/
-
-{
-  border-radius:10px;
-  width:15%;  
-}
-  
-    
-    #about
-  {  
-    background-image:url('http://www.3dcorp.us/blog/wp-content/uploads/2014/01/cloud-part-2.jpg');
-    background-size:100% 100%;   
-    padding:5px;
-    border:2px solid black;
-    font-weight:bold; 
-    display:flex;
-    flex-direction:column;
-    height:460px;
-    order:-1;
-  }
-  
-  #techlist
-  {
-    top:-20px;
-  }
-  
-  .colAbout
-  {
-    border-right:none;  
-    border-bottom:1px solid black;
-    height:auto;    
-  }
-  
-  /*this fixed the min-height issue causing some of the text to overlap on smaller widths*/
- .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
-    position: relative;
-    min-height: inherit;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-  
-  #techlist
-  {  
-    float:none;
-    min-height:;
-  }  
-  
-    .projtalk
-  {
-     display: flex;   
-     flex-direction:row;
-     flex-wrap:wrap;   
-     width:100%;
-     height:100%;
-     margin:0px;
-     margin-top:2vw;
-     border:double black;
-  }
-  
-  .projTitle
-  {   
-    margin-top:0px;
-    margin-bottom:0px;
-  }
-  
-  #webD
-  {
-    position:relative;
-    top:-130px;
-  }    
-  
-   .proj /*container for projpic*/
-  {       
-    margin:auto;
-    margin-top:20px;
-    height:150px;
-    width:150px;    
-  }  
-   
-  
-  .toBig /*Google page speed text*/
-  {
-    margin:auto;
-    margin-top:0px;   
-  }
-  
-  .xp
-  {
-    margin-top:20px;   
-    margin-left:auto;
-    margin-right:auto;   
-  }
-  
-  .wrap
-  {
-    display:flex;
-    flex-direction:column;
-    margin:0px;
-  }
-  
-  .navbar-default
-  {
-    order:-2;
-  }  
-  
-   #about
-  {
-      
-  }
-  
-  #techlist
-  {
-    margin:auto; 
-  }  
-  
-   #top
-  {    
-    order:-1;
-    margin-top:20px;
-  }
-  
-  #breakline
-  {
-    order:-1;   
-  }
-  
-   #project
-  {
-    order:2;
-  }
-  
-  #marq
-  {
-    order:2;
-  }
-  
-  #resource
-  {
-    order:3;
-  }
-  
-  #contact
-  {
-    order:4;
-  }
-  
-  .divide
-  {
-    font-size:17px;
-  }    
-  
-  #about > div
-  {
-    width:100%;
-  }  
-
-  .mf2:last-child
-  {
-    display:none;
-  }
-  
-  .divide
-  {
-    width:25%;
-    border-right:1px solid black;
-  }
-  
-  .divide:nth-child(4)
-  {
-    border-right:none;
-  }  
-  
-  .flip-container
-  {
-   float:left
-  }     
-  
-  #sunpic
-  {
-    position:absolute;
-    top:11vw;
-    right:50px;
-    width:8vw;
-    height:8vw;
-  }
-  
+/********************************** Starts Contact Section  ********************************/
+#contact {
+  display: flex;
 }
 
-@media screen and (max-width:900px)
-{
-  
-  .fly-in-text li
-  {
-    font-size:1em;
-    margin-right:0;
-  }
+.column {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
-/**********************************************************5th media screen MAX-WIDTH 846px********************************************************************/
-@media screen and (max-width:846px)
-{
-    .btn
-  {    
-    font-size:75%;   
-  }
-  
-    #techSlide /*div that holds techpic images*/
-  {  
-    position:absolute;
-    top:9vw;      
-  }
-  
-    #sunpic
-  { 
-    width:11vw;
-    height:11vw; 
-    margin-right:30px;
-    margin-top:15px;
-    right:0;
-    top:9vw;
-    position:absolute;
-  }
-  
-  .fly-in-text li
-  {
-    font-size:90%;
-  }
-  
-}
-/**********************************************************6th media screen MAX-WIDTH 775px********************************************************************/
-@media screen and (max-width:768px)/*natural nav collapse breakpoint*/
-{
-    .panel-heading
-  {
-    width:40%;
-    margin:auto;
-    margin-bottom:5px;
-    background:#0073e6;
-  }
-  
-  #techSlide /*div that holds techpic images*/
-  {  
-    position:absolute;
-    top:45px;
-    width:75px;
-    height:75px;
-    left:20px;
-  }  
-  
-  .techpic /*tech images in slideshow*/
-  {
-    width:13vw;
-    height:12vw;   
-  }
-  
-  #pagetitle
-  {
-    position:relative;
-    top:-25px;
-    z-index:-25;/*prevents the hamburger menu from not being clickable */
-  }
-  
-  #webD
-  {
-    top:-170px;
-  }
-  
-  .fly-in-text li
-  {
-    font-size:90%;
-  }
-  
-  #sunpic
-  { 
-    width:75px;
-    height:75px; 
-    right:25px;
-    top:55px;
-    position:absolute;
-  }
-  
-  #accordion > div > div.panel-heading /*targets all the accordion buttons*/
-{
-  border-radius:10px;
-  width:20%;  
-}
-  
-    .back
-  {
-    display:none; /*this might need to go back to none until I get the proper dimensions for back*/
-  }
+.contactInfo {
+  width: 75%;
+  margin: 5px;
 }
 
-@media screen and (max-width:730px)
-{
-  #pagetitle
-  {
-    letter-spacing: 0.0em;
-  }
-  
-  .fly-in-text li
-  {
-    font-size:90%;
-    margin-right:2px;
-  }
-  
-  #webD
-  {
-    top:-160px;
-    margin-top:0px;
-  }
-  
-}
-/********************************************************* 7th media screen MAX-WIDTH 479px **************************************************************/
-@media screen and (max-width:600px)/*changed this from 450 to 479px*/
-{
-  /*https://jsbin.com/nulayufufe/edit?html,css,output*/
-  #techSlide
-  {
-    top:40px;
-    left:5px;
-  }
-  
-  #sunpic
-  {
-    top:40px;
-    right:35px;
-  }
-  
-  #techlist
-  {
-    top:0px;
-  }   
-  
-   #accordion > div > div.panel-heading /*targets all the accordion buttons*/
-{
-  border-radius:10px;
-  width:25%;  
+.column h3 {
+  width: 100%;
+  text-align: center;
 }
 
-  .toBig /*Google page speed text*/
-  {
-    flex:none;    
-    width:100%;
-    order:2;
-    margin-top:auto;
-    margin-bottom:auto;
-    margin-left:auto;
-    margin-right:auto;
-  }   
-  
-  .front
-  {
-    width:100%;
-    height:100%;
-  }
-  
-  .xp
-  {    
-    order:3;    
-  }  
-  
-  .mf2 /*last divider*/
-  {
-    display:none;
-  }
-  
-  .divide
-  {
-    width:33%;
-  }     
-  
-  //.divide /*removed as it did little and looks fine without*/
-  {   
-    font-size:16px;   
-    padding:5px;
-  }  
-  
+#contEm {
+  font-size: 175%;
+  width: 100%;
 }
 
-@media screen and (max-width:565px)
-{
-  #techSlide
-  {
-    left:0;
-  }
-  
-  #sunpic
-  {
-    right:-10px;
-  }
-  
-  .fly-in-text 
-  {
-    font-size:25px;    
-  }
-  
-  #webD
-  {
-    font-size:23px;
-  }
-  
-  #about
-  {
-    height:100%;
-  }
-  
-  #topotech
-  {
-    font-size:24px;
-  }
-  
-  .techhead
-  {
-   font-size:95%;    
-  }
-  
-  .techs
-  {
-    font-size:75%;    
-  }
-  
-   #accordion > div > div.panel-heading /*targets all the accordion buttons*/
-{
-  border-radius:10px;
-  width:30%;  
-}
-  
-}
-/************************************************wolfram image flip below ***************************************/ 
-#wolfFlip /*calculator flip*/
-{
-  position:relative;  
-  font-size:18px;  
+#social {
+  margin: auto;
 }
 
-#wolfText
-{
-  margin-top:-3vw;
+form {
+  width: 100%;
 }
 
-#wolf
-{
-  width:7vw;
-  height:7vw;
-  position:relative; 
-  margin:5px;
+.hovicon {
+  cursor: pointer;
+  margin: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  color: #fff;
 }
 
-#wolf2/*text after wolfram logo*/
-{
-  position:relative;
-  margin-top:25px;  
+.hovicon:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
-@media screen and (max-width:1450px)
-{
-    #wolfFlip /*calculator flip*/
-  {
-    position:relative;  
-    font-size:18px;      
-  }
-
-  #wolfText
-  {
-    
-   
-  }
-
-  #wolf
-  {
-    width:5vw;
-    height:5vw;
-    position:relative;
-    top:-5px;
-    margin:5px;
-  }
-
-#wolf2/*text after wolfram logo*/
-  { 
-    top:0px; 
-  }
+.hovicon:before {
+  font-size: 48px;
+  line-height: 90px;
+  -webkit-font-smoothing: antialiased;
+}
+.hovicon.effect-2 {
+  color: black; /*changes icon color*/
+  box-shadow: 10px 10px 5px #888888;
+}
+.hovicon.effect-2:after {
+  top: -2px;
+  left: -2px;
+  padding: 2px;
+  z-index: -1;
+  background: #fff;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-
-@media screen and (max-width:1300px)
-{
-  
-  #wolfFlip /*calculator flip*/
-  {    
-    font-size:16px;      
-  }
-  
-  #wolf
-  {
-    width:6vw;
-    height:6vw;
-    position:relative;
-    top:-5px;
-   margin-top:-10px;
-  }
-
-#wolf2/*text after wolfram logo*/
-  { 
-    top:0px; 
-  }
+.hovicon.effect-2:hover {
+  color: blue;
+  box-shadow: 0 0 0 3px black;
 }
 
-@media screen and (max-width:1150px)
-{  
-
-  #wolfText
-  {
-     position:absolute;
-    margin-top:0;
-    top:3px
-  }
-
-  #wolf
-  {
-    width:6vw;
-    height:6vw;
-    top:-5px
-  }
-
-#wolf2/*text after wolfram logo*/
-  { 
-    top:-30px; 
-  }
+.hovicon.effect-2:hover:after {
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  transform: scale(0.85);
 }
 
-@media screen and (max-width:1000px)/*this should be 1000*/
-{
-  #wolfFlip /*calculator flip*/
-  {
-    position:relative;  
-    font-size:16px;      
-  }
-
-  #wolfText
-  {
-   
-    top:-5px;
-    margin-top:0;    
-  }
-
-  #wolf
-  {
-    width:6vw;
-    height:6vw;
-    top:-25px
-  }
-
-#wolf2/*text after wolfram logo*/
-  { 
-    top:-56px; 
-  }
+#submitButton {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #a64dff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+  height: 65px;
 }
 
-@media screen and (max-width:850px)
-{
-   #wolfFlip /*calculator flip*/
-  {
-    position:relative;  
-    font-size:14px;      
-  }
-
-  #wolfText
-  {
-    position:absolute;
-    top:-5px;
-    margin-top:0;   
-  }
-
-  #wolf
-  {  
-    top:-25px;
-      
-  }
-
-#wolf2/*text after wolfram logo*/
-  { 
-    top:-55px; 
-  }
+#submitButton:hover {
+  color: black;
+  background-color: #b366ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
+
+/******************************begins fly in text section*************************/
+.fly-in-text li {
+  display: inline-block;
+  margin-right: 5px;
+  font-family: Open Sans, Arial;
+  font-weight: 300;
+  font-size: 3em;
+  color: black;
+  opacity: 1;
+  transition: all 3.0s ease;
+}
+
+.fly-in-text.blank li {
+  opacity: 0;
+}
+
+.fly-in-text.blank li:nth-child(1) {
+  transform: translateX(-200px) translateY(-200px);
+}
+
+.fly-in-text.blank li:nth-child(2) {
+  transform: translateX(-100px) translateY(50px);
+}
+
+.fly-in-text.blank li:nth-child(3) {
+  transform: translateX(-150px) translateY(-30px);
+}
+
+.fly-in-text.blank li:nth-child(4) {
+  transform: translateX(12px) translateY(40px);
+}
+
+.fly-in-text.blank li:nth-child(5) {
+  transform: translateX(-120px) translateY(250px);
+}
+
+.fly-in-text.blank li:nth-child(6) {
+  transform: translateX(50px) translateY(-35px);
+}
+
+.fly-in-text.blank li:nth-child(7) {
+  transform: translateX(-90px) translateY(25px);
+}
+
+.fly-in-text.blank li:nth-child(8) {
+  transform: translateX(55px) translateY(-250px);
+}
+
+.fly-in-text.blank li:nth-child(9) {
+  transform: translateX(-10px) translateY(120px);
+}
+
+.trans--grow {
+  -webkit-transition: width 1s ease-out; /* For Safari 3.1 to 6.0 */
+  transition: width 1s ease-out;
+  width: 0%;
+}
+
+.grow {
+  width: 100%;
+}
+
 </style>
 </head>
 <body>
-<div class = "container-fluid wrap">  
-  <div class = "navbar navbar-default">
-    <button id ="navSmall" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>    
-    <div class="collapse navbar-collapse" id="myNavbar">
-       <ul class = 'nav navbar-nav'>  
-         <li><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class = "accordionBtn" id = "nav1">About</a></li>
-         <li><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class = "accordionBtn" id = "nav2">Contact</a></li>
-         <li><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class = "accordionBtn" id = "nav3">Resources</a></li>
-         <li class="dropdown">
-           <a class = "dropdown-toggle" data-toggle="dropdown" href="#" id = "testP">
-             Projects
-               <span class="caret"></span>
-            
-           </a>
-           <ul class="dropdown-menu">                  
-             <li class="dropdown-submenu">
-               <a class="test" tabindex="-1" href="#" id = "am1">Websites
-                 <span class="fa fa-caret-right" aria-hidden="true"></span>
-               </a>
-               <ul class="dropdown-menu" id = 'ds1'>
-                 <li><a tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target= "_blank">George Carlin Tribute</a></li>
-                 <li><a tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target= "_blank">Random Quote Generator</a></li>
-                 <li><a tabindex="-1" href = "http://ryanrw81.wix.com/joes-fruit" target= "_blank">Wix Site</a></li>             
-               </ul>
-             </li>
-             <li class="dropdown-submenu">
-               <a class="test" tabindex="-1" href="#" id = "am2">Websites with API's
-                 <span class="fa fa-caret-right" aria-hidden="true"></span>
-               </a>
-               <ul class="dropdown-menu" id = 'ds2'>
-                 <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target= "_blank">Local Weather Forecast</a></li> 
-                 <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target= "_blank">Twitch Streamer Status</a></li>
-                 <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target= "_blank">Wikipedia Search</a></li>
-               </ul>
-             </li>
-          <li class="dropdown-submenu">
-             <a class="test" tabindex="-1" href="#" id = "am3">Tools
-               <span class="fa fa-caret-right" aria-hidden="true"></span>
-             </a>
-             <ul class="dropdown-menu" id = 'ds3'>               
-               <li><a tabindex="-1" href = "https://ryanwfile.github.io/pomodoro.html" target= "_blank">Pomodoro Clock</a></li>
-               <li><a tabindex="-1" href = "https://ryanwfile.github.io/calculator.html" target= "_blank">Calculator</a></li>
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/clock.html" target= "_blank">Digital Clock</a></li>                     
-             </ul>
-           </li>
-           <li class="dropdown-submenu">
-             <a class="test" tabindex="-1" href="#" id = "am4">Games
-               <span class="fa fa-caret-right" aria-hidden="true"></span>
-             </a>
-             <ul class="dropdown-menu" id = 'ds4'>
-               <li><a tabindex="-1" href = "https://ryanwfile.github.io/simon.html" target= "_blank">Simon</a></li>
-               <li><a tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target= "_blank">Tic Tac Toe</a></li> 
-               <li><a tabindex="-1" href = "https://ryanwfile.github.io/battleship.html" target= "_blank">Battleship</a></li>
-             </ul>
-           </li>
-           <li class="dropdown-submenu">
-             <a class="test" tabindex="-1" href="#" id = "am5">React
-               <span class="fa fa-caret-right" aria-hidden="true"></span>
-             </a>
-             <ul class="dropdown-menu" id = 'ds5'>
-               <li><a tabindex="-1" href = "https://github-battle-from-react-tut.firebaseapp.com" target= "_blank">Github Battle</a></li>
-               <li><a tabindex="-1" href = "https://codepen.io/Ryanwfile/full/LLPBYL/" target= "_blank">Free Code Camp Points Leaderboard</a></li>
-             </ul>
-           </li>  
+<div id='wrap'>
+  <ul id="navbar">
+    <li>
+      <a href="#about">
+        <ul class="fly-in-text blank">
+          <li>A</li>
+          <li>b</li>
+          <li>o</li>
+          <li>u</li>
+          <li>t</li>
         </ul>
+      </a>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <ul class="fly-in-text blank">
+          <li>P</li>
+          <li>r</li>
+          <li>o</li>
+          <li>j</li>
+          <li>e</li>
+          <li>c</li>
+          <li>t</li>
+          <li>s</li>
+          <li><span class="caret"></span></ul>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am1">Websites
+                 <span class="fa fa-caret-right" aria-hidden="true"></span>
+               </a>
+          <ul class="dropdown-menu" id='ds1'>
+            <li>
+              <h4>Websites</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target="_blank" rel="noopener">George Carlin Tribute</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target="_blank" rel="noopener">Random Quote Generator</a></li>
+            <li><a tabindex="-1" href="http://ryanrw81.wix.com/joes-fruit" target="_blank" rel="noopener">Wix Site</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am2">Websites with API's
+                 <span class="fa fa-caret-right" aria-hidden="true"></span>
+               </a>
+          <ul class="dropdown-menu" id='ds2'>
+            <li>
+              <h4>Websites with API's</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target="_blank" rel="noopener">Local Weather Forecast</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target="_blank" rel="noopener">Twitch Streamer Status</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target="_blank" rel="noopener">Wikipedia Search</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am3">Tools
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
+          <ul class="dropdown-menu" id='ds3'>
+            <li>
+              <h4>Tools</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/pomodoro.html" target="_blank" rel="noopener">Pomodoro Clock</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/calculator.html" target="_blank" rel="noopener">Calculator</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/clock.html" target="_blank" rel="noopener">Digital Clock</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am4">Games
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
+          <ul class="dropdown-menu" id='ds4'>
+            <li>
+              <h4>Games</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/simon.html" target="_blank" rel="noopener">Simon</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target="_blank" rel="noopener">Tic Tac Toe</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/battleship.html" target="_blank" rel="noopener">Battleship</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am5">React
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
+          <ul class="dropdown-menu" id='ds5'>
+            <li>
+              <h4>React</h4></li>
+            <li><a tabindex="-1" href="https://github-battle-from-react-tut.firebaseapp.com" target="_blank" rel="noopener">Github Battle</a></li>
+            <li><a tabindex="-1" href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="_blank" rel="noopener">Recipe Creator and Storage Box</a></li>
+            <li><a tabindex="-1" href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="_blank" rel="noopener">Free Code Camp Points Leaderboard</a></li>
+
+
+          </ul>
+        </li>
+      </ul>
+
+
+      </a>
       </li>
-      </ul> 
-    </div>  
-    <div id = "techSlide">            
-      <img src = "https://i.ytimg.com/vi/fYetZf8Pjfg/maxresdefault.jpg" alt = "html css and JS logo" class = "techpic">
-      <img src = "http://www.jsweet.org/wp-content/uploads/2016/04/react-logo-300x289.png" alt = "react logo image" class = "techpic">
-      <img src = "https://www.webgiant.co.nz/wp-content/themes/beanstalk01/images/services-bootstrap.gif" alt = "bootstrap logo" class = "techpic">
-      <!--<img src = "http://seeklogo.com/images/P/PHP-logo-A28168CFD0-seeklogo.com.gif " alt = "PHP logo" class = "techpic">-->
-      <img src = "https://brand.jquery.org/resources/jquery-mark-light.gif " alt = "jquery logo" class = "techpic"><!--this one needs to go-->
-      <!--<img src = "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAMlAAAAJDU4ZjlmOTc2LWM1MjAtNDdiMy04YjIzLTQ5YjBmYWRjNTRiNw.png" alt = "canvas logo" class = "techpic"> -->     
-      <img src = "http://sass-lang.com/assets/img/styleguide/color-1c4aab2b.png " alt = "SASS logo" class = "techpic">
-      
-      <!--<img src = "http://www.potenzaglobalsolutions.com/images/blogImages/9077f0ad-b71e-454d-9e5b-2f3389547982.png" alt = "Angular logo" class = "techpic"> -->
-      
-    </div>    
-  </div>
-   <div id = "pagetitle">      
-    <ul id = "cR" class = "fly-in-text blank">
-      <li>C</li>
-      <li>o</li>
-      <li>d</li>
-      <li>e</li>
-      <li>R</li>
-      <li>e</li>
-      <li>e</li>
-      <li>s</li>
-      <li>e</li>      
-    </ul> 
-</div>
-   <ul id = "target">
-  <li>W</li>
-  <li>e</li>
-  <li>b</li>
-  <li> </li>
-  <li>D</li>
-  <li>e</li>
-  <li>v</li>
-  <li>e</li>
-  <li>l</li>
-  <li>o</li>
-  <li>p</li>
-  <li>m</li>
-  <li>e</li>
-  <li>n</li>
-  <li>t</li>
-</ul>
-  <img id = "sunpic" src = "https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt = "image of Ryan" />
-  <div id="top">   
-     <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Mobile First</div>     
-     <div class="divide mf1 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Current Technologies</div>
-     <div class="divide mf2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Reliable & Secure</div>
-     <div class="divide  col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Responsive Design</div>
-     <div class="divide mf2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">Clean UX</div>                 
-  </div>
-  <hr id = "breakline">  
-  <div class="panel-group" id="accordion">       
-    <div class="panel panel-default" id = "sectionAbout">                     
-      <div class="panel-heading">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class = "accordionBtn">  
-          <h4 class="panel-title">              
-            <span class="glyphicon glyphicon-user"></span>About
-          </h4>
-        </a>  
-      </div>                    
-      <div id="collapseOne" class="panel-collapse collapse in">                        
-        <div class="panel-body" id ="about">                           
-          <div class = "col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 colAbout">         
-                  
-            <div id = "describe">          
-           Ryan has been teaching himself web development in the hope of starting a career.  He is based in the New York City metro area.  Ryan is eager to learn everything he can in this fast changing field and hopes his love of problem solving will help make him a better developer. <br><br>Here are links to his work on <a href = "https://github.com/Ryanwfile" target = "blank">github</a>
-           and <a href = "https://codepen.io/Ryanwfile/" target = "blank">codepen</a>
-            </div>
-          </div>              
-          <div id = "techlist" class = "col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">           
-            <h4 id = "topotech">Technologies</h4>               
-            <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
-              <h5 class = "techhead">Comfortable With</h5>                 
-                <ul>
-                  <li>HTML</li>                  
-                  <li>CSS</li>                 
-                  <li>Javascript</li>
-                  
-                  <li>JQuery</li>                 
-                  <li>Bootstrap</li>
-                 
-               </ul>
-            </div>            
-            <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
-              <h5 class = "techhead">Some Experience</h5>
-                <ul>                  
-                  <li>React</li>
-                  
-                  <li>PHP</li>                  
-                  <li>SQL</li>                   
-                  <li>Python</li>                   
-                  <li>XML</li>                   
-                   <li>SASS/SCSS</li>
-                  
-               </ul>
-            </div>               
-            <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 techs">
-              <h5 class = "techhead">Learning</h5>
-                <ul>    
-                  <li>Angular</li>
-                  <li>Node.js</li>            
-                </ul>
-            </div>    
-          </div>  <!--end techlist div -->               
-        </div>
-      </div>
-    </div>                
-    <div class="panel panel-default">        
-      <div class="panel-heading">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class = "accordionBtn">
-          <h4 class="panel-title">
-            <span class="glyphicon glyphicon-folder-close"></span> Portfolio
-          </h4>
+
+
+      <li>
+        <a href="#contact">
+          <ul class="fly-in-text blank">
+            <li>C</li>
+            <li>o</li>
+            <li>n</li>
+            <li>t</li>
+            <li>a</li>
+            <li>c</li>
+            <li>t</li>
+          </ul>
         </a>
-      </div>    
-      <div id="collapseTwo" class="panel-collapse collapse">
-        <ul class="nav nav-tabs" id ="tabber">
-          <li class = "active uncut" ><a href="#website" data-toggle="tab">Websites</a></li>    
-          <li class = "uncut"><a href="#ajax" data-toggle="tab">Websites with API's</a></li>
-          <li class = "uncut"><a href="#gadget" data-toggle="tab">Tools</a></li>
-          <li class = "uncut"><a href="#game" data-toggle="tab">Games</a></li>
-        </ul>        
-        <div class="panel-body tab-content" id = "project">   
-          <!--Only this portfolio page has been put through a markup validation service such as https://validator.w3.org/  so these projects contain all of the many mistakes I learned from-->
-          <div id = "website" class ="tab-pane fade in active">
-            <h2 class = "subTitle">Websites</h2>            
-            <div class = "projtalk">              
-              <h4 class ="projTitle">George Carlin Tribute</h4>   
-              
-              <div class = "proj flip-container" id = "gc">                
-                <div class="flipper">                  
-                  <div class="front">
-                    <img alt= "picture of George Carlin" class = "projpic" src = "http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=450%2C450">
-                  </div>                  
-                  <div class="back norm">A page with media and information on the comedian George Carlin.</div>
-                </div>
-              </div>
-              <div class = "toBig">
-              <ul>                
-                <li><a href = "https://ryanwfile.github.io/carlintribute.html" target = "blank"><u>Link to Page</u></a></li>         
-                <li>Google Page Speed Scores</li>             
-                <li>Mobile Speed: 42/100</li>
-                <li>Desktop Speed: 35/100</li>
-                <li>User Experience: 99/100</li>
-              </ul>
-                </div>              
-              
-              <p class = "xp">Experiences Gained<br>
-            This was the first site I designed with responsiveness in mind, but since I was taking the udacity course on responsiveness during this projects development I learned that I should develop prioritizing mobile first after most of the project was complete. <br>
-            Linking to too many resources can cause the page to load much slower as reflected in the page speed scores.<br>  
-  Images and various media appear differently in separate browsers as the top image appears incredibly bright in firefox.<br> 
-  How important the meta tag governing encoding is as a lot of the pages contents had weird symbols showing up all over before I inserted the charset = UTF-8. 
-              </p>
-            </div>
-            <div class = "projtalk">
-              <h4 class ="projTitle">Random Quote Generator</h4>
-              <div class = "proj vertical flip-container" id = "rqg">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src ="https://ryanwfile.github.io/randomquote.png" alt = "image of random quote generator website">
-                  </div>
-                  <div class="back norm">A button click generates a new quote from various sources.</div>
-                </div>
-              </div>
-              <div class = "toBig">
+      </li>
+
+
+  </ul>
+
+  <div id="about">
+    <div id="titlePic">
+      <h1>Ryan's<br />Portfolio</h1>
+      <img class='circleImage' src="https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt="image of Ryan" />
+    </div>
+    <div id='describe'>
+      <p class='description'>
+        Ryan has been teaching himself web development through many sources such as Free Code Camp, Harvard's CS50 course, Udacity, Coursera.org, etc.<br><br/> He is based in the New York City metro area and is currently searching for entry level or freelance
+        web development opportunities that will allow him to improve his abilities.<br></br>
+        Here are links to his work on <a href="https://github.com/Ryanwfile" target="blank" rel="noopener">github</a> and <a href="https://codepen.io/Ryanwfile/" target="blank" rel="noopener">codepen</a>.</p>
+      <p class='description'>Ryan kept an extensive amount of notes as well as links to many resources, mostly online and some books. <br></br>Eventually he compiled all of these notes and resources for others to use online in this google document, <a href="https://docs.google.com/document/d/1huC-wpyBEfK-cCYxrnT3z5NJ7kWLWXqxlDIdBdNfUhY/pub"
+          target='blank' rel="noopener"> a comprehensive list of information and resources for web developers </a> <br></br>As Ryan is constantly learning this document will see regular updates</p>
+    </div>
+  </div>
+
+  <div id="dividers">
+
+    <div class='divide'>Modern Technologies &nbsp </div>
+    <div class='divide'>Responsive Design &nbsp</div>
+    <div class='divide'>Reliable & Secure &nbsp</div>
+
+  </div>
+  <hr class='trans--grow'></hr>
+  <div id="projects">
+    <h1>Projects</h1>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#react">React</a></li>
+      <li><a data-toggle="tab" href="#website">Websites</a></li>
+      <li><a data-toggle="tab" href="#ajax">Websites with API's</a></li>
+      <li><a data-toggle="tab" href="#gadget">Tools</a></li>
+      <li><a data-toggle="tab" href="#game">Games</a></li>
+      <li><a data-toggle="tab" href="#current">Current Project</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="website" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Websites</h2>
+          <div class="project">
+            <h4 class="projTitle">George Carlin Tribute</h4>
+            <img alt="picture of George Carlin" class="projpic" src="http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=450%2C450" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/carlintribute.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page with media and information on the comedian George Carlin.</p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/randomquote.html" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+                  <li>Free Code Camp</li>
+                  <li>George Carlin's books</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 37/100</li>
+                  <li>Desktop Speed: 32/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Random Quote Generator</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/randomquote.png" alt="image of random quote generator website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/randomquote.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A button click generates a new quote from various sources.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>GoodReads.com</li>
+                  <li>Twitter Documentation</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Twitter Api</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
                   <li>Mobile Speed: 71/100</li>
                   <li>Desktop Speed: 89/100</li>
-                  <li>User Experience: 89/100</li>
+
                 </ul>
-              </div>                
-              <p class = "xp">Experiences Gained<br>
-              I learned a great deal about arrays and how to access random indexes using the Math.random method for this project.<br>  In creating the tweet button I learned about incorporating 3rd-Pary software through reading the accompanying  documentation.
-              </p>
-            </div>
-            <div class = "projtalk">
-              <h4 class = "projTitle">Wix Site</h4>
-              <div class = "proj flip-container" id = "wix">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://ryanwfile.github.io/wix.png" alt = "image of wix website">
-                  </div>
-                 <div class="back norm">This site was done before I had a extensive knowledge of CSS, after studying css I can safely say I should have stuck with Wix.</div>
-                </div>
               </div>
-              <div class = "toBig">
-                <ul> 
-                  <li><a href = "https://ryanrw81.wixsite.com/joes-fruit" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Wix Site</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/wix.png" alt="image of wix website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanrw81.wixsite.com/joes-fruit" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> This site was done before I had a extensive knowledge of CSS, after studying css I can safely say I should have stuck with Wix.</p>
+                <h4>Resources Used</h4>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>Wix Website Builder</li>
+                  <li>Social Media Links Widget</li>
+
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
                   <li>Mobile Speed: 54/100</li>
                   <li>Desktop Speed: 69/100</li>
-                  <li>User Experience: 96/100</li>
+
                 </ul>
               </div>
-             
-              <p class = "xp">Experiences Gained<br>
-             I learned about creating a comfortable user experience with a clean interface.  I also learned about some designer concepts such as spatial awareness, font and color usage, and white space.
-              </p>
-            </div>  
+            </div>
           </div>
-          <div id = "ajax" class = "tab-pane fade">
-            <h2 class = "subTitle">Websites that use API's</h2>
-            <div class = "projtalk">
-              <h4 class = "projTitle">Local Weather</h4>
-              <div class = "proj vertical flip-container" id = "lw">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://ryanwfile.github.io/weather.png" alt = "image of weather website">
-                  </div>
-                  <div class="back norm">Local Weather forecast that uses the Weather Underground API</div>
-                </div>
-              </div> 
-              <div class = "toBig">
+        </div>
+
+      </div>
+      <div id="ajax" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Websites that use API's</h2>
+          <div class="project">
+            <h4 class="projTitle">Local Weather</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/weather.png" alt="image of weather website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/weather.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Local Weather forecast that uses the Weather Underground API</p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/weather.html" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
-                  <li>Mobile Speed: 69/100</li>
-                  <li>Desktop Speed: 87/100</li>
-                  <li>User Experience: 96/100</li>
-                </ul>
-              </div>             
-              <p class = "xp">Experiences Gained<br>
-              I originally did this project with the Free Code Camp recommended Open Weather API but after gaining some experience with api’s I decided to use the much more in depth Weather Underground API.
-              </p>
-            </div>
-             <div class = "projtalk">
-              <h4 class = "projTitle">Twitch Streamer Check</h4>
-              <div class = "proj flip-container" id = "tsc">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://d13yacurqjgara.cloudfront.net/users/802553/screenshots/2268094/twitch_logo_animation.gif" alt = "image of Twith streamer check website">
-                  </div>
-                 <div class="back norm">A page that checks whether some Twitch streamers are online and what they are streaming</div>
-                </div>
-              </div>
-              <div class = "toBig">
-                <ul> 
-                  <li><a href = "https://ryanwfile.github.io/twitch.html" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
-                  <li>Mobile Speed: 69/100</li>
-                  <li>Desktop Speed: 87/100</li>
-                  <li>User Experience: 96/100</li>
+                  <li>Weather Underground Documentation</li>
+                  <li>Free Code Camp</li>
+                  <li>Harvard's CS50 Course</li>
+                  <li>Stack Overflow</li>
                 </ul>
               </div>
-             
-              <p class = "xp">Experiences Gained<br>
-            I learned how to use JSON to communicate with twitch's API and the importance of console logging the API response.
-              </p>
-            </div>
-            <div class = "projtalk">
-              <h4 class = "projTitle">Wikipedia Viewer</h4>
-              <div class = "proj vertical flip-container">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png" alt = "image of Wikipedia viewer website">
-                  </div>
-                  <div class="back norm">Search Wikipedia from an input box or generate a random article.</div>
-                </div>
-              </div> 
-              <div class = "toBig">
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/wiki.html" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Weather Underground Api, OpenWeather Api</li>
+                  <li>W3C Geolocation API</li>
+                  <li>Ajax</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+
                   <li>Mobile Speed: 69/100</li>
                   <li>Desktop Speed: 87/100</li>
-                  <li>User Experience: 96/100</li>
                 </ul>
-              </div>             
-              <p class = "xp">Experiences Gained<br>
-               This project was the first one I used AJAX instead of JSON to communicate with an API.<br>This project helped me understand the importance of the console in accessing data retrieved from on api.<br>I would eventually go on to learn a great deal about using the console through the course <a href = "http://watchandcode.com/courses/practical-javascript" target = "blank">Watch and Code Javascript</a>
-              </p>
+              </div>
             </div>
-          
           </div>
-          <div id = "gadget" class = "tab-pane fade">
-            <h2 class = "subTitle">Tools</h2>
-            <div class = "projtalk">
-              <h4 class ="projTitle">Pomodoro Clock</h4>
-              <div class = "proj flip-container" id = "pc">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src ="https://ryanwfile.github.io/pomodoro.png" alt = "image of pomodoro clock website"></div>
-                  <div class="back norm">Pomodoro is the ancient Egyptian word for touchscreen, you can trust me on this there’s no need to look it up</div>
-                </div>
-              </div>
-              <div class = "toBig">
+          <div class="project">
+            <h4 class="projTitle">Twitch Streamer Check</h4>
+            <img class="projpic" src="https://d13yacurqjgara.cloudfront.net/users/802553/screenshots/2268094/twitch_logo_animation.gif" alt="image of Twith streamer check website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/twitch.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page that checks whether some Twitch streamers are online and what they are streaming</p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/pomodoro" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+                  <li>Free Code Camp</li>
+                  <li>Youtube tutorials</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Twitch Api</li>
+                  <li>Ajax</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
                   <li>Mobile Speed: 69/100</li>
                   <li>Desktop Speed: 87/100</li>
-                  <li>User Experience: 96/100</li>
+
                 </ul>
-              </div>             
-              <p class = "xp">Experiences Gained<br>
-             After using the Window.alert method I came to the conclusion that it was too intrusive and provided such a negative user experience that a sound alert would provide a better user experience.  Once I found a few sounds I wanted to use for the alert my curiosity led me to experiment with many facets of the HTML audio element and playing sounds in javascript.  This project also helped me understand the setInterval method.<br>The source for most of the sounds is <a href = "http://downloads.khinsider.com/game-soundtracks" target = "blank">http://downloads.khinsider.com/game-soundtracks</a> and sometimes they change the url of the sound files so some sound might not work.
-              </p>
-            </div> 
-            <div class = "projtalk">
-              <h4 class = "projTitle">Calculator</h4>
-              <div class = "proj vertical flip-container" id = "calc">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://ryanwfile.github.io/calculator.png" alt = "image of calculator website">
-                  </div>
-                  <div class="back" id = "wolfFlip"><p id = "wolfText">This calculator is modeled after</p><br>
-                    <img src = "http://i0.kym-cdn.com/entries/icons/original/000/018/035/8d81b825e59b928f9da5e9c3416bf53e.media.png" id = "wolf" alt = "image of WolframAlpha logo"><br>
-                    <p id = "wolf2">minus the calculus, algebra, geometry and most other useful parts</p>
-                  </div>
-                </div>
               </div>
-              <div class = "toBig">
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Wikipedia Viewer</h4>
+            <img class="projpic" src="https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png" alt="image of Wikipedia viewer website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/wiki.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Search Wikipedia from an input box or generate a random article.</p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/calculator.html" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+                  <li>Free Code Camp</li>
+                  <li>Harvard's CS50 Course</li>
+                  <li>Stack Overflow</li>
+                  <li>Wikipedia API documentation</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Wikipedia Api</li>
+                  <li>JSON</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="gadget" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Tools</h2>
+          <div class="project">
+            <h4 class="projTitle">Pomodoro Clock</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/pomodoro.png" alt="image of pomodoro clock website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/pomodoro" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Pomodoro timer that can be customized for any timer and break length, as well as video game sounds to accompany timers. Some video game music is available to play in audio player.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Khinsider Game Soundtracks</li>
+                  <li>Free Code Camp</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>HTML5 Audio Player</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Calculator</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/calculator.png" alt="image of calculator website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/calculator.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Calculator that accepts keyboard input as well as mouse clicks</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Unicode Character Tables</li>
+                  <li>Wolfram Alpha</li>
+                  <li>Free Code Camp</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Unicode Keyboard Characters</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
                   <li>Mobile Speed: 71/100</li>
                   <li>Desktop Speed: 89/100</li>
-                  <li>User Experience: 82/100</li>
+
                 </ul>
-              </div>             
-              <p class = "xp">Experiences Gained<br>
-              I originally finished this project using the javascript eval function but after learning a lot more javascript and jQuery I decided to go back and start from scratch without using eval.  Creating all of the computation functions was a great learning experiences and really helped me grasp how arguments inside a function behave.  
-    Allowing the user to use the keyboard or number pad introduced me to the event object’s keycode property and gave me experience converting keyboard input into the appropriate number/symbol.
-    I also learned how important not only commenting my work is but also naming my variables, functions appropriately so I can go back and have an easier time figuring out what the code means.
-              </p> 
-            </div>        
-            <div class = "projtalk">
-              <h4 class ="projTitle">Digital Clock</h4>
-              <div class = "proj flip-container" id = "dc">
-                  <div class="flipper">
-                    <div class="front">
-                      <img class = "projpic" src ="https://ryanwfile.github.io/clock.png" alt = "image of digital clock website">
-                    </div>
-                    <div class="back norm">A page that displays a 12 hour format clock.  Soon to be updated with a calendar and some React.</div>
-                  </div>
-                </div>
-                <div class = "toBig">
-                  <ul>
-                   <li><a href = "https://ryanwfile.github.io/clock" target = "blank"><u>Link to Page</u></a></li>
-                   <li>Google Page Speed Scores</li>
-                   <li>Mobile Speed: 66/100</li>
-                   <li>Desktop Speed: 86/100</li>
-                   <li>User Experience: 100/100</li>
-                 </ul>
-                </div>              
-                <p class = "xp">Experiences Gained<br>
-                       This project introduced me to jQuery.  I also learned some lessons in debugging as when I first put it online there were errors including loading jquery from an http site which was blocked until I fixed it to load from an https source.
-                </p>
-            </div>           
+              </div>
+            </div>
           </div>
-          <div id = "game" class = "tab-pane fade">
-            <h2 class = "subTitle">Games</h2>
-            <div class = "projtalk">
-              <h4 class = "projTitle">Simon</h4>
-              <div class = "proj vertical flip-container">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://ryanwfile.github.io/simon.png" alt = "image of simon game website">
-                  </div>
-                  <div class="back norm">Simon game that has a strict mode, a counter and a short light display upon completion.</div>
-                </div>
-              </div> 
-              <div class = "toBig">
+          <div class="project">
+            <h4 class="projTitle">Digital Clock</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/clock.png" alt="image of digital clock website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/clock" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page that displays a 12 hour format clock. This project was my first venture into Jquery</p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/simon.html" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+                  <li>Alessio Atzeni Tutorial</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 66/100</li>
+                  <li>Desktop Speed: 86/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="game" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Games</h2>
+          <div class="project">
+            <h4 class="projTitle">Simon</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/simon.png" alt="image of simon game website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/simon.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Simon game that has a strict mode, a counter and a short light display upon completion.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Youtube Tutorials</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Web Api Audio Element Constructor</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
                   <li>Mobile Speed: 71/100</li>
                   <li>Desktop Speed: 89/100</li>
-                  <li>User Experience: 81/100</li>
+
                 </ul>
-              </div>             
-              <p class = "xp">Experiences Gained<br>
-              This project helped me to understand javascript events, particularly the on click function.  It also introduced me to the Audio constructor object as it was the first time I incorporated sounds into a project.
-              </p>
-            </div>
-            <div class = "projtalk">
-              <h4 class ="projTitle">Tic Tac Toe</h4>
-              <div class = "proj flip-container" id = "ttt">
-                <div class="flipper"><div class="front">
-                  <img class = "projpic" src ="https://ryanwfile.github.io/tictactoe.png" alt = "image of tic tac toe website"></div>
-                  <div class="back norm"> Tic Tac Toe game that has a randomized computer.</div>
-                </div>
               </div>
-              <div class = "toBig">
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Tic Tac Toe</h4>
+
+            <img class="projpic" src="https://ryanwfile.github.io/tictactoe.png" alt="image of tic tac toe website" />
+
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/tictactoe" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>1 player Tic Tac Toe game that has random ai. Researching this project I learned about the minimax algorithm but didn't implement it </p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/tictactoe" target = "blank"><u>Link to Page</u></a></li>
-                  <li>Google Page Speed Scores</li>
+                  <li>Free Code Camp</li>
+                  <li>Stanford's Algorithm Course</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
                   <li>Mobile Speed: 68/100</li>
                   <li>Desktop Speed: 88/100</li>
-                  <li>User Experience: 100/100</li>
+
                 </ul>
-              </div>              
-              <p class = "xp">Experiences Gained<br>
-              I learned how to construct an algorithm that is presented with different possibilities each step and the final algorithm I developed is similar to the Minmax algorithms I read about in that each turn presents a maximum, minimum possible value move for each player.  Through studying about algorithms I learned some common algorithms such as binary search and also some ways an algorithm’s efficiency is measured, including Big O notation.
-              </p>
+              </div>
             </div>
-            <div class = "projtalk">
-              <h4 class = "projTitle">Battleship</h4>
-              <div class = "proj vertical flip-container" id = "bs">
-                <div class="flipper">
-                  <div class="front">
-                    <img class = "projpic" src = "https://ryanwfile.github.io/battleship.png" alt = "image of battleship game website">
-                  </div>
-                  <div class="back norm">Battleship game created from the example and code from the book HeadFirst:Javascript</div>
-                </div>
-              </div> 
-              <div class = "toBig">
+
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Battleship</h4>
+
+            <img class="projpic" src="https://ryanwfile.github.io/battleship.png" alt="image of battleship game website" />
+
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/battleship.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Battleship game created from the example and code from the book HeadFirst:Javascript</p>
+                <h4>Resources Used</h4>
                 <ul>
-                  <li><a href = "https://ryanwfile.github.io/battleship.html" target = "blank"><u>Link to Page</u></a></li>
+                  <li><u>Headfirst Javascript</u></li>
+                  <li>by Elisabeth Freeman & Eric Freeman</li>
+                  <li>Stack Overflow</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
                   <li>Google Page Speed Scores</li>
                   <li>Mobile Speed: 71/100</li>
                   <li>Desktop Speed: 89/100</li>
-                  <li>User Experience: 81/100</li>
+
                 </ul>
               </div>
-              <p class = "xp">Experiences Gained<br>
-              This was one of the first times I used javascript and most of what I did was copied straight from the book <u>HeadFirst: Javascript</u>.  Currently I am working through the book <u>Eloquent Javascript</u> which has an amazing section on how to create grids using a multidimensional array.  I am considering completely overhauling this project and using object oriented programming similar to that presented in the <u>Eloquent Javascript</u> chapter with the terrarium.
-              </p>
-            </div> 
-          </div>
-           <div class = "backup">
-              <a href="#tabber">Back to Top of Projects</a>
-          </div>
-        </div>                       
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class = "accordionBtn">
-          <h4 class="panel-title">
-            <span class="glyphicon glyphicon-file"></span> Resources           
-          </h4>
-        </a>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse">
-        <div class="panel-body" id ="resource">
-          <div id = "resIntro">
-            <h4>While Ryan has a Bachelor's degree he does not have a formal education in web development so here are some of the resources he used to learn web-development.</h4>
-          </div>
-          <div id = "books">
-            <h2>Books</h2>
-            <div class = "box">            
-              <a href = "https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189" target = "blank"> 
-                <u>HTML and CSS:Design<br>and Build Websites</u><br><br><br>
-                <img alt="image of HTML and CSS:Design and Build Websites book" 
-                src = "https://images-na.ssl-images-amazon.com/images/I/41Z2swEmwaL._SX396_BO1,204,203,200_.jpg">
-              </a> 
-
-              <a href = "https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=pd_bxgy_14_img_2?ie=UTF8&psc=1&refRID=PGD3KQRB46AXT87EERP1" target = "blank">
-                <u>Javascript & Jquery:Interactive<br>Front-end Web Development</u><br><br><br>
-                <img alt = "image of Javascript & Jquery:Interactive Front-end Web Development book" src = "https://images-na.ssl-images-amazon.com/images/I/41oa41LdNdL._SX400_BO1,204,203,200_.jpg"></a>
-
-               <a href = "https://www.amazon.com/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820/ref=sr_1_3?s=books&ie=UTF8&qid=1485821247&sr=1-3&keywords=eloquent+javascript+a+modern+introduction+to+programming" target = "blank"> 
-                <u>Eloquent Javascript: A Modern<br>Introduction to Programming</u><br><br><br>
-                 <img alt="image of Eloquent Javascript: A Modern Introduction to Programming book" 
-                src = "https://images-na.ssl-images-amazon.com/images/I/511ZDqFj28L._SX258_BO1,204,203,200_.jpg">
-              </a>
-
-               <a href = "https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?s=books&ie=UTF8&qid=1485821291&sr=1-1&keywords=headfirst+javascript" target = "blank"> 
-                <u>Headfirst Javascript Programming:<br>A Brain Friendly Guide</u><br><br><br>
-                 <img src = "https://images-na.ssl-images-amazon.com/images/I/51qpyuO-ANL._SX258_BO1,204,203,200_.jpg"
-                  alt="image of Headfirst Javascript Programming:A Brain Friendly Guide book">
-              </a>
-              
-               <a href = "https://www.amazon.com/React-Running-Building-Web-Applications/dp/1491931825" target = "blank"> 
-                <u>React: Up & Running<br>Building Web Applications</u><br><br><br>
-                 <img src = "http://t1.gstatic.com/images?q=tbn:ANd9GcRlSDbO0dCXVpoohP7JEClcw8OOhaezoSoeLc8J-Iq03GAA-k14"
-                  alt="image of book titled React: Up & Running, Building Web Applications">
-              </a>
-
-               <a href = "https://www.amazon.com/CSS-Missing-David-Sawyer-McFarland/dp/1491918055/ref=sr_1_1?s=books&ie=UTF8&qid=1485821314&sr=1-1&keywords=css+missing+manual" target = "blank"> 
-                <u>CSS:The<br>Missing Manual</u><br><br><br>
-                 <img src = "http://akamaicovers.oreilly.com/images/0636920036357/cat.gif"
-                      alt="image of CSS:The Missing Manual book">
-              </a>
-
-               <a href = "https://www.amazon.com/Learning-PHP-MySQL-JavaScript-Javascript/dp/1491918667/ref=sr_1_1?s=books&ie=UTF8&qid=1485821336&sr=1-1&keywords=learning+php+mysql+%26+javascript+with+jquery+css+%26+html5" target = "blank"> 
-                <u>Learning PHP, MySQL,<br>Javascript & CSS</u><br><br><br>
-                 <img src = "https://t3.gstatic.com/images?q=tbn:ANd9GcQTsU3NBEWoJxVSIdKFTkQYQP0uq71kfl8PPi40Uw3LlJgVBTEc"
-                alt="image of Learning PHP, MySQL, Javascript & CSS book">
-              </a>
             </div>
-          </div>
-          <div id = "onlineRes">
-            <h2>Online Resources</h2>
-            <div class = "box">            
-              <a href = "https://www.freecodecamp.com" target = "blank"> 
-                <u>FreeCodeCamp</u><br><br><br>
-                <img alt="image of Free Code Camp Logo" 
-                src = "https://softwareengineeringdaily.com/wp-content/uploads/2017/01/freecodecamp.jpeg" id = "fcc">
-              </a>            
-              
-              <a href = "https://www.udemy.com" target = "blank"> 
-                <u>Udemy</u><br><br><br>
-                 <img src = "http://www.jennaedwardsmedia.com/wp-content/uploads/2015/10/udemy-logo-academyofyou-1024x780-1024x780.jpg"
-                      alt="image of Udemy Logo">
-              </a>
-              
-              <a href = "https://www.coursera.org/" target = "blank"> 
-                <u>Coursera</u><br><br><br>
-                 <img src = "http://blog.dognition.com/wp-content/uploads/2016/09/coursera.png"
-                  alt="image of Coursera Logo">
-              </a>
 
-               <a href = "https://classroom.udacity.com" target = "blank"> 
-                <u>Udacity</u><br><br><br>
-                 <img alt="image of Udacity Logo" 
-                src = "http://www.logoinspiration.net/wp-content/uploads/2016/02/160225_udacity_email_logo-loopgif-drib.gif">
-              </a>  
-              
-              <a href = "https://www.khanacademy.org/" target = "blank"> 
-                <u>Khan Academy</u><br><br><br>
-                 <img src = "https://upload.wikimedia.org/wikipedia/commons/8/87/Khan-Academy-logo.jpg"
-                alt="image of Khan Academy Logo">
-              </a>   
-              
-              <a href = "https://www.edx.org/" target = "blank"> 
-                <u>EDX</u><br><br><br>
-                 <img src = "https://www.edx.org/sites/default/files/mediakit/image/thumb/edx_logo_200x200.png"
-                alt="image of EDX Logo">
-              </a>
-              
-              <a href = "https://www.codecademy.com" target = "blank">
-                <u>CodeAcademy</u><br><br><br>
-                <img alt = "image of CodeAcademy Logo" src = "http://www.underconsideration.com/brandnew/archives/codecademy_logo_detail.png" id = "codeAc">
-              </a>
-              
-            </div>
-          </div>
-          <div class = "backup">
-              <a href="#resource">Back to Top of Resources</a>
           </div>
         </div>
+
+
+      </div>
+      <div id="react" class="tab-pane fade in active">
+        <div class='tabContent'>
+          <h2 class="subTitle">React Projects</h2>
+          <div class="project">
+            <h4 class="projTitle">Github Battle</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/Github_Battle.png" alt="image of github battle application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://github-battle-from-react-tut.firebaseapp.com/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Displays the currently most popular programming repositories, also uses the Github API to compare 2 users in a battle format.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>React Fundamentals Course</li>
+                  <li>from ReactTraining.com/online</li>
+                  <li>Google Firebase</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li></li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>React, React Router</li>
+                  <li>Github Api, Axios</li>
+                  <li>NPM, Webpack</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 79/100</li>
+                  <li>Desktop Speed: 93/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Recipe Creator and Storage Box</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/Recipe_Box.png" alt="image of Recipe Box and Creator application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Allows the user to create and store Recipes.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Stack Overflow</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>SASS/SCSS</li>
+                  <li>React</li>
+                  <li>Create React App</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 64/100</li>
+                  <li>Desktop Speed: 85/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Free Code Camp Points Leaderboard</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/FCC_Leaderboard.png" alt="image of Free Code Camp Leaderboard Application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Uses the Free Code Camp Api to display the point leaders and their points</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp & FCC chat</li>
+                  <li><u>React Up & Running</u></li>
+                  <li>by Stoyan Stefanov</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>Axios</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 70/100</li>
+                  <li>Desktop Speed: 88/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="current" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Current Project</h2>
+          <div class="project">
+            <h4 class="projTitle">Game of Life</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/GameLife.png" alt="image of weather website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/pen/ZyyKvr" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>John Conway's Game of Life Replica</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Game of Life Wikipedia</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                  <li>Youtube</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4><u>Technologies Used</u></h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>SASS/SCSS</li>
+                  <li>React</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="#projects">Back to Top of Projects</a>
+
+    </div>
+
+  </div>
+  <div id='contact'>
+    <div class='column'>
+      <h3>My contact Information</h3>
+      <p id='contEm'></p>
+      <div id='social'>
+        <a href="http://codepen.io/Ryanwfile/" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="Codepen"><i class="hovicon effect-2 fa fa-codepen"></i></a>
+        <a href="https://github.com/Ryanwfile" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i class="hovicon effect-2 fa fa-github"></i></a>
+        <a href="http://www.freecodecamp.com/Ryanwfile" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="FreeCodeCamp"><i class="hovicon effect-2 fa fa-free-code-camp" aria-hidden="true"></i></a>
+        <a href='https://www.linkedin.com/in/ryan-williams-54772610a/' target="blank" data-toggle='tooltip' title='LinkedIn'><i class="hovicon effect-2 fa fa-linkedin" aria-hidden="true"></i></a>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class = "accordionBtn">
-          <h4 class="panel-title">
-            <span class="glyphicon glyphicon-pencil"></span>Contact
-          </h4>
-        </a>
-      </div>
-      <div id="collapseFour" class="panel-collapse collapse">
-        <div class="panel-body">
-          <h5 id = 'marq'>
-            <span id = "pone">
-             Thank you for viewing my portfolio page, below are a few ways to contact me.              
-            </span>
-          </h5>
-              <p class = "pers" id = "contEm"></p>     
-             <a class = "pers" target = "blank" href = "https://www.linkedin.com/in/ryan-williams-54772610a/">Linkedin</a>     
-             
-          
-          <form name = "contactMe" id = "theForm" action = "https://formspree.io/codereese@hotmail.com" method = "post" onSubmit = "return validateTextBox();"><br>            
-            <div class = "row">
-                  <label for = "name"><b>Name</b> :</label>
-                  <input type = "text" id = "name" name ="name">
-            </div><br>       
-            <div class = "row">
-              <label for = "phone"><b>Phone #</b> :</label>
-              <input type = "tel" id = "phone" name ="phone number" placeholder = "optional">
-            </div><br>
-            <div class = "row">
-              <label for = "email"><b>Email</b> :</label>
-              <input type = "email" id = "email" name ="email address">
-            </div><br>
-            <input type = "submit" value = "Submit">
-          </form>
-        </div>
-      </div>
+    <div class='column'>
+      <form name="contactMe" action="https://formspree.io/codereese@hotmail.com" method="post">
+        <h3>Message me Here</h3>
+        <input name='Name' class='contactInfo' type='text' placeholder='Name'></input>
+        <input name='email' class='contactInfo' type='text' placeholder='Email'></input>
+        <textarea cols='' rows='5' name='message' class='contactInfo' placeholder='message'></textarea>
+        <input class='contactInfo button' type="submit" value="Submit" id='submitButton'>
+      </form>
     </div>
   </div>
-2017 | Ryan Williams
+
+  2017 | Ryan Williams
 </div>
 
-
-<script src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function()
 {  
-  $('#sunpic').slideDown(1000);  
+  
+  /***************************dropdowns function*********************************/
   $('.dropdown-submenu a.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    console.log(this.id);
+    $(this).next('ul').toggle();    
     if (this.id == 'am1')
       {
         $('#ds2').hide();
@@ -2250,136 +1215,34 @@ $(document).ready(function()
     e.stopPropagation();
     e.preventDefault();
   });
-
-$(function($) {
-  var bluePaint = false;
-  var target = $("#target");
-  target.html(target.text().replace(/./g, "<li>$&</li>"));
-
-  setTimeout(runAnimation, 250);
-
-  function runAnimation() {
-    var index, lis;
-
-    index = 0;
-    lis = target.children();
-    paintBlue();
-
-    function paintBlue() {
-      bluePaint = true; 
-      var li = $(lis[index]);
-      if (!$.trim(li.text())) {
-        // Skip blanks
-        next();
-        return;
+/***************************navbar fly in function*********************************/
+function fly() {
+    setTimeout(function() {
+      var parentDOM = document.getElementById("navbar");
+      var flyIn = parentDOM.getElementsByClassName("fly-in-text");
+      for (var i = 0; i < flyIn.length; i++) {
+        flyIn[i].classList.remove("blank");
       }
+    }, 500);
+  };
+fly();
 
-      // Do this one
-      li.css({
-        position: "relative",
-      }).animate({
-        top: "-20",
-        color:'#b84dff'
-      }, "fast").animate({
-        top: "0"
-      }, "fast", function() {
-        li.css("position", "");
-        next();
-        
-      });
-    }
-    
-    function paintAlt() {
-      bluePaint = false; 
-      var li = $(lis[index]);
-      if (!$.trim(li.text())) {
-        // Skip blanks
-        next();
-        return;
-      }
-
-      // Do this one
-      li.css({
-        position: "relative",
-      }).animate({
-        bottom: "-20",
-        color:'#ffff1a'
-      }, "fast").animate({
-        bottom: "0"
-      }, "fast", function() {
-        li.css("position", "");
-        next();
-        
-      });
-    }
-
-    function next() {
-      ++index;
-      if (index < lis.length && bluePaint == false) {
-        paintBlue();
-      }
-       else if (index < lis.length && bluePaint == true) {
-        paintAlt();
-      }
-      else {
-        $('#target > li').css('color', "black");
-        setTimeout(runAnimation, 500);
-      }
-    }
-  }
-
-});
-  
-  var username = "codereese";
+  /***************************hr function*********************************/
+  setTimeout(function(){
+    $('.trans--grow').addClass('grow');
+}, 3500);
+   /***************************email link*********************************/
+ var username = "codereese";
   var hostname = "hotmail.com";
   var linktext = username + "@" + hostname ;
   var linker = linktext.fontcolor("blue");
   document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
-  $(linktext).css('color', 'blue');  
-  
-  
-  
-});
+  $(linktext).css('color', 'blue'); 
+})
 
-/**/
-$(".techpic").hide();
 
-setInterval(function() 
- { 
-  $('.techpic:first ')
-    .show()
-    .fadeToggle(1900)
-    .appendTo('#techSlide');
- },  2000);
-
-/************************************Form validation below******************************************/
-function validateTextBox()
-{
-  var box1 = document.getElementById("name");
-  if (box1.value == "")
-    {
-      
-    }
-}
-/************************************fly in text animation below******************************************/
-   $(function() 
-   {                
-      setTimeout(function() 
-      {   
-        $('.fly-in-text').removeClass('blank');
-      }, 500);
-   })();
-/************************************Google analytics******************************************/
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-101872093-1', 'auto');
-  ga('send', 'pageview');
-
-	
-	
 </script>
 </body>
+
+
 </html>
