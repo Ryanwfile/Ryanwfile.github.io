@@ -1,20 +1,1264 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
+<link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-		  ga('create', 'UA-101872093-1', 'auto');
-		  ga('send', 'pageview');
+<style>
+#wrap {
+  margin: 50px 100px;
+  text-align: center;
+  font-family: "Frank Ruhl Libre";
+}
+
+.circleImage {
+  border-radius: 50%;
+}
+
+#navbar {
+  display: flex;
+  position: relative;
+}
+
+#navbar li {
+  cursor: pointer;
+  font-size: 125%;
+}
+
+li h4 {
+  margin: auto;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+  margin: auto;
+}
+/*********************************** Starts about Section  ***************************************/
+#about {
+  position: relative;
+  margin: auto;
+  display: flex;
+}
+
+#titlePic h1 {
+  font-size: 300%;
+}
+
+#describe {
+  margin: 25px;
+  display: flex;
+  font-size: 125%;
+}
+
+.description {
+  width: 50%;
+  padding: 10px;
+}
+
+.description:first-child {
+  border-right: 1px solid black;
+}
+
+/*******************************Starts dividers*********************************/
+
+#dividers {
+  display: flex;
+  text-align: center;
+}
+
+.divide {
+  margin-top: 15px;
+  border-right: 1px solid black;
+  width: 33%;
+  font-size: 150%;
+}
+
+.divide:nth-child(3) {
+  border: none;
+}
+
+hr {
+  border-bottom: 1px solid black;
+}
+
+/************************************Starts Project navigation Section  ********************/
+.nav-tabs > li {
+  float: none;
+  border: none;
+  display: inline-block;
+  *display: inline; /* ie7 fix */
+  zoom: 1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs > li.active,
+.nav-tabs > li > a:hover,
+.nav-tabs > li.active.uncut > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:active,
+.nav-tabs,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.nav-tabs {
+  text-align: center;
+}
+
+.nav-tabs > li > a {
+  color: black;
+}
+
+a:hover {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#projects > ul > li {
+  font-size: 200%;
+}
+/************************************Starts Projects section***************************************/
+#projects {
+  clear: both;
+}
+
+#website, #ajax, #gadget, #game {
+  margin: auto;
+  text-align: center;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+}
+
+#projects h1 {
+  font-size: 300%;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+#projects ul {
+  //font-size: 150%;
+  border: none;
+  padding-left: 0; //needed because of bootstrap default css I guess
+}
+
+.projectInfo {
+  display: flex;
+}
+
+.projectSplit {
+  width: 50%;
+  padding: 5px;
+}
+
+.projectSplit > a {
+  font-size: 175%;
+  color: blue;
+}
+
+.projectSplit > h4, .projectSplit > ul > li > h4, .projectSplit > ul > h4 {
+  text-decoration: underline;
+  font-size: 145%;
+}
+
+.tabContent {
+  display: flex; /*this needs to be adjusted in order to remove the excess white space on the right hand side*/
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project {
+  width: 32%;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.subTitle {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+/********************************** Starts Contact Section  ********************************/
+#contact {
+  display: flex;
+}
+
+.column {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.contactInfo {
+  width: 75%;
+  margin: 5px;
+}
+
+.column h3 {
+  width: 100%;
+  text-align: center;
+}
+
+#contEm {
+  font-size: 175%;
+  width: 100%;
+}
+
+#social {
+  margin: auto;
+}
+
+form {
+  width: 100%;
+}
+
+.hovicon {
+  cursor: pointer;
+  margin: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.hovicon:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.hovicon:before {
+  font-size: 48px;
+  line-height: 90px;
+  -webkit-font-smoothing: antialiased;
+}
+.hovicon.effect-2 {
+  color: black; /*changes icon color*/
+  box-shadow: 10px 10px 5px #888888;
+}
+.hovicon.effect-2:after {
+  top: -2px;
+  left: -2px;
+  padding: 2px;
+  z-index: -1;
+  background: #fff;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hovicon.effect-2:hover {
+  color: blue;
+  box-shadow: 0 0 0 3px black;
+}
+
+.hovicon.effect-2:hover:after {
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  transform: scale(0.85);
+}
+
+#submitButton {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #a64dff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+  height: 65px;
+}
+
+#submitButton:hover {
+  color: black;
+  background-color: #b366ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/******************************begins fly in text section*************************/
+.fly-in-text li {
+  display: inline-block;
+  margin-right: 5px;
+  font-family: Open Sans, Arial;
+  font-weight: 300;
+  font-size: 3em;
+  color: black;
+  opacity: 1;
+  transition: all 3.0s ease;
+}
+
+.fly-in-text.blank li {
+  opacity: 0;
+}
+
+.fly-in-text.blank li:nth-child(1) {
+  transform: translateX(-200px) translateY(-200px);
+}
+
+.fly-in-text.blank li:nth-child(2) {
+  transform: translateX(-100px) translateY(50px);
+}
+
+.fly-in-text.blank li:nth-child(3) {
+  transform: translateX(-150px) translateY(-30px);
+}
+
+.fly-in-text.blank li:nth-child(4) {
+  transform: translateX(12px) translateY(40px);
+}
+
+.fly-in-text.blank li:nth-child(5) {
+  transform: translateX(-120px) translateY(250px);
+}
+
+.fly-in-text.blank li:nth-child(6) {
+  transform: translateX(50px) translateY(-35px);
+}
+
+.fly-in-text.blank li:nth-child(7) {
+  transform: translateX(-90px) translateY(25px);
+}
+
+.fly-in-text.blank li:nth-child(8) {
+  transform: translateX(55px) translateY(-250px);
+}
+
+.fly-in-text.blank li:nth-child(9) {
+  transform: translateX(-10px) translateY(120px);
+}
+
+.trans--grow {
+  -webkit-transition: width 1s ease-out; /* For Safari 3.1 to 6.0 */
+  transition: width 1s ease-out;
+  width: 0%;
+}
+
+.grow {
+  width: 100%;
+}
+
+</style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101872093-1', 'auto');
+  ga('send', 'pageview');
 
 </script>
+  
+</head>
+<body>
+<div id='wrap'>
+  <ul id="navbar">
+    <li>
+      <a href="#about">
+        <ul class="fly-in-text blank">
+          <li>A</li>
+          <li>b</li>
+          <li>o</li>
+          <li>u</li>
+          <li>t</li>
+        </ul>
+      </a>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <ul class="fly-in-text blank">
+          <li>P</li>
+          <li>r</li>
+          <li>o</li>
+          <li>j</li>
+          <li>e</li>
+          <li>c</li>
+          <li>t</li>
+          <li>s</li>
+          <li><span class="caret"></span></ul>
+      </a>
 
-	</head>
-	<body>
-		Google Analytics Tester
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am1">Websites
+                 <span class="fa fa-caret-right" aria-hidden="true"></span>
+               </a>
+          <ul class="dropdown-menu" id='ds1'>
+            <li>
+              <h4>Websites</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target="_blank" rel="noopener">George Carlin Tribute</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target="_blank" rel="noopener">Random Quote Generator</a></li>
+            <li><a tabindex="-1" href="http://ryanrw81.wix.com/joes-fruit" target="_blank" rel="noopener">Wix Site</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am2">Websites with API's
+                 <span class="fa fa-caret-right" aria-hidden="true"></span>
+               </a>
+          <ul class="dropdown-menu" id='ds2'>
+            <li>
+              <h4>Websites with API's</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target="_blank" rel="noopener">Local Weather Forecast</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target="_blank" rel="noopener">Twitch Streamer Status</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target="_blank" rel="noopener">Wikipedia Search</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am3">Tools
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
+          <ul class="dropdown-menu" id='ds3'>
+            <li>
+              <h4>Tools</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/pomodoro.html" target="_blank" rel="noopener">Pomodoro Clock</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/calculator.html" target="_blank" rel="noopener">Calculator</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/clock.html" target="_blank" rel="noopener">Digital Clock</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am4">Games
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
+          <ul class="dropdown-menu" id='ds4'>
+            <li>
+              <h4>Games</h4></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/simon.html" target="_blank" rel="noopener">Simon</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target="_blank" rel="noopener">Tic Tac Toe</a></li>
+            <li><a tabindex="-1" href="https://ryanwfile.github.io/battleship.html" target="_blank" rel="noopener">Battleship</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#" id="am5">React
+               <span class="fa fa-caret-right" aria-hidden="true"></span>
+             </a>
+          <ul class="dropdown-menu" id='ds5'>
+            <li>
+              <h4>React</h4></li>
+            <li><a tabindex="-1" href="https://github-battle-from-react-tut.firebaseapp.com" target="_blank" rel="noopener">Github Battle</a></li>
+            <li><a tabindex="-1" href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="_blank" rel="noopener">Recipe Creator and Storage Box</a></li>
+            <li><a tabindex="-1" href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="_blank" rel="noopener">Free Code Camp Points Leaderboard</a></li>
 
-	</body>
+
+          </ul>
+        </li>
+      </ul>
+
+
+      </a>
+      </li>
+
+
+      <li>
+        <a href="#contact">
+          <ul class="fly-in-text blank">
+            <li>C</li>
+            <li>o</li>
+            <li>n</li>
+            <li>t</li>
+            <li>a</li>
+            <li>c</li>
+            <li>t</li>
+          </ul>
+        </a>
+      </li>
+
+
+  </ul>
+
+  <div id="about">
+    <div id="titlePic">
+      <h1>Ryan's<br />Portfolio</h1>
+      <img class='circleImage' src="https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt="image of Ryan" />
+    </div>
+    <div id='describe'>
+      <p class='description'>
+        Ryan has been teaching himself web development through many sources such as Free Code Camp, Harvard's CS50 course, Udacity, Coursera.org, etc.<br><br/> He is based in the New York City metro area and is currently searching for entry level or freelance
+        web development opportunities that will allow him to improve his abilities.<br></br>
+        Here are links to his work on <a href="https://github.com/Ryanwfile" target="blank" rel="noopener">github</a> and <a href="https://codepen.io/Ryanwfile/" target="blank" rel="noopener">codepen</a>.</p>
+      <p class='description'>Ryan kept an extensive amount of notes as well as links to many resources, mostly online and some books. <br></br>Eventually he compiled all of these notes and resources for others to use online in this google document, <a href="https://docs.google.com/document/d/1huC-wpyBEfK-cCYxrnT3z5NJ7kWLWXqxlDIdBdNfUhY/pub"
+          target='blank' rel="noopener"> a comprehensive list of information and resources for web developers </a> <br></br>As Ryan is constantly learning this document will see regular updates</p>
+    </div>
+  </div>
+
+  <div id="dividers">
+
+    <div class='divide'>Modern Technologies &nbsp </div>
+    <div class='divide'>Responsive Design &nbsp</div>
+    <div class='divide'>Reliable & Secure &nbsp</div>
+
+  </div>
+  <hr class='trans--grow'></hr>
+  <div id="projects">
+    <h1>Projects</h1>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#react">React</a></li>
+      <li><a data-toggle="tab" href="#website">Websites</a></li>
+      <li><a data-toggle="tab" href="#ajax">Websites with API's</a></li>
+      <li><a data-toggle="tab" href="#gadget">Tools</a></li>
+      <li><a data-toggle="tab" href="#game">Games</a></li>
+      <li><a data-toggle="tab" href="#current">Current Project</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="website" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Websites</h2>
+          <div class="project">
+            <h4 class="projTitle">George Carlin Tribute</h4>
+            <img alt="picture of George Carlin" class="projpic" src="http://i0.wp.com/georgecarlin.com/wp-content/uploads/2015/01/george_carlin_comedian_performance_7.jpg?resize=450%2C450" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/carlintribute.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page with media and information on the comedian George Carlin.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>George Carlin's books</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 37/100</li>
+                  <li>Desktop Speed: 32/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Random Quote Generator</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/randomquote.png" alt="image of random quote generator website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/randomquote.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A button click generates a new quote from various sources.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>GoodReads.com</li>
+                  <li>Twitter Documentation</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Twitter Api</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Wix Site</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/wix.png" alt="image of wix website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanrw81.wixsite.com/joes-fruit" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> This site was done before I had a extensive knowledge of CSS, after studying css I can safely say I should have stuck with Wix.</p>
+                <h4>Resources Used</h4>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>Wix Website Builder</li>
+                  <li>Social Media Links Widget</li>
+
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 54/100</li>
+                  <li>Desktop Speed: 69/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="ajax" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Websites that use API's</h2>
+          <div class="project">
+            <h4 class="projTitle">Local Weather</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/weather.png" alt="image of weather website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/weather.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Local Weather forecast that uses the Weather Underground API</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Weather Underground Documentation</li>
+                  <li>Free Code Camp</li>
+                  <li>Harvard's CS50 Course</li>
+                  <li>Stack Overflow</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Weather Underground Api, OpenWeather Api</li>
+                  <li>W3C Geolocation API</li>
+                  <li>Ajax</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Twitch Streamer Check</h4>
+            <img class="projpic" src="https://d13yacurqjgara.cloudfront.net/users/802553/screenshots/2268094/twitch_logo_animation.gif" alt="image of Twith streamer check website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/twitch.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page that checks whether some Twitch streamers are online and what they are streaming</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Youtube tutorials</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Twitch Api</li>
+                  <li>Ajax</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Wikipedia Viewer</h4>
+            <img class="projpic" src="https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png" alt="image of Wikipedia viewer website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/wiki.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Search Wikipedia from an input box or generate a random article.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Harvard's CS50 Course</li>
+                  <li>Stack Overflow</li>
+                  <li>Wikipedia API documentation</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Wikipedia Api</li>
+                  <li>JSON</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="gadget" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Tools</h2>
+          <div class="project">
+            <h4 class="projTitle">Pomodoro Clock</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/pomodoro.png" alt="image of pomodoro clock website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/pomodoro" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Pomodoro timer that can be customized for any timer and break length, as well as video game sounds to accompany timers. Some video game music is available to play in audio player.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Khinsider Game Soundtracks</li>
+                  <li>Free Code Camp</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>HTML5 Audio Player</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 69/100</li>
+                  <li>Desktop Speed: 87/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Calculator</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/calculator.png" alt="image of calculator website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/calculator.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Calculator that accepts keyboard input as well as mouse clicks</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Unicode Character Tables</li>
+                  <li>Wolfram Alpha</li>
+                  <li>Free Code Camp</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Unicode Keyboard Characters</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Digital Clock</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/clock.png" alt="image of digital clock website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/clock" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page that displays a 12 hour format clock. This project was my first venture into Jquery</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Alessio Atzeni Tutorial</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 66/100</li>
+                  <li>Desktop Speed: 86/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="game" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Games</h2>
+          <div class="project">
+            <h4 class="projTitle">Simon</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/simon.png" alt="image of simon game website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/simon.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>Simon game that has a strict mode, a counter and a short light display upon completion.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Youtube Tutorials</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>Web Api Audio Element Constructor</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Tic Tac Toe</h4>
+
+            <img class="projpic" src="https://ryanwfile.github.io/tictactoe.png" alt="image of tic tac toe website" />
+
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/tictactoe" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>1 player Tic Tac Toe game that has random ai. Researching this project I learned about the minimax algorithm but didn't implement it </p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Stanford's Algorithm Course</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 68/100</li>
+                  <li>Desktop Speed: 88/100</li>
+
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Battleship</h4>
+
+            <img class="projpic" src="https://ryanwfile.github.io/battleship.png" alt="image of battleship game website" />
+
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/battleship.html" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Battleship game created from the example and code from the book HeadFirst:Javascript</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li><u>Headfirst Javascript</u></li>
+                  <li>by Elisabeth Freeman & Eric Freeman</li>
+                  <li>Stack Overflow</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 71/100</li>
+                  <li>Desktop Speed: 89/100</li>
+
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+      <div id="react" class="tab-pane fade in active">
+        <div class='tabContent'>
+          <h2 class="subTitle">React Projects</h2>
+          <div class="project">
+            <h4 class="projTitle">Github Battle</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/Github_Battle.png" alt="image of github battle application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://github-battle-from-react-tut.firebaseapp.com/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Displays the currently most popular programming repositories, also uses the Github API to compare 2 users in a battle format.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>React Fundamentals Course</li>
+                  <li>from ReactTraining.com/online</li>
+                  <li>Google Firebase</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li></li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>React, React Router</li>
+                  <li>Github Api, Axios</li>
+                  <li>Node.js, NPM, Webpack</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 79/100</li>
+                  <li>Desktop Speed: 93/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Recipe Creator and Storage Box</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/Recipe_Box.png" alt="image of Recipe Box and Creator application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Allows the user to create and store Recipes.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Stack Overflow</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>SASS/SCSS</li>
+                  <li>React</li>
+                  <li>Create React App</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 64/100</li>
+                  <li>Desktop Speed: 85/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Free Code Camp Points Leaderboard</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/FCC_Leaderboard.png" alt="image of Free Code Camp Leaderboard Application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Uses the Free Code Camp Api to display the point leaders and their points</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp & FCC chat</li>
+                  <li><u>React Up & Running</u></li>
+                  <li>by Stoyan Stefanov</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>Axios</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 70/100</li>
+                  <li>Desktop Speed: 88/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="current" class="tab-pane fade">
+        <div class='tabContent'>
+          <h2 class="subTitle">Current Project</h2>
+          <div class="project">
+            <h4 class="projTitle">Game of Life</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/GameLife.png" alt="image of weather website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/pen/ZyyKvr" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>John Conway's Game of Life Replica</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Game of Life Wikipedia</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                  <li>Youtube</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4><u>Technologies Used</u></h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>SASS/SCSS</li>
+                  <li>React</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="#projects">Back to Top of Projects</a>
+
+    </div>
+
+  </div>
+  <div id='contact'>
+    <div class='column'>
+      <h3>My contact Information</h3>
+      <p id='contEm'></p>
+      <div id='social'>
+        <a href="http://codepen.io/Ryanwfile/" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="Codepen"><i class="hovicon effect-2 fa fa-codepen"></i></a>
+        <a href="https://github.com/Ryanwfile" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i class="hovicon effect-2 fa fa-github"></i></a>
+        <a href="http://www.freecodecamp.com/Ryanwfile" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="FreeCodeCamp"><i class="hovicon effect-2 fa fa-free-code-camp" aria-hidden="true"></i></a>
+        <a href='https://www.linkedin.com/in/ryan-williams-54772610a/' target="blank" data-toggle='tooltip' title='LinkedIn'><i class="hovicon effect-2 fa fa-linkedin" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class='column'>
+      <form name="contactMe" action="https://formspree.io/codereese@hotmail.com" method="post">
+        <h3>Message me Here</h3>
+        <input name='Name' class='contactInfo' type='text' placeholder='Name'></input>
+        <input name='email' class='contactInfo' type='text' placeholder='Email'></input>
+        <textarea cols='' rows='5' name='message' class='contactInfo' placeholder='message'></textarea>
+        <input class='contactInfo button' type="submit" value="Submit" id='submitButton'>
+      </form>
+    </div>
+  </div>
+
+  2017 | Ryan Williams
+</div>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function()
+{  
+  
+  /***************************dropdowns function*********************************/
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();    
+    if (this.id == 'am1')
+      {
+        $('#ds2').hide();
+        $('#ds3').hide();
+        $('#ds4').hide();
+        $('#ds5').hide();
+      }   
+    else if (this.id == 'am2')
+      {
+         $('#ds1').hide();
+         $('#ds3').hide();
+         $('#ds4').hide();
+         $('#ds5').hide();
+      }
+    else if (this.id == 'am3')
+      {
+         $('#ds1').hide();
+         $('#ds2').hide();
+         $('#ds4').hide();
+         $('#ds5').hide();
+      }
+     else if (this.id == 'am4')
+      {
+         $('#ds1').hide();
+         $('#ds2').hide();
+         $('#ds3').hide();
+         $('#ds5').hide();
+      }
+     else if (this.id == 'am5')
+      {
+         $('#ds1').hide();
+         $('#ds2').hide();
+         $('#ds3').hide();
+         $('#ds4').hide();
+      }
+    e.stopPropagation();
+    e.preventDefault();
+  });
+/***************************navbar fly in function*********************************/
+function fly() {
+    setTimeout(function() {
+      var parentDOM = document.getElementById("navbar");
+      var flyIn = parentDOM.getElementsByClassName("fly-in-text");
+      for (var i = 0; i < flyIn.length; i++) {
+        flyIn[i].classList.remove("blank");
+      }
+    }, 500);
+  };
+fly();
+
+  /***************************hr function*********************************/
+  setTimeout(function(){
+    $('.trans--grow').addClass('grow');
+}, 3500);
+   /***************************email link*********************************/
+ var username = "codereese";
+  var hostname = "hotmail.com";
+  var linktext = username + "@" + hostname ;
+  var linker = linktext.fontcolor("blue");
+  document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
+  $(linktext).css('color', 'blue'); 
+})
+  
+  
+
+
+
+
+
+</script>
+</body>
+
+
 </html>
