@@ -8,69 +8,120 @@
 
 <style>
 #wrap {
-  margin: 50px 100px;
+  margin: 50px 75px;
   text-align: center;
   font-family: "Frank Ruhl Libre";
+  font-weight: bold;
+  color: black;
 }
 
-.circleImage {
-  border-radius: 50%;
+.trans--grow {
+  -webkit-transition: width 1s ease-out;
+  /* For Safari 3.1 to 6.0 */
+  transition: width 1s ease-out;
+  width: 0%;
 }
 
+.grow {
+  width: 100%;
+}
+
+#title {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  font-size: 450%;
+}
+
+/**********************starts navbar and dropdown ***************/
 #navbar {
   display: flex;
   position: relative;
+  padding: 0;
+}
+
+#ds1, #ds2, #ds3, #ds4, #ds5 {
+  left: 100%;
+  top: 0;
+}
+
+ul.fly-in-text {
+  padding: 0;
 }
 
 #navbar li {
   cursor: pointer;
-  font-size: 125%;
+  font-size: 135%;
 }
 
 li h4 {
-  margin: auto;
   text-align: center;
+  text-decoration: underline;
 }
 
 li {
   list-style-type: none;
   margin: auto;
 }
+
+.menuProject {
+  text-align: center;
+}
+
 /*********************************** Starts about Section  ***************************************/
 #about {
   position: relative;
   margin: auto;
   display: flex;
-}
-
-#titlePic h1 {
-  font-size: 300%;
-}
-
-#describe {
-  margin: 25px;
-  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  font-weight: bold;
+  z-index: 1;
+  overflow: hidden;
   font-size: 125%;
+}
+
+#about h1 {
+  z-index: 1;
+  width: 100%;
+}
+
+#about:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: .6;
+  background-image: url("http://eskipaper.com/images/desktop-backgrounds-23.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .description {
   width: 50%;
   padding: 10px;
+  z-index: 1;
 }
 
-.description:first-child {
+.description a {
+  color: blue;
+}
+
+.description:nth-child(2) {
   border-right: 1px solid black;
 }
 
 /*******************************Starts dividers*********************************/
-
-#dividers {
+.dividers {
   display: flex;
-  text-align: center;
 }
 
 .divide {
-  margin-top: 15px;
+  margin: auto;
+  margin-top: 20px;
   border-right: 1px solid black;
   width: 33%;
   font-size: 150%;
@@ -89,8 +140,11 @@ hr {
   float: none;
   border: none;
   display: inline-block;
-  *display: inline; /* ie7 fix */
-  zoom: 1; /* hasLayout ie7 trigger */
+  z-index: 1;
+  *display: inline;
+  /* ie7 fix */
+  zoom: 1;
+  /* hasLayout ie7 trigger */
 }
 
 .nav-tabs > li.active,
@@ -103,6 +157,7 @@ hr {
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover {
   border: none;
+  border-top: 1px solid black;
   border-bottom: 1px solid black;
   color: black;
 }
@@ -123,22 +178,40 @@ a:hover {
 #projects > ul > li {
   font-size: 200%;
 }
+
 /************************************Starts Projects section***************************************/
 #projects {
-  clear: both;
+  position: relative;
+  padding: 15px;
+  font-weight: bold;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-#website, #ajax, #gadget, #game {
-  margin: auto;
-  text-align: center;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
+#projects:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: .6;
+  background-image: url("http://eskipaper.com/images/desktop-backgrounds-23.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #projects h1 {
   font-size: 300%;
+  z-index: 1;
+  width: 100%;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
 }
 
 img {
@@ -147,9 +220,9 @@ img {
 }
 
 #projects ul {
-  //font-size: 150%;
   border: none;
-  padding-left: 0; //needed because of bootstrap default css I guess
+  padding-left: 0;
+  width: 100%;
 }
 
 .projectInfo {
@@ -172,7 +245,7 @@ img {
 }
 
 .tabContent {
-  display: flex; /*this needs to be adjusted in order to remove the excess white space on the right hand side*/
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -181,16 +254,54 @@ img {
   width: 32%;
   border: 1px solid black;
   margin: 5px;
+  z-index: 1;
+}
+
+.projTitle {
+  font-size: 200%;
+  color: black;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb;
 }
 
 .subTitle {
   margin: auto;
+  margin-top: 10px;
   text-align: center;
+  font-size: 400%;
   width: 100%;
+  z-index: 1;
+  color: black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
+
+.hideMe {
+  visibility: hidden;
+}
+
 /********************************** Starts Contact Section  ********************************/
 #contact {
   display: flex;
+  position: relative;
+  margin: auto;
+  font-weight: bold;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#contact:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: .6;
+  background-image: url("http://eskipaper.com/images/desktop-backgrounds-23.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .column {
@@ -198,20 +309,24 @@ img {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-}
-
-.contactInfo {
-  width: 75%;
-  margin: 5px;
+  z-index: 1;
 }
 
 .column h3 {
   width: 100%;
   text-align: center;
+  font-weight: bold;
+  font-size: 240%;
+}
+
+.contactInfo {
+  width: 75%;
+  margin: 10px;
+  padding: 3px;
 }
 
 #contEm {
-  font-size: 175%;
+  font-size: 225%;
   width: 100%;
 }
 
@@ -223,15 +338,26 @@ form {
   width: 100%;
 }
 
+form input, form textarea {
+  text-align: center;
+}
+
+/*****************************Starts Social Media Section ************************************/
 .hovicon {
   cursor: pointer;
   margin: 20px;
-  width: 90px;
   height: 90px;
   border-radius: 50%;
   position: relative;
   z-index: 1;
   color: #fff;
+}
+
+#social > a:nth-child(1) > i,
+#social > a:nth-child(2) > i,
+#social > a:nth-child(3) > i,
+#social > a:nth-child(4) > i {
+  width: 25%;
 }
 
 .hovicon:after {
@@ -250,10 +376,13 @@ form {
   line-height: 90px;
   -webkit-font-smoothing: antialiased;
 }
+
 .hovicon.effect-2 {
-  color: black; /*changes icon color*/
+  color: black;
+  /*changes icon color*/
   box-shadow: 10px 10px 5px #888888;
 }
+
 .hovicon.effect-2:after {
   top: -2px;
   left: -2px;
@@ -278,30 +407,165 @@ form {
 }
 
 #submitButton {
-  padding: 15px 25px;
+  position: relative;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #a64dff;
+  color: white;
+  background-color: #6666ff;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 7px #999;
-  height: 65px;
+  box-shadow: 0 4px #999;
+  height: 55px;
+  top: -8px;
 }
 
 #submitButton:hover {
   color: black;
-  background-color: #b366ff;
-  box-shadow: 0 5px #666;
+  background-color: #6666ff;
+  box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
 
+/******************************Footer Divider*******************************/
+.divideNoBorder {
+  margin-top: 15px;
+  width: 33%;
+  font-size: 150%;
+  margin: 10px;
+}
+
+#techSlide {
+  width: 30%;
+  height: 100px;
+}
+
+.techpic {
+  width: 30%;
+  height: 80px;
+}
+
+#responsive, #secure {
+  width: 30%;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/************************************************************First Media Break******************************************************/
+@media screen and (max-width: 1000px) {
+  .project {
+    font-size: 95%;
+  }
+}
+@media screen and (max-width: 960px) {
+  #ds1, #ds2, #ds3, #ds4, #ds5 {
+    top: 100%;
+    left: 0px;
+  }
+
+  div.project {
+    width: 100%;
+    font-size: 150%;
+  }
+
+  img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hideMe {
+    display: none;
+  }
+
+  #contEm {
+    font-size: 155%;
+    width: 100%;
+  }
+
+  .techpic {
+    width: 48%;
+  }
+
+  #responsive, #secure {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 650px) {
+  #wrap {
+    margin: 1px;
+  }
+
+  #navbar > li:nth-child(1) {
+    display: none;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .description:nth-child(2) {
+    border: none;
+  }
+
+  .projectInfo {
+    display: block;
+  }
+
+  .projectSplit {
+    width: 100%;
+  }
+
+  #contact {
+    font-size: 85%;
+  }
+
+  #contEm {
+    font-size: 165%;
+  }
+
+  .hovicon:before {
+    font-size: 35px;
+    line-height: 60px;
+  }
+
+  #social > a:nth-child(1) > i, #social > a:nth-child(2) > i, #social > a:nth-child(3) > i, #social > a:nth-child(4) > i {
+    width: 65px;
+    height: 55px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .dividers {
+    font-size: 75%;
+  }
+
+  .techpic {
+    width: 68%;
+  }
+
+  #contact h3 {
+    font-size: 175%;
+  }
+}
+@media screen and (max-width: 450px) {
+  #contEm {
+    font-size: 125%;
+  }
+
+  .hovicon:before {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  #social > a:nth-child(1) > i, #social > a:nth-child(2) > i, #social > a:nth-child(3) > i, #social > a:nth-child(4) > i {
+    width: 30px;
+    height: 35px;
+  }
+}
 /******************************begins fly in text section*************************/
 .fly-in-text li {
   display: inline-block;
   margin-right: 5px;
+  margin: auto;
   font-family: Open Sans, Arial;
   font-weight: 300;
   font-size: 3em;
@@ -350,18 +614,8 @@ form {
   transform: translateX(-10px) translateY(120px);
 }
 
-.trans--grow {
-  -webkit-transition: width 1s ease-out; /* For Safari 3.1 to 6.0 */
-  transition: width 1s ease-out;
-  width: 0%;
-}
-
-.grow {
-  width: 100%;
-}
-
 </style>
-  <script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -371,10 +625,12 @@ form {
   ga('send', 'pageview');
 
 </script>
-  
 </head>
 <body>
 <div id='wrap'>
+  <hr class='trans--grow'></hr>
+  <h1 id='title'>Ryan's Portfolio</h1>
+  <hr class='trans--grow'></hr>
   <ul id="navbar">
     <li>
       <a href="#about">
@@ -409,9 +665,9 @@ form {
           <ul class="dropdown-menu" id='ds1'>
             <li>
               <h4>Websites</h4></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target="_blank" rel="noopener">George Carlin Tribute</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target="_blank" rel="noopener">Random Quote Generator</a></li>
-            <li><a tabindex="-1" href="http://ryanrw81.wix.com/joes-fruit" target="_blank" rel="noopener">Wix Site</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/carlintribute.html" target="_blank" rel="noopener">George Carlin Tribute</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/randomquote.html" target="_blank" rel="noopener">Random Quote Generator</a></li>
+            <li><a class='menuProject' tabindex="-1" href="http://ryanrw81.wix.com/joes-fruit" target="_blank" rel="noopener">Wix Site</a></li>
           </ul>
         </li>
         <li class="dropdown-submenu">
@@ -421,9 +677,9 @@ form {
           <ul class="dropdown-menu" id='ds2'>
             <li>
               <h4>Websites with API's</h4></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/weather.html" target="_blank" rel="noopener">Local Weather Forecast</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target="_blank" rel="noopener">Twitch Streamer Status</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target="_blank" rel="noopener">Wikipedia Search</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/weather.html" target="_blank" rel="noopener">Local Weather Forecast</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/twitch.html" target="_blank" rel="noopener">Twitch Streamer Status</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/wiki.html" target="_blank" rel="noopener">Wikipedia Search</a></li>
           </ul>
         </li>
         <li class="dropdown-submenu">
@@ -433,9 +689,9 @@ form {
           <ul class="dropdown-menu" id='ds3'>
             <li>
               <h4>Tools</h4></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/pomodoro.html" target="_blank" rel="noopener">Pomodoro Clock</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/calculator.html" target="_blank" rel="noopener">Calculator</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/clock.html" target="_blank" rel="noopener">Digital Clock</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/pomodoro.html" target="_blank" rel="noopener">Pomodoro Clock</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/calculator.html" target="_blank" rel="noopener">Calculator</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/clock.html" target="_blank" rel="noopener">Digital Clock</a></li>
           </ul>
         </li>
         <li class="dropdown-submenu">
@@ -445,9 +701,9 @@ form {
           <ul class="dropdown-menu" id='ds4'>
             <li>
               <h4>Games</h4></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/simon.html" target="_blank" rel="noopener">Simon</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target="_blank" rel="noopener">Tic Tac Toe</a></li>
-            <li><a tabindex="-1" href="https://ryanwfile.github.io/battleship.html" target="_blank" rel="noopener">Battleship</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/simon.html" target="_blank" rel="noopener">Simon</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/tictactoe.html" target="_blank" rel="noopener">Tic Tac Toe</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://ryanwfile.github.io/battleship.html" target="_blank" rel="noopener">Battleship</a></li>
           </ul>
         </li>
         <li class="dropdown-submenu">
@@ -457,9 +713,9 @@ form {
           <ul class="dropdown-menu" id='ds5'>
             <li>
               <h4>React</h4></li>
-            <li><a tabindex="-1" href="https://github-battle-from-react-tut.firebaseapp.com" target="_blank" rel="noopener">Github Battle</a></li>
-            <li><a tabindex="-1" href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="_blank" rel="noopener">Recipe Creator and Storage Box</a></li>
-            <li><a tabindex="-1" href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="_blank" rel="noopener">Free Code Camp Points Leaderboard</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://github-battle-from-react-tut.firebaseapp.com" target="_blank" rel="noopener">Github Battle</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="_blank" rel="noopener">Recipe Creator and Storage Box</a></li>
+            <li><a class='menuProject' tabindex="-1" href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="_blank" rel="noopener">Free Code Camp Points Leaderboard</a></li>
 
 
           </ul>
@@ -489,39 +745,150 @@ form {
   </ul>
 
   <div id="about">
-    <div id="titlePic">
-      <h1>Ryan's<br />Portfolio</h1>
-      <img class='circleImage' src="https://github.com/Ryanwfile/FirstRepo/blob/master/Updated.JPG?raw=true" alt="image of Ryan" />
-    </div>
-    <div id='describe'>
-      <p class='description'>
-        Ryan has been teaching himself web development through many sources such as Free Code Camp, Harvard's CS50 course, Udacity, Coursera.org, etc.<br><br/> He is based in the New York City metro area and is currently searching for entry level or freelance
-        web development opportunities that will allow him to improve his abilities.<br></br>
-        Here are links to his work on <a href="https://github.com/Ryanwfile" target="blank" rel="noopener">github</a> and <a href="https://codepen.io/Ryanwfile/" target="blank" rel="noopener">codepen</a>.</p>
-      <p class='description'>Ryan kept an extensive amount of notes as well as links to many resources, mostly online and some books. <br></br>Eventually he compiled all of these notes and resources for others to use online in this google document, <a href="https://docs.google.com/document/d/1huC-wpyBEfK-cCYxrnT3z5NJ7kWLWXqxlDIdBdNfUhY/pub"
-          target='blank' rel="noopener"> a comprehensive list of information and resources for web developers </a> <br></br>As Ryan is constantly learning this document will see regular updates</p>
-    </div>
-  </div>
-
-  <div id="dividers">
-
-    <div class='divide'>Modern Technologies &nbsp </div>
-    <div class='divide'>Responsive Design &nbsp</div>
-    <div class='divide'>Reliable & Secure &nbsp</div>
+    <h1>About Me</h1>
+    <p class='description'>
+      Hello, my name is Ryan. I have been teaching myself web development through many sources such as Free Code Camp, Harvard's CS50 course, Udacity, Coursera.org, etc.<br><br/> I am based in the New York City metro area and am currently searching for
+      entry level or freelance web development opportunities that will allow me to improve on my abilities.<br></br>
+      Here are links to some of my work on <a href="https://github.com/Ryanwfile" target="blank" rel="noopener">github</a> and <a href="https://codepen.io/Ryanwfile/" target="blank" rel="noopener">codepen</a>.</p>
+    <p class='description'>While learning I keep an extensive amount of notes as well as links to many resources. <br></br>Eventually I compiled all of these notes and resources for others to use online in <a href="https://docs.google.com/document/d/1huC-wpyBEfK-cCYxrnT3z5NJ7kWLWXqxlDIdBdNfUhY/pub"
+        target='blank' rel="noopener"><b> this google document.</b>  </a> <br></br>As I am constantly learning this document will see regular updates</p>
 
   </div>
+
+  <div class="dividers">
+    <div class='divide'>Modern<br>Technologies</div>
+    <div class='divide'>Responsive<br>Design</div>
+    <div class='divide'>Reliable &<br> Secure</div>
+  </div>
+
   <hr class='trans--grow'></hr>
   <div id="projects">
     <h1>Projects</h1>
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#react">React</a></li>
       <li><a data-toggle="tab" href="#website">Websites</a></li>
-      <li><a data-toggle="tab" href="#ajax">Websites with API's</a></li>
+      <li><a data-toggle="tab" href="#ajax">API's</a></li>
       <li><a data-toggle="tab" href="#gadget">Tools</a></li>
       <li><a data-toggle="tab" href="#game">Games</a></li>
-      <li><a data-toggle="tab" href="#current">Current Project</a></li>
+      <li><a data-toggle="tab" href="#current">Current</a></li>
     </ul>
     <div class="tab-content">
+      <div id="react" class="tab-pane fade in active">
+        <div class='tabContent'>
+          <h2 class="subTitle">React Projects</h2>
+          <div class="project">
+            <h4 class="projTitle">Github Battle</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/Github_Battle.png" alt="image of github battle application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://github-battle-from-react-tut.firebaseapp.com/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Displays the current most popular programming repositories, also uses the Github API to compare 2 users in a battle format.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>React Fundamentals Course</li>
+                  <li>from ReactTraining.com/online</li>
+                  <li>Google Firebase</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li></li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>React, React Router</li>
+                  <li>Github Api, Axios</li>
+                  <li>Node.JS, NPM, Webpack</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+                  <li>Mobile Speed: 79/100</li>
+                  <li>Desktop Speed: 93/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Recipe Creator and Storage Box</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/Recipe_Box.png" alt="image of Recipe Box and Creator application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Allows the user to create and store recipes.</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp</li>
+                  <li>Stack Overflow</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS, Bootstrap</li>
+                  <li>Javascript</li>
+                  <li>SASS/SCSS</li>
+                  <li>React</li>
+                  <li>Create React App</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 64/100</li>
+                  <li>Desktop Speed: 85/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h4 class="projTitle">Free Code Camp Points Leaderboard</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/FCC_Leaderboard.png" alt="image of Free Code Camp Leaderboard Application" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p> Uses the Free Code Camp Api to display the point leaders and their points</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Free Code Camp & FCC chat</li>
+                  <li><u>React Up & Running</u></li>
+                  <li>by Stoyan Stefanov</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
+
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>Axios</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Google Page Speed Scores</li>
+                  <li>Mobile Speed: 70/100</li>
+                  <li>Desktop Speed: 88/100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="website" class="tab-pane fade">
         <div class='tabContent'>
           <h2 class="subTitle">Websites</h2>
@@ -547,8 +914,6 @@ form {
                 <h4>Technologies Used</h4>
                 <ul>
 
-                  <li>
-                  </li>
                   <li>HTML, CSS, Bootstrap</li>
                   <li>Javascript</li>
                   <li>Jquery</li>
@@ -586,7 +951,6 @@ form {
                   <li>HTML, CSS, Bootstrap</li>
                   <li>Javascript</li>
                   <li>Jquery</li>
-                  <li>Twitter Api</li>
                   <li>
                     <h4>Google Page Speed Scores</h4></li>
                   <li>Mobile Speed: 71/100</li>
@@ -632,7 +996,7 @@ form {
       </div>
       <div id="ajax" class="tab-pane fade">
         <div class='tabContent'>
-          <h2 class="subTitle">Websites that use API's</h2>
+          <h2 class="subTitle">Websites with API's</h2>
           <div class="project">
             <h4 class="projTitle">Local Weather</h4>
             <img class="projpic" src="https://ryanwfile.github.io/weather.png" alt="image of weather website" />
@@ -989,127 +1353,12 @@ form {
           </div>
         </div>
 
-
       </div>
-      <div id="react" class="tab-pane fade in active">
-        <div class='tabContent'>
-          <h2 class="subTitle">React Projects</h2>
-          <div class="project">
-            <h4 class="projTitle">Github Battle</h4>
-            <img class="projpic" src="https://ryanwfile.github.io/Github_Battle.png" alt="image of github battle application" />
-            <div class="projectInfo">
-              <div class='projectSplit'>
-                <a href="https://github-battle-from-react-tut.firebaseapp.com/" target="blank" rel="noopener">
-                  <u>Link to Page</u>
-                </a>
-                <h4>Description</h4>
-                <p> Displays the currently most popular programming repositories, also uses the Github API to compare 2 users in a battle format.</p>
-                <h4>Resources Used</h4>
-                <ul>
-                  <li>React Fundamentals Course</li>
-                  <li>from ReactTraining.com/online</li>
-                  <li>Google Firebase</li>
-                </ul>
-              </div>
-              <div class='projectSplit'>
-                <h4>Technologies Used</h4>
-                <ul>
 
-                  <li></li>
-                  <li>HTML, CSS, Bootstrap</li>
-                  <li>Javascript</li>
-                  <li>React, React Router</li>
-                  <li>Github Api, Axios</li>
-                  <li>Node.js, NPM, Webpack</li>
-                  <li>
-                    <h4>Google Page Speed Scores</h4></li>
-                  <li>Mobile Speed: 79/100</li>
-                  <li>Desktop Speed: 93/100</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <h4 class="projTitle">Recipe Creator and Storage Box</h4>
-            <img class="projpic" src="https://ryanwfile.github.io/Recipe_Box.png" alt="image of Recipe Box and Creator application" />
-            <div class="projectInfo">
-              <div class='projectSplit'>
-                <a href="https://codepen.io/Ryanwfile/full/RgZyMM/" target="blank" rel="noopener">
-                  <u>Link to Page</u>
-                </a>
-                <h4>Description</h4>
-                <p> Allows the user to create and store Recipes.</p>
-                <h4>Resources Used</h4>
-                <ul>
-                  <li>Free Code Camp</li>
-                  <li>Stack Overflow</li>
-                  <li><u>Javascript & Jquery</u></li>
-                  <li>by Jon Duckett</li>
-                </ul>
-              </div>
-              <div class='projectSplit'>
-                <h4>Technologies Used</h4>
-                <ul>
-
-                  <li>
-                  </li>
-                  <li>HTML, CSS, Bootstrap</li>
-                  <li>Javascript</li>
-                  <li>SASS/SCSS</li>
-                  <li>React</li>
-                  <li>Create React App</li>
-                  <li>
-                    <h4>Google Page Speed Scores</h4></li>
-
-                  <li>Mobile Speed: 64/100</li>
-                  <li>Desktop Speed: 85/100</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <h4 class="projTitle">Free Code Camp Points Leaderboard</h4>
-            <img class="projpic" src="https://ryanwfile.github.io/FCC_Leaderboard.png" alt="image of Free Code Camp Leaderboard Application" />
-            <div class="projectInfo">
-              <div class='projectSplit'>
-                <a href="https://codepen.io/Ryanwfile/full/LLPBYL/" target="blank" rel="noopener">
-                  <u>Link to Page</u>
-                </a>
-                <h4>Description</h4>
-                <p> Uses the Free Code Camp Api to display the point leaders and their points</p>
-                <h4>Resources Used</h4>
-                <ul>
-                  <li>Free Code Camp & FCC chat</li>
-                  <li><u>React Up & Running</u></li>
-                  <li>by Stoyan Stefanov</li>
-                </ul>
-              </div>
-              <div class='projectSplit'>
-                <h4>Technologies Used</h4>
-                <ul>
-
-                  <li>
-                  </li>
-                  <li>HTML, CSS</li>
-                  <li>Javascript</li>
-                  <li>React</li>
-                  <li>Axios</li>
-                  <li>
-                    <h4>Google Page Speed Scores</h4></li>
-
-                  <li>Google Page Speed Scores</li>
-                  <li>Mobile Speed: 70/100</li>
-                  <li>Desktop Speed: 88/100</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
       <div id="current" class="tab-pane fade">
         <div class='tabContent'>
           <h2 class="subTitle">Current Project</h2>
+          <div class="project hideMe"></div>
           <div class="project">
             <h4 class="projTitle">Game of Life</h4>
             <img class="projpic" src="https://ryanwfile.github.io/GameLife.png" alt="image of weather website" />
@@ -1144,19 +1393,53 @@ form {
               </div>
             </div>
           </div>
+          <div class="project hideMe">
+            <h4 class="projTitle">Digital Clock</h4>
+            <img class="projpic" src="https://ryanwfile.github.io/clock.png" alt="image of digital clock website" />
+            <div class="projectInfo">
+              <div class='projectSplit'>
+                <a href="https://ryanwfile.github.io/clock" target="blank" rel="noopener">
+                  <u>Link to Page</u>
+                </a>
+                <h4>Description</h4>
+                <p>A page that displays a 12 hour format clock. This project was my first venture into Jquery</p>
+                <h4>Resources Used</h4>
+                <ul>
+                  <li>Alessio Atzeni Tutorial</li>
+                  <li><u>Javascript & Jquery</u></li>
+                  <li>by Jon Duckett</li>
+                </ul>
+              </div>
+              <div class='projectSplit'>
+                <h4>Technologies Used</h4>
+                <ul>
 
+                  <li>
+                  </li>
+                  <li>HTML, CSS</li>
+                  <li>Javascript</li>
+                  <li>Jquery</li>
+                  <li>
+                    <h4>Google Page Speed Scores</h4></li>
+
+                  <li>Mobile Speed: 66/100</li>
+                  <li>Desktop Speed: 86/100</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
-
-      <a href="#projects">Back to Top of Projects</a>
+     
 
     </div>
 
   </div>
   <div id='contact'>
     <div class='column'>
-      <h3>My contact Information</h3>
+      <h3>My Contact Information</h3>
       <p id='contEm'></p>
       <div id='social'>
         <a href="http://codepen.io/Ryanwfile/" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="bottom" title="Codepen"><i class="hovicon effect-2 fa fa-codepen"></i></a>
@@ -1167,13 +1450,36 @@ form {
     </div>
     <div class='column'>
       <form name="contactMe" action="https://formspree.io/codereese@hotmail.com" method="post">
-        <h3>Message me Here</h3>
+        <h3>Message Me </h3>
         <input name='Name' class='contactInfo' type='text' placeholder='Name'></input>
         <input name='email' class='contactInfo' type='text' placeholder='Email'></input>
-        <textarea cols='' rows='5' name='message' class='contactInfo' placeholder='message'></textarea>
+        <textarea cols='' rows='5' name='message' class='contactInfo' placeholder='Message'></textarea>
         <input class='contactInfo button' type="submit" value="Submit" id='submitButton'>
       </form>
     </div>
+  </div>
+  <a href="#title"><h3>Back to Top</h3></a>
+  <h2>Thank you for visiting</h2>
+
+  <div class="dividers">
+    <div class='divideNoBorder'><img id='responsive' src='https://cdn.dribbble.com/users/485181/screenshots/1594659/gif-responsive-2.gif' alt='Responsive Image gif'> </div>
+    <div id='techSlide' class='divideNoBorder'>
+      <img src="https://i.ytimg.com/vi/fYetZf8Pjfg/maxresdefault.jpg" alt="html css and JS logo" class="techpic">
+      
+      <img src="http://www.jsweet.org/wp-content/uploads/2016/04/react-logo-300x289.png" alt="react logo image" class="techpic">
+      
+      <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/07/1436439824nodejs-logo.png" alt="node.js logo image" class="techpic">      
+      
+      <img src="http://resource.thaicreate.com/upload/stock/20170420172840.png?v=1001" alt="bootstrap logo" class="techpic">
+    
+      <img src="https://brand.jquery.org/resources/jquery-mark-light.gif " alt="jquery logo" class="techpic">
+      
+      <img src="http://sass-lang.com/assets/img/styleguide/color-1c4aab2b.png " alt="SASS logo" class="techpic">
+   
+    </div>
+
+    <div class='divideNoBorder'><img id='secure' src='https://media.giphy.com/media/rjmxLtQueiRWg/giphy.gif' alt="Secure image gif"> </div>
+
   </div>
 
   2017 | Ryan Williams
@@ -1183,8 +1489,7 @@ form {
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function()
-{  
-  
+{    
   /***************************dropdowns function*********************************/
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();    
@@ -1243,16 +1548,25 @@ fly();
     $('.trans--grow').addClass('grow');
 }, 3500);
    /***************************email link*********************************/
- var username = "codereese";
+  var username = "codereese";
   var hostname = "hotmail.com";
   var linktext = username + "@" + hostname ;
   var linker = linktext.fontcolor("blue");
   document.getElementById('contEm').innerHTML = "<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linker + "</a>";
-  $(linktext).css('color', 'blue'); 
+  $(linktext).css('color', 'blue');   
 })
-  
-  
 
+/***************************slideshow Animation***************************/
+
+  $(".techpic").hide();
+
+  setInterval(function() 
+   { 
+    $('.techpic:first ')
+      .show()
+      .fadeToggle(1900)
+      .appendTo('#techSlide');
+   },  2000);
 
 
 
