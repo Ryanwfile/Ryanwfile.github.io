@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
+<link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+<style>
+td {
+  background-color: pink;
+  border: 1px solid black;
+  text-align: center;
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+}
+
+.grid {
+  margin: auto;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 15px auto;
+}
+
+table {
+  margin: auto;
+}
+
+.row {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+button {
+  margin: 5px;
+  height: 40px;
+}
+
+.cell {
+  background: blue;
+  height: 16px;
+  width: 16px;
+  margin: auto;
+}
+
+label {
+  font-weight: bold;
+  font-size: 150%;
+  margin-right: 10px;
+}
+
+input {
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div id = 'app'></div>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+<script>
+'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/*to customize this further I can have the usre input grid size, and refresh cell rate*/
+
+function Cell() {
+  return React.createElement('div', { className: 'cell' });
+}
+
+var Interface = function (_React$Component) {
+  _inherits(Interface, _React$Component);
+
+  function Interface(props) {
+    _classCallCheck(this, Interface);
+
+    return _possibleConstructorReturn(this, _React$Component.call(this, props));
+  }
+
+  Interface.prototype.render = function render() {
+    return React.createElement(
+      'div',
+      { className: 'title' },
+      React.createElement(
+        'h1',
+        null,
+        'Game of Life'
+      ),
+      React.createElement(
+        'h2',
+        null,
+        'Generations Passed      ',
+        this.props.generations
+      ),
+      React.createElement(
+        'div',
+        { className: 'row' },
+        React.createElement(
+          'label',
+          null,
+          'Grid Size'
+        ),
+        React.createElement('input', { type: 'text', placeholder: 'Square Numbers Only' })
+      ),
+      React.createElement(
+        'div',
+        { className: 'row' },
+        React.createElement(
+          'button',
+          {
+            onClick: this.props.handlePlay
+          },
+          'Play'
+        ),
+        React.createElement(
+          'button',
+          {
+            id: 'pause',
+            onClick: this.props.handlePause
+          },
+          'Pause'
+        ),
+        React.createElement(
+          'button',
+          {
+            onClick: this.props.handleCustom
+          },
+          'Clear/Set Board'
+        ),
+        React.createElement(
+          'button',
+          {
+            onClick: this.props.handleReady
+          },
+          'Custom Ready'
+        )
+      )
+    );
+  };
+
+  return Interface;
+}(React.Component);
+
+var Board = function (_React$Component2) {
+  _inherits(Board, _React$Component2);
+
+  function Board(props) {
+    _classCallCheck(this, Board);
+
+    var _this2 = _possibleConstructorReturn(this, _React$Component2.call(this, props));
+
+    _this2.state = {
+      boardArray: _this2.createBoard([])
+
+    };
+
+    _this2.createBoard = _this2.createBoard.bind(_this2);
+    _this2.randomize = _this2.randomize.bind(_this2);
+    _this2.neighbor = _this2.neighbor.bind(_this2);
+    _this2.nextBoard = _this2.nextBoard.bind(_this2);
+    _this2.timer = _this2.timer.bind(_this2);
+    //this.createCustom = this.createCustom.bind(this);
+    //this.handleClick = this.handleClick.bind(this);
+    //this.handleTD = this.handleTD.bind(this);
+    return _this2;
+  }
+  //https://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method
+  /*handleTD(e){
+    console.log(e);   
+  } */
+
+  Board.prototype.componentDidMount = function componentDidMount() {
+    var intervalId = setInterval(this.timer, 1000);
+    this.setState({
+      intervalId: intervalId });
+  };
+
+  Board.prototype.componentWillUnmount = function componentWillUnmount() {
+    clearInterval(this.state.intervalId);
+  };
+
+  Board.prototype.timer = function timer() {
+    if (!this.props.isPaused) {
+      this.setState({ boardArray: this.nextBoard() });
+    }
+  };
+
+  Board.prototype.randomize = function randomize(min, max) {
+    //inclusive min and max
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  Board.prototype.createBoard = function createBoard(array) {
+    var size = 256; //adjusting this number sets the grid size, needs to be a square number
+    var length = Math.sqrt(size);
+    var row;
+    var column;
+    var startingCellCount = function (arr) {
+      var cellCount = this.randomize(75, 115); //randomly determines the starting cell counts
+      for (var i = 0; i < cellCount; i++) {
+        var rng = this.randomize(1, size);
+        if (arr.indexOf(rng) === -1) {
+          //searches array for duplicates  
+          arr.push(rng);
+        } else {
+          i--;
+        }
+      }
+      return arr;
+    }.bind(this);
+
+    var startingCells = startingCellCount([]); //generates starting random cells
+    for (var i = 1; i <= size; i++) {
+      row = Math.ceil(i / length);
+      column = i % length || length;
+      if (startingCells.indexOf(i) > -1) {
+        //if cell is in startingCells array
+        array.push({ id: startingCells[startingCells.indexOf(i)], alive: true, location: [row, column] }); //push the rng value as the cells id
+      } else {
+          array.push({ id: i, alive: false, location: [row, column] });
+        }
+    }
+    return array;
+  };
+
+  Board.prototype.neighbor = function neighbor() {
+    var boardState;
+    for (var index = 0; index < this.state.boardArray.length; index++) {
+      var neighbors = 0;
+      var totalArray = this.state.boardArray;
+      var length = Math.sqrt(totalArray.length);
+      var origin = totalArray[index]; //this can be omitted, just put totalArray[index] in its stead
+      var row = totalArray[index].location[0];
+      var column = totalArray[index].location[1];
+
+      if (totalArray[index - length - 1] && totalArray[index - length - 1].alive) {
+        var rowTest = totalArray[index - length - 1].location[0];
+        var colTest = totalArray[index - length - 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell1", cell1);
+        }
+      }
+
+      if (totalArray[index - length] && totalArray[index - length].alive) {
+        var rowTest = totalArray[index - length].location[0];
+        var colTest = totalArray[index - length].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell2", cell2);
+        }
+      }
+
+      if (totalArray[index - length + 1] && totalArray[index - length + 1].alive) {
+        var rowTest = totalArray[index - length + 1].location[0];
+        var colTest = totalArray[index - length + 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell3", cell3);
+        }
+      }
+
+      if (totalArray[index - 1] && totalArray[index - 1].alive) {
+        var rowTest = totalArray[index - 1].location[0];
+        var colTest = totalArray[index - 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell4", cell4);
+        }
+      }
+
+      if (totalArray[index + 1] && totalArray[index + 1].alive) {
+        var rowTest = totalArray[index + 1].location[0];
+        var colTest = totalArray[index + 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell5", cell5);
+        }
+      }
+
+      if (totalArray[index + length - 1] && totalArray[index + length - 1].alive) {
+        var rowTest = totalArray[index + length - 1].location[0];
+        var colTest = totalArray[index + length - 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell6", cell6);
+        }
+      }
+
+      if (totalArray[index + length] && totalArray[index + length].alive) {
+        var rowTest = totalArray[index + length].location[0];
+        var colTest = totalArray[index + length].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell7", cell7);
+        }
+      }
+
+      if (totalArray[index + length + 1] && totalArray[index + length + 1].alive) {
+        var rowTest = totalArray[index + length + 1].location[0];
+        var colTest = totalArray[index + length + 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+        }
+      }
+
+      if (origin.alive && (neighbors < 2 || neighbors > 3)) {
+        origin.nextGen = false;
+        this.props.addGeneration();
+      }
+      if (origin.alive && (neighbors === 2 || neighbors === 3)) {
+        origin.nextGen = true;
+      }
+      if (!origin.alive && neighbors === 3) {
+        origin.nextGen = true;
+      } else if (!origin.alive) {
+        origin.nextGen = false;
+      }
+      boardState = totalArray;
+    } //ends for loop
+    //console.log(boardState[50]);
+    //console.log(this.props.generations);
+    return boardState;
+  };
+
+  Board.prototype.nextBoard = function nextBoard() {
+    var switchBoard = this.neighbor();
+    switchBoard.map(function (val, idx) {
+      switchBoard[idx].alive = switchBoard[idx].nextGen; //switches all cells to their next gen value
+      delete switchBoard[idx].nextGen;
+    });
+    //console.log(switchBoard);
+    return switchBoard;
+  };
+
+  /* onClick={() => console.log(v.id - 1)}  */
+
+  Board.prototype.render = function render() {
+    //need to set keys
+    var length = Math.sqrt(this.state.boardArray.length); //this is 10   
+    return React.createElement(
+      'table',
+      null,
+      this.state.boardArray.map(function (value, index, arr) {
+        //console.log(value);
+        {
+          var sliced = arr.slice(index * length, index * length + length);
+          return React.createElement(
+            'tr',
+            null,
+            sliced.map(function (v, i, a) {
+              if (v.alive) {
+                return React.createElement(
+                  'td',
+                  null,
+                  ' ',
+                  React.createElement(Cell, null),
+                  ' '
+                );
+              } else {
+                return React.createElement('td', {
+                  key: v.id - 1,
+                  onClick: function onClick() {
+                    return console.log(v.id - 1);
+                  }
+                });
+              }
+            })
+          );
+        }
+      }.bind(this))
+    );
+  };
+
+  return Board;
+}(React.Component);
+
+var CustomBoard = function (_React$Component3) {
+  _inherits(CustomBoard, _React$Component3);
+
+  function CustomBoard(props) {
+    _classCallCheck(this, CustomBoard);
+
+    var _this3 = _possibleConstructorReturn(this, _React$Component3.call(this, props));
+
+    _this3.state = {
+      boardArray: _this3.createBoard([]),
+      boardCreated: false,
+      userBoard: []
+    };
+    _this3.createBoard = _this3.createBoard.bind(_this3);
+    _this3.setBoard = _this3.setBoard.bind(_this3);
+    _this3.timer = _this3.timer.bind(_this3);
+    _this3.neighbor = _this3.neighbor.bind(_this3);
+    _this3.nextBoard = _this3.nextBoard.bind(_this3);
+    _this3.timer();
+    // this.newBoard = this.newBoard.bind(this);
+    return _this3;
+  }
+
+  CustomBoard.prototype.componentDidMount = function componentDidMount() {
+
+    var intervalId = setInterval(this.timer, 1000);
+    this.setState({
+      intervalId: intervalId });
+  };
+
+  CustomBoard.prototype.componentWillUnmount = function componentWillUnmount() {
+    console.log("Component Will UnMount here");
+    clearInterval(this.state.intervalId);
+  };
+
+  CustomBoard.prototype.timer = function timer() {
+    if (!this.props.isPaused && this.props.boardReady) {
+      this.setState({ boardArray: this.nextBoard() });
+    }
+  };
+
+  CustomBoard.prototype.createBoard = function createBoard(array) {
+    var size = 256;
+    var row = undefined;
+    var column = undefined;
+    var length = Math.sqrt(size);
+    for (var i = 1; i <= size; i++) {
+      row = Math.ceil(i / length);
+      column = i % length || length;
+      array.push({ id: i - 1,
+        alive: false,
+        location: [row, column]
+      });
+    }
+
+    //console.log(this.state.userBoard);
+    return array;
+  };
+
+  CustomBoard.prototype.setBoard = function setBoard(cellValue) {
+    /*inputs a cell value from a user click, output is an array to setState for boardArray*/
+    //console.log(cellValue);  
+    if (!this.props.boardReady) {
+      var boardState = this.state.boardArray;
+      var duplicate = false;
+      var indexCheck = this.state.userBoard.indexOf(cellValue);
+      if (indexCheck !== -1) {
+        duplicate = true;
+        var newArray = this.state.userBoard;
+        newArray.splice(indexCheck, 1);
+        boardState[cellValue].alive = false;
+        this.setState({ userBoard: newArray,
+          boardArray: boardState
+        });
+      }
+
+      if (!duplicate) {
+        var newArray = this.state.userBoard;
+        newArray.push(cellValue);
+        boardState[cellValue].alive = true;
+        this.setState({ userBoard: newArray,
+          boardArray: boardState
+        });
+      }
+    }
+  };
+
+  CustomBoard.prototype.neighbor = function neighbor() {
+    //console.log(this.state.boardArray);
+    var boardState;
+    for (var index = 0; index < this.state.boardArray.length; index++) {
+      var neighbors = 0;
+      var totalArray = this.state.boardArray;
+      var length = Math.sqrt(totalArray.length);
+      var origin = totalArray[index]; //this can be omitted, just put totalArray[index] in its stead
+      var row = totalArray[index].location[0];
+      var column = totalArray[index].location[1];
+
+      if (totalArray[index - length - 1] && totalArray[index - length - 1].alive) {
+        var rowTest = totalArray[index - length - 1].location[0];
+        var colTest = totalArray[index - length - 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell1", cell1);
+        }
+      }
+
+      if (totalArray[index - length] && totalArray[index - length].alive) {
+        var rowTest = totalArray[index - length].location[0];
+        var colTest = totalArray[index - length].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell2", cell2);
+        }
+      }
+
+      if (totalArray[index - length + 1] && totalArray[index - length + 1].alive) {
+        var rowTest = totalArray[index - length + 1].location[0];
+        var colTest = totalArray[index - length + 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell3", cell3);
+        }
+      }
+
+      if (totalArray[index - 1] && totalArray[index - 1].alive) {
+        var rowTest = totalArray[index - 1].location[0];
+        var colTest = totalArray[index - 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell4", cell4);
+        }
+      }
+
+      if (totalArray[index + 1] && totalArray[index + 1].alive) {
+        var rowTest = totalArray[index + 1].location[0];
+        var colTest = totalArray[index + 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell5", cell5);
+        }
+      }
+
+      if (totalArray[index + length - 1] && totalArray[index + length - 1].alive) {
+        var rowTest = totalArray[index + length - 1].location[0];
+        var colTest = totalArray[index + length - 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell6", cell6);
+        }
+      }
+
+      if (totalArray[index + length] && totalArray[index + length].alive) {
+        var rowTest = totalArray[index + length].location[0];
+        var colTest = totalArray[index + length].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+          //console.log("Cell7", cell7);
+        }
+      }
+
+      if (totalArray[index + length + 1] && totalArray[index + length + 1].alive) {
+        var rowTest = totalArray[index + length + 1].location[0];
+        var colTest = totalArray[index + length + 1].location[1];
+        if (row - rowTest >= -1 && row - rowTest <= 1 && column - colTest >= -1 && column - colTest <= 1) {
+          neighbors += 1;
+        }
+      }
+
+      if (origin.alive && (neighbors < 2 || neighbors > 3)) {
+        origin.nextGen = false;
+        this.props.addGeneration();
+      }
+      if (origin.alive && (neighbors === 2 || neighbors === 3)) {
+        origin.nextGen = true;
+      }
+      if (!origin.alive && neighbors === 3) {
+        origin.nextGen = true;
+      } else if (!origin.alive) {
+        origin.nextGen = false;
+      }
+      boardState = totalArray;
+    } //ends for loop
+    //console.log(boardState[50]);
+    //console.log(this.props.generations);
+    return boardState;
+  };
+
+  CustomBoard.prototype.nextBoard = function nextBoard() {
+    // console.log("Next board executed");
+    var switchBoard = this.neighbor();
+    switchBoard.map(function (val, idx) {
+      switchBoard[idx].alive = switchBoard[idx].nextGen; //switches all cells to their next gen value
+      delete switchBoard[idx].nextGen;
+    });
+    //console.log(switchBoard);
+    return switchBoard;
+  };
+
+  CustomBoard.prototype.render = function render() {
+    // console.log(this.state.boardArray);
+    var length = Math.sqrt(this.state.boardArray.length); //this is 10   
+    //console.log(this.state.boardArray);
+    return React.createElement(
+      'table',
+      null,
+      this.state.boardArray.map(function (value, index, arr) {
+        {
+          var sliced = arr.slice(index * length, index * length + length);
+          return React.createElement(
+            'tr',
+            null,
+            sliced.map(function (v, i, a) {
+              //console.log(v);
+              if (v.alive) {
+                return React.createElement(
+                  'td',
+                  {
+                    key: i,
+                    onClick: function () {
+                      this.setBoard(v.id);
+                    }.bind(this)
+                  },
+                  ' ',
+                  React.createElement(Cell, null)
+                );
+              } else {
+                return React.createElement('td', {
+                  key: i,
+                  onClick: function () {
+                    this.setBoard(v.id);
+                  }.bind(this)
+                });
+              }
+            }.bind(this))
+          );
+        }
+      }.bind(this))
+    );
+  };
+
+  return CustomBoard;
+}(React.Component);
+
+var App = function (_React$Component4) {
+  _inherits(App, _React$Component4);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    var _this4 = _possibleConstructorReturn(this, _React$Component4.call(this, props));
+
+    _this4.state = {
+      isPaused: false,
+      generations: 0,
+      customBoard: false,
+      boardReady: false
+    };
+
+    _this4.handlePause = _this4.handlePause.bind(_this4);
+    _this4.handlePlay = _this4.handlePlay.bind(_this4);
+    _this4.handleReady = _this4.handleReady.bind(_this4);
+    _this4.handleCustom = _this4.handleCustom.bind(_this4);
+    _this4.addGeneration = _this4.addGeneration.bind(_this4);
+    return _this4;
+  }
+
+  App.prototype.addGeneration = function addGeneration() {
+    this.setState({
+      generations: this.state.generations + 1
+    });
+  };
+
+  App.prototype.handlePause = function handlePause() {
+    console.log("Pause clicked");
+    this.setState({
+      isPaused: true
+    });
+    //console.log(this.state.isPaused);
+  };
+
+  App.prototype.handlePlay = function handlePlay() {
+    console.log("Play clicked");
+    this.setState({
+      isPaused: false
+    });
+  };
+
+  App.prototype.handleReady = function handleReady() {
+    console.log("Handle Ready clicked");
+    this.setState({
+      boardReady: true
+    });
+  };
+
+  App.prototype.handleCustom = function handleCustom() {
+    console.log("Custom Clicked");
+    this.setState({
+      customBoard: true,
+      generations: 0,
+      boardReady: false
+    });
+  };
+
+  App.prototype.render = function render() {
+    if (!this.state.customBoard) {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(Interface, {
+          handlePause: this.handlePause,
+          handlePlay: this.handlePlay,
+          handleCustom: this.handleCustom,
+          generations: this.state.generations
+        }),
+        React.createElement(Board, {
+          isPaused: this.state.isPaused,
+          addGeneration: this.addGeneration
+        })
+      );
+    } else return React.createElement(
+      'div',
+      null,
+      React.createElement(Interface, {
+        handlePause: this.handlePause,
+        handlePlay: this.handlePlay,
+        handleReady: this.handleReady,
+        handleCustom: this.handleCustom,
+        generations: this.state.generations
+      }),
+      React.createElement(CustomBoard, {
+        isPaused: this.state.isPaused,
+        addGeneration: this.addGeneration,
+        boardReady: this.state.boardReady
+      })
+    );
+  };
+
+  return App;
+}(React.Component);
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(App, null)
+), document.getElementById('app'));
+
+</script>
+</body>
+
+
+</html>
