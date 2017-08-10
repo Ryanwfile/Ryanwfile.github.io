@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
+<link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+<style>
+.container {
+  margin: auto;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.column {
+  display: block;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+  border: 1px dotted red;
+  text-align: center;
+}
+
+.list {
+  list-style-type: none;
+  padding: 8px;
+}
+
+.list li {
+  margin: 10px;
+}
+
+.remove {
+  display: none;
+}
+
+.recipe {
+  cursor: pointer;
+}
+
+.button {
+  padding: 6px;
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: #19194d;
+  color: #ececf9;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div id = "wrap">
+</div>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+<script>
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/*
+https://github.com/jasonbellamy/react-codepen  for a quick way to upload react codepens to github?
+
+I can add recipe sections such as Appetizers, Entrees, Desserts, Beverages
+
+there is a bug with deleting the localStorage content, one of the recipes didn't delete from the storage upon clicking delete this recipe
+
+*/
+
+var Directions = function (_React$Component) {
+  _inherits(Directions, _React$Component);
+
+  function Directions(props) {
+    _classCallCheck(this, Directions);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+    _this.state = {
+      directionName: "",
+      directions: []
+    };
+
+    _this.directionChange = _this.directionChange.bind(_this);
+    _this.addDirection = _this.addDirection.bind(_this);
+    _this.insertDirections = _this.insertDirections.bind(_this);
+    _this.finalClick = _this.finalClick.bind(_this);
+    return _this;
+  }
+
+  Directions.prototype.directionChange = function directionChange(event) {
+    var value = event.target.value; //this is needed because of closure
+    this.setState(function () {
+      return {
+        directionName: value
+      };
+    });
+  };
+
+  Directions.prototype.addDirection = function addDirection(direction, cb) {
+    var val = this.state.directions;
+    val.push(direction);
+    this.setState({
+      directions: val
+    });
+    cb();
+  };
+
+  Directions.prototype.insertDirections = function insertDirections(cb) {
+    console.log("insertDirections function executed", this.state.directions);
+
+    var newDirections = this.state.directions;
+    this.setState(function () {
+      this.props.directionsComplete(newDirections);
+    });
+    //console.log(this.state.directions);
+    cb();
+  };
+
+  Directions.prototype.finalClick = function finalClick(cb) {
+    this.insertDirections();
+    cb();
+  };
+
+  Directions.prototype.render = function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h1",
+        null,
+        "Add Directions"
+      ),
+      React.createElement(
+        "ul",
+        { className: "list" },
+        React.createElement(
+          "li",
+          null,
+          React.createElement("textarea", {
+            onChange: this.directionChange,
+            placeholder: "Add Directions here"
+          })
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "button",
+            {
+              className: "button",
+              onClick: this.addDirection.bind(null, this.state.directionName, this.insertDirections)
+            },
+            "Add This Direction To This Recipe"
+          )
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "h3",
+            null,
+            "Here are the Directions So Far"
+          )
+        ),
+        React.createElement(
+          "ul",
+          { className: "list" },
+          this.state.directions.map(function (directions) {
+            return React.createElement(
+              "li",
+              null,
+              directions
+            );
+          })
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "button",
+            { className: "button", onClick: this.props.addRecipe /*THIS WAS A HUGE HELP HERE   https://stackoverflow.com/questions/33846682/react-onclick-function-fires-on-render   I was invoking the function instead of passing it to onClick*/ },
+            "Recipe Complete, Add To Recipe List"
+          )
+        )
+      )
+    );
+  };
+
+  return Directions;
+}(React.Component);
+/*********************************************************************************************************/
+
+var CreateRecipe = function (_React$Component2) {
+  _inherits(CreateRecipe, _React$Component2);
+
+  function CreateRecipe(props) {
+    _classCallCheck(this, CreateRecipe);
+
+    var _this2 = _possibleConstructorReturn(this, _React$Component2.call(this, props));
+
+    _this2.state = {
+      recipe: {},
+      inputValue: "",
+      addingToRecipe: false,
+      addDirections: false
+    };
+
+    _this2.addName = _this2.addName.bind(_this2);
+    _this2.handleChange = _this2.handleChange.bind(_this2);
+    _this2.ingredientsComplete = _this2.ingredientsComplete.bind(_this2);
+    _this2.addRecipe = _this2.addRecipe.bind(_this2);
+    _this2.directionsComplete = _this2.directionsComplete.bind(_this2);
+    return _this2;
+  }
+
+  CreateRecipe.prototype.ingredientsComplete = function ingredientsComplete(ingredients) {
+    var newRecipe = this.state.recipe; //this was key to getting the list updated
+    newRecipe.ingredients = ingredients;
+    this.setState(function () {
+      return {
+        recipe: newRecipe,
+        addDirections: true
+      };
+    });
+  };
+
+  CreateRecipe.prototype.directionsComplete = function directionsComplete(directions) {
+    var newRecipe = this.state.recipe;
+    newRecipe.directions = directions;
+    this.setState(function () {
+      return {
+        recipe: newRecipe
+      };
+    });
+  };
+
+  CreateRecipe.prototype.addRecipe = function addRecipe() {
+    //adds completed recipe to recipe list
+    console.log("AddRecipe Function executed", this.state.recipe);
+
+    var recObj = this.state.recipe;
+    this.setState(function () {
+      this.props.addToList(recObj);
+      return {
+        recipe: {},
+        inputValue: "",
+        addingToRecipe: false,
+        addDirections: false
+      };
+    });
+  };
+
+  CreateRecipe.prototype.addName = function addName(name) {
+    var rec = this.state.recipe;
+    rec.name = name;
+    this.setState({
+      recipe: rec,
+      addingToRecipe: true
+    });
+  };
+
+  CreateRecipe.prototype.handleChange = function handleChange(event) {
+    var value = event.target.value;
+    this.setState(function () {
+      return {
+        inputValue: value
+      };
+    });
+  };
+
+  CreateRecipe.prototype.render = function render() {
+    if (!this.state.addingToRecipe && !this.state.addDirections) {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "ul",
+          { className: "list" },
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              "h1",
+              null,
+              "Create a Recipe"
+            )
+          ),
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              "h2",
+              null,
+              "Name of Recipe"
+            )
+          ),
+          React.createElement(
+            "li",
+            null,
+            React.createElement("input", {
+              type: "text",
+              placeholder: "Name of Recipe",
+              id: "recName",
+              onChange: this.handleChange
+            })
+          ),
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              "button",
+              {
+                className: "button",
+                onClick: this.addName.bind(null, this.state.inputValue)
+              },
+              "Submit Name of Recipe"
+            )
+          )
+        )
+      );
+    } else if (!this.state.addDirections) {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(Ingredients, { ingredientsComplete: this.ingredientsComplete })
+      );
+    } else {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(Directions, {
+          addRecipe: this.addRecipe,
+          recipe: this.state.recipe,
+          directionsComplete: this.directionsComplete
+        })
+      );
+    }
+  };
+
+  return CreateRecipe;
+}(React.Component);
+
+/************************************************************************************************/
+
+var Ingredients = function (_React$Component3) {
+  _inherits(Ingredients, _React$Component3);
+
+  function Ingredients(props) {
+    _classCallCheck(this, Ingredients);
+
+    var _this3 = _possibleConstructorReturn(this, _React$Component3.call(this, props));
+
+    _this3.state = {
+      ingredientName: "",
+      ingredients: []
+    };
+    _this3.addIngredient = _this3.addIngredient.bind(_this3);
+    _this3.ingredientChange = _this3.ingredientChange.bind(_this3);
+    _this3.insertIngredients = _this3.insertIngredients.bind(_this3);
+    return _this3;
+  }
+
+  Ingredients.prototype.addIngredient = function addIngredient(ingredient) {
+    var val = this.state.ingredients;
+    val.push(ingredient);
+    this.setState({
+      ingredients: val
+    });
+  };
+
+  Ingredients.prototype.ingredientChange = function ingredientChange(event) {
+    var value = event.target.value; //this is needed for closure sake, if I just put event.target.value it wouldn't work
+    this.setState(function () {
+      return {
+        ingredientName: value
+      };
+    });
+  };
+
+  Ingredients.prototype.insertIngredients = function insertIngredients() {
+    var newIngredients = this.state.ingredients;
+    this.setState(function () {
+      this.props.ingredientsComplete(newIngredients);
+    });
+  };
+
+  Ingredients.prototype.render = function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h1",
+        null,
+        "Adding Ingredients"
+      ),
+      React.createElement(
+        "ul",
+        { className: "list" },
+        React.createElement(
+          "li",
+          null,
+          React.createElement("input", {
+            placeholder: "Type stuff here",
+            onChange: this.ingredientChange
+          })
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "button",
+            {
+              className: "button",
+              onClick: this.addIngredient.bind(null, this.state.ingredientName)
+            },
+            "Submit Ingredient"
+          )
+        )
+      ),
+      React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "ul",
+          { className: "list" },
+          React.createElement(
+            "h3",
+            null,
+            "Ingredients So Far"
+          ),
+          this.state.ingredients.map(function (name) {
+            return React.createElement(
+              "li",
+              null,
+              name
+            );
+          }),
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              "button",
+              { className: "button", onClick: this.insertIngredients },
+              " ",
+              "Finished Adding Ingredients"
+            )
+          )
+        )
+      )
+    );
+  };
+
+  return Ingredients;
+}(React.Component);
+/*********************************************************************************************************/
+
+var ListOfRecipes = function (_React$Component4) {
+  _inherits(ListOfRecipes, _React$Component4);
+
+  function ListOfRecipes(props) {
+    _classCallCheck(this, ListOfRecipes);
+
+    var _this4 = _possibleConstructorReturn(this, _React$Component4.call(this, props));
+
+    _this4.state = {};
+    return _this4;
+  }
+
+  ListOfRecipes.prototype.render = function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "ul",
+        { className: "list" },
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "h1",
+            null,
+            "Recipe List"
+          )
+        ),
+        this.props.list.map(function (recipe) {
+          return React.createElement(
+            "li",
+            { key: recipe.name, className: "recipe" },
+            React.createElement(
+              "h2",
+              null,
+              recipe.name
+            ),
+            React.createElement(
+              "ul",
+              { className: "list" },
+              React.createElement(
+                "h4",
+                null,
+                "Ingredients"
+              ),
+              recipe.ingredients.map(function (ingredients) {
+                return React.createElement(
+                  "li",
+                  { onClick: this.props.editing },
+                  ingredients
+                );
+              }.bind(this))
+            ),
+            React.createElement(
+              "ul",
+              { className: "list" },
+              React.createElement(
+                "h4",
+                null,
+                "Directions"
+              ),
+              recipe.directions.map(function (directions) {
+                return React.createElement(
+                  "li",
+                  { onClick: this.props.editing },
+                  directions
+                );
+              }.bind(this))
+            )
+          );
+        }.bind(this))
+      )
+    );
+  };
+
+  return ListOfRecipes;
+}(React.Component);
+/*********************************************************************************************************/
+
+var App = function (_React$Component5) {
+  _inherits(App, _React$Component5);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    //localStorage.clear();
+
+    var _this5 = _possibleConstructorReturn(this, _React$Component5.call(this, props));
+
+    console.log(localStorage);
+    if (localStorage.length === 0 || !window.localStorage) {
+      var userData = [];
+    } else {
+      var userData = JSON.parse(localStorage.list);
+    }
+
+    _this5.state = {
+      list: userData,
+      editMode: false
+    };
+    _this5.addToList = _this5.addToList.bind(_this5);
+    _this5.editing = _this5.editing.bind(_this5);
+    return _this5;
+  }
+
+  App.prototype.addToList = function addToList(recipe) {
+    var newList = this.state.list;
+    newList.push(recipe);
+    var updatedStorage = JSON.stringify(newList);
+    localStorage.setItem("list", updatedStorage);
+    this.setState(function () {
+      newList;
+    });
+  };
+
+  App.prototype.editing = function editing(event) {
+    var textAreaNodes = event.target.parentNode.getElementsByTagName("textarea");
+    var buttonNodes = event.target.parentNode.getElementsByTagName("button");
+    var target = event.target;
+    //console.log(target);
+    var linebreak = document.createElement("br");
+    var clone = linebreak.cloneNode(false);
+    var clone2 = linebreak.cloneNode(false);
+    var newTextArea = document.createElement("textarea");
+    var btn = document.createElement("button");
+    btn.className = "button";
+    var btnClone = btn.cloneNode(false);
+    var newText = document.createTextNode("Submit Edit for this Individual Item");
+    var deleteText = document.createTextNode("Delete this Recipe");
+    if (textAreaNodes.length === 0 || buttonNodes.length === 0) {
+      btn.appendChild(newText);
+      btnClone.appendChild(deleteText);
+      target.appendChild(linebreak);
+      target.appendChild(newTextArea);
+      target.appendChild(clone);
+      target.appendChild(btn);
+      target.appendChild(clone2);
+      target.appendChild(btnClone);
+    } else if (buttonNodes[0] === target) {
+      //edit recipe
+      var updatedText = textAreaNodes[0].value;
+      buttonNodes[0].parentNode.childNodes[0].textContent = updatedText;
+      var container = buttonNodes[0].parentNode;
+      var child0 = buttonNodes[0].parentNode.childNodes[0];
+      var child1 = buttonNodes[0].parentNode.childNodes[1];
+      var child2 = buttonNodes[0].parentNode.childNodes[2];
+      var child3 = buttonNodes[0].parentNode.childNodes[3];
+      var child4 = buttonNodes[0].parentNode.childNodes[4];
+      var child5 = buttonNodes[0].parentNode.childNodes[5];
+      var child6 = buttonNodes[0].parentNode.childNodes[6];
+      container.removeChild(child6);
+      container.removeChild(child5);
+      container.removeChild(child4);
+      container.removeChild(child3);
+      container.removeChild(child2);
+      container.removeChild(child1);
+      console.log(target.parentNode.parentNode.parentNode.nodeValue);
+    } else if (buttonNodes[1] === target) {
+      var search = function search(nameKey, myArray) {
+        //finds the index of the recipe object to be deleted
+        for (var i = 0; i < myArray.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
+          if (myArray[i].name === nameKey) {
+            return i;
+          }
+        }
+window.CP.exitedLoop(1);
+
+      };
+
+      //delete recipe
+      var str = target.parentNode.parentNode.parentNode.textContent;
+      var new_str = str.substring(0, str.indexOf("Ingredients"));
+      var deletedNode = target.parentNode.parentNode.parentNode;
+      var textToBeDeleted = target.parentNode.parentNode.parentNode.textContent;
+      var containerNode = target.parentNode.parentNode.parentNode.parentNode;
+      containerNode.removeChild(deletedNode);
+
+      var index = search(new_str, this.state.list);
+      this.state.list.splice(index, 1);
+      console.log(this.state.list);
+      var stringedList = JSON.stringify(this.state.list);
+      localStorage.setItem("list", stringedList);
+    }
+  };
+
+  App.prototype.render = function render() {
+    return React.createElement(
+      "div",
+      { className: "row" },
+      React.createElement(
+        "div",
+        { className: "column" },
+        React.createElement(CreateRecipe, { addToList: this.addToList, list: this.state.list })
+      ),
+      React.createElement(
+        "div",
+        { className: "column" },
+        React.createElement(ListOfRecipes, { list: this.state.list, editing: this.editing })
+      )
+    );
+  };
+
+  return App;
+}(React.Component);
+/*********************************************************************************************************/
+
+ReactDOM.render(React.createElement(App, null), document.getElementById("wrap"));
+
+</script>
+</body>
+
+
+</html>
