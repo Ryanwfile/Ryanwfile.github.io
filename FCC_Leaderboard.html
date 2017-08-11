@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Frank Ruhl Libre"/>
+<link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+<style>
+.projTitle{  
+  text-align:center;
+}
+
+ul li
+  {
+  color: blue;
+  padding-top:15px;
+  margin-top:8px;
+  list-style-type:none;
+    
+  }
+
+.row{
+	display:flex;
+	justify-content: space-around;
+}
+
+.column {
+	display:flex;
+	flex-direction: column;
+	width:50%;
+	align-items: center;
+}
+
+.button{
+	color:#e6e6e6;
+	background: grey;
+	border:none;
+	font-size: 16px;
+	border-radius: 3px;
+	width:200px;
+	text-align: center;
+	display: block;
+	padding:7px 0;
+	margin:10px auto;
+}
+
+.button:hover:enabled{
+	background:linear-gradient(#1a1a1a, #0a0a0a);
+  cursor:pointer;
+}
+
+.button:active{
+	transform: translateY(1px);
+}
+
+
+</style>
+</head>
+<body>
+<div class = "container" id = "wrap">
+  
+</div>
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+<script>
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var recentURL = "https://fcctop100.herokuapp.com/api/fccusers/top/recent";
+var allURL = "https://fcctop100.herokuapp.com/api/fccusers/top/alltime";
+
+var getRecent = function getRecent() {
+  return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent').then(function (dataR) {
+    return dataR;
+  });
+};
+
+function getAll() {
+  return axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime').then(function (dataA) {
+    return dataA;
+  });
+}
+
+function displayRec(list, bool) {
+  if (bool) {
+    return React.createElement(
+      "ul",
+      { className: "userList" },
+      list.map(function (user) {
+        return React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "h5",
+            null,
+            "Username : ",
+            user.username
+          ),
+          React.createElement(
+            "h5",
+            null,
+            "All Points : ",
+            user.alltime
+          )
+        );
+      })
+    );
+  }
+  return React.createElement(
+    "ul",
+    { className: "userList" },
+    list.map(function (user) {
+      return React.createElement(
+        "li",
+        null,
+        React.createElement(
+          "h5",
+          null,
+          "Username : ",
+          user.username
+        ),
+        React.createElement(
+          "h5",
+          null,
+          "Recent Points : ",
+          user.recent
+        )
+      );
+    })
+  );
+}
+
+function displayAll(list, bool) {
+  if (bool) {
+    return React.createElement(
+      "ul",
+      { className: "userList" },
+      list.map(function (user) {
+        return React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "h5",
+            null,
+            "Username : ",
+            user.username
+          ),
+          React.createElement(
+            "h5",
+            null,
+            "Recent Points : ",
+            user.recent
+          )
+        );
+      })
+    );
+  } else return React.createElement(
+    "ul",
+    { className: "userList" },
+    list.map(function (user) {
+      return React.createElement(
+        "li",
+        null,
+        React.createElement(
+          "h5",
+          null,
+          "Username : ",
+          user.username
+        ),
+        React.createElement(
+          "h5",
+          null,
+          "All Points : ",
+          user.alltime
+        )
+      );
+    })
+  );
+}
+
+var Points = function (_React$Component) {
+  _inherits(Points, _React$Component);
+
+  function Points(props) {
+    _classCallCheck(this, Points);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+    _this.state = { //this is the only place where using this.state is correct, everywhere else should be setState
+      toggle: false,
+      toggleR: false,
+      recentInfo: null,
+      allInfo: null
+    };
+    _this.toggleAll = _this.toggleAll.bind(_this);
+    _this.toggleRec = _this.toggleRec.bind(_this);
+    //this.displayRecent = this.displayRecent.bind(this);
+    return _this;
+  }
+
+  Points.prototype.toggleRec = function toggleRec() {
+    this.setState(function () {
+      return {
+        toggle: true,
+        toggleR: false
+      };
+    });
+  };
+
+  Points.prototype.toggleAll = function toggleAll() {
+    this.setState(function () {
+      return {
+        toggleR: true,
+        toggle: false
+      };
+    });
+  };
+
+  Points.prototype.componentDidMount = function componentDidMount() {
+    return axios.all([getRecent(), getAll()]).then(function (info) {
+      this.setState(function () {
+        return {
+          recentInfo: function () {
+            var rec = [];
+            for (var i = 0; i < 30; i++) {if (window.CP.shouldStopExecution(1)){break;}
+              rec.push(info[0].data[i]);
+            }
+window.CP.exitedLoop(1);
+
+            return rec;
+          }(),
+          allInfo: function () {
+            var all = [];
+            for (var i = 0; i < 30; i++) {if (window.CP.shouldStopExecution(2)){break;}
+              all.push(info[1].data[i]);
+            }
+window.CP.exitedLoop(2);
+
+            return all;
+          }()
+        };
+      });
+    }.bind(this));
+  };
+
+  Points.prototype.render = function render() {
+    if (!this.state.allInfo || !this.state.recentInfo) return React.createElement(
+      "p",
+      null,
+      "Loading..."
+    );
+    console.log(" Value of Toggle is " + " " + this.state.toggle + " The Value of ToggleR is " + " " + this.state.toggleR);
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h1",
+        { className: "projTitle" },
+        "Free Code Camp Points Leaderboard"
+      ),
+      React.createElement(
+        "div",
+        { className: "row" },
+        React.createElement(
+          "button",
+          {
+            className: "button",
+            onClick: this.toggleAll
+          },
+          "Show All time Points"
+        ),
+        React.createElement(
+          "button",
+          {
+            className: "button",
+            onClick: this.toggleRec
+          },
+          "Show Recent Points"
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: "row" },
+        React.createElement(
+          "div",
+          { className: "column" },
+          React.createElement(
+            "h2",
+            null,
+            "Recent Point Leaders"
+          ),
+          displayRec(this.state.recentInfo, this.state.toggleR)
+        ),
+        React.createElement(
+          "div",
+          { className: "column" },
+          React.createElement(
+            "h2",
+            null,
+            "All time Point Leaders"
+          ),
+          displayAll(this.state.allInfo, this.state.toggle)
+        )
+      )
+    );
+  };
+
+  return Points;
+}(React.Component);
+
+ReactDOM.render(React.createElement(Points, null), document.getElementById('wrap'));
+
+</script>
+</body>
+
+
+</html>
