@@ -9,9 +9,9 @@ var SLIDER = SLIDER || (function(){
 			function numberWithCommas(x) {
 				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			}
-
+//THIS IS WHERE TO input slidervalues
 			var sliderValues = _args[0];
-
+            //console.log("Args 0 is ", _args[0]);
 			var quantitySlider = $('.quantity-slider').slider({
 				animate: true,
 				range: 'min',
@@ -28,6 +28,8 @@ var SLIDER = SLIDER || (function(){
 			});
 
 			var calculateTotal = function() {
+               
+
 				var quantity = sliderValues[quantitySlider.slider('option', 'value')];
 				var pricePer = _args[3];
 				var discount = 0;
@@ -59,13 +61,13 @@ var SLIDER = SLIDER || (function(){
                 var img = '';
                 switch (category){
                     case 'facebook':
-                        img = '/img/pricing/facebook-circle.png';
+                        img = 'img/pricing/facebook-circle.png';
                         break;
                     case 'twitter':
-                        img = '/img/pricing/twitter-circle.png';
+                        img = 'img/pricing/twitter-circle.png';
                         break;
                     case 'instagram':
-                        img = '/img/pricing/instagram-circle.png';
+                        img = 'img/pricing/instagram-circle.png';
                         break;
                     default :
                         img = '';
