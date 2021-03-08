@@ -14,10 +14,28 @@ need to fix the big button, it looks horrible
 /*text-shadow property from stack overflow http://stackoverflow.com/questions/2570972/css-font-border*/
 /* Need to shine up the button and add some animations and this is gtg*/
 
+/* html {
+    --bg-start: #2c35a2;
+    --bg-end: #0f133b;
+
+    --highlight-fg: #161c46;
+    --highlight-primary: #73fff5;
+    --highlight-secondary: #cf0389;
+
+    --fg-color: rgba(255, 255, 255, .9);
+
+    --transition: 250ms ease-out;
+} */
+
 body
 {
-  background-image:url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-11.jpg");
-  color:white;  
+/*   background-image:url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-11.jpg"); */
+/*     background: radial-gradient(#e66465, #9198e5); */
+/*   background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c); */
+  background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+/*   background: radial-gradient(ellipse at top, #e66465, transparent),
+            radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
+ 
   }
 
 .wrapper 
@@ -28,7 +46,7 @@ body
 #quoter{
   margin: 0 auto;
   width: 700px;
-  font-size: 23px;
+  font-size: 28px;
   font-family: Courier New;
   text-align: center;
   position: relative;
@@ -36,11 +54,11 @@ body
   border:black;
   border-style:none solid none solid;
   border-radius:30px;
-  color: yellow;
+  color: black;
   text-shadow: -1px 0 black, 0 1px black, 1px 0         black, 0 -1px black; 
   top:5px;
   padding:5px;
-  font-weight:bold;
+  font-weight:350;
   width:50%;
 }
 
@@ -79,10 +97,12 @@ body
 </head>
 <body>
 <div class="wrapper">  
-  <button class="button btn" id = "cnt">Press <br>for new </br> quote </button>
-  <a id = "tweet"></a>
+  <button class="button btn" id = "cnt">Press <brfor new </br> quote </button>
+<!--   <a id = "tweet"></a> -->
   <div id="quoter">Quotation is a serviceable substitute for wit.</br> - Oscar Wilde</div>
 </div>
+
+
 
 
 </body>
